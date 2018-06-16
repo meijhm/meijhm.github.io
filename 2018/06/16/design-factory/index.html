@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="&amp;emsp;&amp;emsp;今天我要给大家科普的设计模式中的创建型模式：工厂模式。那么什么是创建行模式呢，它主要就是将类或者对象的实例化过程抽象起来，可以分为类的创建型模式和对象的创建型模式两类，而工厂模式就属于对象的创建型模式。">
+<meta name="description" content="&amp;emsp;&amp;emsp;今天我要给大家科普的是设计模式中的工厂模式。它属于创建型模式，那么什么是创建行模式呢，它主要就是将类或者对象的实例化过程抽象起来，可以分为类的创建型模式和对象的创建型模式两类，而工厂模式就属于对象的创建型模式。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="工厂模式(Factory Pattern)">
 <meta property="og:url" content="http://meijhm.github.io/2018/06/16/design-factory/index.html">
 <meta property="og:site_name" content="雪中梅">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;今天我要给大家科普的设计模式中的创建型模式：工厂模式。那么什么是创建行模式呢，它主要就是将类或者对象的实例化过程抽象起来，可以分为类的创建型模式和对象的创建型模式两类，而工厂模式就属于对象的创建型模式。">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;今天我要给大家科普的是设计模式中的工厂模式。它属于创建型模式，那么什么是创建行模式呢，它主要就是将类或者对象的实例化过程抽象起来，可以分为类的创建型模式和对象的创建型模式两类，而工厂模式就属于对象的创建型模式。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-16T09:48:35.535Z">
+<meta property="og:updated_time" content="2018-06-16T10:07:02.750Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="工厂模式(Factory Pattern)">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;今天我要给大家科普的设计模式中的创建型模式：工厂模式。那么什么是创建行模式呢，它主要就是将类或者对象的实例化过程抽象起来，可以分为类的创建型模式和对象的创建型模式两类，而工厂模式就属于对象的创建型模式。">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;今天我要给大家科普的是设计模式中的工厂模式。它属于创建型模式，那么什么是创建行模式呢，它主要就是将类或者对象的实例化过程抽象起来，可以分为类的创建型模式和对象的创建型模式两类，而工厂模式就属于对象的创建型模式。">
 
 
 
@@ -329,10 +329,10 @@
       
 
       
-        <p>&emsp;&emsp;今天我要给大家科普的设计模式中的创建型模式：工厂模式。那么什么是创建行模式呢，它主要就是将类或者对象的实例化过程抽象起来，可以分为类的创建型模式和对象的创建型模式两类，而工厂模式就属于对象的创建型模式。<br><a id="more"></a></p>
+        <p>&emsp;&emsp;今天我要给大家科普的是<a href="https://baike.baidu.com/item/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/1212549?fr=aladdin" target="_blank" rel="noopener">设计模式</a>中的工厂模式。它属于创建型模式，那么什么是创建行模式呢，它主要就是将类或者对象的实例化过程抽象起来，可以分为类的创建型模式和对象的创建型模式两类，而工厂模式就属于对象的创建型模式。<br><a id="more"></a></p>
 <h2 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>&emsp;&emsp;工厂模式主要是为创建对象提供过渡接口，以便将创建对象的具体过程屏蔽隔离起来，达到提高灵活性的目的。（通俗说就是工厂会根据不同的情况，为我们创建不同的产品。）</p>
 <h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><p>1）简单工厂模式-Simple Factory Pattern<br>2）工厂方法模式-Factory Method Pattern<br>3）抽象工厂模式-Abstract Factory Pattern</p>
-<p>&emsp;&emsp;这三种模式从上到下逐步抽象，并且一个比一个更具有一般性。GOF在《设计模式》一书中，将简单工厂模式（Simple Factory）看为工厂方法模式的一种特例，两者归为一类。所以也有人将工厂模式分为两类，在这我更偏向把它分为三类，后面分三类举例讲解。</p>
+<p>&emsp;&emsp;这三种模式从上到下逐步抽象，并且一个比一个更具有一般性。<a href="https://baike.baidu.com/item/GoF/6406151" target="_blank" rel="noopener">GoF</a>在《设计模式》一书中，将简单工厂模式（Simple Factory）看为工厂方法模式的一种特例，两者归为一类。所以也有人将工厂模式分为两类，在这我更偏向把它分为三类，后面分三类举例讲解。</p>
 <h3 id="三种工厂模式用法"><a href="#三种工厂模式用法" class="headerlink" title="三种工厂模式用法"></a>三种工厂模式用法</h3><p>1）简单工厂模式：<br>&emsp;&emsp;专门定义一个类来负责创建其他类的实例，被创建的实例通常都具有共同的父类。它又称为静态工厂方法模式。它的实质是由一个工厂类根据传入的参数，动态决定应该创建哪一个产品类（这些产品类继承自一个父类或接口）的实例。</p>
 <p>2）工厂方法模式：<br>&emsp;&emsp;在工厂和产品中间增加接口，工厂不再负责产品的创建，由接口针对不同条件返回具体的类实例，由具体类实例去实现。有一个抽象的Factory类（可以是抽象类和接口），这个类将不在负责具体的产品生产，而是只制定一些规范，具体的生产工作由其子类去完成。</p>
 <p>3）抽象工厂模式：<br>&emsp;&emsp;抽象工厂模式是所有形态的工厂模式中最为抽象和最具一般性的一种形态。它有多个抽象产品类，每个抽象产品类可以派生出多个具体产品类，一个抽象工厂类， 可以派生出多个具体工厂类，每个具体工厂类可以创建多个具体产品类的实例。</p>
