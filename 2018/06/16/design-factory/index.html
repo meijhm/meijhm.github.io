@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="&amp;emsp;&amp;emsp;今天我要给大家科普的设计模式中的创建型模式：工厂模式。那么什么是创建行模式呢，它主要就是将类或者对象的实例化过程抽象起来，可以分为类的创建型模式和对象的创建型模式两类，而工厂模式就属于对象的创建型模式。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="工厂模式(Factory Pattern)">
+<meta property="og:url" content="http://meijhm.github.io/2018/06/16/design-factory/index.html">
+<meta property="og:site_name" content="雪中梅">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;今天我要给大家科普的设计模式中的创建型模式：工厂模式。那么什么是创建行模式呢，它主要就是将类或者对象的实例化过程抽象起来，可以分为类的创建型模式和对象的创建型模式两类，而工厂模式就属于对象的创建型模式。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-06-16T09:48:35.535Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="工厂模式(Factory Pattern)">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;今天我要给大家科普的设计模式中的创建型模式：工厂模式。那么什么是创建行模式呢，它主要就是将类或者对象的实例化过程抽象起来，可以分为类的创建型模式和对象的创建型模式两类，而工厂模式就属于对象的创建型模式。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://meijhm.github.io/2018/06/16/design-factory/"/>
+
+
+
+
+
+  <title>工厂模式(Factory Pattern) | 雪中梅</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">雪中梅</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://meijhm.github.io/2018/06/16/design-factory/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="meijhm">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="雪中梅">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">工厂模式(Factory Pattern)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-16T17:22:49+08:00">
+                2018-06-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>&emsp;&emsp;今天我要给大家科普的设计模式中的创建型模式：工厂模式。那么什么是创建行模式呢，它主要就是将类或者对象的实例化过程抽象起来，可以分为类的创建型模式和对象的创建型模式两类，而工厂模式就属于对象的创建型模式。<br><a id="more"></a></p>
+<h2 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>&emsp;&emsp;工厂模式主要是为创建对象提供过渡接口，以便将创建对象的具体过程屏蔽隔离起来，达到提高灵活性的目的。（通俗说就是工厂会根据不同的情况，为我们创建不同的产品。）</p>
+<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><p>1）简单工厂模式-Simple Factory Pattern<br>2）工厂方法模式-Factory Method Pattern<br>3）抽象工厂模式-Abstract Factory Pattern</p>
+<p>&emsp;&emsp;这三种模式从上到下逐步抽象，并且一个比一个更具有一般性。GOF在《设计模式》一书中，将简单工厂模式（Simple Factory）看为工厂方法模式的一种特例，两者归为一类。所以也有人将工厂模式分为两类，在这我更偏向把它分为三类，后面分三类举例讲解。</p>
+<h3 id="三种工厂模式用法"><a href="#三种工厂模式用法" class="headerlink" title="三种工厂模式用法"></a>三种工厂模式用法</h3><p>1）简单工厂模式：<br>&emsp;&emsp;专门定义一个类来负责创建其他类的实例，被创建的实例通常都具有共同的父类。它又称为静态工厂方法模式。它的实质是由一个工厂类根据传入的参数，动态决定应该创建哪一个产品类（这些产品类继承自一个父类或接口）的实例。</p>
+<p>2）工厂方法模式：<br>&emsp;&emsp;在工厂和产品中间增加接口，工厂不再负责产品的创建，由接口针对不同条件返回具体的类实例，由具体类实例去实现。有一个抽象的Factory类（可以是抽象类和接口），这个类将不在负责具体的产品生产，而是只制定一些规范，具体的生产工作由其子类去完成。</p>
+<p>3）抽象工厂模式：<br>&emsp;&emsp;抽象工厂模式是所有形态的工厂模式中最为抽象和最具一般性的一种形态。它有多个抽象产品类，每个抽象产品类可以派生出多个具体产品类，一个抽象工厂类， 可以派生出多个具体工厂类，每个具体工厂类可以创建多个具体产品类的实例。</p>
+<h3 id="代码演示"><a href="#代码演示" class="headerlink" title="代码演示"></a>代码演示</h3><p>&emsp;&emsp;看了上面的用法，大家可能有些不能理解，下面就用三个非常简单的栗子阐述清楚这些概念：<br>&emsp;&emsp;1）简单工厂模式的例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">package simple;</span><br><span class="line">/**</span><br><span class="line"> * 简单工厂模式：生产多种型号宝马产品</span><br><span class="line"> * 补充：开闭原则——&gt;对扩展的开放，对修改的关闭</span><br><span class="line"> * 缺点：每增加一种新型车,工厂类中需要增加相应的case，违背开闭原则（对扩展的开发，对修改的关闭）</span><br><span class="line"> * 弥补：提出工厂方法模式，定义如下</span><br><span class="line"> * 工厂类定义成了接口,而每新增的车种类型,就增加该车种类型对应工厂类的实现,</span><br><span class="line"> * 这样工厂的设计就可以扩展了,而不必去修改原来的代码。</span><br><span class="line"> */</span><br><span class="line">//产品类</span><br><span class="line">interface BMW&#123;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line">class BMW320 implements BMW&#123;</span><br><span class="line">	public BMW320() &#123;</span><br><span class="line">		System.out.println(&quot;制造 BMW320&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">class BMW523 implements BMW&#123;</span><br><span class="line">	public BMW523() &#123;</span><br><span class="line">		 System.out.println(&quot;制造 BMW523&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">//工厂类</span><br><span class="line">class Factory&#123;</span><br><span class="line">	public BMW createBMW(int type) &#123; //根据参数不同，返回不同的产品（对象）</span><br><span class="line">		switch (type) &#123;</span><br><span class="line">		case 320:</span><br><span class="line">			return new BMW320();</span><br><span class="line">		case 523:</span><br><span class="line">			return new BMW523();</span><br><span class="line">		default:</span><br><span class="line">			break;</span><br><span class="line">		&#125;</span><br><span class="line">		return null;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">//顾客类</span><br><span class="line">public class Customer &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		Factory factory = new Factory();</span><br><span class="line">		factory.createBMW(320);</span><br><span class="line">		factory.createBMW(523);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;2）工厂方法模式的例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">package method;</span><br><span class="line">/**</span><br><span class="line"> * 工厂方法模式：生产多种型号宝马产品</span><br><span class="line"> * 缺点：如果要生产多个产品，此将不再适用</span><br><span class="line"> * 弥补：提出抽象工厂模式，特点如下</span><br><span class="line"> * 抽象工厂模式有多个抽象产品类，具体工厂类可以创建多个具体产品类的实例</span><br><span class="line"> */</span><br><span class="line">//产品类</span><br><span class="line">interface BMW&#123;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line">class BMW320 implements BMW&#123;</span><br><span class="line">	public BMW320() &#123;</span><br><span class="line">		System.out.println(&quot;生产BMW320&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">class BMW523 implements BMW&#123;</span><br><span class="line">	public BMW523() &#123;</span><br><span class="line">		System.out.println(&quot;生产BMW523&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">//工厂类</span><br><span class="line">interface FactoryBMW&#123;</span><br><span class="line">	public BMW createBWM();</span><br><span class="line">&#125;</span><br><span class="line">class FactoryBMW320 implements FactoryBMW&#123;</span><br><span class="line">	@Override</span><br><span class="line">	public BMW createBWM() &#123; //父类作为方法返回值实现多态</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">		return new BMW320(); //返回该工厂生产的产品</span><br><span class="line">	&#125;	</span><br><span class="line">&#125;</span><br><span class="line">class FactoryBMW523 implements FactoryBMW&#123;</span><br><span class="line">	@Override</span><br><span class="line">	public BMW createBWM() &#123;</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">		return new BMW523();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">//客户类</span><br><span class="line">public class Customer &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//创建320型号宝马的工厂</span><br><span class="line">		FactoryBMW320 factoryBMW320 = new FactoryBMW320();</span><br><span class="line">		factoryBMW320.createBWM();</span><br><span class="line">		//创建523型号宝马的工厂</span><br><span class="line">		FactoryBMW523 factoryBMW523 = new FactoryBMW523();</span><br><span class="line">		factoryBMW523.createBWM();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;3）抽象工厂模式的例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line">package ecjtu.mjh.abstr;</span><br><span class="line">/**</span><br><span class="line"> * 抽象工厂模式:生产汽车的多种配件的多种型号产品</span><br><span class="line"> * 两个重要概念：</span><br><span class="line"> * 产品等级结构：产品的继承结构。</span><br><span class="line"> * 产品族：在抽象工厂模式中，产品族（Dough、Sauce）是指由同一个工厂生产的，</span><br><span class="line"> * 位于不同产品等级结构中的一组产品。</span><br><span class="line"> */</span><br><span class="line">//产品类</span><br><span class="line">//产品1：引擎</span><br><span class="line">interface Engine&#123;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line">class EngineA implements Engine&#123;</span><br><span class="line">	public EngineA() &#123;</span><br><span class="line">		System.out.println(&quot;生产引擎A&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">class EngineB implements Engine&#123;</span><br><span class="line">	public EngineB() &#123;</span><br><span class="line">		System.out.println(&quot;生产引擎B&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">//产品2：轮胎</span><br><span class="line">interface Tyre&#123;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line">class TyreA implements Tyre&#123;</span><br><span class="line">	public TyreA() &#123;</span><br><span class="line">		System.out.println(&quot;生产轮胎A&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">class TyreB implements Tyre&#123;</span><br><span class="line">	public TyreB() &#123;</span><br><span class="line">		System.out.println(&quot;生产轮胎B&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">//工厂类</span><br><span class="line">//抽象工厂接口</span><br><span class="line">interface AbstractFactory&#123;</span><br><span class="line">	public Engine createEngine();</span><br><span class="line">	public Tyre createTyre();</span><br><span class="line">&#125;</span><br><span class="line">class FactoryBMW320 implements AbstractFactory&#123; </span><br><span class="line">    //生产宝马320系列配件的工厂：需要引擎A和轮胎A</span><br><span class="line">	@Override</span><br><span class="line">	public Engine createEngine() &#123;</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">		return new EngineA();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public Tyre createTyre() &#123;</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">		return new TyreA();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line">class FactoryBMW523 implements AbstractFactory&#123; </span><br><span class="line">    //生产宝马523系列配件的工厂：需要引擎B和轮胎B</span><br><span class="line">	@Override</span><br><span class="line">	public Engine createEngine() &#123;</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">		return new EngineB();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public Tyre createTyre() &#123;</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">		return new TyreB();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line">public class Customer &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//要生产宝马320的配件的工厂</span><br><span class="line">		FactoryBMW320 f320 = new FactoryBMW320();</span><br><span class="line">		f320.createEngine();</span><br><span class="line">		f320.createTyre();</span><br><span class="line">		</span><br><span class="line">		//要生产宝马523的配件的工厂</span><br><span class="line">		FactoryBMW523 f523 = new FactoryBMW523();</span><br><span class="line">		f523.createEngine();</span><br><span class="line">		f523.createTyre();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="工厂方法模式与抽象工厂模式的区别"><a href="#工厂方法模式与抽象工厂模式的区别" class="headerlink" title="工厂方法模式与抽象工厂模式的区别"></a>工厂方法模式与抽象工厂模式的区别</h3><p>&emsp;&emsp;结合了上面的例子，看下面的区别就容易理解了<br>1）工厂方法模式：<br>一个抽象产品类，可以派生出多个具体产品类。<br>一个抽象工厂类，可以派生出多个具体工厂类。<br>每个具体工厂类只能创建一个具体产品类的实例。<br>2）抽象工厂模式：<br>多个抽象产品类，每个抽象产品类可以派生出多个具体产品类。<br>一个抽象工厂类，可以派生出多个具体工厂类。<br>每个具体工厂类可以创建多个具体产品类的实例。<br>3）两者区别：<br>工厂方法模式只有一个抽象产品类，而抽象工厂模式有多个。<br>工厂方法模式的具体工厂类只能创建一个具体产品类的实例，而抽象工厂模式可以创建多个。</p>
+<h3 id="适用场景和相互转换"><a href="#适用场景和相互转换" class="headerlink" title="适用场景和相互转换"></a>适用场景和相互转换</h3><p>&emsp;&emsp;当需要创建的对象是一系列相互关联或相互依赖的产品族时，便可以使用抽象工厂模式。说的更明白一点，就是一个继承体系中，如果存在着多个等级结构（即存在着多个抽象类），并且分属各个等级结构中的实现类之间存在着一定的关联或者约束，就可以使用抽象工厂模式。<br>&emsp;&emsp;明明使用的工厂方法模式，当新需求来临，稍加修改，加入了一个新方法后，由于类中的产品构成了不同等级结构中的产品族，它就变成抽象工厂模式了；而对于抽象工厂模式，当减少一个方法使的提供的产品不再构成产品族之后，它就演变成了工厂方法模式。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>&emsp;&emsp;在使用工厂模式时，只需要关心降低耦合度的目的是否达到了。解耦简单说就是让设计依赖于抽象（接口），而不是依赖于实现（具体的类）。打个比方，汽车制造者可以依赖于轮胎这个抽象的东西，但不能依赖于具体的品牌比如”朝阳轮胎”。就到这里了，goodbye!</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpeg"
+                alt="meijhm" />
+            
+              <p class="site-author-name" itemprop="name">meijhm</p>
+              <p class="site-description motion-element" itemprop="description">我的一个博客，欢迎大家！</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#工厂模式"><span class="nav-number">1.</span> <span class="nav-text">工厂模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简介"><span class="nav-number">1.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分类"><span class="nav-number">1.2.</span> <span class="nav-text">分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三种工厂模式用法"><span class="nav-number">1.3.</span> <span class="nav-text">三种工厂模式用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码演示"><span class="nav-number">1.4.</span> <span class="nav-text">代码演示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#工厂方法模式与抽象工厂模式的区别"><span class="nav-number">1.5.</span> <span class="nav-text">工厂方法模式与抽象工厂模式的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#适用场景和相互转换"><span class="nav-number">1.6.</span> <span class="nav-text">适用场景和相互转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">1.7.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">meijhm</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
