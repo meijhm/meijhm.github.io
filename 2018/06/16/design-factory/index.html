@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="设计模式,Java," />
+  <meta name="keywords" content="Java,设计模式," />
 
 
 
@@ -80,14 +80,14 @@
 
 
 <meta name="description" content="简单易懂的介绍设计模式之工厂模式">
-<meta name="keywords" content="设计模式,Java">
+<meta name="keywords" content="Java,设计模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【设计模式】工厂模式(Factory Pattern)">
-<meta property="og:url" content="https://meijhm.github.io/2018/06/16/2018-06-16-design-factory/index.html">
+<meta property="og:url" content="https://meijhm.github.io/2018/06/16/design-factory/index.html">
 <meta property="og:site_name" content="雪中梅">
 <meta property="og:description" content="简单易懂的介绍设计模式之工厂模式">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-17T04:29:29.848Z">
+<meta property="og:updated_time" content="2018-06-17T09:41:46.649Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【设计模式】工厂模式(Factory Pattern)">
 <meta name="twitter:description" content="简单易懂的介绍设计模式之工厂模式">
@@ -120,7 +120,7 @@
 
 
 
-  <link rel="canonical" href="https://meijhm.github.io/2018/06/16/2018-06-16-design-factory/"/>
+  <link rel="canonical" href="https://meijhm.github.io/2018/06/16/design-factory/"/>
 
 
 
@@ -230,6 +230,16 @@
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
 
       
     </ul>
@@ -263,12 +273,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://meijhm.github.io/2018/06/16/2018-06-16-design-factory/">
+    <link itemprop="mainEntityOfPage" href="https://meijhm.github.io/2018/06/16/design-factory/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="雪中梅">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="image" content="/images/avatar.ico">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -322,6 +332,17 @@
 
                 
                 
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/设计模式/创建型模式/" itemprop="url" rel="index">
+                    <span itemprop="name">创建型模式</span>
+                  </a>
+                </span>
+
+                
+                
               
             </span>
           
@@ -368,7 +389,8 @@
 <p>&emsp;&emsp;3）抽象工厂模式的例子：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> ecjtu.mjh.abstr;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 抽象工厂模式:生产汽车的多种配件的多种型号产品</span></span><br><span class="line"><span class="comment"> * 两个重要概念：</span></span><br><span class="line"><span class="comment"> * 产品等级结构：产品的继承结构。</span></span><br><span class="line"><span class="comment"> * 产品族：在抽象工厂模式中，产品族（Dough、Sauce）是指由同一个工厂生产的，</span></span><br><span class="line"><span class="comment"> * 位于不同产品等级结构中的一组产品。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">//产品类</span></span><br><span class="line"><span class="comment">//产品1：引擎</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Engine</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">EngineA</span> <span class="keyword">implements</span> <span class="title">Engine</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">EngineA</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"生产引擎A"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">EngineB</span> <span class="keyword">implements</span> <span class="title">Engine</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">EngineB</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"生产引擎B"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//产品2：轮胎</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Tyre</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TyreA</span> <span class="keyword">implements</span> <span class="title">Tyre</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">TyreA</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"生产轮胎A"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TyreB</span> <span class="keyword">implements</span> <span class="title">Tyre</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">TyreB</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"生产轮胎B"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//工厂类</span></span><br><span class="line"><span class="comment">//抽象工厂接口</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">AbstractFactory</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> Engine <span class="title">createEngine</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> Tyre <span class="title">createTyre</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FactoryBMW320</span> <span class="keyword">implements</span> <span class="title">AbstractFactory</span></span>&#123; </span><br><span class="line">    <span class="comment">//生产宝马320系列配件的工厂：需要引擎A和轮胎A</span></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Engine <span class="title">createEngine</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> EngineA();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Tyre <span class="title">createTyre</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> TyreA();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FactoryBMW523</span> <span class="keyword">implements</span> <span class="title">AbstractFactory</span></span>&#123; </span><br><span class="line">    <span class="comment">//生产宝马523系列配件的工厂：需要引擎B和轮胎B</span></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Engine <span class="title">createEngine</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> EngineB();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Tyre <span class="title">createTyre</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> TyreB();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Customer</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//要生产宝马320的配件的工厂</span></span><br><span class="line">		FactoryBMW320 f320 = <span class="keyword">new</span> FactoryBMW320();</span><br><span class="line">		f320.createEngine();</span><br><span class="line">		f320.createTyre();</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//要生产宝马523的配件的工厂</span></span><br><span class="line">		FactoryBMW523 f523 = <span class="keyword">new</span> FactoryBMW523();</span><br><span class="line">		f523.createEngine();</span><br><span class="line">		f523.createTyre();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h3 id="工厂方法模式与抽象工厂模式的区别"><a href="#工厂方法模式与抽象工厂模式的区别" class="headerlink" title="工厂方法模式与抽象工厂模式的区别"></a>工厂方法模式与抽象工厂模式的区别</h3><p>&emsp;&emsp;结合了上面的例子，看下面的区别就容易理解了<br>1）工厂方法模式：<br>一个抽象产品类，可以派生出多个具体产品类。<br>一个抽象工厂类，可以派生出多个具体工厂类。<br>每个具体工厂类只能创建一个具体产品类的实例。<br>2）抽象工厂模式：<br>多个抽象产品类，每个抽象产品类可以派生出多个具体产品类。<br>一个抽象工厂类，可以派生出多个具体工厂类。<br>每个具体工厂类可以创建多个具体产品类的实例。<br>3）两者区别：<br>工厂方法模式只有一个抽象产品类，而抽象工厂模式有多个。<br>工厂方法模式的具体工厂类只能创建一个具体产品类的实例，而抽象工厂模式可以创建多个。</p>
 <h3 id="适用场景和相互转换"><a href="#适用场景和相互转换" class="headerlink" title="适用场景和相互转换"></a>适用场景和相互转换</h3><p>&emsp;&emsp;当需要创建的对象是一系列相互关联或相互依赖的产品族时，便可以使用抽象工厂模式。说的更明白一点，就是一个继承体系中，如果存在着多个等级结构（即存在着多个抽象类），并且分属各个等级结构中的实现类之间存在着一定的关联或者约束，就可以使用抽象工厂模式。<br>&emsp;&emsp;明明使用的工厂方法模式，当新需求来临，稍加修改，加入了一个新方法后，由于类中的产品构成了不同等级结构中的产品族，它就变成抽象工厂模式了；而对于抽象工厂模式，当减少一个方法使的提供的产品不再构成产品族之后，它就演变成了工厂方法模式。</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>&emsp;&emsp;在使用工厂模式时，只需要关心降低耦合度的目的是否达到了。解耦简单说就是让设计依赖于抽象（接口），而不是依赖于实现（具体的类）。打个比方，汽车制造者可以依赖于轮胎这个抽象的东西，但不能依赖于具体的品牌比如”朝阳轮胎”。就到这里了，goodbye!</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>&emsp;&emsp;在使用工厂模式时，只需要关心降低耦合度的目的是否达到了。解耦简单说就是让设计依赖于抽象（接口），而不是依赖于实现（具体的类）。打个比方，汽车制造者可以依赖于轮胎这个抽象的东西，但不能依赖于具体的品牌比如”朝阳轮胎”。就到这里了，goodbye!  </p>
+<p><strong>欢迎转载，请注明本文的链接地址：</strong><br><a href="https://meijhm.github.io/2018/06/16/2018-06-16-design-factory/">https://meijhm.github.io/2018/06/16/2018-06-16-design-factory/</a></p>
 
       
     </div>
@@ -386,9 +408,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/设计模式/" rel="tag"># 设计模式</a>
-          
             <a href="/tags/Java/" rel="tag"># Java</a>
+          
+            <a href="/tags/设计模式/" rel="tag"># 设计模式</a>
           
         </div>
       
@@ -407,7 +429,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/06/17/2018-06-17-design-Singleton/" rel="prev" title="【设计模式】单例模式(Singleton Pattern)">
+              <a href="/2018/06/17/design-Singleton/" rel="prev" title="【设计模式】单例模式(Singleton Pattern)">
                 【设计模式】单例模式(Singleton Pattern) <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -476,7 +498,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image"
-                src="/images/avatar.jpeg"
+                src="/images/avatar.ico"
                 alt="雪中梅" />
             
               <p class="site-author-name" itemprop="name">雪中梅</p>
@@ -501,7 +523,7 @@
               
               <div class="site-state-item site-state-categories">
                 
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 
               </div>
@@ -512,7 +534,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -523,11 +545,45 @@
           
 
           
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/meijhm" target="_blank" title="我的github">
+                      
+                        <i class="fa fa-fw fa-globe"></i>我的github</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/meijhm" target="_blank" title="我的微博">
+                      
+                        <i class="fa fa-fw fa-globe"></i>我的微博</a>
+                  </span>
+                
+            </div>
+          
 
           
           
 
           
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.welcom212.com/m" title="梅小站" target="_blank">梅小站</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.welcom212.com/wordpress" title="212博客" target="_blank">212博客</a>
+                  </li>
+                
+              </ul>
+            </div>
           
 
           
@@ -565,7 +621,9 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -585,6 +643,15 @@
 
   <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
+
+<div>
+<span id="busuanzi_container_site_pv">
+    总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>&nbsp;&nbsp;
+<span id="busuanzi_container_site_uv">
+  访客数<span id="busuanzi_value_site_uv"></span>人次
+</span>
+</div>
 
 
 
@@ -610,7 +677,7 @@
     
 
   </div>
-
+  
   
 
 <script type="text/javascript">

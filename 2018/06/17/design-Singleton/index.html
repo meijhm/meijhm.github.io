@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="java,设计模式," />
+  <meta name="keywords" content="Java,设计模式," />
 
 
 
@@ -80,14 +80,14 @@
 
 
 <meta name="description" content="对单例模式三种写法的介绍">
-<meta name="keywords" content="java,设计模式">
+<meta name="keywords" content="Java,设计模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【设计模式】单例模式(Singleton Pattern)">
-<meta property="og:url" content="https://meijhm.github.io/2018/06/17/2018-06-17-design-Singleton/index.html">
+<meta property="og:url" content="https://meijhm.github.io/2018/06/17/design-Singleton/index.html">
 <meta property="og:site_name" content="雪中梅">
 <meta property="og:description" content="对单例模式三种写法的介绍">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-17T04:30:27.954Z">
+<meta property="og:updated_time" content="2018-06-17T09:46:25.135Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【设计模式】单例模式(Singleton Pattern)">
 <meta name="twitter:description" content="对单例模式三种写法的介绍">
@@ -120,7 +120,7 @@
 
 
 
-  <link rel="canonical" href="https://meijhm.github.io/2018/06/17/2018-06-17-design-Singleton/"/>
+  <link rel="canonical" href="https://meijhm.github.io/2018/06/17/design-Singleton/"/>
 
 
 
@@ -230,6 +230,16 @@
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
 
       
     </ul>
@@ -263,12 +273,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://meijhm.github.io/2018/06/17/2018-06-17-design-Singleton/">
+    <link itemprop="mainEntityOfPage" href="https://meijhm.github.io/2018/06/17/design-Singleton/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="雪中梅">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="image" content="/images/avatar.ico">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -322,12 +332,21 @@
 
                 
                 
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/设计模式/创建型模式/" itemprop="url" rel="index">
+                    <span itemprop="name">创建型模式</span>
+                  </a>
+                </span>
+
+                
+                
               
             </span>
           
 
-          
-            
           
 
           
@@ -362,7 +381,8 @@
 <h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><p>1、饿汉式（推荐）<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> test;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 饿汉式</span></span><br><span class="line"><span class="comment"> * 线程是安全的</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SingleInstance</span> </span>&#123;</span><br><span class="line">	<span class="comment">//在类加载时就完成了初始化，final使对象实例不能改变（可写可不写，推荐写,javaApi里的单例也用了这个关键字）</span></span><br><span class="line">	<span class="comment">//final(保证对象的安全发布，防止对象引用被其他线程在对象被完全构造完成前拿到并使用)</span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> SingleInstance INSTANCE = <span class="keyword">new</span> SingleInstance();</span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="title">SingleInstance</span><span class="params">()</span> </span>&#123;&#125; <span class="comment">//构造函数私有化</span></span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> SingleInstance <span class="title">getInstance</span><span class="params">()</span> </span>&#123; <span class="comment">//获取对象的方法</span></span><br><span class="line">		<span class="keyword">return</span> INSTANCE;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		SingleInstance test1 = SingleInstance.getInstance();</span><br><span class="line">		SingleInstance test2 = SingleInstance.getInstance();</span><br><span class="line">		System.out.println(test1 == test2);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>2、懒汉式（不推荐）<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> test;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 懒汉式</span></span><br><span class="line"><span class="comment"> * 线程不安全型</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SingleInstance</span> </span>&#123;</span><br><span class="line">	<span class="comment">//在类加载时，只进行声明，不进行初始化，不能写final，因为后面要赋值修改</span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> SingleInstance INSTANCE;</span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="title">SingleInstance</span><span class="params">()</span> </span>&#123;&#125; <span class="comment">//构造函数私有化</span></span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> SingleInstance <span class="title">getInstance</span><span class="params">()</span> </span>&#123; <span class="comment">//获取对象的方法</span></span><br><span class="line">		<span class="keyword">if</span>(INSTANCE == <span class="keyword">null</span>) &#123;</span><br><span class="line">			INSTANCE = <span class="keyword">new</span> SingleInstance();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> INSTANCE;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		SingleInstance test1 = SingleInstance.getInstance();</span><br><span class="line">		SingleInstance test2 = SingleInstance.getInstance();</span><br><span class="line">		System.out.println(test1 == test2);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>&emsp;&emsp;上面写法在多线程需要同步的环境下不能正常工作，那把它改为线程安全型的。<br>&emsp;&emsp;改为线程安全型的懒汉式，只需要在getInstance()方法前加上同步锁关键字synchronized即可，但加了同步锁之后，效率会变得很低，毕竟大多数情况下不需要同步的。所以推荐大家使用第一种方式。<br>3、静态内部类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> test;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 静态内部类</span></span><br><span class="line"><span class="comment"> * 资源利用率高</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SingleInstance</span> </span>&#123;</span><br><span class="line">	<span class="comment">//在静态内部类中，初始化对象实例，相比饿汉式，不执行getInstance()就不会被实例，节省资源</span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">SingletonHelp</span></span>&#123;</span><br><span class="line">		<span class="keyword">static</span> <span class="keyword">final</span> SingleInstance instance = <span class="keyword">new</span> SingleInstance();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="title">SingleInstance</span><span class="params">()</span> </span>&#123;&#125; <span class="comment">//构造函数私有化</span></span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> SingleInstance <span class="title">getInstance</span><span class="params">()</span> </span>&#123; <span class="comment">//获取对象的方法</span></span><br><span class="line">		<span class="keyword">return</span> SingletonHelp.instance;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		SingleInstance test1 = SingleInstance.getInstance();</span><br><span class="line">		SingleInstance test2 = SingleInstance.getInstance();</span><br><span class="line">		System.out.println(test1 == test2);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>&emsp;&emsp;对象的创建比较消耗资源，只需要一个时，比如资源共享的情况下，就可以使用单例模式，这样可以避免由于资源操作时导致的性能或损耗等。<br>&emsp;&emsp;再次说明，一般采用饿汉式，如果对资源要求利用率高，可以采用静态内部类，不建议采用懒汉式。就到这里了，goodbye, everyone!   </p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>&emsp;&emsp;对象的创建比较消耗资源，只需要一个时，比如资源共享的情况下，就可以使用单例模式，这样可以避免由于资源操作时导致的性能或损耗等。<br>&emsp;&emsp;再次说明，一般采用饿汉式，如果对资源要求利用率高，可以采用静态内部类，不建议采用懒汉式。就到这里了，goodbye, everyone!     </p>
+<p><strong>欢迎转载，请注明本文的链接地址：</strong><br><a href="https://meijhm.github.io/2018/06/17/2018-06-17-design-Singleton/">https://meijhm.github.io/2018/06/17/2018-06-17-design-Singleton/</a></p>
 
       
     </div>
@@ -380,7 +400,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/java/" rel="tag"># java</a>
+            <a href="/tags/Java/" rel="tag"># Java</a>
           
             <a href="/tags/设计模式/" rel="tag"># 设计模式</a>
           
@@ -395,7 +415,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/16/2018-06-16-design-factory/" rel="next" title="【设计模式】工厂模式(Factory Pattern)">
+              <a href="/2018/06/16/design-factory/" rel="next" title="【设计模式】工厂模式(Factory Pattern)">
                 <i class="fa fa-chevron-left"></i> 【设计模式】工厂模式(Factory Pattern)
               </a>
             
@@ -432,10 +452,6 @@
 
           
 
-  
-
-
-
         </div>
         
           
@@ -470,7 +486,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image"
-                src="/images/avatar.jpeg"
+                src="/images/avatar.ico"
                 alt="雪中梅" />
             
               <p class="site-author-name" itemprop="name">雪中梅</p>
@@ -495,7 +511,7 @@
               
               <div class="site-state-item site-state-categories">
                 
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 
               </div>
@@ -506,7 +522,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -517,11 +533,45 @@
           
 
           
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/meijhm" target="_blank" title="我的github">
+                      
+                        <i class="fa fa-fw fa-globe"></i>我的github</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/meijhm" target="_blank" title="我的微博">
+                      
+                        <i class="fa fa-fw fa-globe"></i>我的微博</a>
+                  </span>
+                
+            </div>
+          
 
           
           
 
           
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.welcom212.com/m" title="梅小站" target="_blank">梅小站</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.welcom212.com/wordpress" title="212博客" target="_blank">212博客</a>
+                  </li>
+                
+              </ul>
+            </div>
           
 
           
@@ -559,7 +609,9 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -579,6 +631,15 @@
 
   <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
+
+<div>
+<span id="busuanzi_container_site_pv">
+    总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>&nbsp;&nbsp;
+<span id="busuanzi_container_site_uv">
+  访客数<span id="busuanzi_value_site_uv"></span>人次
+</span>
+</div>
 
 
 
@@ -604,7 +665,7 @@
     
 
   </div>
-
+  
   
 
 <script type="text/javascript">
