@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="雪中梅">
 <meta property="og:description" content="如何衡量一个算法的好坏">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-18T12:33:56.637Z">
+<meta property="og:updated_time" content="2018-06-18T17:01:22.110Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【算法】算法的优劣评判">
 <meta name="twitter:description" content="如何衡量一个算法的好坏">
@@ -100,7 +100,7 @@
     root: '/',
     scheme: 'Gemini',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -145,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -217,7 +217,6 @@
 
   
 </nav>
-
 
 
  </div>
@@ -308,11 +307,37 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/06/18/algorithm/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/06/18/algorithm/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
           
+             <span id="/2018/06/18/algorithm/" class="leancloud_visitors" data-flag-title="【算法】算法的优劣评判">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
           
 
           
@@ -343,8 +368,7 @@
 <p>&emsp;&emsp;总次数为T（n）= n^2 + n^3，同数量级的一般取数量级高的n^3，最后T(n)/f(n) = 1/n + 1，当n趋近无穷时，T(n)/f(n) = 1，为一个常数，所以时间复杂度为O(n^3)<br>&emsp;&emsp;口算的计算方法是：看看有几重for循环，只有一重则时间复杂度为O(n)，二重则为O(n^2)，依此类推，如果有二分则为O(logn)，二分例如二分查找，如果一个for循环套一个二分，那么时间复杂度则为O(nlogn)。</p>
 <h3 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h3><p>1、理解：它是指运行算法需要消耗的内存空间，详见百科<a href="https://baike.baidu.com/item/%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6" target="_blank" rel="noopener">空间复杂度</a>。<br>2、时间复杂度函数<br>&emsp;&emsp;O(1)：表示为一个常量，即不随被处理数据量n的大小而改变。<br>&emsp;&emsp;O(log2n)：表示一个算法的空间复杂度与以2为底的n的对数成正比。<br>&emsp;&emsp;O(n)：表示一个算法的空间复杂度与n成线性比例关系。<br>&emsp;&emsp;等等,以此类推……</p>
 <h2 id="时间复杂度与空间复杂度的关系"><a href="#时间复杂度与空间复杂度的关系" class="headerlink" title="时间复杂度与空间复杂度的关系"></a>时间复杂度与空间复杂度的关系</h2><p>&emsp;&emsp;时间复杂度和空间复杂度往往是相互影响，一个好另一个坏，反之。所以我们常会结合实际的需求来选择牺牲某一个换取另一个。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>&emsp;&emsp;选择一个高效的算法，主要是看时间复杂度和空间复杂度，当两者不能同时达到最优时，我们应该根据实际软件的要求，有舍有得，达到在<strong>时间上的高效利用</strong>或<strong>空间上的高效利用</strong>。好了，今天就到这，byebye 了！  </p>
-<p><strong>欢迎转载，请注明本文的链接地址：</strong><br><a href="https://meijhm.github.io/2018/06/18/algorithm/">https://meijhm.github.io/2018/06/18/algorithm/</a></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>&emsp;&emsp;选择一个高效的算法，主要是看时间复杂度和空间复杂度，当两者不能同时达到最优时，我们应该根据实际软件的要求，有舍有得，达到在<strong>时间上的高效利用</strong>或<strong>空间上的高效利用</strong>。好了，今天就到这，byebye 了！</p>
 
       
     </div>
@@ -355,7 +379,49 @@
     
 
     
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>支持我</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
 
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="雪中梅 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    雪中梅
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://meijhm.github.io/2018/06/18/algorithm/" title="【算法】算法的优劣评判">https://meijhm.github.io/2018/06/18/algorithm/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
     
 
     <footer class="post-footer">
@@ -412,6 +478,9 @@
 
           
 
+  
+    <div class="comments" id="comments">
+    </div>
   
 
 
@@ -500,15 +569,15 @@
             <div class="links-of-author motion-element">
                 
                   <span class="links-of-author-item">
-                    <a href="https://github.com/meijhm" target="_blank" title="我的github">
+                    <a href="https://github.com/meijhm" target="_blank" title="GitHub">
                       
-                        <i class="fa fa-fw fa-globe"></i>我的github</a>
+                        <i class="fa fa-fw fa-github"></i></a>
                   </span>
                 
                   <span class="links-of-author-item">
                     <a href="http://weibo.com/meijhm" target="_blank" title="我的微博">
                       
-                        <i class="fa fa-fw fa-globe"></i>我的微博</a>
+                        <i class="fa fa-fw fa-weibo"></i></a>
                   </span>
                 
             </div>
@@ -519,10 +588,10 @@
 
           
           
-            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
               <div class="links-of-blogroll-title">
                 <i class="fa  fa-fw fa-link"></i>
-                Links
+                友情链接
               </div>
               <ul class="links-of-blogroll-list">
                 
@@ -539,7 +608,6 @@
           
 
           
-
         </div>
       </section>
 
@@ -562,6 +630,13 @@
       
 
       
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
 
     </div>
   </aside>
@@ -573,11 +648,9 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
-    <i class="fa fa-user"></i>
+    <i class="fa fa-heartbeat"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">雪中梅</span>
 
@@ -596,18 +669,29 @@
   <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
-<div>
-<span id="busuanzi_container_site_pv">
-    总访问量<span id="busuanzi_value_site_pv"></span>次
-</span>&nbsp;&nbsp;
-<span id="busuanzi_container_site_uv">
-  访客数<span id="busuanzi_value_site_uv"></span>人次
-</span>
-</div>
-
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
 
 
 
@@ -620,16 +704,10 @@
     </footer>
 
     
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
 
     
 
   </div>
-  
   
 
 <script type="text/javascript">
@@ -753,6 +831,28 @@
 
 
 
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'eD1Rs54NNaVqBbLHzsyJYcRO-gzGzoHsz',
+        appKey: 'wWXI8OYeUaWcPYWv7MOk0KxQ',
+        placeholder: '来啊，评论啊！',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
 
 
   
@@ -762,6 +862,113 @@
 
 
   
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("eD1Rs54NNaVqBbLHzsyJYcRO-gzGzoHsz", "wWXI8OYeUaWcPYWv7MOk0KxQ");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
 
   
 
