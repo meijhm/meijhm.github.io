@@ -2,16 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://meijhm.github.io/2018/06/22/javaDevelop-deploy/</loc>
+    <loc>https://meijhm.github.io/2018/06/20/java-gui/</loc>
     
-    <lastmod>2018-06-22T03:09:24.509Z</lastmod>
+    <lastmod>2018-06-24T13:06:10.684Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://meijhm.github.io/2018/06/20/java-gui/</loc>
+    <loc>https://meijhm.github.io/2018/06/18/algorithm/</loc>
     
-    <lastmod>2018-06-20T12:17:43.652Z</lastmod>
+    <lastmod>2018-06-24T13:02:22.638Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://meijhm.github.io/2018/06/17/design-Singleton/</loc>
+    
+    <lastmod>2018-06-24T13:01:54.677Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://meijhm.github.io/2018/06/16/design-factory/</loc>
+    
+    <lastmod>2018-06-24T13:01:28.232Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://meijhm.github.io/2018/06/24/computer-language1/</loc>
+    
+    <lastmod>2018-06-24T12:59:36.842Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://meijhm.github.io/2018/06/22/javaDevelop-deploy/</loc>
+    
+    <lastmod>2018-06-22T03:09:24.509Z</lastmod>
     
   </url>
   
@@ -33,27 +61,6 @@
     <loc>https://meijhm.github.io/tags/index.html</loc>
     
     <lastmod>2018-06-19T00:58:35.269Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://meijhm.github.io/2018/06/17/design-Singleton/</loc>
-    
-    <lastmod>2018-06-18T17:20:20.595Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://meijhm.github.io/2018/06/18/algorithm/</loc>
-    
-    <lastmod>2018-06-18T17:01:22.110Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://meijhm.github.io/2018/06/16/design-factory/</loc>
-    
-    <lastmod>2018-06-18T16:25:22.184Z</lastmod>
     
   </url>
   
