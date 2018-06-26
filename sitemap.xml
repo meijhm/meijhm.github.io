@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://meijhm.github.io/2018/06/20/java-gui/</loc>
+    
+    <lastmod>2018-06-26T12:39:07.177Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://meijhm.github.io/2018/06/22/javaDevelop-deploy/</loc>
+    
+    <lastmod>2018-06-26T12:38:52.173Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://meijhm.github.io/2018/06/24/computer-language/</loc>
     
     <lastmod>2018-06-26T02:12:55.397Z</lastmod>
@@ -16,13 +30,6 @@
   </url>
   
   <url>
-    <loc>https://meijhm.github.io/2018/06/20/java-gui/</loc>
-    
-    <lastmod>2018-06-24T13:06:10.684Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://meijhm.github.io/2018/06/18/algorithm/</loc>
     
     <lastmod>2018-06-24T13:02:22.638Z</lastmod>
@@ -33,13 +40,6 @@
     <loc>https://meijhm.github.io/2018/06/17/design-Singleton/</loc>
     
     <lastmod>2018-06-24T13:01:54.677Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://meijhm.github.io/2018/06/22/javaDevelop-deploy/</loc>
-    
-    <lastmod>2018-06-22T03:09:24.509Z</lastmod>
     
   </url>
   
