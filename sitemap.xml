@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://meijhm.github.io/2018/06/24/computer-language/</loc>
+    
+    <lastmod>2018-06-26T02:12:55.397Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://meijhm.github.io/2018/06/16/design-factory/</loc>
+    
+    <lastmod>2018-06-25T12:11:42.590Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://meijhm.github.io/2018/06/20/java-gui/</loc>
     
     <lastmod>2018-06-24T13:06:10.684Z</lastmod>
@@ -19,20 +33,6 @@
     <loc>https://meijhm.github.io/2018/06/17/design-Singleton/</loc>
     
     <lastmod>2018-06-24T13:01:54.677Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://meijhm.github.io/2018/06/16/design-factory/</loc>
-    
-    <lastmod>2018-06-24T13:01:28.232Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://meijhm.github.io/2018/06/24/computer-language1/</loc>
-    
-    <lastmod>2018-06-24T12:59:36.842Z</lastmod>
     
   </url>
   
