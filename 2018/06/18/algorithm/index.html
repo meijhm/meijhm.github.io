@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="雪中梅">
 <meta property="og:description" content="如何衡量一个算法的好坏">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-24T13:02:22.638Z">
+<meta property="og:updated_time" content="2018-06-27T09:05:55.370Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【算法】算法的优劣评判">
 <meta name="twitter:description" content="如何衡量一个算法的好坏">
@@ -431,7 +431,7 @@
       
 
       
-        <p>&emsp;&emsp;我们知道<strong>程序=数据结构+算法</strong>，同一问题可用不同算法解决，一个好的算法能够使程序运行变得更高效，可能你在编程为了解决某一类问题，经常会用到算法，但你知道这个算法的效率怎么样吗？有没有比它效率还高的算法呢？所以今天我就想跟大家分享一下如何判断一个算法的好坏。<br><a id="more"></a></p>
+        <p>&emsp;&emsp;我们知道<strong>程序=数据结构+算法</strong>，同一问题可用不同算法解决，一个好的算法能够使程序运行变得更高效，可能你在编程为了解决某一类问题，经常会用到算法，但你知道这个算法的效率怎么样吗？有没有比它效率还高的算法呢？所以今天我就想跟大家分享一下如何判断一个算法的好坏。</p>
 <h2 id="五大评判条件"><a href="#五大评判条件" class="headerlink" title="五大评判条件"></a>五大评判条件</h2><p>1、时间复杂度<br>2、空间复杂度<br>3、正确性（要能使程序正确运行）<br>4、可读性（供人阅读的容易程度）<br>5、健壮性（算法对不合理数据输入的反应能力和处理能力，即容错性）<br>我们主要是根据<strong>时间复杂度</strong>和<strong>空间复杂度</strong>来比较算法的好坏，下面我主要讲解这两者。</p>
 <h2 id="算法复杂度"><a href="#算法复杂度" class="headerlink" title="算法复杂度"></a>算法复杂度</h2><h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><p>1、理解：它是指运行算法需要的计算工作量，是一个函数，描述了该算法的运行时间，时间复杂度常用大O符号表示。<br>2、计算方法：<br>第一步：定义符号<br>n：表示问题规模<br>T(n)：表示重复执行的次数，定义域是n，T(n)是n的一个函数。<br>f(n)：表示一个与T(n)同数量级的辅助函数  </p>
 <p>第二步：考察当输入值大小趋近无穷<br>&emsp;&emsp;当n趋近于无穷大时，T(n)/f(n)的极限值为不等于零的常数，则称f(n)是T(n)的同数量级函数，记作T(n)=O(f(n))<br>&emsp;&emsp;其中O(f(n)) 为算法的渐进时间复杂度，简称就是时间复杂度。可以看出，主要就是要求得f(n)就行。<br>&emsp;&emsp;随着规模n的增大，算法执行的时间的增长率和 f(n) 的增长率成正比，f(n) 越小，时间复杂度越低。<br>3、总结上面做法就是，先算出基础操作的次数，然后再找出它的同数量级，最后比一下为常数。栗子如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++)&#123;</span><br><span class="line">    s = i;<span class="comment">//基本操作执行次数：n^2</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; n; k++)&#123;</span><br><span class="line">        s += j + k;<span class="comment">//基本操作执行次数：n^3</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
