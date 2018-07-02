@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="算法," />
+  <meta name="keywords" content="JavaScript,ajax,jQuery,JSON,XML," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="如何衡量一个算法的好坏">
-<meta name="keywords" content="算法">
+<meta name="description" content="对ajax用法的介绍和json的了解">
+<meta name="keywords" content="JavaScript,ajax,jQuery,JSON,XML">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【算法】算法的优劣评判">
-<meta property="og:url" content="https://meijhm.github.io/2018/06/18/algorithm/index.html">
+<meta property="og:title" content="【ajax,json】jQuery的ajax的用法和JSON格式了解">
+<meta property="og:url" content="https://meijhm.github.io/2018/07/02/ajax/index.html">
 <meta property="og:site_name" content="雪中梅">
-<meta property="og:description" content="如何衡量一个算法的好坏">
+<meta property="og:description" content="对ajax用法的介绍和json的了解">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-02T07:38:09.316Z">
+<meta property="og:updated_time" content="2018-07-02T07:50:16.370Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【算法】算法的优劣评判">
-<meta name="twitter:description" content="如何衡量一个算法的好坏">
+<meta name="twitter:title" content="【ajax,json】jQuery的ajax的用法和JSON格式了解">
+<meta name="twitter:description" content="对ajax用法的介绍和json的了解">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://meijhm.github.io/2018/06/18/algorithm/"/>
+  <link rel="canonical" href="https://meijhm.github.io/2018/07/02/ajax/"/>
 
 
 
 
 
-  <title>【算法】算法的优劣评判 | 雪中梅</title>
+  <title>【ajax,json】jQuery的ajax的用法和JSON格式了解 | 雪中梅</title>
   
 
 
@@ -306,7 +306,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://meijhm.github.io/2018/06/18/algorithm/">
+    <link itemprop="mainEntityOfPage" href="https://meijhm.github.io/2018/07/02/ajax/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="雪中梅">
@@ -323,7 +323,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">【算法】算法的优劣评判</h1>
+          <h1 class="post-title" itemprop="name headline">【ajax,json】jQuery的ajax的用法和JSON格式了解</h1>
         
 
         <div class="post-meta">
@@ -335,8 +335,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-18T18:44:10+08:00">
-                2018-06-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-02T11:37:40+08:00">
+                2018-07-02
               </time>
             
 
@@ -369,8 +369,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/计算机类/算法/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
+                  <a href="/categories/计算机类/ajax/" itemprop="url" rel="index">
+                    <span itemprop="name">ajax</span>
                   </a>
                 </span>
 
@@ -387,8 +387,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/06/18/algorithm/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/06/18/algorithm/" itemprop="commentCount"></span>
+                <a href="/2018/07/02/ajax/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/07/02/ajax/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -396,7 +396,7 @@
 
           
           
-             <span id="/2018/06/18/algorithm/" class="leancloud_visitors" data-flag-title="【算法】算法的优劣评判">
+             <span id="/2018/07/02/ajax/" class="leancloud_visitors" data-flag-title="【ajax,json】jQuery的ajax的用法和JSON格式了解">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -414,7 +414,7 @@
 
           
               <div class="post-description">
-                  如何衡量一个算法的好坏
+                  对ajax用法的介绍和json的了解
               </div>
           
 
@@ -431,14 +431,30 @@
       
 
       
-        <p>&emsp;&emsp;我们知道<strong>程序=数据结构+算法</strong>，同一问题可用不同算法解决，一个好的算法能够使程序运行变得更高效，可能你在编程为了解决某一类问题，经常会用到算法，但你知道这个算法的效率怎么样吗？有没有比它效率还高的算法呢？所以今天我就想跟大家分享一下如何判断一个算法的好坏。</p>
-<h2 id="五大评判条件"><a href="#五大评判条件" class="headerlink" title="五大评判条件"></a>五大评判条件</h2><p>1、时间复杂度<br>2、空间复杂度<br>3、正确性（要能使程序正确运行）<br>4、可读性（供人阅读的容易程度）<br>5、健壮性（算法对不合理数据输入的反应能力和处理能力，即容错性）<br>我们主要是根据<strong>时间复杂度</strong>和<strong>空间复杂度</strong>来比较算法的好坏，下面我主要讲解这两者。</p>
-<h2 id="算法复杂度"><a href="#算法复杂度" class="headerlink" title="算法复杂度"></a>算法复杂度</h2><h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><p>1、理解：它是指运行算法需要的计算工作量，是一个函数，描述了该算法的运行时间，时间复杂度常用大O符号表示。<br>2、计算方法：<br>第一步：定义符号<br>n：表示问题规模<br>T(n)：表示重复执行的次数，定义域是n，T(n)是n的一个函数。<br>f(n)：表示一个与T(n)同数量级的辅助函数  </p>
-<p>第二步：考察当输入值大小趋近无穷<br>&emsp;&emsp;当n趋近于无穷大时，T(n)/f(n)的极限值为不等于零的常数，则称f(n)是T(n)的同数量级函数，记作T(n)=O(f(n))<br>&emsp;&emsp;其中O(f(n)) 为算法的渐进时间复杂度，简称就是时间复杂度。可以看出，主要就是要求得f(n)就行。<br>&emsp;&emsp;随着规模n的增大，算法执行的时间的增长率和 f(n) 的增长率成正比，f(n) 越小，时间复杂度越低。<br>3、总结上面做法就是，先算出基础操作的次数，然后再找出它的同数量级，最后比一下为常数。栗子如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++)&#123;</span><br><span class="line">    s = i;<span class="comment">//基本操作执行次数：n^2</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; n; k++)&#123;</span><br><span class="line">        s += j + k;<span class="comment">//基本操作执行次数：n^3</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>&emsp;&emsp;总次数为T（n）= n^2 + n^3，同数量级的一般取数量级高的n^3，最后T(n)/f(n) = 1/n + 1，当n趋近无穷时，T(n)/f(n) = 1，为一个常数，所以时间复杂度为O(n^3)<br>&emsp;&emsp;口算的计算方法是：看看有几重for循环，只有一重则时间复杂度为O(n)，二重则为O(n^2)，依此类推，如果有二分则为O(logn)，二分例如二分查找，如果一个for循环套一个二分，那么时间复杂度则为O(nlogn)。</p>
-<h3 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h3><p>1、理解：它是指运行算法需要消耗的内存空间，详见百科<a href="https://baike.baidu.com/item/%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6" target="_blank" rel="noopener">空间复杂度</a>。<br>2、时间复杂度函数<br>&emsp;&emsp;O(1)：表示为一个常量，即不随被处理数据量n的大小而改变。<br>&emsp;&emsp;O(log2n)：表示一个算法的空间复杂度与以2为底的n的对数成正比。<br>&emsp;&emsp;O(n)：表示一个算法的空间复杂度与n成线性比例关系。<br>&emsp;&emsp;等等,以此类推……</p>
-<h2 id="时间复杂度与空间复杂度的关系"><a href="#时间复杂度与空间复杂度的关系" class="headerlink" title="时间复杂度与空间复杂度的关系"></a>时间复杂度与空间复杂度的关系</h2><p>&emsp;&emsp;时间复杂度和空间复杂度往往是相互影响，一个好另一个坏，反之。所以我们常会结合实际的需求来选择牺牲某一个换取另一个。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>&emsp;&emsp;选择一个高效的算法，主要是看时间复杂度和空间复杂度，当两者不能同时达到最优时，我们应该根据实际软件的要求，有舍有得，达到在<strong>时间上的高效利用</strong>或<strong>空间上的高效利用</strong>。好了，今天就到这，byebye 了！</p>
+        <p>&emsp;&emsp;很多天没更了，一是这几天比较忙，二是还没整理好思路，今天来给大家讲一讲我对jQuery的ajax的理解还附带了一些JSON数据格式一些补充。</p>
+<h2 id="jQuery调用ajax方法概述"><a href="#jQuery调用ajax方法概述" class="headerlink" title="jQuery调用ajax方法概述"></a>jQuery调用ajax方法概述</h2><p>&emsp;&emsp;ajax（异步 JavaScript 和 XML）：<br>&emsp;&emsp;jQuery可以通过$.Ajax()和load(),$.get(),$.post(),$.getScript(),$.getJSON()这些方法来使用ajax。（注意下面提到的方法用，中括号括起来的参数，表示可选参数！）</p>
+<h3 id="load-方法"><a href="#load-方法" class="headerlink" title="$.load()方法"></a>$.load()方法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#id"</span>).load(url, [data], [callback]);</span><br></pre></td></tr></table></figure>
+<p>url:要请求的页面地址<br>data：要发送到服务器的key/value数据，没有指定传递方式默认为get方式<br>callback：请求完成时的回调函数（无论成败都调用），匿名函数定义如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params">responseText, textStates, XMLHttpRequest</span>)</span>&#123;</span><br><span class="line">	<span class="comment">//responseText：请求返回的内容</span></span><br><span class="line">   	<span class="comment">//textStates：请求状态：success   error  notmodified  timeout4种</span></span><br><span class="line">  	 <span class="comment">//XMLHttpRequest：XMLHttpRequest对象</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="get-方法"><a href="#get-方法" class="headerlink" title="$.get()方法"></a>$.get()方法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#btn"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $.get( url, [data], [callback], [type]);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>url:要请求的页面地址（可以用php页面处理后台数据）<br>data：要发送到服务器的key/value数据，没有指定传递方式默认为get方式<br>callback：该回调函数只会在成功时调用，匿名函数定义如下<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params">data, textStatus</span>)</span>&#123;</span><br><span class="line">  <span class="comment">//data：返回的内容，可以是XML文档，json文件，XHML片段等等</span></span><br><span class="line">  <span class="comment">//textStatus：请求状态：success  error  notmodified timeout4种</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>type：服务器返回数据的格式（有json，xml，text，html，script）</p>
+<h3 id="post-方法"><a href="#post-方法" class="headerlink" title="$.post()方法"></a>$.post()方法</h3><p>&emsp;&emsp;$.post()的用法和$.get()类似，不再累述，但我们要知道get和post两种方式传递数据的区别<br>&emsp;&emsp;总结为四字口诀：数长可缓<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">           post                    get</span><br><span class="line">数据类型   文件和二进制文件          文本</span><br><span class="line">长度       无限		    	   255</span><br><span class="line">可见性     不可见	           可见</span><br><span class="line">缓存       无                       有</span><br></pre></td></tr></table></figure></p>
+<h3 id="getScript-方法"><a href="#getScript-方法" class="headerlink" title="$.getScript( )方法"></a>$.getScript( )方法</h3><p>&emsp;&emsp;用于在需要的时候加载JavaScript文件<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$.getScript(url, callback);</span><br></pre></td></tr></table></figure></p>
+<p>url：请求地址(一般是js文件，文件里写js处理问题的函数)<br>callback：回调匿名函数（必选参数）<br>一个小栗子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $.getScript(<span class="string">"hello.js"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      alert(sayHello()); <span class="comment">//调用hello.js中的sayHello()方法</span></span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h3 id="getJson-方法"><a href="#getJson-方法" class="headerlink" title="$.getJson( )方法"></a>$.getJson( )方法</h3><p>&emsp;&emsp;用于在需要的时候加载SON文件<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$.getJSON(url, callback);</span><br></pre></td></tr></table></figure></p>
+<p>url：请求地址<br>callback：回调匿名函数（必选参数），定义如下<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123; <span class="comment">// 遍历json数据</span></span><br><span class="line"><span class="comment">//1、$.each(data，function(index, value)&#123;//输出index索引，value变量或内容&#125;);</span></span><br><span class="line"><span class="comment">//2、传统的for循环遍历</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Ajax（）方法"><a href="#Ajax（）方法" class="headerlink" title="$.Ajax（）方法"></a>$.Ajax（）方法</h3><p>&emsp;&emsp;前面的方法都是基于此方法实现的，所以这个方法可以实现上面4个方法的所有功能。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">url:<span class="string">"account.php"</span>, <span class="comment">// 请求地址</span></span><br><span class="line">type: get, <span class="comment">// "get | post | put | delete " 默认是get</span></span><br><span class="line">data: &#123;<span class="string">"user"</span>:<span class="string">"jack"</span>,<span class="string">"pwd"</span>:<span class="string">"1234"</span>&#125;, <span class="comment">// 要发送到服务器的key/value数据</span></span><br><span class="line">dataType:<span class="string">"text"</span>, <span class="comment">// 请求数据类型（json，xml，text，html，script 和 jsonp ）</span></span><br><span class="line">success:<span class="function"><span class="keyword">function</span>(<span class="params">data,dataTextStatus,jqxhr</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(dataTextStatus);</span><br><span class="line">    <span class="built_in">console</span>.log(jqxhr);</span><br><span class="line">    &#125;, <span class="comment">// 请求成功时</span></span><br><span class="line">error:<span class="function"><span class="keyword">function</span>(<span class="params">jqxhr,textStatus,error</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(jqxhr);</span><br><span class="line">    <span class="built_in">console</span>.log(textStatus);</span><br><span class="line">    &#125; <span class="comment">// 请求失败时</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//(6个参数，是用逗号隔开每个参数，最后可以不用逗号)</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="对JavaScript与JSON的了解"><a href="#对JavaScript与JSON的了解" class="headerlink" title="对JavaScript与JSON的了解"></a>对JavaScript与JSON的了解</h2><p>&emsp;&emsp;描述JSON格式数据的语法采用了JS对象字面量的表示方法，但是不能把JS对象看做是JSON，它们只是语法相似，和XML一样JSON只是一种存储数据的类型，不算编程语言。下面会具体对比它们。</p>
+<h3 id="完整的JavaScript实现"><a href="#完整的JavaScript实现" class="headerlink" title="完整的JavaScript实现"></a>完整的JavaScript实现</h3><p>核心（ECMAScript）<br>文档对象模型（DOM）<br>浏览器对象模型（BOM）  </p>
+<h3 id="JavaScript数据类型"><a href="#JavaScript数据类型" class="headerlink" title="JavaScript数据类型"></a>JavaScript数据类型</h3><p>&emsp;&emsp;总共有六种类型，可以用typeof操作符检测类型，具体如下：<br>“undefined”——如果这个值未定义；<br>“boolean”——如果这个值是布尔值；<br>“string”——如果这个值是字符串；<br>“number”——如果这个值是数值；<br>“object”——如果这个值是对象或 null；<br>“function”——如果这个值是函数  </p>
+<h3 id="for-in遍历"><a href="#for-in遍历" class="headerlink" title="for-in遍历"></a>for-in遍历</h3><p>&emsp;&emsp;用来枚举对象的属性（注意：对象的属性没有顺序）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">for (property in expression) statement</span><br></pre></td></tr></table></figure></p>
+<p>小栗子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(obj != <span class="literal">null</span> || obj != <span class="literal">undefined</span>)&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">var</span> pro <span class="keyword">in</span> obj)&#123;</span><br><span class="line">				<span class="built_in">document</span>.write(pro+<span class="string">"&lt;br&gt;"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">a(<span class="built_in">window</span>); <span class="comment">// 遍历window对象的所以属性</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="JSON数据格式"><a href="#JSON数据格式" class="headerlink" title="JSON数据格式"></a>JSON数据格式</h3><h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><p>&emsp;&emsp;JSON: JavaScript Object Notation（中文名：JavaScript 对象表示法），它和JavaScript对比如下：<br>1、JSON 中没有变量的概念，没有(不用)声明变量<br>2、没有末尾的分号<br>3、对象的属性必须加双引号</p>
+<h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><p>&emsp;&emsp;与JavaScript对比：<br>1、简单值：使用与 JavaScript 相同的语法，可以在 JSON 中表示字符串、数值、布尔值和 null。<br>但 JSON 不支持 JavaScript 中的特殊值 undefined。<br>2、对象{}：是一组无序的键值对<br>3、数组[]：表示一组有序的值的列表<br>下面是一个栗子：<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">"age"</span>: <span class="number">18</span>,</span><br><span class="line">        <span class="attr">"name"</span>: <span class="string">"张三"</span>,</span><br><span class="line">        <span class="attr">"school"</span>: &#123;</span><br><span class="line">            <span class="attr">"location"</span>: <span class="string">"位置"</span>,</span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">"一中"</span>,</span><br><span class="line">            <span class="attr">"teacher"</span>: [</span><br><span class="line">                <span class="string">"老师一"</span>,</span><br><span class="line">                <span class="string">"老师二"</span></span><br><span class="line">            ],</span><br><span class="line">            <span class="attr">"year"</span>: <span class="number">2018</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">"age"</span>: <span class="number">18</span>,</span><br><span class="line">        <span class="attr">"name"</span>: <span class="string">"李四"</span>,</span><br><span class="line">        <span class="attr">"school"</span>: &#123;</span><br><span class="line">            <span class="attr">"location"</span>: <span class="string">"位置"</span>,</span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">"一中"</span>,</span><br><span class="line">            <span class="attr">"teacher"</span>: [</span><br><span class="line">                <span class="string">"老师一"</span>,</span><br><span class="line">                <span class="string">"老师二"</span></span><br><span class="line">            ],</span><br><span class="line">            <span class="attr">"year"</span>: <span class="number">2017</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
+<h4 id="JSON-对象的方法"><a href="#JSON-对象的方法" class="headerlink" title="JSON 对象的方法"></a>JSON 对象的方法</h4><p>&emsp;&emsp;JSON 对象有两个方法：stringify()和 parse()<br>1、把JavaScript 对象序列化为 JSON 字符串（默认情况下，JSON.stringify()输出的 JSON 字符串不包含任何空格字符或缩进）<br>2、把 JSON 字符串解析为原生 JavaScript 值  </p>
+<h4 id="JSON与XML的写法对比"><a href="#JSON与XML的写法对比" class="headerlink" title="JSON与XML的写法对比"></a>JSON与XML的写法对比</h4><p>json栗子：<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attr">"employees"</span>:[</span><br><span class="line">    &#123;<span class="attr">"firstName"</span>:<span class="string">"John"</span>, <span class="attr">"lastName"</span>:<span class="string">"Doe"</span>&#125;,</span><br><span class="line">    &#123;<span class="attr">"firstName"</span>:<span class="string">"Anna"</span>, <span class="attr">"lastName"</span>:<span class="string">"Smith"</span>&#125;,</span><br><span class="line">    &#123;<span class="attr">"firstName"</span>:<span class="string">"Peter"</span>, <span class="attr">"lastName"</span>:<span class="string">"Jones"</span>&#125;</span><br><span class="line">]&#125;</span><br></pre></td></tr></table></figure></p>
+<p>xml栗子：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">employees</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">employee</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">firstName</span>&gt;</span>John<span class="tag">&lt;/<span class="name">firstName</span>&gt;</span> <span class="tag">&lt;<span class="name">lastName</span>&gt;</span>Doe<span class="tag">&lt;/<span class="name">lastName</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">employee</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">employee</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">firstName</span>&gt;</span>Anna<span class="tag">&lt;/<span class="name">firstName</span>&gt;</span> <span class="tag">&lt;<span class="name">lastName</span>&gt;</span>Smith<span class="tag">&lt;/<span class="name">lastName</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">employee</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">employee</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">firstName</span>&gt;</span>Peter<span class="tag">&lt;/<span class="name">firstName</span>&gt;</span> <span class="tag">&lt;<span class="name">lastName</span>&gt;</span>Jones<span class="tag">&lt;/<span class="name">lastName</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">employee</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">employees</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;好了，先到这里了，拜拜…</p>
 
       
     </div>
@@ -488,7 +504,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://meijhm.github.io/2018/06/18/algorithm/" title="【算法】算法的优劣评判">https://meijhm.github.io/2018/06/18/algorithm/</a>
+    <a href="https://meijhm.github.io/2018/07/02/ajax/" title="【ajax,json】jQuery的ajax的用法和JSON格式了解">https://meijhm.github.io/2018/07/02/ajax/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -503,7 +519,15 @@
       
         <div class="post-tags">
           
-            <a href="/tags/算法/" rel="tag"># 算法</a>
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+            <a href="/tags/ajax/" rel="tag"># ajax</a>
+          
+            <a href="/tags/jQuery/" rel="tag"># jQuery</a>
+          
+            <a href="/tags/JSON/" rel="tag"># JSON</a>
+          
+            <a href="/tags/XML/" rel="tag"># XML</a>
           
         </div>
       
@@ -516,8 +540,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/17/design-Singleton/" rel="next" title="【设计模式】单例模式(Singleton Pattern)">
-                <i class="fa fa-chevron-left"></i> 【设计模式】单例模式(Singleton Pattern)
+              <a href="/2018/06/24/computer-language/" rel="next" title="【计算机语言】介绍一些计算机语言">
+                <i class="fa fa-chevron-left"></i> 【计算机语言】介绍一些计算机语言
               </a>
             
           </div>
@@ -525,10 +549,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/20/java-gui/" rel="prev" title="【图形界面】Java GUI 简单编程">
-                【图形界面】Java GUI 简单编程 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -700,7 +720,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#五大评判条件"><span class="nav-number">1.</span> <span class="nav-text">五大评判条件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法复杂度"><span class="nav-number">2.</span> <span class="nav-text">算法复杂度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#时间复杂度"><span class="nav-number">2.1.</span> <span class="nav-text">时间复杂度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#空间复杂度"><span class="nav-number">2.2.</span> <span class="nav-text">空间复杂度</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#时间复杂度与空间复杂度的关系"><span class="nav-number">3.</span> <span class="nav-text">时间复杂度与空间复杂度的关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#jQuery调用ajax方法概述"><span class="nav-number">1.</span> <span class="nav-text">jQuery调用ajax方法概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#load-方法"><span class="nav-number">1.1.</span> <span class="nav-text">$.load()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#get-方法"><span class="nav-number">1.2.</span> <span class="nav-text">$.get()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#post-方法"><span class="nav-number">1.3.</span> <span class="nav-text">$.post()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getScript-方法"><span class="nav-number">1.4.</span> <span class="nav-text">$.getScript( )方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getJson-方法"><span class="nav-number">1.5.</span> <span class="nav-text">$.getJson( )方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ajax（）方法"><span class="nav-number">1.6.</span> <span class="nav-text">$.Ajax（）方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对JavaScript与JSON的了解"><span class="nav-number">2.</span> <span class="nav-text">对JavaScript与JSON的了解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#完整的JavaScript实现"><span class="nav-number">2.1.</span> <span class="nav-text">完整的JavaScript实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript数据类型"><span class="nav-number">2.2.</span> <span class="nav-text">JavaScript数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for-in遍历"><span class="nav-number">2.3.</span> <span class="nav-text">for-in遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSON数据格式"><span class="nav-number">2.4.</span> <span class="nav-text">JSON数据格式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#概述"><span class="nav-number">2.4.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据类型"><span class="nav-number">2.4.2.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JSON-对象的方法"><span class="nav-number">2.4.3.</span> <span class="nav-text">JSON 对象的方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JSON与XML的写法对比"><span class="nav-number">2.4.4.</span> <span class="nav-text">JSON与XML的写法对比</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
