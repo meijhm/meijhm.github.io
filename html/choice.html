@@ -23,15 +23,15 @@
   <title>M</title>
 
   
-    <meta name="description" content="天选之人              #input_m {             outline-style: none;             border: 1px solid #ccc;             border-radius: 3px;             padding: 13px 14px;             width: 220px;">
+    <meta name="description" content="真心话大冒险              #input_m {             outline-style: none;             border: 1px solid #ccc;             border-radius: 3px;             padding: 13px 14px;             width: 220px">
 <meta property="og:type" content="website">
 <meta property="og:title" content="M">
 <meta property="og:url" content="https://meijhm.github.io/html/choice.html">
 <meta property="og:site_name" content="M">
-<meta property="og:description" content="天选之人              #input_m {             outline-style: none;             border: 1px solid #ccc;             border-radius: 3px;             padding: 13px 14px;             width: 220px;">
+<meta property="og:description" content="真心话大冒险              #input_m {             outline-style: none;             border: 1px solid #ccc;             border-radius: 3px;             padding: 13px 14px;             width: 220px">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-06-13T08:16:15.733Z">
-<meta property="article:modified_time" content="2023-06-13T08:16:15.733Z">
+<meta property="article:published_time" content="2023-06-14T10:45:48.108Z">
+<meta property="article:modified_time" content="2023-06-14T10:45:48.108Z">
 <meta property="article:author" content="mjh">
 <meta property="article:tag" content="HTML">
 <meta name="twitter:card" content="summary">
@@ -79,9 +79,7 @@
 
 <div class="widgets">
 
-
-<widget class="widget-wrapper recent"><div class="widget-header cap theme dis-select"><span class="name">最近更新</span></div><div class="widget-body related-posts fs14"><a class="item title" href="/2023/06/12/%E5%9C%A8%E7%BA%BF%E5%B7%A5%E5%85%B7%E9%9B%86/"><span class="title">在线工具集</span></a><a class="item title" href="/2023/06/13/hexo+github%E6%90%AD%E5%8D%9A%E5%AE%A2/"><span class="title">hexo+github搭博客</span></a><a class="item title" href="/2023/06/10/Java%E3%80%81Tomcat%E5%92%8CMysql%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE/"><span class="title">Java、Tomcat和Mysql安装和配置</span></a><a class="item title" href="/2023/06/03/%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%BA%9B%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%AF%AD%E8%A8%80/"><span class="title">介绍一些计算机语言</span></a><a class="item title" href="/2023/06/04/%E7%AE%97%E6%B3%95%E7%9A%84%E4%BC%98%E5%8A%A3%E8%AF%84%E5%88%A4/"><span class="title">算法的优劣评判</span></a></div></widget>
-
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">本文目录</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">真心话大冒险</span></a></li></ol></div></div></widget>
 
 <widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" placeholder="站内搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
 </div>
@@ -104,7 +102,7 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>天选之人</title>
+    <title>真心话大冒险</title>
     <style>
         #input_m {
             outline-style: none;
@@ -176,26 +174,47 @@
     </style>
 </head>
 <body>
-<div style="text-align: center">
-    <span id="people_m"></span><br>
-    <label style="font-family: 黑体,sans-serif">谁是天选之人？</label><br>
-    <label id="result_m"></label><br>
-    <label>
-        <input id="input_m" placeholder="多个人用空格隔开，如：张三 李四 王二" required type="text">
-    </label>
-    <button id="try_m" class="button_css_m" onclick="random()">试试</button>
-    <br>
-    <span hidden="hidden" id="penalize_m"><span>请选择接受一项惩罚：</span><br><button
-            class="button_css_m" onclick="penalize(zxh_text)">真心话</button>&nbsp;&nbsp;<button
-            class="button_css_m" onclick="penalize(dmx_text)">大冒险</button></span><br><br>
-    <span hidden="hidden" id="penalize_result_m"></span><br><br>
-    <span><button class="button_css_m" id="set_zxh"
-                  onclick="new_text('输入多条自定义真心话，以换行隔开。', '设置真心话', 'set_zxh')">设置真心话</button>&nbsp;&nbsp;<button
-            class="button_css_m" id="set_dmx"
-            onclick="new_text('输入多条自定义大冒险，以换行隔开。', '设置大冒险', 'set_dmx')">设置大冒险</button></span><br>
-    <label hidden="hidden" id="label_text_m">
-        <textarea id="textarea_m"></textarea>
-    </label>
+<div>
+    <div><h2>真心话大冒险</h2></div>
+    <div><p>
+        <span id="people_m"></span><br>
+        <label style="font-family: 黑体,sans-serif">谁是天选之人？</label><br>
+    </p></div>
+
+    <div>
+        <p><label id="result_m"></label><br></p>
+        <p>
+            <label>
+                <input id="input_m" placeholder="多个人用空格隔开，如：张三 李四 王二" required type="text">
+            </label>
+            <button class="button_css_m" id="try_m" onclick="random()">试试</button>
+        </p>
+
+        <div hidden="hidden" id="penalize_m">
+            <p>请选择接受一项惩罚：</p>
+            <div>
+                <button class="button_css_m" onclick="penalize(zxh_text)">真心话</button>&nbsp;&nbsp;<button
+                    class="button_css_m" onclick="penalize(dmx_text)">大冒险
+            </button>
+            </div>
+        </div>
+        <p><span hidden="hidden" id="penalize_result_m"></span><br><br></p>
+    </div>
+
+    <div>
+        <p>
+            <span><button class="button_css_m" id="set_zxh"
+                          onclick="new_text('输入多条自定义真心话，以换行隔开。', '设置真心话', 'set_zxh')">设置真心话</button>&nbsp;&nbsp;<button
+                    class="button_css_m" id="set_dmx"
+                    onclick="new_text('输入多条自定义大冒险，以换行隔开。', '设置大冒险', 'set_dmx')">设置大冒险</button></span>
+        </p>
+        <p>
+            <label hidden="hidden" id="label_text_m">
+                <textarea id="textarea_m"></textarea>
+            </label>
+        </p>
+    </div>
+
 </div>
 <script>
     let zxh_text = ["1、近一个星期内最让你开心的事。",
@@ -208,25 +227,16 @@
         "8、面对和他人产生的矛盾，你会怎么办？",
         "9、爱情事业和家庭，你怎么排序？",
         "10、最喜欢的三种食物或饮品。"];
-    let dmx_text = ["1、背一位异性让场地n圈",
-        "2、唱《青藏高原》最后一句",
-        "3、做一个大家都满意的鬼脸",
-        "4、抱一位异性直到下一轮真心话大冒险结束",
-        "5、跟一位异性表白3分钟",
-        "6、与一位异性十指相扣，对视10秒",
-        "7、邀请一位异性为你唱情歌，或邀请一位异性与你情歌对唱",
-        "8、做自己最性感、最妩媚的表情或动作",
-        "9、吃下朋友给你夹的任何菜",
-        "10、跳草裙舞，尤其是在冬天",
-        "11、蹲在凳子上作便秘状",
-        "12、亲xxx（这个人可以事先指定），或者亲一位异性，部位不限",
-        "13、神情的吻墙10秒",
-        "14、模仿古代特殊职业女子拉客",
-        "15、模仿脑白金广告，边唱边跳",
-        "16、让他到街上大喊“卖拖鞋啦～2块一双，买一送3”",
-        "17、抓着铁门喊“放我出去！”",
-        "18、对陌生人美眉挤眉弄眼",
-        "19 、 一人先用嘴吸住一纸牌，另一人用嘴从另一面将纸牌吸住移走；"];
+    let dmx_text = ["1、背一位异性绕场地3圈。",
+        "2、唱《青藏高原》最后一句。",
+        "3、做一个大家都满意的鬼脸。",
+        "4、公主抱一位异性深蹲5次。",
+        "5、跟一位异性真诚表白。",
+        "6、与一位异性对视15秒。",
+        "7、邀请一位异性为你唱情歌，或邀请一位异性与你情歌对唱。",
+        "8、做自己最性感、最妩媚的表情或动作。",
+        "9、做20个俯卧撑，女生的话就指定一位男生做。",
+        "10、深情的吻墙10秒。"];
 
     function new_text(place_holder, btn_text, id) {
         let flag;
@@ -312,7 +322,8 @@
         let select = document.getElementById("people_m");
         select.innerText = arr1.toString().replaceAll(',', ' ');
         select.style.fontSize = "18px";
-        select.style.color = "red";
+        select.style.color = "green";
+        select.style.fontFamily = "黑体";
 
         let result = document.getElementById("result_m");
         result.innerText = arr1[r1];
