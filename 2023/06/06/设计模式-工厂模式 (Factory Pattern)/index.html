@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.19.0">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://gcore.jsdelivr.net'>
+  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>设计模式-工厂模式 (Factory Pattern) - M</title>
+
+  
+    <meta name="description" content="简单易懂的介绍设计模式之工厂模式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="设计模式-工厂模式 (Factory Pattern)">
+<meta property="og:url" content="https://meijhm.github.io/2023/06/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%20(Factory%20Pattern)/">
+<meta property="og:site_name" content="M">
+<meta property="og:description" content="简单易懂的介绍设计模式之工厂模式">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-06-06T02:29:38.000Z">
+<meta property="article:modified_time" content="2023-06-14T07:24:09.935Z">
+<meta property="article:author" content="mjh">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="设计模式">
+<meta name="twitter:card" content="summary">
+  
+  
+  
+  <meta name="keywords" content="java,设计模式">
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="M" type="application/atom+xml">
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+
+  
+
+  
+
+
+  
+</head>
+
+<body>
+  
+
+
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='post'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="title" href="/"><div class="main" ff="title">M</div><div class="sub normal cap">阳光白梅</div><div class="sub hover cap" style="opacity:0"> Designed by mei</div></a></div>
+
+<nav class="menu dis-select"></nav>
+</header>
+
+
+<div class="widgets">
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" data-filter="/blog/" placeholder="文章搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
+
+
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">设计模式-工厂模式 (Factory Pattern)</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F"><span class="toc-text">工厂模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%B1%BB"><span class="toc-text">分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E7%A7%8D%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E7%94%A8%E6%B3%95"><span class="toc-text">三种工厂模式用法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%EF%BC%9A"><span class="toc-text">1、简单工厂模式：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F%EF%BC%9A"><span class="toc-text">2、工厂方法模式：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E3%80%81%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%EF%BC%9A"><span class="toc-text">3、抽象工厂模式：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E6%BC%94%E7%A4%BA"><span class="toc-text">代码演示</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E4%BE%8B%E5%AD%90"><span class="toc-text">1、简单工厂模式例子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F%E4%BE%8B%E5%AD%90"><span class="toc-text">2、工厂方法模式例子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E3%80%81%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E4%BE%8B%E5%AD%90"><span class="toc-text">3、抽象工厂模式例子</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F%E4%B8%8E%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">工厂方法模式与抽象工厂模式的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF%E5%92%8C%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2"><span class="toc-text">适用场景和相互转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol></li></ol></div></div></widget>
+
+
+
+
+</div>
+
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+
+
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a></div><div id="post-meta">发布于&nbsp;<time datetime="2023-06-06T02:29:38.000Z">2023-06-06</time></div></div>
+
+<article class='md-text content post'>
+<h1 class="article-title"><span>设计模式-工厂模式 (Factory Pattern)</span></h1>
+<p>  <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/1212549?fr=aladdin">设计模式</a>中的工厂模式。它属于创建型模式，那么什么是创建行模式呢，它主要就是将类或者对象的实例化过程抽象起来，可以分为类的创建型模式和对象的创建型模式两类，而工厂模式就属于对象的创建型模式。  </p>
+<h2 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>  工厂模式主要是为创建对象提供过渡接口，以便将创建对象的具体过程屏蔽隔离起来，达到提高灵活性的目的。（通俗说就是工厂会根据不同的情况，为我们创建不同的产品。）</p>
+<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><p>  1）简单工厂模式 - Simple Factory Pattern<br>  2）工厂方法模式 - Factory Method Pattern<br>  3）抽象工厂模式 - Abstract Factory Pattern</p>
+<p>  这三种模式从上到下逐步抽象，并且一个比一个更具有一般性。<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/GoF/6406151">GoF</a> 在《设计模式》一书中，将简单工厂模式（Simple Factory）看为工厂方法模式的一种特例，两者归为一类。所以也有人将工厂模式分为两类，在这我更偏向把它分为三类，后面分三类举例讲解。</p>
+<h3 id="三种工厂模式用法"><a href="#三种工厂模式用法" class="headerlink" title="三种工厂模式用法"></a>三种工厂模式用法</h3><h4 id="1、简单工厂模式："><a href="#1、简单工厂模式：" class="headerlink" title="1、简单工厂模式："></a>1、简单工厂模式：</h4><p>  专门定义一个类来负责创建其他类的实例，被创建的实例通常都具有共同的父类。它又称为静态工厂方法模式。它的实质是由一个工厂类根据传入的参数，动态决定应该创建哪一个产品类（这些产品类继承自一个父类或接口）的实例。</p>
+<h4 id="2、工厂方法模式："><a href="#2、工厂方法模式：" class="headerlink" title="2、工厂方法模式："></a>2、工厂方法模式：</h4><p>  在工厂和产品中间增加接口，工厂不再负责产品的创建，由接口针对不同条件返回具体的类实例，由具体类实例去实现。有一个抽象的 Factory 类（可以是抽象类和接口），这个类将不在负责具体的产品生产，而是只制定一些规范，具体的生产工作由其子类去完成。</p>
+<h4 id="3、抽象工厂模式："><a href="#3、抽象工厂模式：" class="headerlink" title="3、抽象工厂模式："></a>3、抽象工厂模式：</h4><p>  抽象工厂模式是所有形态的工厂模式中最为抽象和最具一般性的一种形态。它有多个抽象产品类，每个抽象产品类可以派生出多个具体产品类，一个抽象工厂类， 可以派生出多个具体工厂类，每个具体工厂类可以创建多个具体产品类的实例。</p>
+<h3 id="代码演示"><a href="#代码演示" class="headerlink" title="代码演示"></a>代码演示</h3><p>  看了上面的用法，大家可能有些不能理解，下面就用三个非常简单的栗子阐述清楚这些概念：  </p>
+<h4 id="1、简单工厂模式例子"><a href="#1、简单工厂模式例子" class="headerlink" title="1、简单工厂模式例子"></a>1、简单工厂模式例子</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">package simple;</span><br><span class="line">/**</span><br><span class="line"> * 简单工厂模式：生产多种型号宝马产品</span><br><span class="line"> * 补充：开闭原则——&gt;对扩展的开放，对修改的关闭</span><br><span class="line"> * 缺点：每增加一种新型车,工厂类中需要增加相应的case，违背开闭原则（对扩展的开发，对修改的关闭）</span><br><span class="line"> * 弥补：提出工厂方法模式，定义如下</span><br><span class="line"> * 工厂类定义成了接口,而每新增的车种类型,就增加该车种类型对应工厂类的实现,</span><br><span class="line"> * 这样工厂的设计就可以扩展了,而不必去修改原来的代码。</span><br><span class="line"> */</span><br><span class="line">//产品类</span><br><span class="line">interface BMW&#123;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line">class BMW320 implements BMW&#123;</span><br><span class="line">	public BMW320() &#123;</span><br><span class="line">		System.out.println(&quot;制造 BMW320&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">class BMW523 implements BMW&#123;</span><br><span class="line">	public BMW523() &#123;</span><br><span class="line">		 System.out.println(&quot;制造 BMW523&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">//工厂类</span><br><span class="line">class Factory&#123;</span><br><span class="line">	public BMW createBMW(int type) &#123; //根据参数不同，返回不同的产品（对象）</span><br><span class="line">		switch (type) &#123;</span><br><span class="line">		case 320:</span><br><span class="line">			return new BMW320();</span><br><span class="line">		case 523:</span><br><span class="line">			return new BMW523();</span><br><span class="line">		default:</span><br><span class="line">			break;</span><br><span class="line">		&#125;</span><br><span class="line">		return null;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">//顾客类</span><br><span class="line">public class Customer &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		Factory factory = new Factory();</span><br><span class="line">		factory.createBMW(320);</span><br><span class="line">		factory.createBMW(523);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2、工厂方法模式例子"><a href="#2、工厂方法模式例子" class="headerlink" title="2、工厂方法模式例子"></a>2、工厂方法模式例子</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">package method;</span><br><span class="line">/**</span><br><span class="line"> * 工厂方法模式：生产多种型号宝马产品</span><br><span class="line"> * 缺点：如果要生产多个产品，此将不再适用</span><br><span class="line"> * 弥补：提出抽象工厂模式，特点如下</span><br><span class="line"> * 抽象工厂模式有多个抽象产品类，具体工厂类可以创建多个具体产品类的实例</span><br><span class="line"> */</span><br><span class="line">//产品类</span><br><span class="line">interface BMW&#123;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line">class BMW320 implements BMW&#123;</span><br><span class="line">	public BMW320() &#123;</span><br><span class="line">		System.out.println(&quot;生产BMW320&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">class BMW523 implements BMW&#123;</span><br><span class="line">	public BMW523() &#123;</span><br><span class="line">		System.out.println(&quot;生产BMW523&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">//工厂类</span><br><span class="line">interface FactoryBMW&#123;</span><br><span class="line">	public BMW createBWM();</span><br><span class="line">&#125;</span><br><span class="line">class FactoryBMW320 implements FactoryBMW&#123;</span><br><span class="line">	@Override</span><br><span class="line">	public BMW createBWM() &#123; //父类作为方法返回值实现多态</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">		return new BMW320(); //返回该工厂生产的产品</span><br><span class="line">	&#125;	</span><br><span class="line">&#125;</span><br><span class="line">class FactoryBMW523 implements FactoryBMW&#123;</span><br><span class="line">	@Override</span><br><span class="line">	public BMW createBWM() &#123;</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">		return new BMW523();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">//客户类</span><br><span class="line">public class Customer &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//创建320型号宝马的工厂</span><br><span class="line">		FactoryBMW320 factoryBMW320 = new FactoryBMW320();</span><br><span class="line">		factoryBMW320.createBWM();</span><br><span class="line">		//创建523型号宝马的工厂</span><br><span class="line">		FactoryBMW523 factoryBMW523 = new FactoryBMW523();</span><br><span class="line">		factoryBMW523.createBWM();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3、抽象工厂模式例子"><a href="#3、抽象工厂模式例子" class="headerlink" title="3、抽象工厂模式例子"></a>3、抽象工厂模式例子</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line">package ecjtu.mjh.abstr;</span><br><span class="line">/**</span><br><span class="line"> * 抽象工厂模式:生产汽车的多种配件的多种型号产品</span><br><span class="line"> * 两个重要概念：</span><br><span class="line"> * 产品等级结构：产品的继承结构。</span><br><span class="line"> * 产品族：在抽象工厂模式中，产品族（Dough、Sauce）是指由同一个工厂生产的，</span><br><span class="line"> * 位于不同产品等级结构中的一组产品。</span><br><span class="line"> */</span><br><span class="line">//产品类</span><br><span class="line">//产品1：引擎</span><br><span class="line">interface Engine&#123;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line">class EngineA implements Engine&#123;</span><br><span class="line">	public EngineA() &#123;</span><br><span class="line">		System.out.println(&quot;生产引擎A&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">class EngineB implements Engine&#123;</span><br><span class="line">	public EngineB() &#123;</span><br><span class="line">		System.out.println(&quot;生产引擎B&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">//产品2：轮胎</span><br><span class="line">interface Tyre&#123;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line">class TyreA implements Tyre&#123;</span><br><span class="line">	public TyreA() &#123;</span><br><span class="line">		System.out.println(&quot;生产轮胎A&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">class TyreB implements Tyre&#123;</span><br><span class="line">	public TyreB() &#123;</span><br><span class="line">		System.out.println(&quot;生产轮胎B&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">//工厂类</span><br><span class="line">//抽象工厂接口</span><br><span class="line">interface AbstractFactory&#123;</span><br><span class="line">	public Engine createEngine();</span><br><span class="line">	public Tyre createTyre();</span><br><span class="line">&#125;</span><br><span class="line">class FactoryBMW320 implements AbstractFactory&#123; </span><br><span class="line">    //生产宝马320系列配件的工厂：需要引擎A和轮胎A</span><br><span class="line">	@Override</span><br><span class="line">	public Engine createEngine() &#123;</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">		return new EngineA();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public Tyre createTyre() &#123;</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">		return new TyreA();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line">class FactoryBMW523 implements AbstractFactory&#123; </span><br><span class="line">    //生产宝马523系列配件的工厂：需要引擎B和轮胎B</span><br><span class="line">	@Override</span><br><span class="line">	public Engine createEngine() &#123;</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">		return new EngineB();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public Tyre createTyre() &#123;</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">		return new TyreB();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line">public class Customer &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//要生产宝马320的配件的工厂</span><br><span class="line">		FactoryBMW320 f320 = new FactoryBMW320();</span><br><span class="line">		f320.createEngine();</span><br><span class="line">		f320.createTyre();</span><br><span class="line">		</span><br><span class="line">		//要生产宝马523的配件的工厂</span><br><span class="line">		FactoryBMW523 f523 = new FactoryBMW523();</span><br><span class="line">		f523.createEngine();</span><br><span class="line">		f523.createTyre();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="工厂方法模式与抽象工厂模式的区别"><a href="#工厂方法模式与抽象工厂模式的区别" class="headerlink" title="工厂方法模式与抽象工厂模式的区别"></a>工厂方法模式与抽象工厂模式的区别</h3><p>  结合了上面的例子，看下面的区别就容易理解了<br>  1）工厂方法模式：<br>  一个抽象产品类，可以派生出多个具体产品类。<br>  一个抽象工厂类，可以派生出多个具体工厂类。<br>  每个具体工厂类只能创建一个具体产品类的实例。<br>  2）抽象工厂模式：<br>  多个抽象产品类，每个抽象产品类可以派生出多个具体产品类。<br>  一个抽象工厂类，可以派生出多个具体工厂类。<br>  每个具体工厂类可以创建多个具体产品类的实例。<br>  3）两者区别：<br>  工厂方法模式只有一个抽象产品类，而抽象工厂模式有多个。<br>  工厂方法模式的具体工厂类只能创建一个具体产品类的实例，而抽象工厂模式可以创建多个。</p>
+<h3 id="适用场景和相互转换"><a href="#适用场景和相互转换" class="headerlink" title="适用场景和相互转换"></a>适用场景和相互转换</h3><p>  当需要创建的对象是一系列相互关联或相互依赖的产品族时，便可以使用抽象工厂模式。说的更明白一点，就是一个继承体系中，如果存在着多个等级结构（即存在着多个抽象类），并且分属各个等级结构中的实现类之间存在着一定的关联或者约束，就可以使用抽象工厂模式。<br>  明明使用的工厂方法模式，当新需求来临，稍加修改，加入了一个新方法后，由于类中的产品构成了不同等级结构中的产品族，它就变成抽象工厂模式了；而对于抽象工厂模式，当减少一个方法使的提供的产品不再构成产品族之后，它就演变成了工厂方法模式。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>  在使用工厂模式时，只需要关心降低耦合度的目的是否达到了。解耦简单说就是让设计依赖于抽象（接口），而不是依赖于实现（具体的类）。打个比方，汽车制造者可以依赖于轮胎这个抽象的东西，但不能依赖于具体的品牌比如” 朝阳轮胎”。</p>
+
+
+
+<div class="article-footer reveal fs14"><section id="license"><div class="header"><span>许可协议</span></div><div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div></section></div>
+
+</article>
+
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2023/06/07/java%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81/">java线程状态</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2023/06/05/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F%20(Singleton%20Pattern)/">设计模式-单例模式 (Singleton Pattern)</a></div></section></div>
+
+
+
+
+
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="text"><p>本站由 <a href="/">@anonymity</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar">Stellar</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  const stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = stellar.config.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.19.0';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.19.0';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+    root : '/',
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
+  };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.css","js":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.copycode = Object.assign({"enable":true,"js":"/js/plugins/copycode.js","default_text":"Copy","success_text":"Copied"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>
