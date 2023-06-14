@@ -126,13 +126,6 @@
   </url>
   
   <url>
-    <loc>https://meijhm.github.io/tags/JavaGUI/</loc>
-    <lastmod>2023-06-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://meijhm.github.io/tags/tomcat/</loc>
     <lastmod>2023-06-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -168,6 +161,20 @@
   </url>
   
   <url>
+    <loc>https://meijhm.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</loc>
+    <lastmod>2023-06-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://meijhm.github.io/tags/JavaGUI/</loc>
+    <lastmod>2023-06-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://meijhm.github.io/tags/hexo/</loc>
     <lastmod>2023-06-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -183,20 +190,6 @@
   
   <url>
     <loc>https://meijhm.github.io/tags/github/</loc>
-    <lastmod>2023-06-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://meijhm.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</loc>
-    <lastmod>2023-06-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://meijhm.github.io/tags/%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2023-06-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -252,6 +245,13 @@
   </url>
   
   <url>
+    <loc>https://meijhm.github.io/tags/%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2023-06-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://meijhm.github.io/tags/%E5%9C%A8%E7%BA%BF%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2023-06-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -275,14 +275,14 @@
 
   
   <url>
-    <loc>https://meijhm.github.io/categories/%E7%BC%96%E7%A8%8B/</loc>
+    <loc>https://meijhm.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/</loc>
     <lastmod>2023-06-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://meijhm.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/</loc>
+    <loc>https://meijhm.github.io/categories/%E7%BC%96%E7%A8%8B/</loc>
     <lastmod>2023-06-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
