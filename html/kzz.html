@@ -30,8 +30,8 @@
 <meta property="og:site_name" content="M">
 <meta property="og:description" content="可转债涨幅前10榜单                                                                         代码                     名字                     最新价                     涨幅">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-08-27T03:06:43.348Z">
-<meta property="article:modified_time" content="2023-08-27T03:06:43.348Z">
+<meta property="article:published_time" content="2023-08-27T03:50:45.258Z">
+<meta property="article:modified_time" content="2023-08-27T03:50:45.258Z">
 <meta property="article:author" content="mjh">
 <meta property="article:tag" content="HTML">
 <meta name="twitter:card" content="summary">
@@ -111,7 +111,7 @@
 </head>
 
 <body>
-    <div id="app">
+    <div>
         <table class="table table-hover table-bordered">
             <thead>
                 <tr class="table-primary">
@@ -121,29 +121,18 @@
                     <th>涨幅</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr v-for="item11 in tableData">
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>%</td>
-                </tr>
+            <tbody id="data_m">
             </tbody>
         </table>
     </div>
 </body>
 <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
 <script>
-    new Vue({
-        el: '#app',
-        data: {
-            tableData: info()
-        }
-    });
-
+    (function () {
+        $("#data_m").html(info());
+    })();
     function info() {
-        var arr = [];
+        var str = "";
         $.ajax({
             url: "https://87.push2.eastmoney.com/api/qt/clist/get?cb=jQuery112404203189329532593_1693034898801&pn=1&pz=10&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&wbp2u=|0|0|0|web&fid=f3&fs=b:MK0354&fields=f2,f3,f12,f14&_=1693034898803",
             type: "GET",
@@ -161,12 +150,12 @@
                         jsonObj = jsonArr[i] + "}";
                     }
                     var obj = jQuery.parseJSON(jsonObj);
-                    arr.push(obj);
+                    str += "<tr><td>" + obj.f12 + "</td><td>" + obj.f14 + "</td><td>" + obj.f2 + "</td><td>" + obj.f3 + "</td></tr>"
                 }
-                // console.log(arr);
+                //console.log(str);
             }
         });
-        return arr;
+        return str;
     }
 </script>
 
