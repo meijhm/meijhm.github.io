@@ -23,15 +23,15 @@
   <title>M</title>
 
   
-    <meta name="description" content="可转债涨幅前10榜单                                                                        代码                     名字                     最新价                     涨幅">
+    <meta name="description" content="可转债涨幅前10榜单                                                                        代码                     名字                     最新价                     涨幅                     流通规模">
 <meta property="og:type" content="website">
 <meta property="og:title" content="M">
 <meta property="og:url" content="https://meijhm.github.io/html/kzz.html">
 <meta property="og:site_name" content="M">
-<meta property="og:description" content="可转债涨幅前10榜单                                                                        代码                     名字                     最新价                     涨幅">
+<meta property="og:description" content="可转债涨幅前10榜单                                                                        代码                     名字                     最新价                     涨幅                     流通规模">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-08-27T14:06:37.783Z">
-<meta property="article:modified_time" content="2023-08-27T14:06:37.783Z">
+<meta property="article:published_time" content="2023-08-28T08:24:15.224Z">
+<meta property="article:modified_time" content="2023-08-28T08:24:15.069Z">
 <meta property="article:author" content="mjh">
 <meta property="article:tag" content="HTML">
 <meta name="twitter:card" content="summary">
@@ -117,6 +117,8 @@
                     <th>名字</th>
                     <th>最新价</th>
                     <th>涨幅</th>
+                    <th>流通规模</th>
+                    <th>上市天数</th>
                 </tr>
             </thead>
             <tbody id="data_m">
@@ -132,7 +134,7 @@
     function info() {
         var str = "";
         $.ajax({
-            url: "https://87.push2.eastmoney.com/api/qt/clist/get?cb=jQuery112404203189329532593_1693034898801&pn=1&pz=10&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&wbp2u=|0|0|0|web&fid=f3&fs=b:MK0354&fields=f2,f3,f12,f14&_=1693034898803",
+            url: "https://87.push2.eastmoney.com/api/qt/clist/get?cb=jQuery112404203189329532593_1693034898801&pn=1&pz=10&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&wbp2u=|0|0|0|web&fid=f3&fs=b:MK0354&fields=f2,f3,f12,f14",
             type: "GET",
             async: false,
             success: function (response) {
@@ -140,15 +142,67 @@
                 var jsonStr = response.substring(response.indexOf('[') + 1, response.lastIndexOf(']'));
                 // console.log(jsonStr);
                 var jsonArr = jsonStr.split("},");
+                // console.log(jsonArr);
                 for (let i = 0; i < 10; i++) {
                     var jsonObj;
                     if (i < 9) {
                         jsonObj = jsonArr[i] + "}";
+                    } else {
+                        jsonObj = jsonArr[i];
                     }
                     var obj = jQuery.parseJSON(jsonObj);
-                    str += "<tr><td>" + obj.f12 + "</td><td>" + obj.f14 + "</td><td>" + obj.f2 + "</td><td>" + obj.f3 + "%</td></tr>"
+                    str += "<tr><td>" + obj.f12 + "</td><td>" + obj.f14 + "</td><td>" + obj.f2 + "</td><td>" + obj.f3;
+                    var url1 =  "https://datacenter-web.eastmoney.com/api/data/v1/get?callback=jQuery1123019513872859514692_1693182726993&columns=ALL&token=894050c76af8597a853f5b408b759f5d&sortColumns=date&sortTypes=1&source=WEB&reportName=RPTA_WEB_KZZ_LS&filter=(zcode%3D%22" + obj.f12 + "%22)&pageNumber=1&pageSize=8000&_=1693182726995";
+                    $.ajax({
+                        url: url1,
+                        type: "GET",
+                        async: false,
+                        success: function (res) {
+                            var vIndex = res.lastIndexOf("USWAPTVOL");
+                            var rIndex = res.lastIndexOf(',"USWAPTRATE');
+                            var one = res.substring(vIndex - 1, rIndex);
+                            var two = res.substring(res.lastIndexOf("USWAPTVOL", vIndex - 1) - 1, res.lastIndexOf(',"USWAPTRATE', rIndex - 1));
+                            var jsonStr1 = "{" +  one + "}";
+                            var jsonStr2 = "{" +  two + "}";
+                            var jsonObj1 = jQuery.parseJSON(jsonStr1);
+                            var jsonObj2 = jQuery.parseJSON(jsonStr2);
+                            var vol = jsonObj1.USWAPTVOL;
+                            if(vol == null) {
+                                vol = jsonObj2.USWAPTVOL;
+                            }
+                            var listingDate, temp, scale;
+                            if((obj.f12 + "").startsWith("12")) {
+                                temp = obj.f12 + ".SZ";
+                            } else {
+                                temp = obj.f12 + ".SH";
+                            }
+                            var url2 = "http://datacenter-web.eastmoney.com/api/data/v1/get?callback=jQuery35106089301639063178_1693194122565&reportName=RPT_BOND_BS_INFO&columns=ISSUE_SCALE%2CLISTING_DATE&filter=(SECUCODE%3D%22"+ temp +"%22)&pageNumber=1&pageSize=200&sortTypes=&source=QuoteWeb&client=WEB&_=1693194122566";
+                            $.ajax({
+                                url: url2,
+                                type: "GET",
+                                async: false,
+                                success: function (res1) {
+                                    var jsonStr3 = res1.substring(res1.lastIndexOf("[{") + 1,res1.lastIndexOf("],"));
+                                    var jsonObj3 = jQuery.parseJSON(jsonStr3);
+                                    scale = jsonObj3.ISSUE_SCALE;
+                                    listingDate = jsonObj3.LISTING_DATE;
+                                }
+                            });
+                            if(vol == null) {
+                                vol = scale;
+                            } else {
+                                vol = vol/1000000;
+                            }
+                            var date = new Date().getTime() - new Date(listingDate).getTime(); //时间差的毫秒数
+                            var days = Math.floor(date / (24*3600*1000)) + 1; // 计算出相差天数
+                            var new_kzz = '';
+                            if(days < 180) {
+                                new_kzz = "(次新)";
+                            }
+                            str += "%</td><td>" + vol + "亿</td><td>" + new_kzz + "第"+ days +"天</td></tr>";
+                        }
+                    });
                 }
-                //console.log(str);
             }
         });
         return str;
