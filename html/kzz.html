@@ -30,8 +30,8 @@
 <meta property="og:site_name" content="M">
 <meta property="og:description" content="可转债涨幅前10榜单                                                                         代码                     名字                     最新价                     涨幅                     流通规模">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-08-28T09:29:40.343Z">
-<meta property="article:modified_time" content="2023-08-28T09:29:40.343Z">
+<meta property="article:published_time" content="2023-08-28T12:06:06.963Z">
+<meta property="article:modified_time" content="2023-08-28T12:06:06.963Z">
 <meta property="article:author" content="mjh">
 <meta property="article:tag" content="HTML">
 <meta name="twitter:card" content="summary">
@@ -178,7 +178,7 @@
                             } else {
                                 temp = obj.f12 + ".SH";
                             }
-                            var url2 = "http://datacenter-web.eastmoney.com/api/data/v1/get?callback=jQuery35106089301639063178_1693194122565&reportName=RPT_BOND_BS_INFO&columns=ISSUE_SCALE%2CLISTING_DATE&filter=(SECUCODE%3D%22" + temp + "%22)&pageNumber=1&pageSize=200&sortTypes=&source=QuoteWeb&client=WEB";
+                            var url2 = "https://datacenter-web.eastmoney.com/api/data/v1/get?callback=jQuery35106089301639063178_1693194122565&reportName=RPT_BOND_BS_INFO&columns=ISSUE_SCALE%2CLISTING_DATE&filter=(SECUCODE%3D%22" + temp + "%22)&pageNumber=1&pageSize=200&sortTypes=&source=QuoteWeb&client=WEB";
                             $.ajax({
                                 url: url2,
                                 type: "GET",
@@ -201,7 +201,7 @@
                             if (days < 180) {
                                 new_kzz = "(次新)";
                             }
-                            str += "%</td><td>" + vol + "亿</td><td>" + new_kzz + "第" + days + "天</td></tr>";
+                            str += "%</td><td>" + vol + "亿</td><td>" + new_kzz + days + "天</td></tr>";
                         }
                     });
                 }
