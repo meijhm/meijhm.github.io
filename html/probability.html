@@ -62,6 +62,7 @@
         <h2>
             中大奖模拟
         </h2>
+        <br>
         <p>
             10.5代表有10.5%的概率能中奖，可多次尝试
         </p>
@@ -74,10 +75,12 @@
                 <label for="chance"></label><input id="chance"
                                                    placeholder="概率值(整数、小数)" type="text"/>
             </p>
+            <br>
             <p>
-                <span><input id="on_off_m" type="checkbox" checked/><label class="label_css_m" for="on_off_m">中奖提示开关</label></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <span><button id="btn_m" onclick="count()" type="button">试试</button></span>
+                <span><input id="on_off_m" type="checkbox" checked/>中奖提示<label class="label_css_m" for="on_off_m"></label></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span><button id="btn_m" onclick="count()" type="button">尝试</button></span>
             </p>
+            <br>
         </div>
         <p>
             <span hidden="hidden" id="l1">你的中奖率：<span id="val"></span>%</span>
