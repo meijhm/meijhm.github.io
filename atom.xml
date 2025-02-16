@@ -6,7 +6,7 @@
   <link href="https://meijhm.github.io/atom.xml" rel="self"/>
   
   <link href="https://meijhm.github.io/"/>
-  <updated>2023-08-31T00:55:08.235Z</updated>
+  <updated>2025-02-16T08:07:20.981Z</updated>
   <id>https://meijhm.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在线工具集</title>
+    <link href="https://meijhm.github.io/2025/01/28/%E5%9C%A8%E7%BA%BF%E5%B7%A5%E5%85%B7%E9%9B%86/"/>
+    <id>https://meijhm.github.io/2025/01/28/%E5%9C%A8%E7%BA%BF%E5%B7%A5%E5%85%B7%E9%9B%86/</id>
+    <published>2025-01-27T16:00:00.000Z</published>
+    <updated>2025-02-16T08:07:20.981Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="真心话大冒险"><a href="#真心话大冒险" class="headerlink" title="真心话大冒险"></a>真心话大冒险</h3><p>  这是一款真心话大冒险的现场多人游戏，可以和一群朋友一起玩耍，可以自己设置问题。</p><p>  试试：<a href="https://meijhm.github.io/html/choice.html">真心话大冒险小游戏</a></p><h3 id="我是欧皇"><a href="#我是欧皇" class="headerlink" title="我是欧皇"></a>我是欧皇</h3><p>  这款工具可以自定义中奖率，精确到小数。欧皇就是我，体验一下万里挑一的感觉。</p><p>  试试：<a href="https://meijhm.github.io/html/probability.html">中大奖模拟</a></p><h3 id="贪吃蛇"><a href="#贪吃蛇" class="headerlink" title="贪吃蛇"></a>贪吃蛇</h3><p>  这是一款自适应贪吃蛇小游戏，等你来挑战！</p><p>  试试：<a href="https://meijhm.github.io/html/snake.html">自适应贪吃蛇</a></p><h3 id="Srt字幕文件转Txt文件"><a href="#Srt字幕文件转Txt文件" class="headerlink" title="Srt字幕文件转Txt文件"></a>Srt字幕文件转Txt文件</h3><p>  将srt字幕文件中的字幕提取出来，生成txt文件，可下载到本地。</p><p>  试试：<a href="https://meijhm.github.io/html/SrtToTxt.html">Srt字幕文件转Txt文件</a></p><h3 id="可转债涨幅前10榜单"><a href="#可转债涨幅前10榜单" class="headerlink" title="可转债涨幅前10榜单"></a>可转债涨幅前10榜单</h3><p>  可转债涨幅前10排行榜，包含现阶段的流通市值。</p><p>  试试：<a href="https://meijhm.github.io/html/kzz.html">可转债涨幅前10榜单</a></p><h3 id="最近50只新债流通规模"><a href="#最近50只新债流通规模" class="headerlink" title="最近50只新债流通规模"></a>最近50只新债流通规模</h3><p>  最近50只新债的流通规模，由新到旧排序，显示的是现阶段流通市值。</p><p>  试试：<a href="https://meijhm.github.io/html/nkzz.html">最近50只新债流通规模</a></p>]]></content>
+    
+    
+    <summary type="html">有趣实用的在线小程序</summary>
+    
+    
+    
+    <category term="工具" scheme="https://meijhm.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="html" scheme="https://meijhm.github.io/tags/html/"/>
+    
+    <category term="在线工具" scheme="https://meijhm.github.io/tags/%E5%9C%A8%E7%BA%BF%E5%B7%A5%E5%85%B7/"/>
+    
+    <category term="多人小游戏" scheme="https://meijhm.github.io/tags/%E5%A4%9A%E4%BA%BA%E5%B0%8F%E6%B8%B8%E6%88%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>Markdown语法</title>
@@ -59,31 +84,6 @@
     <category term="博客" scheme="https://meijhm.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
     
     <category term="github" scheme="https://meijhm.github.io/tags/github/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>在线工具集</title>
-    <link href="https://meijhm.github.io/2023/06/12/%E5%9C%A8%E7%BA%BF%E5%B7%A5%E5%85%B7%E9%9B%86/"/>
-    <id>https://meijhm.github.io/2023/06/12/%E5%9C%A8%E7%BA%BF%E5%B7%A5%E5%85%B7%E9%9B%86/</id>
-    <published>2023-06-11T16:00:00.000Z</published>
-    <updated>2025-02-16T07:53:41.582Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="真心话大冒险"><a href="#真心话大冒险" class="headerlink" title="真心话大冒险"></a>真心话大冒险</h3><p>  这是一款真心话大冒险的现场多人游戏，可以和一群朋友一起玩耍。</p><p>  试试：<a href="https://meijhm.github.io/html/choice.html">真心话大冒险小游戏</a></p><h3 id="我是欧皇"><a href="#我是欧皇" class="headerlink" title="我是欧皇"></a>我是欧皇</h3><p>  这款工具可以自定义中奖率，精确到小数。欧皇就是我，体验一下万里挑一的感觉。</p><p>  试试：<a href="https://meijhm.github.io/html/probability.html">中奖大模拟</a></p><h3 id="贪吃蛇"><a href="#贪吃蛇" class="headerlink" title="贪吃蛇"></a>贪吃蛇</h3><p>  这是一款自适应贪吃蛇小游戏，等你来挑战！</p><p>  试试：<a href="https://meijhm.github.io/html/snake.html">自适应贪吃蛇</a></p><h3 id="Srt字幕文件转Txt文件"><a href="#Srt字幕文件转Txt文件" class="headerlink" title="Srt字幕文件转Txt文件"></a>Srt字幕文件转Txt文件</h3><p>  将srt字幕文件中的字幕提取出来，生成txt文件，可下载到本地。</p><p>  试试：<a href="https://meijhm.github.io/html/SrtToTxt.html">Srt字幕文件转Txt文件</a></p><h3 id="可转债涨幅前10榜单"><a href="#可转债涨幅前10榜单" class="headerlink" title="可转债涨幅前10榜单"></a>可转债涨幅前10榜单</h3><p>  可转债涨幅前10排行榜，包含现阶段的流通市值。</p><p>  试试：<a href="https://meijhm.github.io/html/kzz.html">可转债涨幅前10榜单</a></p><h3 id="最近50只新债流通规模"><a href="#最近50只新债流通规模" class="headerlink" title="最近50只新债流通规模"></a>最近50只新债流通规模</h3><p>  最近50只新债的流通规模，由新到旧排序，显示的是现阶段流通市值。</p><p>  试试：<a href="https://meijhm.github.io/html/nkzz.html">最近50只新债流通规模</a></p>]]></content>
-    
-    
-    <summary type="html">有趣实用的在线小程序</summary>
-    
-    
-    
-    <category term="工具" scheme="https://meijhm.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="html" scheme="https://meijhm.github.io/tags/html/"/>
-    
-    <category term="在线工具" scheme="https://meijhm.github.io/tags/%E5%9C%A8%E7%BA%BF%E5%B7%A5%E5%85%B7/"/>
-    
-    <category term="多人小游戏" scheme="https://meijhm.github.io/tags/%E5%A4%9A%E4%BA%BA%E5%B0%8F%E6%B8%B8%E6%88%8F/"/>
     
   </entry>
   
