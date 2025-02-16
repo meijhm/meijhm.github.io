@@ -11,42 +11,6 @@
   </url>
   
   <url>
-    <loc>https://meijhm.github.io/html/snake.html</loc>
-    
-    <lastmod>2025-02-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://meijhm.github.io/html/SrtToTxt.html</loc>
-    
-    <lastmod>2024-01-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://meijhm.github.io/html/kzz.html</loc>
-    
-    <lastmod>2023-12-02</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://meijhm.github.io/html/nkzz.html</loc>
-    
-    <lastmod>2023-12-02</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://meijhm.github.io/2023/08/30/Markdown%E8%AF%AD%E6%B3%95/</loc>
     
     <lastmod>2023-08-31</lastmod>
@@ -86,24 +50,6 @@
     <loc>https://meijhm.github.io/about/</loc>
     
     <lastmod>2023-06-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://meijhm.github.io/html/probability.html</loc>
-    
-    <lastmod>2023-06-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://meijhm.github.io/html/choice.html</loc>
-    
-    <lastmod>2023-06-14</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -203,21 +149,7 @@
   </url>
   
   <url>
-    <loc>https://meijhm.github.io/tags/hexo/</loc>
-    <lastmod>2025-02-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://meijhm.github.io/tags/%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2025-02-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://meijhm.github.io/tags/github/</loc>
+    <loc>https://meijhm.github.io/tags/Markdown/</loc>
     <lastmod>2025-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -259,7 +191,21 @@
   </url>
   
   <url>
-    <loc>https://meijhm.github.io/tags/%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://meijhm.github.io/tags/hexo/</loc>
+    <lastmod>2025-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://meijhm.github.io/tags/%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2025-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://meijhm.github.io/tags/github/</loc>
     <lastmod>2025-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -267,20 +213,6 @@
   
   <url>
     <loc>https://meijhm.github.io/tags/html/</loc>
-    <lastmod>2025-02-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://meijhm.github.io/tags/%E5%9C%A8%E7%BA%BF%E5%B7%A5%E5%85%B7/</loc>
-    <lastmod>2025-02-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://meijhm.github.io/tags/%E5%A4%9A%E4%BA%BA%E5%B0%8F%E6%B8%B8%E6%88%8F/</loc>
     <lastmod>2025-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -329,7 +261,21 @@
   </url>
   
   <url>
-    <loc>https://meijhm.github.io/tags/Markdown/</loc>
+    <loc>https://meijhm.github.io/tags/%E5%9C%A8%E7%BA%BF%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2025-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://meijhm.github.io/tags/%E5%A4%9A%E4%BA%BA%E5%B0%8F%E6%B8%B8%E6%88%8F/</loc>
+    <lastmod>2025-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://meijhm.github.io/tags/%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2025-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -352,14 +298,14 @@
   </url>
   
   <url>
-    <loc>https://meijhm.github.io/categories/%E6%95%99%E7%A8%8B/</loc>
+    <loc>https://meijhm.github.io/categories/%E7%BC%96%E7%A8%8B/</loc>
     <lastmod>2025-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://meijhm.github.io/categories/%E7%BC%96%E7%A8%8B/</loc>
+    <loc>https://meijhm.github.io/categories/%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2025-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
