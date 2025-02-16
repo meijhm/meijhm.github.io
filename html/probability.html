@@ -2,7 +2,9 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>概率测试</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/responsive.css">
+    <title>中大奖模拟</title>
     <style>
         .label_css_m {
             display: inline-block;
@@ -58,27 +60,27 @@
 <div>
     <div>
         <h2>
-            中奖概率测试
+            中大奖模拟
         </h2>
         <p>
-            在输入框输入中奖概率数字，比如20.5，代表有20.5%的可能中奖，然后点击试试，可以多次尝试。
+            10.5代表有10.5%的概率能中奖，可多次尝试
         </p>
     </div>
     <div>
         <p><span id="l"></span></p>
         <div>
             <p>
-                设置中奖概率（%）：
+                中奖概率(%)：
                 <label for="chance"></label><input id="chance"
-                                                   placeholder="输入概率数值，整数或小数" type="text"/>
+                                                   placeholder="概率值(整数、小数)" type="text"/>
             </p>
             <p>
-                <span><input id="on_off_m" type="checkbox"/><label class="label_css_m" for="on_off_m">中奖提示开关</label></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span><input id="on_off_m" type="checkbox" checked/><label class="label_css_m" for="on_off_m">中奖提示开关</label></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <span><button id="btn_m" onclick="count()" type="button">试试</button></span>
             </p>
         </div>
         <p>
-            <span hidden="hidden" id="l1">你设置的中奖率为：<span id="val"></span>%</span>
+            <span hidden="hidden" id="l1">你的中奖率：<span id="val"></span>%</span>
         </p>
         <p>
             <span id="num"></span>
@@ -116,7 +118,7 @@
             l.innerText = "中奖了";
             success++;
             if (on_off.checked) {
-                alert("当前抽到" + total + "次了，恭喜你，中奖了！");
+                alert("抽到第" + total + "次，恭喜你中奖了！");
             }
         } else {
             //未命中
@@ -130,7 +132,7 @@
         v.style.color = "red";
         v.style.fontSize = "20px";
 
-        n.innerText = "抽了" + total + "次，中了" + success + "次，你的实际中奖率为：" + success / total * 100 + "%";
+        n.innerText = "抽了" + total + "次，中了" + success + "次，实际中奖率：" + (success / total * 100).toFixed(3) + "%";
     }
 
     function randomColor() {
