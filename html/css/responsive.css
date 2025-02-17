@@ -1,123 +1,124 @@
 /* 响应式基础重置 - 安全引入不破坏原有布局 */
 :root {
-    --responsive-base-font: clamp(14px, 1.5vw + 10px, 18px); /* 动态字体大小 */
+  --responsive-base-font: clamp(14px, 1.5vw + 10px, 18px); /* 动态字体大小 */
+}
+
+/* 核心自适应规则 */
+@media screen {
+  /* 安全重置 */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box !important; /* 强制所有元素使用border-box */
+    margin: 0;
+    padding: 0;
+    -webkit-text-size-adjust: 100%; /* 防止iOS横屏文字放大 */
+    text-size-adjust: 100%;
   }
-  
-  /* 核心自适应规则 */
-  @media screen {
-    /* 安全重置 */
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box !important; /* 强制所有元素使用border-box */
-      margin: 0;
-      padding: 0;
-      -webkit-text-size-adjust: 100%; /* 防止iOS横屏文字放大 */
-      text-size-adjust: 100%;
+
+  html {
+    font-size: var(--responsive-base-font);
+    line-height: 1.5;
+    -webkit-tap-highlight-color: transparent; /* 移除移动端点击高光 */
+    scroll-behavior: smooth;
+  }
+
+  /* 安全容器限制 */
+  body {
+    width: 100% !important;
+    min-height: 100vh !important;
+    margin: 0 auto !important;
+    padding: 2vw !important;
+    overflow-x: hidden !important;
+    position: relative !important;
+  }
+
+  /* 智能内容容器 */
+  .responsive-container,
+  body > *:not(script):not(style) {
+    max-width: 1440px !important; /* 桌面最大宽度 */
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 0 4% !important;
+  }
+
+  /* 媒体元素自适应 */
+  img,
+  video,
+  iframe,
+  canvas,
+  svg {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* 移动端优化 */
+  @media (pointer: coarse) {
+    input,
+    select,
+    textarea,
+    button {
+      min-height: 44px !important; /* 满足WCAG点击目标标准 */
+      font-size: 16px !important; /* 防止iOS缩放 */
     }
-  
-    html {
-      font-size: var(--responsive-base-font);
-      line-height: 1.5;
-      -webkit-tap-highlight-color: transparent; /* 移除移动端点击高光 */
-      scroll-behavior: smooth;
-    }
-  
-    /* 安全容器限制 */
+
     body {
-      width: 100% !important;
-      min-height: 100vh !important;
-      margin: 0 auto !important;
-      padding: 2vw !important;
-      overflow-x: hidden !important;
-      position: relative !important;
+      padding: 4vw !important;
     }
-  
-    /* 智能内容容器 */
+  }
+
+  /* 响应式断点 */
+  @media (max-width: 768px) {
+    :root {
+      --responsive-base-font: clamp(14px, 1.8vw + 10px, 16px);
+    }
+
     .responsive-container,
     body > *:not(script):not(style) {
-      max-width: 1440px !important; /* 桌面最大宽度 */
-      margin-left: auto !important;
-      margin-right: auto !important;
-      padding: 0 4% !important;
+      padding: 0 6% !important;
     }
-  
-    /* 媒体元素自适应 */
-    img,
-    video,
-    iframe,
-    canvas,
-    svg {
-      max-width: 100% !important;
-      height: auto !important;
-      display: block;
-      margin: 0 auto;
-    }
-  
-    /* 移动端优化 */
-    @media (pointer: coarse) {
-      input,
-      select,
-      textarea,
-      button {
-        min-height: 44px !important; /* 满足WCAG点击目标标准 */
-        font-size: 16px !important; /* 防止iOS缩放 */
-      }
-  
-      body {
-        padding: 4vw !important;
-      }
-    }
-  
-    /* 响应式断点 */
-    @media (max-width: 768px) {
-      :root {
-        --responsive-base-font: clamp(14px, 1.8vw + 10px, 16px);
-      }
-  
-      .responsive-container,
-      body > *:not(script):not(style) {
-        padding: 0 6% !important;
-      }
-  
-      /* 隐藏复杂表格 */
-      table.responsive-table {
-        overflow-x: auto !important;
-        display: block !important;
-        white-space: nowrap !important;
-      }
-    }
-  
-    @media (max-width: 480px) {
-      /* 移动端元素堆叠 */
-      .responsive-stack {
-        flex-direction: column !important;
-      }
-  
-      /* 文字内容优化 */
-      p, li {
-        line-height: 1.6 !important;
-        text-align: justify !important;
-        hyphens: auto !important;
-      }
+
+    /* 隐藏复杂表格 */
+    table.responsive-table {
+      overflow-x: auto !important;
+      display: block !important;
+      white-space: nowrap !important;
     }
   }
-  
-  /* 打印优化 */
-  @media print {
-    * {
-      background: transparent !important;
-      color: #000 !important;
-      box-shadow: none !important;
-      text-shadow: none !important;
+
+  @media (max-width: 480px) {
+    /* 移动端元素堆叠 */
+    .responsive-stack {
+      flex-direction: column !important;
     }
-  
-    body {
-      padding: 0.5in !important;
-      max-width: 100% !important;
-    }
-  
-    .no-print {
-      display: none !important;
+
+    /* 文字内容优化 */
+    p,
+    li {
+      line-height: 1.6 !important;
+      text-align: justify !important;
+      hyphens: auto !important;
     }
   }
+}
+
+/* 打印优化 */
+@media print {
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  body {
+    padding: 0.5in !important;
+    max-width: 100% !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+}

@@ -1,125 +1,154 @@
 <!DOCTYPE html>
 <html lang="zh">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/responsive.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/responsive.css" />
     <title>真心话大冒险</title>
     <style>
-        #input_m {
-            outline-style: none;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            padding: 13px 14px;
-            width: 220px;
-            font-size: 14px;
-            font-weight: 600;
-            font-family: 黑体, sans-serif;
-        }
+      #input_m {
+        outline-style: none;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        padding: 13px 14px;
+        width: 220px;
+        font-size: 14px;
+        font-weight: 600;
+        font-family: 黑体, sans-serif;
+      }
 
-        #input_m:focus, #textarea_m:focus {
-            border-color: #66afe9;
-            outline: 0;
-            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
-            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6)
-        }
+      #input_m:focus,
+      #textarea_m:focus {
+        border-color: #66afe9;
+        outline: 0;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+          0 0 8px rgba(102, 175, 233, 0.6);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+          0 0 8px rgba(102, 175, 233, 0.6);
+      }
 
-        .button_css_m {
-            background: #eb94d0;
-            /* 创建渐变 */
-            background-image: -webkit-linear-gradient(top, #eb94d0, #2079b0);
-            background-image: -moz-linear-gradient(top, #eb94d0, #2079b0);
-            background-image: -ms-linear-gradient(top, #eb94d0, #2079b0);
-            background-image: -o-linear-gradient(top, #eb94d0, #2079b0);
-            background-image: linear-gradient(to bottom, #eb94d0, #2079b0);
-            /* 给按钮添加圆角 */
-            -webkit-border-radius: 18px;
-            -moz-border-radius: 18px;
-            border-radius: 18px;
-            font-family: 黑体, sans-serif;
-            font-weight: 600;
-            color: #fafafa;
-            font-size: 14px;
-            padding: 6px;
-            text-decoration: none;
-        }
+      .button_css_m {
+        background: #eb94d0;
+        /* 创建渐变 */
+        background-image: -webkit-linear-gradient(top, #eb94d0, #2079b0);
+        background-image: -moz-linear-gradient(top, #eb94d0, #2079b0);
+        background-image: -ms-linear-gradient(top, #eb94d0, #2079b0);
+        background-image: -o-linear-gradient(top, #eb94d0, #2079b0);
+        background-image: linear-gradient(to bottom, #eb94d0, #2079b0);
+        /* 给按钮添加圆角 */
+        -webkit-border-radius: 18px;
+        -moz-border-radius: 18px;
+        border-radius: 18px;
+        font-family: 黑体, sans-serif;
+        font-weight: 600;
+        color: #fafafa;
+        font-size: 14px;
+        padding: 6px;
+        text-decoration: none;
+      }
 
-        /* 悬停样式 */
-        .button_css_m:hover {
-            background: #2079b0;
-            background-image: -webkit-linear-gradient(top, #2079b0, #eb94d0);
-            background-image: -moz-linear-gradient(top, #2079b0, #eb94d0);
-            background-image: -ms-linear-gradient(top, #2079b0, #eb94d0);
-            background-image: -o-linear-gradient(top, #2079b0, #eb94d0);
-            background-image: linear-gradient(to bottom, #2079b0, #eb94d0);
-            text-decoration: none;
-        }
+      /* 悬停样式 */
+      .button_css_m:hover {
+        background: #2079b0;
+        background-image: -webkit-linear-gradient(top, #2079b0, #eb94d0);
+        background-image: -moz-linear-gradient(top, #2079b0, #eb94d0);
+        background-image: -ms-linear-gradient(top, #2079b0, #eb94d0);
+        background-image: -o-linear-gradient(top, #2079b0, #eb94d0);
+        background-image: linear-gradient(to bottom, #2079b0, #eb94d0);
+        text-decoration: none;
+      }
 
-        #textarea_m {
-            overflow: scroll;
-            width: 316px;
-            height: 50px;
-            resize: none;
-            font-size: 14px;
-            font-weight: 600;
-            font-family: 黑体, sans-serif;
-        }
+      #textarea_m {
+        overflow: scroll;
+        width: 316px;
+        height: 50px;
+        resize: none;
+        font-size: 14px;
+        font-weight: 600;
+        font-family: 黑体, sans-serif;
+      }
 
-        /* 滚动条的宽度设置为 10px */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
+      /* 滚动条的宽度设置为 10px */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
 
-        ::-webkit-scrollbar-thumb {
-            background-color: #888;
-        }
+      ::-webkit-scrollbar-thumb {
+        background-color: #888;
+      }
     </style>
-</head>
-<body>
-<div>
-    <div><h2>真心话大冒险</h2></div>
-    <div><p>
-        <span id="people_m"></span><br>
-        <label style="font-family: 黑体,sans-serif">谁是天选之人？</label><br>
-    </p></div>
-
+  </head>
+  <body>
     <div>
-        <p><label id="result_m"></label><br></p>
+      <div><h2>真心话大冒险</h2></div>
+      <div>
         <p>
-            <label>
-                <input id="input_m" placeholder="多个人用空格隔开，如：张三 李四 王二" required type="text">
-            </label>
-            <button class="button_css_m" id="try_m" onclick="random()">试试</button>
+          <span id="people_m"></span><br />
+          <label style="font-family: 黑体, sans-serif">谁是天选之人？</label
+          ><br />
+        </p>
+      </div>
+
+      <div>
+        <p><label id="result_m"></label><br /></p>
+        <p>
+          <label>
+            <input
+              id="input_m"
+              placeholder="多个人用空格隔开，如：张三 李四 王二"
+              required
+              type="text"
+            />
+          </label>
+          <button class="button_css_m" id="try_m" onclick="random()">
+            试试
+          </button>
         </p>
 
         <div hidden="hidden" id="penalize_m">
-            <p>请选择接受一项惩罚：</p>
-            <div>
-                <button class="button_css_m" onclick="penalize(zxh_text)">真心话</button>&nbsp;&nbsp;<button
-                    class="button_css_m" onclick="penalize(dmx_text)">大冒险
+          <p>请选择接受一项惩罚：</p>
+          <div>
+            <button class="button_css_m" onclick="penalize(zxh_text)">
+              真心话</button
+            >&nbsp;&nbsp;<button
+              class="button_css_m"
+              onclick="penalize(dmx_text)"
+            >
+              大冒险
             </button>
-            </div>
+          </div>
         </div>
-        <p><span hidden="hidden" id="penalize_result_m"></span><br><br></p>
-    </div>
+        <p><span hidden="hidden" id="penalize_result_m"></span><br /><br /></p>
+      </div>
 
-    <div>
+      <div>
         <p>
-            <span><button class="button_css_m" id="set_zxh"
-                          onclick="new_text('输入多条自定义真心话，以换行隔开。', '设置真心话', 'set_zxh')">设置真心话</button>&nbsp;&nbsp;<button
-                    class="button_css_m" id="set_dmx"
-                    onclick="new_text('输入多条自定义大冒险，以换行隔开。', '设置大冒险', 'set_dmx')">设置大冒险</button></span>
+          <span
+            ><button
+              class="button_css_m"
+              id="set_zxh"
+              onclick="new_text('输入多条自定义真心话，以换行隔开。', '设置真心话', 'set_zxh')"
+            >
+              设置真心话</button
+            >&nbsp;&nbsp;<button
+              class="button_css_m"
+              id="set_dmx"
+              onclick="new_text('输入多条自定义大冒险，以换行隔开。', '设置大冒险', 'set_dmx')"
+            >
+              设置大冒险
+            </button></span
+          >
         </p>
         <p>
-            <label hidden="hidden" id="label_text_m">
-                <textarea id="textarea_m"></textarea>
-            </label>
+          <label hidden="hidden" id="label_text_m">
+            <textarea id="textarea_m"></textarea>
+          </label>
         </p>
+      </div>
     </div>
-
-</div>
-<script>
-    let zxh_text = ["1、近一个星期内最让你开心的事。",
+    <script>
+      let zxh_text = [
+        "1、近一个星期内最让你开心的事。",
         "2、最害怕的三件事物。",
         "3、和异性发生过最暧昧的事情。",
         "4、给你一个机会穿越到过去或未来，你选哪一个？为什么？",
@@ -128,8 +157,10 @@
         "7、童年最有趣的一次经历。",
         "8、面对和他人产生的矛盾，你会怎么办？",
         "9、爱情事业和家庭，你怎么排序？",
-        "10、最喜欢的三种食物或饮品。"];
-    let dmx_text = ["1、背一位异性绕场地3圈。",
+        "10、最喜欢的三种食物或饮品。",
+      ];
+      let dmx_text = [
+        "1、背一位异性绕场地3圈。",
         "2、唱《青藏高原》最后一句。",
         "3、做一个大家都满意的鬼脸。",
         "4、公主抱一位异性深蹲5次。",
@@ -138,14 +169,15 @@
         "7、邀请一位异性为你唱情歌，或邀请一位异性与你情歌对唱。",
         "8、做自己最性感、最妩媚的表情或动作。",
         "9、做20个俯卧撑，女生的话就指定一位男生做。",
-        "10、深情的吻墙10秒。"];
+        "10、深情的吻墙10秒。",
+      ];
 
-    function new_text(place_holder, btn_text, id) {
+      function new_text(place_holder, btn_text, id) {
         let flag;
         if (btn_text === "设置真心话") {
-            flag = "520";
+          flag = "520";
         } else if (btn_text === "设置大冒险") {
-            flag = "1314";
+          flag = "1314";
         }
         let zxh_btn = document.getElementById("set_zxh");
         let dmx_btn = document.getElementById("set_dmx");
@@ -155,74 +187,91 @@
         let bt = btn.innerText;
         console.log(bt);
         if (bt === btn_text) {
-            btn.innerText = "确定";
-            new_label.hidden = false;
-            text_area.placeholder = place_holder;
-            if (id === 'set_zxh') {
-                dmx_btn.innerText = "设置大冒险";
-            } else if (id === 'set_dmx') {
-                zxh_btn.innerText = "设置真心话";
-            }
+          btn.innerText = "确定";
+          new_label.hidden = false;
+          text_area.placeholder = place_holder;
+          if (id === "set_zxh") {
+            dmx_btn.innerText = "设置大冒险";
+          } else if (id === "set_dmx") {
+            zxh_btn.innerText = "设置真心话";
+          }
         } else {
-            if (text_area.value.length !== 0) {
-                console.log(text_area.value);
-                if (flag === "520") {
-                    zxh_text = arr_not_empty(text_area.value.split("\n"));
-                    console.log(zxh_text);
-                    alert("自定义真心话成功！可以点击真心话随机抽取了一条了。");
-                } else if (flag === "1314") {
-                    dmx_text = arr_not_empty(text_area.value.split("\n"));
-                    console.log(dmx_text);
-                    alert("自定义大冒险成功！可以点击大冒险随机抽取了一条了。");
-                }
-
-                new_label.hidden = true;
-                btn.innerText = btn_text;
+          if (text_area.value.length !== 0) {
+            console.log(text_area.value);
+            if (flag === "520") {
+              zxh_text = arr_not_empty(text_area.value.split("\n"));
+              console.log(zxh_text);
+              alert("自定义真心话成功！可以点击真心话随机抽取了一条了。");
+            } else if (flag === "1314") {
+              dmx_text = arr_not_empty(text_area.value.split("\n"));
+              console.log(dmx_text);
+              alert("自定义大冒险成功！可以点击大冒险随机抽取了一条了。");
             }
+
+            new_label.hidden = true;
+            btn.innerText = btn_text;
+          }
         }
-    }
+      }
 
-    function randomNum(min, max) {
+      function randomNum(min, max) {
         return Math.floor(Math.random() * (max - min) + min);
-    }
+      }
 
-    function randomColor() {
-        let color_char = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F']
+      function randomColor() {
+        let color_char = [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+        ];
         let color_arr = [];
         for (let i = 0; i < 6; i++) {
-            color_arr[i] = randomNum(0, 16);
+          color_arr[i] = randomNum(0, 16);
         }
         let color = "#";
         for (const k in color_arr) {
-            color = color + color_char[color_arr[k]];
+          color = color + color_char[color_arr[k]];
         }
         console.log(color);
         return color;
-    }
+      }
 
-    function arr_not_empty(arr) {
+      function arr_not_empty(arr) {
         let a = [];
         for (const k in arr) {
-            if (arr[k].length !== 0) {
-                a.push(arr[k]);
-            }
+          if (arr[k].length !== 0) {
+            a.push(arr[k]);
+          }
         }
         return a;
-    }
+      }
 
-    function random() {
+      function random() {
         let input = document.getElementById("input_m");
         let try_m = document.getElementById("try_m");
         let cf_result = document.getElementById("penalize_result_m");
-        let arr = input.value.split(' ');
+        let arr = input.value.split(" ");
         let arr1 = arr_not_empty(arr);
         if (arr1.length === 0) {
-            return;
+          return;
         }
         let r1 = randomNum(0, arr1.length);
 
         let select = document.getElementById("people_m");
-        select.innerText = arr1.toString().replaceAll(',', ' ');
+        select.innerText = arr1.toString().replaceAll(",", " ");
         select.style.fontSize = "18px";
         select.style.color = "green";
         select.style.fontFamily = "黑体";
@@ -233,20 +282,20 @@
         result.style.fontSize = "52px";
         try_m.innerText = "再试试";
         if (!cf_result.hidden) {
-            cf_result.hidden = true;
+          cf_result.hidden = true;
         }
 
         document.getElementById("penalize_m").hidden = false;
-    }
+      }
 
-    function penalize(arr) {
+      function penalize(arr) {
         let cf = randomNum(0, arr.length);
         let cf_result = document.getElementById("penalize_result_m");
         cf_result.hidden = false;
         cf_result.innerText = arr[cf];
         cf_result.style.color = randomColor();
         cf_result.style.fontSize = "20px";
-    }
-</script>
-</body>
+      }
+    </script>
+  </body>
 </html>

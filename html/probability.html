@@ -1,111 +1,121 @@
 <!DOCTYPE html>
 <html lang="zh">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/responsive.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/responsive.css" />
     <title>中大奖模拟</title>
     <style>
-        .label_css_m {
-            display: inline-block;
-            color: tomato;
-        }
+      .label_css_m {
+        display: inline-block;
+        color: tomato;
+      }
 
-        .label_css_m:before {
-            content: '❌';
-            border: solid;
-            border-radius: 3px;
+      .label_css_m:before {
+        content: "❌";
+        border: solid;
+        border-radius: 3px;
 
-            padding: 0.15em;
-        }
+        padding: 0.15em;
+      }
 
-        #on_off_m:checked + .label_css_m {
-            color: turquoise;
-        }
+      #on_off_m:checked + .label_css_m {
+        color: turquoise;
+      }
 
-        #on_off_m:checked + .label_css_m:before {
-            content: '✔';
-        }
+      #on_off_m:checked + .label_css_m:before {
+        content: "✔";
+      }
 
-        [type = "checkbox"] {
-            position: fixed;
-            left: -9999px;
-        }
+      [type="checkbox"] {
+        position: fixed;
+        left: -9999px;
+      }
 
-        #chance {
-            outline-style: none;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            padding: 13px 14px;
-            width: 220px;
-            font-size: 14px;
-            font-weight: 600;
-            font-family: 黑体, sans-serif;
-        }
+      #chance {
+        outline-style: none;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        padding: 13px 14px;
+        width: 220px;
+        font-size: 14px;
+        font-weight: 600;
+        font-family: 黑体, sans-serif;
+      }
 
-        #chance:focus {
-            border-color: #66afe9;
-            outline: 0;
-            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
-            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6)
-        }
+      #chance:focus {
+        border-color: #66afe9;
+        outline: 0;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+          0 0 8px rgba(102, 175, 233, 0.6);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+          0 0 8px rgba(102, 175, 233, 0.6);
+      }
 
-        #btn_m {
-            width: 80px;
-            height: 30px;
-        }
+      #btn_m {
+        width: 80px;
+        height: 30px;
+      }
     </style>
-</head>
-<body>
-<div>
+  </head>
+  <body>
     <div>
-        <h2>
-            中大奖模拟
-        </h2>
-        <br>
-        <p>
-            10.5代表有10.5%的概率能中奖，可多次尝试
-        </p>
-    </div>
-    <div>
+      <div>
+        <h2>中大奖模拟</h2>
+        <br />
+        <p>10.5代表有10.5%的概率能中奖，可多次尝试</p>
+      </div>
+      <div>
         <p><span id="l"></span></p>
         <div>
-            <p>
-                中奖概率(%)：
-                <label for="chance"></label><input id="chance"
-                                                   placeholder="概率值(整数、小数)" type="text"/>
-            </p>
-            <br>
-            <p>
-                <span><input id="on_off_m" type="checkbox" checked/>中奖提示<label class="label_css_m" for="on_off_m"></label></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <span><button id="btn_m" onclick="count()" type="button">尝试</button></span>
-            </p>
-            <br>
+          <p>
+            中奖概率(%)：
+            <label for="chance"></label
+            ><input id="chance" placeholder="概率值(整数、小数)" type="text" />
+          </p>
+          <br />
+          <p>
+            <span
+              ><input id="on_off_m" type="checkbox" checked />中奖提示<label
+                class="label_css_m"
+                for="on_off_m"
+              ></label></span
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span
+              ><button id="btn_m" onclick="count()" type="button">
+                尝试
+              </button></span
+            >
+          </p>
+          <br />
         </div>
         <p>
-            <span hidden="hidden" id="l1">你的中奖率：<span id="val"></span>%</span>
+          <span hidden="hidden" id="l1"
+            >你的中奖率：<span id="val"></span>%</span
+          >
         </p>
         <p>
-            <span id="num"></span>
+          <span id="num"></span>
         </p>
+      </div>
     </div>
-</div>
-<script>
-    let total = 0, success = 0;
+    <script>
+      let total = 0,
+        success = 0;
 
-    function count() {
+      function count() {
         let i = document.getElementById("chance");
         if (i.value.length === 0) {
-            return;
+          return;
         }
         let num1 = parseInt(i.value);
         if (isNaN(num1)) {
-            alert("请输入数字！")
-            return;
+          alert("请输入数字！");
+          return;
         }
         if (num1 < 0 || num1 > 100) {
-            alert("请输入0到100间的概率数值！")
-            return;
+          alert("请输入0到100间的概率数值！");
+          return;
         }
 
         let l = document.getElementById("l");
@@ -117,15 +127,15 @@
         let random_num = Math.random() * 100;
         console.log(random_num);
         if (random_num < i.value) {
-            //命中
-            l.innerText = "中奖了";
-            success++;
-            if (on_off.checked) {
-                alert("抽到第" + total + "次，恭喜你中奖了！");
-            }
+          //命中
+          l.innerText = "中奖了";
+          success++;
+          if (on_off.checked) {
+            alert("抽到第" + total + "次，恭喜你中奖了！");
+          }
         } else {
-            //未命中
-            l.innerText = "没中";
+          //未命中
+          l.innerText = "没中";
         }
         l.style.color = randomColor();
         l.style.fontSize = "50px";
@@ -135,25 +145,49 @@
         v.style.color = "red";
         v.style.fontSize = "20px";
 
-        n.innerText = "抽了" + total + "次，中了" + success + "次，实际中奖率：" + (success / total * 100).toFixed(3) + "%";
-    }
+        n.innerText =
+          "抽了" +
+          total +
+          "次，中了" +
+          success +
+          "次，实际中奖率：" +
+          ((success / total) * 100).toFixed(3) +
+          "%";
+      }
 
-    function randomColor() {
-        let color_char = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F']
+      function randomColor() {
+        let color_char = [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+        ];
         let color_arr = [];
         for (let i = 0; i < 6; i++) {
-            color_arr[i] = randomNum(0, 16);
+          color_arr[i] = randomNum(0, 16);
         }
         let color = "#";
         for (const k in color_arr) {
-            color = color + color_char[color_arr[k]];
+          color = color + color_char[color_arr[k]];
         }
         return color;
-    }
+      }
 
-    function randomNum(min, max) {
+      function randomNum(min, max) {
         return Math.floor(Math.random() * (max - min) + min);
-    }
-</script>
-</body>
+      }
+    </script>
+  </body>
 </html>

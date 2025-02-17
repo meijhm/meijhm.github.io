@@ -1,154 +1,191 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>可转债涨幅前十榜单</title>
-    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.6.2/css/bootstrap.min.css">
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.staticfile.org/twitter-bootstrap/4.6.2/css/bootstrap.min.css"
+    />
+  </head>
 
-<body>
+  <body>
     <div>
-        <table class="table table-hover table-bordered">
-            <thead>
-                <tr class="table-primary">
-                    <th>代码</th>
-                    <th>名字</th>
-                    <th>价格</th>
-                    <th>涨幅</th>
-                    <th>流通量</th>
-                    <th>上市天数</th>
-                </tr>
-            </thead>
-            <tbody id="data_m">
-            </tbody>
-        </table>
+      <table class="table table-hover table-bordered">
+        <thead>
+          <tr class="table-primary">
+            <th>代码</th>
+            <th>名字</th>
+            <th>价格</th>
+            <th>涨幅</th>
+            <th>流通量</th>
+            <th>上市天数</th>
+          </tr>
+        </thead>
+        <tbody id="data_m"></tbody>
+      </table>
     </div>
-</body>
-<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
-<script>
+  </body>
+  <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+  <script>
     (function () {
-        $("#data_m").html(info());
+      $("#data_m").html(info());
     })();
     function info() {
-        var str = "";
-        $.ajax({
-            url: "https://87.push2.eastmoney.com/api/qt/clist/get?cb=jQuery112404203189329532593_1693034898801&pn=1&pz=10&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&wbp2u=|0|0|0|web&fid=f3&fs=b:MK0354&fields=f2,f3,f12,f14",
-            type: "GET",
-            async: false,
-            success: function (response) {
-                // console.log(response);
-                var jsonStr = response.substring(response.indexOf('[') + 1, response.lastIndexOf(']'));
-                // console.log(jsonStr);
-                var jsonArr = jsonStr.split("},");
-                // console.log(jsonArr);
-                for (let i = 0; i < 10; i++) {
-                    var jsonObj;
-                    if (i < 9) {
-                        jsonObj = jsonArr[i] + "}";
-                    } else {
-                        jsonObj = jsonArr[i];
-                    }
-                    var obj = jQuery.parseJSON(jsonObj);
-                    str += "<tr><td>" + obj.f12 + "</td><td>" + obj.f14 + "</td><td>" + obj.f2 + "</td><td>" + obj.f3;
-                    var url1 = "https://datacenter-web.eastmoney.com/api/data/v1/get?callback=jQuery1123019513872859514692_1693182726993&columns=ALL&token=894050c76af8597a853f5b408b759f5d&sortColumns=date&sortTypes=1&source=WEB&reportName=RPTA_WEB_KZZ_LS&filter=(zcode%3D%22" + obj.f12 + "%22)&pageNumber=1&pageSize=8000";
-                    $.ajax({
-                        url: url1,
-                        type: "GET",
-                        async: false,
-                        success: function (res) {
-                            var vIndex = res.lastIndexOf("USWAPTVOL");
-                            var rIndex = res.lastIndexOf(',"USWAPTRATE');
-                            var one = res.substring(vIndex - 1, rIndex);
-                            var two = res.substring(res.lastIndexOf("USWAPTVOL", vIndex - 1) - 1, res.lastIndexOf(',"USWAPTRATE', rIndex - 1));
-                            var jsonStr1 = "{" + one + "}";
-                            var jsonStr2 = "{" + two + "}";
-                            var jsonObj1 = jQuery.parseJSON(jsonStr1);
-                            var jsonObj2 = jQuery.parseJSON(jsonStr2);
-                            var vol = null;
-                            var vol1 = jsonObj1.USWAPTVOL; // 剩余规模1
-                            var vol2 = jsonObj2.USWAPTVOL; // 剩余规模2
-                            if (vol1 != null) {
-                                vol = vol1;
-                            } else if (vol2 != null) {
-                                vol = vol2;
-                            }
-                            // console.log("剩余规模：" + vol);
-                            var listingDate, temp, scale;
-                            if ((obj.f12 + "").startsWith("12")) {
-                                temp = obj.f12 + ".SZ";
-                            } else {
-                                temp = obj.f12 + ".SH";
-                            }
-                            var url2 = "https://datacenter-web.eastmoney.com/api/data/v1/get?callback=jQuery35106089301639063178_1693194122565&reportName=RPT_BOND_BS_INFO&columns=ISSUE_SCALE%2CLISTING_DATE&filter=(SECUCODE%3D%22" + temp + "%22)&pageNumber=1&pageSize=200&sortTypes=&source=QuoteWeb&client=WEB";
-                            $.ajax({
-                                url: url2,
-                                type: "GET",
-                                async: false,
-                                success: function (res1) {
-                                    var jsonStr3 = res1.substring(res1.lastIndexOf("[{") + 1, res1.lastIndexOf("],"));
-                                    var jsonObj3 = jQuery.parseJSON(jsonStr3);
-                                    scale = jsonObj3.ISSUE_SCALE; // 发现规模
-                                    listingDate = jsonObj3.LISTING_DATE; // 发行日期
-                                }
-                            });
-                            var date = new Date().getTime() - new Date(listingDate).getTime(); //时间差的毫秒数
-                            var days = Math.floor(date / (24 * 3600 * 1000)) + 1; // 计算出相差天数
-                            var new_kzz = '', most_holder_rank = 0;
-                            if (days < 180) {
-                                new_kzz = "(新)";
-                                var url_holderRank = "https://datacenter.eastmoney.com/securities/api/data/get?client=APP&source=SECURITIES&type=RPT_BOND10_BS_HOLDER&sty=HOLD_RATIO&filter=(SECUCODE%3D%22" + temp + "%22)&pageNumber=1&pageSize=50&st=END_DATE,HOLDER_RANK&sr=-1,1";
-                                $.ajax({
-                                    url: url_holderRank,
-                                    type: "GET",
-                                    async: false,
-                                    success: function (res2) {
-                                        var str4 = res2.substring(res2.lastIndexOf("[{") + 1, res2.lastIndexOf("],"));
-                                        var strs = str4.split('},{"HOLD_RATIO":');
-                                        for (let a = 0; a < 9; a++) {
-                                            if (a == 0) {
-                                                strs[a] = strs[a].split('{"HOLD_RATIO":')[1];
-                                            }
-                                            var float_num = parseFloat(strs[a]);
-                                            if (float_num >= 5) {
-                                                most_holder_rank += float_num;
-                                            }
-                                        }
-                                    }
-                                });
-                                // console.log("发行市值：" + scale);
-                                var init_circulate = scale * (100 - most_holder_rank) / 100;
-                                // console.log("初始流通：" + init_circulate);
-                                // console.log("次新债剩余规模：" + vol);
-                                if (vol == null) {
-                                    vol = init_circulate;
-                                } else {
-                                    vol = vol / 1000000;
-                                    // console.log("转股后流通量：" + vol);
-                                    var reduce = scale - vol; // 转股量
-                                    // console.log("转股量：" + reduce);
-                                    vol = init_circulate - reduce;
-                                    // console.log("初始流通减转股量：" + vol);
-                                }
-                            } else {
-                                // console.log("老债剩余规模：" + vol);
-                                if (vol == null) {
-                                    vol = scale;
-                                    // console.log("老债发行量：" + vol);
-                                } else {
-                                    vol = vol / 1000000;
-                                    // console.log("老债流通量：" + vol);
-                                }
-                            }
-                            str += "%</td><td>" + vol.toFixed(3) + "亿</td><td>" + new_kzz + days + "天</td></tr>";
-                        }
-                    });
-                }
+      var str = "";
+      $.ajax({
+        url: "https://87.push2.eastmoney.com/api/qt/clist/get?cb=jQuery112404203189329532593_1693034898801&pn=1&pz=10&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&wbp2u=|0|0|0|web&fid=f3&fs=b:MK0354&fields=f2,f3,f12,f14",
+        type: "GET",
+        async: false,
+        success: function (response) {
+          // console.log(response);
+          var jsonStr = response.substring(
+            response.indexOf("[") + 1,
+            response.lastIndexOf("]")
+          );
+          // console.log(jsonStr);
+          var jsonArr = jsonStr.split("},");
+          // console.log(jsonArr);
+          for (let i = 0; i < 10; i++) {
+            var jsonObj;
+            if (i < 9) {
+              jsonObj = jsonArr[i] + "}";
+            } else {
+              jsonObj = jsonArr[i];
             }
-        });
-        return str;
+            var obj = jQuery.parseJSON(jsonObj);
+            str +=
+              "<tr><td>" +
+              obj.f12 +
+              "</td><td>" +
+              obj.f14 +
+              "</td><td>" +
+              obj.f2 +
+              "</td><td>" +
+              obj.f3;
+            var url1 =
+              "https://datacenter-web.eastmoney.com/api/data/v1/get?callback=jQuery1123019513872859514692_1693182726993&columns=ALL&token=894050c76af8597a853f5b408b759f5d&sortColumns=date&sortTypes=1&source=WEB&reportName=RPTA_WEB_KZZ_LS&filter=(zcode%3D%22" +
+              obj.f12 +
+              "%22)&pageNumber=1&pageSize=8000";
+            $.ajax({
+              url: url1,
+              type: "GET",
+              async: false,
+              success: function (res) {
+                var vIndex = res.lastIndexOf("USWAPTVOL");
+                var rIndex = res.lastIndexOf(',"USWAPTRATE');
+                var one = res.substring(vIndex - 1, rIndex);
+                var two = res.substring(
+                  res.lastIndexOf("USWAPTVOL", vIndex - 1) - 1,
+                  res.lastIndexOf(',"USWAPTRATE', rIndex - 1)
+                );
+                var jsonStr1 = "{" + one + "}";
+                var jsonStr2 = "{" + two + "}";
+                var jsonObj1 = jQuery.parseJSON(jsonStr1);
+                var jsonObj2 = jQuery.parseJSON(jsonStr2);
+                var vol = null;
+                var vol1 = jsonObj1.USWAPTVOL; // 剩余规模1
+                var vol2 = jsonObj2.USWAPTVOL; // 剩余规模2
+                if (vol1 != null) {
+                  vol = vol1;
+                } else if (vol2 != null) {
+                  vol = vol2;
+                }
+                // console.log("剩余规模：" + vol);
+                var listingDate, temp, scale;
+                if ((obj.f12 + "").startsWith("12")) {
+                  temp = obj.f12 + ".SZ";
+                } else {
+                  temp = obj.f12 + ".SH";
+                }
+                var url2 =
+                  "https://datacenter-web.eastmoney.com/api/data/v1/get?callback=jQuery35106089301639063178_1693194122565&reportName=RPT_BOND_BS_INFO&columns=ISSUE_SCALE%2CLISTING_DATE&filter=(SECUCODE%3D%22" +
+                  temp +
+                  "%22)&pageNumber=1&pageSize=200&sortTypes=&source=QuoteWeb&client=WEB";
+                $.ajax({
+                  url: url2,
+                  type: "GET",
+                  async: false,
+                  success: function (res1) {
+                    var jsonStr3 = res1.substring(
+                      res1.lastIndexOf("[{") + 1,
+                      res1.lastIndexOf("],")
+                    );
+                    var jsonObj3 = jQuery.parseJSON(jsonStr3);
+                    scale = jsonObj3.ISSUE_SCALE; // 发现规模
+                    listingDate = jsonObj3.LISTING_DATE; // 发行日期
+                  },
+                });
+                var date =
+                  new Date().getTime() - new Date(listingDate).getTime(); //时间差的毫秒数
+                var days = Math.floor(date / (24 * 3600 * 1000)) + 1; // 计算出相差天数
+                var new_kzz = "",
+                  most_holder_rank = 0;
+                if (days < 180) {
+                  new_kzz = "(新)";
+                  var url_holderRank =
+                    "https://datacenter.eastmoney.com/securities/api/data/get?client=APP&source=SECURITIES&type=RPT_BOND10_BS_HOLDER&sty=HOLD_RATIO&filter=(SECUCODE%3D%22" +
+                    temp +
+                    "%22)&pageNumber=1&pageSize=50&st=END_DATE,HOLDER_RANK&sr=-1,1";
+                  $.ajax({
+                    url: url_holderRank,
+                    type: "GET",
+                    async: false,
+                    success: function (res2) {
+                      var str4 = res2.substring(
+                        res2.lastIndexOf("[{") + 1,
+                        res2.lastIndexOf("],")
+                      );
+                      var strs = str4.split('},{"HOLD_RATIO":');
+                      for (let a = 0; a < 9; a++) {
+                        if (a == 0) {
+                          strs[a] = strs[a].split('{"HOLD_RATIO":')[1];
+                        }
+                        var float_num = parseFloat(strs[a]);
+                        if (float_num >= 5) {
+                          most_holder_rank += float_num;
+                        }
+                      }
+                    },
+                  });
+                  // console.log("发行市值：" + scale);
+                  var init_circulate = (scale * (100 - most_holder_rank)) / 100;
+                  // console.log("初始流通：" + init_circulate);
+                  // console.log("次新债剩余规模：" + vol);
+                  if (vol == null) {
+                    vol = init_circulate;
+                  } else {
+                    vol = vol / 1000000;
+                    // console.log("转股后流通量：" + vol);
+                    var reduce = scale - vol; // 转股量
+                    // console.log("转股量：" + reduce);
+                    vol = init_circulate - reduce;
+                    // console.log("初始流通减转股量：" + vol);
+                  }
+                } else {
+                  // console.log("老债剩余规模：" + vol);
+                  if (vol == null) {
+                    vol = scale;
+                    // console.log("老债发行量：" + vol);
+                  } else {
+                    vol = vol / 1000000;
+                    // console.log("老债流通量：" + vol);
+                  }
+                }
+                str +=
+                  "%</td><td>" +
+                  vol.toFixed(3) +
+                  "亿</td><td>" +
+                  new_kzz +
+                  days +
+                  "天</td></tr>";
+              },
+            });
+          }
+        },
+      });
+      return str;
     }
-</script>
-
+  </script>
 </html>

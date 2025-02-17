@@ -1,121 +1,143 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,user-scalable=no"
+    />
     <title>Srt字幕文件提取为txt文件</title>
     <style>
-        .font1 {
-            text-align: center;
-            font-family: "思源黑体 CN Regular";
-            tab-size: 1.3em;
-        }
+      .font1 {
+        text-align: center;
+        font-family: "思源黑体 CN Regular";
+        tab-size: 1.3em;
+      }
 
-        input {
-            margin: 15px 0;
-        }
+      input {
+        margin: 15px 0;
+      }
 
-        textarea {
-            width: 85%;
-            height: 300px;
-            resize: none;
-        }
+      textarea {
+        width: 85%;
+        height: 300px;
+        resize: none;
+      }
 
-        #down {
-            display: none;
-        }
+      #down {
+        display: none;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div align="center">
-        <div class="font1">srt字幕文件(UTF-8编码)提取为txt文件</div>
-        <input type="file" name="upload" id="upload" /><br>
-        <div style="display: flex;">
-            <div style="width: 50%;">
-                <textarea readonly name="content" id="content" placeholder="上传的字幕文本"></textarea>
-            </div>
-            <div style="width: 50%;">
-                <textarea readonly name="content1" id="content1" placeholder="提取后的文本"></textarea>
-            </div>
+      <div class="font1">srt字幕文件(UTF-8编码)提取为txt文件</div>
+      <input type="file" name="upload" id="upload" /><br />
+      <div style="display: flex">
+        <div style="width: 50%">
+          <textarea
+            readonly
+            name="content"
+            id="content"
+            placeholder="上传的字幕文本"
+          ></textarea>
         </div>
-        <p id="fileInfo"></p>
-        <button type="button" id="down">点击下载提取后的txt文件</button>
+        <div style="width: 50%">
+          <textarea
+            readonly
+            name="content1"
+            id="content1"
+            placeholder="提取后的文本"
+          ></textarea>
+        </div>
+      </div>
+      <p id="fileInfo"></p>
+      <button type="button" id="down">点击下载提取后的txt文件</button>
     </div>
-</body>
-
+  </body>
 </html>
 <script>
-    var downloadFileName;
-    window.onload = function () {
-        var
-            upload = document.getElementById('upload'),
-            content = document.getElementById('content'),
-            content1 = document.getElementById('content1'),
-            fileInfo = document.getElementById('fileInfo');
-        upload.onchange = function () {
-            var file = upload.files[0];
-            var fileName = file.name;
-            downloadFileName = fileName.substring(0, fileName.lastIndexOf('.')) + ".txt";
-            fileInfo.innerHTML = '上传的srt文件名(左侧): ' + fileName + '<br>' +
-                '上传的srt文件大小: ' + (file.size / 1024).toFixed(1) + 'KB' + '<br>' +
-                '下载后txt文件名(右侧): ' + downloadFileName;
-            var reader = new FileReader();
-            reader.onload = function () {
-                var cTxt = this.result;
-                content.value = cTxt;
-                var txt = "";
-                var lines;
-                if (cTxt.match(/\r/)) {
-                    lines = cTxt.split('\n\r\n');
-                } else {
-                    lines = cTxt.split('\n\n');
-                }
-                if (cTxt.indexOf("</font>") != -1) {
-
-                    for (var i = 0; i < lines.length; i++) {
-                        var lineTxt = lines[i];
-                        var t = lineTxt.substring(lineTxt.indexOf('">') + 1, lineTxt.lastIndexOf('</'));
-                        if (!isStringEmpty(t)) {
-                            t = t.split('>')[1];
-                            txt += t + "\n";
-                        }
-                    }
-                } else {
-                    for (var j = 0; j < lines.length; j++) {
-                        var lmin = lines[j].split("\n");
-                        for (k = 2; k < lmin.length; k++) {
-                            txt += lmin[k] + "\n";
-                        }
-                    }
-                }
-                content1.value = txt;
-            };
-            reader.readAsText(file, 'utf-8');
-            document.getElementById('down').style.display = "block";
+  var downloadFileName;
+  window.onload = function () {
+    var upload = document.getElementById("upload"),
+      content = document.getElementById("content"),
+      content1 = document.getElementById("content1"),
+      fileInfo = document.getElementById("fileInfo");
+    upload.onchange = function () {
+      var file = upload.files[0];
+      var fileName = file.name;
+      downloadFileName =
+        fileName.substring(0, fileName.lastIndexOf(".")) + ".txt";
+      fileInfo.innerHTML =
+        "上传的srt文件名(左侧): " +
+        fileName +
+        "<br>" +
+        "上传的srt文件大小: " +
+        (file.size / 1024).toFixed(1) +
+        "KB" +
+        "<br>" +
+        "下载后txt文件名(右侧): " +
+        downloadFileName;
+      var reader = new FileReader();
+      reader.onload = function () {
+        var cTxt = this.result;
+        content.value = cTxt;
+        var txt = "";
+        var lines;
+        if (cTxt.match(/\r/)) {
+          lines = cTxt.split("\n\r\n");
+        } else {
+          lines = cTxt.split("\n\n");
         }
-    }
-    function isStringEmpty(str) {
-        return typeof str === 'undefined' || str === null || str.trim().length === 0;
-    }
-    function download(filename, content) {
-        var blob = new Blob([content], { type: 'text/plain' });
-        var url = window.URL.createObjectURL(blob);
-        var a = document.createElement('a');
-
-        a.style = "display: none";
-        a.href = url;
-        a.download = filename;
-        document.body.appendChild(a);
-        a.click();
-
-        setTimeout(function () {
-            document.body.removeChild(a);
-            window.URL.revokeObjectURL(url);
-        }, 5);
-    }
-    document.getElementById('down').onclick = function () {
-        download(downloadFileName, content1.value);
+        if (cTxt.indexOf("</font>") != -1) {
+          for (var i = 0; i < lines.length; i++) {
+            var lineTxt = lines[i];
+            var t = lineTxt.substring(
+              lineTxt.indexOf('">') + 1,
+              lineTxt.lastIndexOf("</")
+            );
+            if (!isStringEmpty(t)) {
+              t = t.split(">")[1];
+              txt += t + "\n";
+            }
+          }
+        } else {
+          for (var j = 0; j < lines.length; j++) {
+            var lmin = lines[j].split("\n");
+            for (k = 2; k < lmin.length; k++) {
+              txt += lmin[k] + "\n";
+            }
+          }
+        }
+        content1.value = txt;
+      };
+      reader.readAsText(file, "utf-8");
+      document.getElementById("down").style.display = "block";
     };
+  };
+  function isStringEmpty(str) {
+    return (
+      typeof str === "undefined" || str === null || str.trim().length === 0
+    );
+  }
+  function download(filename, content) {
+    var blob = new Blob([content], { type: "text/plain" });
+    var url = window.URL.createObjectURL(blob);
+    var a = document.createElement("a");
+
+    a.style = "display: none";
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+
+    setTimeout(function () {
+      document.body.removeChild(a);
+      window.URL.revokeObjectURL(url);
+    }, 5);
+  }
+  document.getElementById("down").onclick = function () {
+    download(downloadFileName, content1.value);
+  };
 </script>
