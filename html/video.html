@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>api视频流</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000;
+            overflow: hidden;
+            touch-action: pan-y;
+        }
+
+        /* 视频容器 */
+        .video-container {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            transition: transform 0.5s ease;
+        }
+
+        /* 视频播放器 */
+        .video-player {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background: #000;
+        }
+
+        /* 加载状态 */
+        .loading {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 14px;
+            display: none;
+        }
+
+        /* 进度提示 */
+        .swipe-tip {
+            position: fixed;
+            bottom: 20%;
+            width: 100%;
+            text-align: center;
+            color: rgba(255,255,255,0.8);
+            font-size: 12px;
+            animation: float 2s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container" id="videoContainer"></div>
+    <div class="loading" id="loading">加载中...</div>
+    <div class="swipe-tip">上划浏览下个视频</div>
+    <div><button onclick="unmuteVideo()">🔇 开启声音</button></div>
+
+    <script>
+        const API_URL = 'https://api.kuleu.com/api/MP4_xiaojiejie?type=json';
+        let currentVideoIndex = 0;
+        let isSwiping = false;
+        let startY = 0;
+
+        // 创建视频元素
+        function createVideoElement(url) {
+            const video = document.createElement('video');
+            video.className = 'video-player';
+            video.playsInline = true;
+            video.autoplay = true;
+            video.muted = true; // 初始静音自动播放
+            video.controls = true;
+            video.loop = false;
+            
+            const source = document.createElement('source');
+            source.src = url;
+            source.type = 'video/mp4';
+            
+            video.appendChild(source);
+            return video;
+        }
+
+        // 加载新视频
+        async function loadNewVideo() {
+            try {
+                showLoading();
+                const response = await fetch(API_URL);
+                const { code, mp4_video } = await response.json();
+                
+                if (code === 200) {
+                    const video = createVideoElement(mp4_video);
+                    video.addEventListener('ended', () => autoNextVideo(video));
+                    
+                    videoContainer.prepend(video);
+                    currentVideoIndex++;
+                    
+                    // 保留最近3个视频优化性能
+                    if (videoContainer.children.length > 3) {
+                        videoContainer.lastChild.remove();
+                    }
+                }
+            } catch (error) {
+                console.error('加载失败:', error);
+            } finally {
+                hideLoading();
+            }
+        }
+
+        // 自动播放下个视频
+        function autoNextVideo(currentVideo) {
+            currentVideo.removeEventListener('ended', autoNextVideo);
+            loadNewVideo();
+        }
+
+        // 触摸事件处理
+        videoContainer.addEventListener('touchstart', e => {
+            startY = e.touches[0].clientY;
+        });
+
+        videoContainer.addEventListener('touchmove', e => {
+            if (!isSwiping) {
+                const deltaY = startY - e.touches[0].clientY;
+                if (deltaY > 50) { // 滑动阈值检测
+                    isSwiping = true;
+                    loadNewVideo();
+                }
+            }
+        });
+
+        videoContainer.addEventListener('touchend', () => {
+            isSwiping = false;
+        });
+
+        // 工具函数
+        function showLoading() {
+            loading.style.display = 'block';
+        }
+
+        function hideLoading() {
+            loading.style.display = 'none';
+        }
+
+        // 初始化加载
+        loadNewVideo();
+    </script>
+</body>
+</html>
