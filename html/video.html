@@ -66,7 +66,6 @@
     <div class="video-container" id="videoContainer"></div>
     <div class="loading" id="loading">加载中...</div>
     <div class="swipe-tip">上划浏览下个视频</div>
-    <div><button onclick="unmuteVideo()">🔇 开启声音</button></div>
 
     <script>
         const API_URL = 'https://api.kuleu.com/api/MP4_xiaojiejie?type=json';
@@ -79,10 +78,10 @@
             const video = document.createElement('video');
             video.className = 'video-player';
             video.playsInline = true;
-            video.autoplay = true;
-            video.muted = true; // 初始静音自动播放
+            // video.autoplay = true;
+            // video.muted = true; // 初始静音自动播放
             video.controls = true;
-            video.loop = false;
+            video.loop = true;
             
             const source = document.createElement('source');
             source.src = url;
