@@ -513,11 +513,11 @@
   --link-outline: none !important;
 }</style>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>互动小说 · 文字修仙 v1.6</title>
+<title>互动小说 · 文字修仙 v1.6.1</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;900&amp;display=swap">
-<style nonce="7+vCYcypFzfc49fwrKaB1g==">
+<style nonce="7bdpumEwlpOIc+SIy9kfDw==">
 :root{--bg:#dde5e0;--cd:#eaf0ec;--ink:#18262e;--dm:#52666b;--jd:#2a6b64;--gd:#8b6b24;--ln:#b7c6c0;--hp:#a84a3f;--mp:#3f6f9a;box-sizing:border-box;color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d151c;--cd:#15212a;--ink:#d9e4df;--dm:#8fa4a6;--jd:#6cc3b1;--gd:#cfae63;--ln:#2a3a44;--hp:#d0624f;--mp:#6aa0d4;color-scheme:dark}}
@@ -651,6 +651,15 @@ dialog .ch button{padding:5px 10px}
 @media(prefers-reduced-motion:reduce){.tr.can{animation:none;box-shadow:0 0 6px rgba(214,69,61,.8)}}
 .mc{display:flex;align-items:center;gap:6px;flex:none;padding:5px 2px;font-size:12.5px;cursor:pointer}
 .mc input{width:16px;height:16px;margin:0;accent-color:var(--jd)}
+.un.uk{cursor:pointer;border-radius:8px;padding:3px 5px;margin:0 -5px}
+.un.uk:hover{background:color-mix(in srgb,var(--jd) 8%,transparent)}
+.uh{font-size:10px;color:var(--dm);font-weight:400}
+.eqn{margin-left:4px;font-size:10px;color:var(--gd)}
+.udl{padding:5px 0;border-bottom:1px dashed var(--ln);font-size:12.5px;line-height:1.6}
+.udl small{color:var(--dm);font-size:11.5px}
+.udl button{padding:1px 8px;font-size:11px;margin-left:4px}
+.lock{margin:2px 0 10px;padding:9px 11px;border-radius:10px;border:1px solid var(--hp);background:color-mix(in srgb,var(--hp) 8%,transparent);font-size:12.5px;line-height:1.65;color:var(--ink)}
+.lock>b:first-child{display:block;color:var(--hp);margin-bottom:2px}
 .lrt{display:inline-block;padding:0 6px;border-radius:5px;font-size:11px;font-weight:700;line-height:1.6;color:#fff;white-space:nowrap;vertical-align:middle}
 .lrA{background:linear-gradient(135deg,#ffe27a,#ffb02e 55%,#ff7a45);color:#3a1a00;box-shadow:0 0 7px rgba(255,170,50,.8)}
 .lrB{background:linear-gradient(135deg,#9a4fe0,#5b2bb5);box-shadow:0 0 6px rgba(154,79,224,.6)}
@@ -707,7 +716,7 @@ button.fb{border-color:#1aa6b7;background:#1aa6b7;color:#fff;font-weight:900;ani
 </head>
 <body>
 <div id="app">
-<h1>互动小说<small>文字修仙 v1.6</small></h1>
+<h1>互动小说<small>文字修仙 v1.6.1</small></h1>
 <div id="hd">
 <div class="cd" id="ordA"></div>
 <section class="cd" id="stat"><div id="who"></div><div id="pb"><div id="rlm"></div><div id="bars"></div></div><div id="cbA"></div></section>
@@ -837,8 +846,8 @@ AF.forEach((a,i)=>IT['A'+i]=[a[0],`${a[2]}（冷却${a[1]}回合）`,a[4],0,a[0]
 
 SE.forEach((s,i)=>IT['T'+i]=[s[0]+'（秘术玉简）',s[1],s[2],0,s[0]]);
 MT.forEach((m,i)=>IT['M'+i]=[m[0]+'（主修玉简）',m[1],m[3],0,m[0]]);
-ZF.forEach((z,i)=>IT['Z'+i]=[z[0]+'（阵法书）',`布阵：${z[1][0]}阵盘、${z[1][1]}阵旗、${z[1][2]}灵石，阵旗越多威力越大。${z[2]}。效果：${FZ(z[3])}`,z[4],1,z[0]]);
-const MD=['灵兽喂养材料：喂给灵兽，获得当前等级升级所需10%的修炼。（炼丹、炼器系统暂未开放）','灵兽喂养材料：喂给灵兽，获得当前等级升级所需25%的修炼。（炼丹、炼器系统暂未开放）','灵兽喂养材料：喂给灵兽，获得当前等级升级所需15%的修炼。（炼丹、炼器系统暂未开放）','布阵材料：每座阵法需要1个阵盘，布阵后收回，可重复使用。','布阵材料：阵旗越多阵法威力越大，至少需要所需数量的25%；布阵后收回，可重复使用。'];
+ZF.forEach((z,i)=>IT['Z'+i]=[z[0]+'（阵法书）',`布阵：${z[1][0]}阵盘、${z[1][1]}阵旗、${z[1][2]}灵石（须事先备齐，缺一不可）。${z[2]}。效果：${FZ(z[3])}`,z[4],1,z[0]]);
+const MD=['灵兽喂养材料：喂给灵兽，获得当前等级升级所需10%的修炼。（炼丹、炼器系统暂未开放）','灵兽喂养材料：喂给灵兽，获得当前等级升级所需25%的修炼。（炼丹、炼器系统暂未开放）','灵兽喂养材料：喂给灵兽，获得当前等级升级所需15%的修炼。（炼丹、炼器系统暂未开放）','布阵材料：每座阵法需要1个阵盘，须事先备齐；阵势运转期间被占用，消散后收回，可重复使用。','布阵材料：每座阵法需要的阵旗数量见阵法书，须事先全部备齐，少一面也布不起来；阵势运转期间被占用，消散后收回，可重复使用。'];
 MA.forEach((m,i)=>IT['W'+i]=[m[0],MD[i],m[1],m[2]||0,m[0]]);
 MB.forEach((m,i)=>IT['E'+i]=[m[0]+'卵',`孵化后得到一只1级${m[0]}，需会驭兽烙印`,Math.round(40*(1+.4*(m[1]-1))),0,m[0]+'卵']);
 // 稀有度：[档位序号,遇到概率权重]；全局稀有等级g（0~4）决定颜色与价格，g越高越稀有
@@ -875,7 +884,7 @@ const wp=(ks,w)=>{let t=0;ks.forEach(k=>t+=w(k));let r=Math.random()*t;for(const
 function pool(cats,ok,boost=0){const c=wp(cats,x=>CW[x]),ks=(c=='B'?MB.map((m,i)=>'B'+i):ALL.filter(k=>k[0]==c)).filter(k=>ok(rar(k)[0])),k=wp(ks,q=>rar(q)[1]*(1+boost*rar(q)[0]));return c=='B'?k+':'+Math.max(1,Math.min(13,Lp()+ri(-2,1))):k}
 const lk=(b=0)=>pool(['P','S','M','T','A','Z','E'],()=>true,b);
 const bH=b=>Math.round(70*KK(sq(b.lv))*(b.bd?1:.5)),bA=b=>12*KK(sq(b.lv))*MB[b.i][2]*(b.bd?1:.5),xn=L=>Math.round(40*KK(sq(L))),bv=z=>V('B'+z.i+':'+z.lv),bq=()=>G.s>=12?99:Math.max(0,2-G.bdN),mkb=(i,lv,ag)=>{const b={i,lv,xp:0,bd:0,d:0,h:0,eq:[],lim:Math.max(lv,BLIM[rollT()]),ag:ag!=null?ag:Math.round(pLife(lv)*rnd(.1,.45))};b.h=bH(b);return b};
-function fresh(){G={lr:null,lrd:null,lrc:0,lim:14,limR:0,egg:0,n:NM[ri(0,5)],s:0,x:0,hp:1,mp:1,st:30,age:16,pill:0,over:0,ev:-1,enc:null,iv:{P1:2,P0:1},sp:[0],se:[],mo:[0],mt:0,sw:0,zf:[],bz:[],bdN:0,hb:0,mb:0,wk:0,hide:0,rv:0,lot:null,sex:0,pi:0,np:{},dl:null,kc:0,dx:0,ex:{},sa:-1,shop:[],ec:0,bn:0,v:19,vb:0,slk:null,sec:null,dvc:0,lg:[],sl:[{a:16,d:30,r:'初入仙途·随身盘缠',b:30}],si:30,so:0};G.hp=mh();G.mp=mm();S('你立于青云山门前，凡躯一副，道心一颗。','k');S('入门第一件事：测灵根。点击右侧「🔮 测试灵根」。','k');S('打坐积攒修为，修为圆满后尝试突破；外出历练会遇见妖兽、恶修、有缘人与种种奇遇。去坊市添置法术、法宝与丹药吧。点击名字旁的「✎ 改名」可设定名字与性别（仅限一次）。')}
+function fresh(){G={lr:null,lrd:null,lrc:0,lim:14,limR:0,egg:0,n:NM[ri(0,5)],s:0,x:0,hp:1,mp:1,st:30,age:16,pill:0,over:0,ev:-1,enc:null,iv:{P1:2,P0:1},sp:[0],se:[],mo:[0],mt:0,sw:0,zf:[],bz:[],bdN:0,hb:0,mb:0,wk:0,hide:0,rv:0,lot:null,sex:0,pi:0,np:{},dl:null,kc:0,dx:0,ex:{},sa:-1,shop:[],ec:0,bn:0,v:19,vb:0,slk:null,sec:null,dvc:0,lg:[],sl:[{a:16,d:30,r:'初入仙途·随身盘缠',b:30}],si:30,so:0};G.hp=mh();G.mp=mm();S('你立于青云山门前，凡躯一副，道心一颗。','k');S('入门第一件事：定下名字、性别，并测出灵根。点击右侧「🔮 入门：定名测灵」。灵根可无限重测，踏上仙途后名字、性别、灵根均不可更改。','k');S('打坐积攒修为，修为圆满后尝试突破；外出历练会遇见妖兽、恶修、有缘人与种种奇遇。去坊市添置法术、法宝与丹药吧。')}
 function load(){try{const d=JSON.parse(localStorage.getItem('xx'));if(d&&d.iv&&[11,12,13,14,15,16,17,18,19].includes(d.v)){if(d.v<19){d.ev=-1;d.x=(d.x||0)*10;if(d.dl)d.dl.x=(d.dl.x||0)*10;d.lr=d.lr||null;d.lrd=null;d.lrc=0;(d.bz||[]).forEach(z=>{if(z.ag==null)z.ag=Math.round(pLife(z.lv)*rnd(.1,.45));if(!z.limR)z.lim=Math.max(z.lv,BLIM[rollT()])});Object.values(d.np||{}).forEach(q=>{if(!q.r)q.r=rollRoot();if(q.ao==null)q.ao=ri(-5,10);q.x=q.x||0;if(!q.limR)q.lim=dLim(q.r,q.s||0)});if(d.dl){const D=d.dl;if(!D.r)D.r=(d.np[D.k]&&d.np[D.k].r)||rollRoot();if(D.ao==null)D.ao=(d.np[D.k]&&d.np[D.k].ao)||0;if(!D.limR)D.lim=dLim(D.r,D.s)}}if(d.v<18){d.ev=-1;d.egg=0;if(d.lim==null)d.lim=Math.max(d.s,PLIM[rollT()]);d.limR=d.limR||0;(d.bz||[]).forEach(z=>{z.eq=z.eq||[];if(z.lim==null)z.lim=Math.max(z.lv,BLIM[rollT()])});Object.values(d.np||{}).forEach(q=>{if(q.lim==null)q.lim=Math.max(q.s||0,PLIM[rollT()])});if(d.dl){d.dl.eq=d.dl.eq||[];if(d.dl.lim==null)d.dl.lim=Math.max(d.dl.s,PLIM[rollT()])}}if(d.v<17){d.ev=-1;(d.bz||[]).forEach(z=>{z.py=null})}if(d.v<16){Object.values(d.np||{}).forEach(q=>{q.j=q.j||0;q.m=q.m!=null?q.m:Math.ceil((q.f||0)/15)});if(d.dl){d.dl.j=d.dl.j||0;d.dl.ng=d.dl.ng||0}d.sec=d.sec!=null?d.sec:null;d.dvc=0}if(d.v<15){d.ev=-1;delete d.fr;delete d.fd;d.sex=d.sex||0;d.pi=d.pi||0;d.np=d.np||{};d.dl=d.dl||null;d.kc=d.kc||0;d.dx=0;d.ex={}}d.v=19;d.vb=d.vb||0;d.slk=d.slk||null;if(!d.sl){d.sl=[{a:d.age,d:0,r:'期初结余·旧存档迁移',b:d.st}];d.si=0;d.so=0}if(d.enc&&typeof d.enc[0]=='number')d.enc=[d.enc];{let c=0;const mx=DM[d.s/3|0];(d.bz||[]).forEach(z=>{if(z.d&&++c>mx)z.d=0})}d.bn=d.bn||(d.wk?(d.wk.p>=90?2:1):0);d.shop=(d.shop||[]).filter(k=>k[0]!='B');(d.bz||[]).forEach(z=>{z.lv=Math.min(13,z.lv);if(z.lv>=13)z.xp=0;z.h=Math.min(z.h,bH(z))});return G=d}}catch(e){}fresh()}
 function end(w,t){G.over=w?2:1;S(t,'k')}
 function die(t){if(G.rv>G.age){G.rv=0;G.hp=Math.round(mh()*.4);G.mp=Math.round(mm()*.4);S('危急关头，九转还魂丹药力爆发，你于鬼门关前夺回一命！（以40%气血、40%灵力复活，「复生」状态消散）','k');return 0}C=null;end(0,t);return 1}
@@ -1044,11 +1053,13 @@ if(o.qk){const x=ap(U,'qk',o.qk,o.qt);if(x)r.push(x)}
 if(o.self){const x=Math.round(U.a*o.self);U.h-=x;r.push(`余波震伤自身${x}点`)}
 S(tx+r.filter(Boolean).join('，')+'。',isE(U)?'e':'b')}
 // 自动使用策略：攻击型冷却好就用；治疗/护盾在友方受伤时用；净化/免疫在友方中了负面效果或伤势较重时用
-function pickEq(U){const L=U.eq||[];if(!L.length)return null;const al=allyOf(U),low=lowest(al);if(!low)return null;const avg=al.reduce((a,t)=>a+hpr(t),0)/al.length,deb=al.some(t=>nDeb(t)>0),T=TE();
+// 友方（灵兽、道侣、同伴）自动使用法宝（v1.6.1）：辅助类优先、不占出手——
+// 治疗：只要有友方不满血就用；护盾：有友方没有护盾就用；净化/免疫：有友方中了负面效果或尚未免疫就用；强化/疾速：自身没有就用；攻击类：冷却好就用
+function pickEq(U){const L=U.eq||[];if(!L.length)return null;const al=allyOf(U),low=lowest(al);if(!low)return null;const T=TE(),hurt=al.some(t=>hpr(t)<.995),noSh=al.some(t=>t.sh<t.H*.05),deb=al.some(t=>nDeb(t)>0),noIm=al.some(t=>!t.im);
 for(const k of [...L].sort((a,b)=>isSup(b)-isSup(a))){if(U.ecd&&U.ecd[k]>0)continue;const o=AF[+k.slice(1)][3];
-if(o.d)return k;if(o.wk&&T&&!T.wk)return k;if(o.swA)return k;
-if((o.hl||o.sh)&&hpr(low)<.6)return k;if((o.hlA||o.shA)&&(avg<.75||hpr(low)<.45))return k;if((o.clA||o.imA)&&(deb||avg<.6))return k;
-if(o.bf&&!U.bf)return k;if(o.qk&&!U.qk)return k}return null}
+if((o.hl||o.hlA)&&hurt)return k;if((o.sh||o.shA)&&noSh)return k;if((o.clA||o.imA)&&(deb||noIm))return k;
+if(o.bf&&!U.bf)return k;if(o.qk&&!U.qk)return k;
+if(o.d)return k;if(o.wk&&T&&!T.wk)return k;if(o.swA)return k}return null}
 const isSup=k=>{const o=AF[+k.slice(1)][3];return!o.d&&!o.wk&&!o.swA};
 function useEq(U,k){const a=AF[+k.slice(1)];U.ecd=U.ecd||{};U.ecd[k]=a[1]+1;uFx(U,a[3],`${nmX(U)}祭出法宝【${a[0]}】：`)}
 function uAct(U,en){const M=MB[U.i],say=x=>S(x,en?'e':'b');
@@ -1121,7 +1132,7 @@ if(P.pa==1){P.pa=0;k='n'}
 if(k=='n')fx({mp:.05},.8,'你挥剑斩出，剑气纵横，');
 else if(k=='s'){const s=SP[i],c=Math.ceil(mm()*s[1]/100);G.mp-=c;if(s[3].cd)C.cd['s'+i]=s[3].cd+1;fx(s[3],s[3].nd?0:spm(i),`你施展法术【${s[0]}】：${s[3].fl||s[2]}，`,s[0])}
 else if(k=='a'){const a=AF[i];C.cd['a'+i]=a[1]+1;fx(a[3],a[3].d||0,`你祭出法宝【${a[0]}】：${a[3].fl||a[2]}，`,a[0])}
-else if(k=='z'){const z=ZF[i],f=Math.min(hv('W4'),z[1][1]);if((C.za[i]||0)>0){S(`【${z[0]}】阵势尚在运转，需待其消散后才能重新布阵。`,'p');return}C.za[i]=z[3].zt;ST(-z[1][2],`布阵消耗·${z[0]}`);fx(z[3],z[3].d||0,`你布下【${z[0]}】（动用${f}面阵旗，威力${Math.round(f/z[1][1]*100)}%）：${z[2]}，`,z[0],f/z[1][1])}
+else if(k=='z'){const z=ZF[i],q=z[1];if((C.za[i]||0)>0){S(`【${z[0]}】阵势尚在运转，需待其消散后才能重新布阵。`,'p');return}const ms=zMiss(i);if(ms){S(`布阵材料不齐（${ms}），【${z[0]}】布不起来！生死关头，有灵石也买不到阵旗。`,'p');return}C.za[i]=z[3].zt;ST(-q[2],`布阵消耗·${z[0]}`);fx(z[3],z[3].d||0,`你祭出${q[0]}面阵盘、${q[1]}面阵旗，布下【${z[0]}】：${z[2]}，`,z[0],1)}
 else if(k=='e'){
 if(i==1){const cE=C.lkE&&!C.lkE.cv&&AE().includes(C.lkE)?C.lkE:lowest(AE().filter(cap))||lowest(AE().filter(e=>!e.cv)),E=cE;
 if(!E){S('驭兽烙印只能烙印妖兽，对人族修士毫无作用。','p');return}
@@ -1210,8 +1221,9 @@ S(me?`一股清流冲刷你的四肢百骸，杂质尽去——灵根由【${o}�
 function giveDL(k){const D=G.dl;if(!D||C||!hv(k))return;if(k=='P13'&&!(D.r&&D.r.t in WUP)){say(`${nmK(D.k)}的灵根已是${lrN(D.r)}，无需再洗。`);return}tk(k);if(k=='P12'){if(!breakDL()){const g=dlCult(1.5);S(`${nmK(D.k)}服下逆天改命丹，却并无异样——${TA(D.k)}的天命本就无拘无束。药力化作修为+${g}。`,'p')}}else washRoot(D,0)}
 function feedNT(x){const z=G.bz[x];if(!z||C||!hv('P12'))return;tk('P12');if(!breakPet(z)){pxp(z,xn(z.lv));S(`${MB[z.i][0]}吞下逆天改命丹，并无异样——它的天资本就没有上限。药力化作修炼。`,'p')}}
 // 灵根测试（开局，共3次机会，确定后不可更改）
-function drawLR(){if(G.lr||G.lrc>=3)return;G.lrd=rollRoot();G.lrc++;const r=G.lrd;S(`你将手掌按上测灵石，石中亮起${['璀璨金光','诡异紫光','明亮青光','温润白光','黯淡灰光','微弱浊光'][r.t]}——【${lrN(r)}】！`,r.t<=2?'k':'p')}
-function confirmLR(){if(G.lr||!G.lrd)return;G.lr=G.lrd;G.lrd=null;if(!G.limR)G.lim=dLim(G.lr,G.s);S(`灵根已定：【${lrN(G.lr)}】，修炼速度×${LR[G.lr.t][2]}。${G.lr.t<=1?'测灵长老两眼放光，当场便要收你为亲传弟子！':G.lr.t==2?'长老微微颔首：“资质尚可，好生修炼。”':G.lr.t==3?'长老淡淡道：“中规中矩，勤能补拙。”':'长老摇了摇头：“伪灵根……仙路艰难，望你另有机缘。”'}`,'k');if($('dg').open)$('dg').close()}
+function savePI(){if(G.lr)return 1;const e=$('pin'),r=document.querySelector?document.querySelector('input[name=psx]:checked'):null;if(e&&e.value!=null){const n=String(e.value||'').trim();if(!/^[\u4e00-\u9fa5A-Za-z0-9·]{1,8}$/.test(n)){G.pie='名字需为1～8个汉字、字母或数字。';return 0}G.n=n}if(r)G.sex=+r.value?1:0;G.pie='';return 1}
+function drawLR(){if(G.lr)return;savePI();G.lrd=rollRoot();G.lrc++;}
+function confirmLR(){if(G.lr||!G.lrd)return;if(!savePI())return;G.pi=1;G.lr=G.lrd;G.lrd=null;if(!G.limR)G.lim=dLim(G.lr,G.s);S(`${G.n}（${G.sex?'女':'男'}修）踏上仙途！灵根已定：【${lrN(G.lr)}】，修炼速度×${LR[G.lr.t][2]}。名字、性别、灵根从此不可更改。`,'k');S(`${G.lr.t<=1?'测灵长老两眼放光，当场便要收你为亲传弟子！':G.lr.t==2?'长老微微颔首：“资质尚可，好生修炼。”':G.lr.t==3?'长老淡淡道：“中规中矩，勤能补拙。”':'长老摇了摇头：“伪灵根……仙路艰难，望你另有机缘。”'}`,'k');if($('dg').open)$('dg').close()}
 function eat(k){const n=+k.slice(1),p=PL[n];if(!hv(k)||n==9&&G.rv>G.age)return;
 if((n==4||n==5||n==10)&&!C){say('此丹需在战斗中服用。');return}
 if(n==11&&C){say('凌虚丹药力绵长，需在战斗外静心炼化。');return}
@@ -1240,6 +1252,11 @@ if(t)S(t+'。','p');if(C)pDone()}
 function A(k,i){act(()=>pAct(k,i))}
 function act(f){if(G.over)return;kick();f();draw()}
 function reset(){C=null;PO=null;fresh();draw()}
+
+// 布阵材料（v1.6.1）：必须事先备齐全部阵盘与阵旗，并备好布阵灵石；不足则无法布阵（不再按比例降低威力）
+// 阵盘、阵旗在阵势运转期间被占用，阵势消散后收回；同时运转多座阵法时，需各自备齐
+const zUse=()=>{let a=0,b=0;if(C)for(const j in C.za)if(C.za[j]>0){a+=ZF[j][1][0];b+=ZF[j][1][1]}return[a,b]};
+function zMiss(i){const q=ZF[i][1],[ua,ub]=zUse(),fa=hv('W3')-ua,fb=hv('W4')-ub,m=[];if(fa<q[0])m.push(`阵盘${Math.max(0,fa)}/${q[0]}`);if(fb<q[1])m.push(`阵旗${Math.max(0,fb)}/${q[1]}`);if(G.st<q[2])m.push(`灵石${G.st}/${q[2]}`);return m.join('、')}
 function cm(b){const P=C.P,o=[],lb=t=>`<div class="lb">${t}</div>`,mcb=G.se.includes(1)?`<label class="mc" title="勾选后，修士与灵兽会控制出手伤害，把妖兽血量留在1~10%，方便烙印；此后的战斗默认开启"><input type="checkbox"${G.mc?' checked':''} onchange="G.mc=this.checked?1:0;draw()"><span>手下留情</span></label>`:'';
 const th=C.EN.length>1?`<p class="no" style="margin:0;font-size:11px;line-height:1.5">敌方${C.EN.length}人 · ${C.lkE?`已锁定：${TE().n}（再点一次取消）`:`自动锁敌：血量最低的${TE().n}（点选敌人可手动锁定）`}</p>`:'';
 const fl=C.fl?`<div class="flh">⚡ 身化疾影，速度翻倍！此刻可尝试脱身（50%）</div>`+b('疾影脱身（50%）',"A('f')",'fb'):'';
@@ -1250,7 +1267,7 @@ const se=G.se.filter(i=>i>0);
 if(se.length){o.push(lb('秘术'));se.forEach(i=>{const u=i==2||i==3,us=i==4&&C.ys||i>=5&&C.su[i];o.push(b(SE[i][0]+(u?`（${bb()}/2）`:us?'（已用）':''),`A('e',${i})`,'k1',u&&bb()>=2||us))})}
 const af=Object.keys(G.iv).filter(k=>k[0]=='A');
 if(af.length){o.push(lb('法宝'));af.forEach(k=>{const i=+k.slice(1),cd=C.cd['a'+i]||0;o.push(b(AF[i][0]+(cd?`（冷${cd}）`:''),`A('a',${i})`,'g',cd>0))})}
-if(G.zf.length){o.push(lb('阵法'));G.zf.forEach(i=>{const z=ZF[i],q=z[1],za=C.za[i]||0,ok=!za&&hv('W3')>=q[0]&&hv('W4')>=Math.ceil(q[1]*.25)&&G.st>=q[2];o.push(b(z[0]+(za?`（生效中·${za}回）`:''),`A('z',${i})`,'k2',!ok))})}
+if(G.zf.length){o.push(lb('阵法'));G.zf.forEach(i=>{const z=ZF[i],za=C.za[i]||0,ms=za?'':zMiss(i);o.push(b(z[0]+(za?`（生效中·${za}回）`:ms?`（缺${ms}）`:''),`A('z',${i})`,'k2',za||ms))})}
 return o.join('')}
 // 遭遇等级：低20% 同55% 高一级20% 高二级5%；不再遇到高三级的敌人
 const encL=()=>{const o=wp([-1,0,1,2],x=>[20,55,20,5][x+1]);return Math.max(1,Math.min(13,Lp()+(o<0?-ri(1,2):o)))},ENC=()=>[wp(MB.map((m,i)=>i),i=>RA['B'+i][1]),encL()];
@@ -1332,7 +1349,7 @@ if(ty==2){if(r[0])x.push('噬血'+hTx(hLow(U,()=>r[0]*.3)));if(pt(20))x.push(ap(
 if(ty==1&&U.ac%2==0)x.push('回春之术'+hTx(hLow(U,t=>t.H*.2)));
 say(`${U.n}${sn?`掐诀施展【${sn[0]}】`:'出手攻敌'}${ex?'——'+ex:''}，${x.filter(Boolean).join('，')}。`)}
 // 玩家信息：名字、性别只能修改一次
-function setPI(n,x){if(G.pi)return 0;n=String(n||'').trim();if(!/^[\u4e00-\u9fa5A-Za-z0-9·]{1,8}$/.test(n)){G.pie='名字需为1～8个汉字、字母或数字。';return 0}const o=G.n;G.n=n;G.sex=x?1:0;G.pi=1;G.pie='';S(`你在三生石前刻下真名：${o===n?'':`从此不再叫${o}，`}改名【${n}】，${x?'女':'男'}修。（名字与性别仅可修改一次，现已锁定）`,'k');return 1}
+function setPI(n,x){if(G.lr)return 0;n=String(n||'').trim();if(!/^[\u4e00-\u9fa5A-Za-z0-9·]{1,8}$/.test(n)){G.pie='名字需为1～8个汉字、字母或数字。';return 0}const o=G.n;G.n=n;G.sex=x?1:0;G.pi=1;G.pie='';S(`你在三生石前刻下真名：${o===n?'':`从此不再叫${o}，`}改名【${n}】，${x?'女':'男'}修。（名字与性别仅可修改一次，现已锁定）`,'k');return 1}
 function setPIu(){const n=$('pin')?$('pin').value:'',r=document.querySelector?document.querySelector('input[name=psx]:checked'):null;act(()=>{if(setPI(n,r?+r.value:G.sex))$('dg').close()})}
 function cave(){const k=lk(3),a=ri(10,25)*sc();gain(k);ST(a,'洞府遗宝·灵石');S(`你在洞府深处觅得遗宝：【${inf(k)[0]}】${tag(k)}与灵石${a}！`,'g')}
 function bid(m,p){const k=G.lot[0],x=Math.round(G.lot[1]*m);if(k[0]=='B'&&!petRoom()){say(`你的灵兽袋已满（${G.bz.length}/${pcap()}），容不下这只灵兽，只得作罢。`);return}if(G.st<x){say('你灵石不足，举牌的手僵在半空，拍卖师摇了摇头。');return}if(Math.random()<p+(G.hide?.2:0)){ST(-x,`拍卖会·${inf(k)[0]}`);gain(k);S(`几轮叫价后，你以${x}灵石拍得【${inf(k)[0]}】${tag(k)}！`,'g')}else say(`你出价${x}灵石，却被一位神秘富商高价截走。`)}
@@ -1429,17 +1446,39 @@ if(c=='W'&&hv(k)>1)b.push(B('全卖',`act(()=>sell('${k}',${hv(k)}))`,!!C));
 return RS(`${q[0]}${tag(k)}×${G.iv[k]}`,q[1],b.join(''))};
 function ledger(f){const A=G.sl||[],L=A.slice().reverse().filter(e=>f=='a'||(f=='i'?e.d>0:e.d<0)),sum=pos=>{const m={};A.forEach(e=>{if(pos?e.d>0:e.d<0){const c=e.r.split('·')[0];m[c]=(m[c]||0)+Math.abs(e.d)}});return Object.entries(m).sort((a,b)=>b[1]-a[1]).map(([c,v])=>`<span class="lgc">${c} <b>${fm(v)}</b></span>`).join('')||'<span class="no">暂无</span>'};
 return `<div class="ch">${B('‹ 返回储物袋',"po('s')")}</div><div class="lgs"><div>当前结余<b>${fm(G.st)}</b></div><div>累计收入<b class="lin">+${fm(G.si||0)}</b></div><div>累计消耗<b class="lout">-${fm(G.so||0)}</b></div></div><h3>灵石来源</h3><div class="lgcs">${sum(1)}</div><h3>灵石去向</h3><div class="lgcs">${sum(0)}</div><h3>收支明细（最近${A.length}条，新→旧）</h3><div class="ch">${[['a','全部'],['i','收入'],['o','消耗']].map(([q,t])=>`<button class="${f==q?'p':''}" onclick="po('h','${q}')">${t}</button>`).join('')}</div>`+(L.length?L.map(e=>`<div class="lr"><span class="la">${e.a}岁</span><span>${e.r}</span><b class="${e.d>0?'lin':e.d<0?'lout':''}">${e.d>0?'+':''}${e.d}</b><small>余${e.b}</small></div>`).join(''):no)}
+
+// ===== 战斗中查看我方单位详情、调配法宝（v1.6.1）=====
+const udU=j=>!C?null:j==0?C.P:C.B[j-1]||null,canEq=U=>!!U&&!U.me&&(!!U.r||U.D===G.dl),eqRec=U=>U.r?U.r:U.D;
+function eqU(j,k){const U=udU(j);if(!canEq(U)||!hv(k)||k[0]!='A')return;const R0=eqRec(U);R0.eq=R0.eq||[];if(R0.eq.length>=2)return;tk(k);R0.eq.push(k);const cd=C.cd['a'+k.slice(1)]||0;U.ecd=U.ecd||{};if(cd>(U.ecd[k]||0))U.ecd[k]=cd;S(`你将【${IT[k][0]}】${tag(k)}抛给${U.n}，${U.n}稳稳接住。`,'b')}
+function uneqU(j,x){const U=udU(j);if(!canEq(U))return;const R0=eqRec(U),k=(R0.eq||[])[x];if(!k)return;R0.eq.splice(x,1);add(k);const c=U.ecd&&U.ecd[k]||0,a='a'+k.slice(1);if(c>(C.cd[a]||0))C.cd[a]=c;S(`你从${U.n}手中收回了【${IT[k][0]}】。`,'b')}
+function udHTML(j){const U=udU(j);if(!U)return no;const L=[],sec=(t,b)=>b?L.push(`<h3>${t}</h3>${b}`):0,li=a=>a.map(x=>`<div class="udl">${x}</div>`).join(''),st=tgsL(U.me?stl(U).concat(xt()):stl(U));
+const hp=`生命 ${Math.max(0,Math.round(U.h))}/${Math.round(U.H)}${U.sh?`　🛡${Math.round(U.sh)}`:''}　速度 ${SPD(U)}`;
+if(U.me){L.push(R(`${G.n}　${lab(G.s)}　${lrT(G.lr)}`,`${hp}　灵力 ${G.mp}/${mm()}<br>主修《${MT[G.mt][0]}》：${MT[G.mt][1]}${st?'<br>'+st:''}`));
+sec('法术',li(G.sp.map(i=>{const s0=SP[i],cd=C.cd['s'+i]||0;return`<b>${s0[0]}</b>${tag('S'+i)} 耗灵力${s0[1]}%${s0[3].nd?'':` 伤害×${spm(i)}`}${cd?`（冷却${cd}）`:''}<br><small>${s0[2]}</small>`})));
+sec('秘术',li(G.se.map(i=>`<b>${SE[i][0]}</b>${tag('T'+i)}${i>=5&&C.su[i]||i==4&&C.ys?'（本场已用）':''}<br><small>${SE[i][1]}</small>`)));
+sec('阵法',li(G.zf.map(i=>{const z=ZF[i],za=C.za[i]||0,ms=za?'':zMiss(i);return`<b>${z[0]}</b>${tag('Z'+i)} ${za?`阵势运转中（剩${za}回合）`:ms?`<span style="color:var(--hp)">缺${ms}</span>`:'材料已备齐'}<br><small>${FZ(z[3])}</small>`})));
+const af=Object.keys(G.iv).filter(k=>k[0]=='A').sort();sec('储物袋中的法宝',li(af.map(k=>{const a=AF[+k.slice(1)],cd=C.cd['a'+k.slice(1)]||0;return`<b>${a[0]}</b>${tag(k)}×${hv(k)}${cd?`（冷却${cd}）`:''}<br><small>${a[2]}</small>`})))}
+else{const isP=!!U.r,D=U.D,mine=canEq(U);
+if(isP){const z=U.r,M=MB[z.i];L.push(R(`${M[0]}${tag('B'+z.i)}　${z.lv}级（${lvl(z.lv)}）`,`${hp}<br>契约：${z.bd?'滴血认主（完美发挥）':'仅烙印（五成实力）'}${st?'<br>'+st:''}`));sec('天赋神通',li([`<b>「${M[4]}」</b>${M[5]}<br><small>当前：${tv(z)}</small>`]))}
+else{const c=DLC[D.k],T0=dlS(D);L.push(R(`${c[0]}<span class="rt rtL">${D===G.dl?'道侣':'同伴'}</span>　${lab(D.s)}　${D.r?lrT(D.r):''}`,`${hp}<br>${c[3]}·${T0.n}${st?'<br>'+st:''}`));sec('流派天赋',li([T0.tl]));sec('法术',li(T0.sp.map(i=>`<b>${SP[i][0]}</b>${tag('S'+i)}<br><small>${SP[i][2]}</small>`)))}
+const eq=U.eq||[];if(mine){const bag=Object.keys(G.iv).filter(k=>k[0]=='A').sort();
+L.push(`<h3>佩戴法宝（${eq.length}/2）</h3><p class="no" style="margin:0 0 4px">战斗中自动使用：治疗类有友方不满血就用、护盾类有友方没有护盾就用、净化/免疫类有负面效果或尚未免疫就用，辅助类不占出手；攻击类冷却好就代替普攻。调配法宝不占用你的出手。</p>`+(eq.length?li(eq.map((k,x)=>{const a=AF[+k.slice(1)],cd=U.ecd&&U.ecd[k]||0;return`<b>${a[0]}</b>${tag(k)}${cd?`（冷却${cd}）`:'（就绪）'} <button class="s" onclick="act(()=>uneqU(${j},${x}))">收回</button><br><small>${a[2]}</small>`})):'<p class="no">尚未佩戴</p>')+(eq.length<2&&bag.length?`<div class="ch">${bag.map(k=>`<button class="s" onclick="act(()=>eqU(${j},'${k}'))">＋${IT[k][0]}${tag(k)}×${hv(k)}</button>`).join('')}</div>`:''))}
+else if(eq.length)sec('佩戴法宝',li(eq.map(k=>`<b>${IT[k][0]}</b>${tag(k)}`)))}
+return L.join('')}
 function rp(){if(!PO)return;const[k,x]=PO;let h='',tt='';
-if(k=='t'){const q=IT[x];tt={S:'法术',T:'秘术',Z:'阵法',M:'主修功法'}[x[0]]||'详情';h=R(q[4]+tag(x),q[1],x=='T0'?BC(B(G.hide?'解除敛气':'施展敛气','act(hideT)',!!C)):'')}
+if(k=='t'){const q=IT[x];tt={S:'法术',T:'秘术',Z:'阵法',M:'主修功法'}[x[0]]||'详情';h=R(q[4]+tag(x),q[1],x=='T0'?BC(B(G.hide?'解除敛气':'施展敛气','act(hideT)',!!C)):'')+(x[0]=='Z'?(()=>{const ms=zMiss(+x.slice(1));return`<p class="no" style="margin-top:6px">${ms?`⚠ 材料未备齐：缺${ms}。战斗中无法布阵，请提前去坊市备齐。`:'✔ 布阵材料已备齐，战斗中可以布阵。'}（当前：阵盘${hv('W3')}、阵旗${hv('W4')}、灵石${G.st}）</p>`})():'')}
 else if(k=='m'){tt='主修功法';h=`<p>切换需灵石，每次翻倍：下次 <b>${50*Math.pow(2,G.sw)}</b> 灵石</p>`+G.mo.map(j=>R(`《${MT[j][0]}》${tag('M'+j)}${G.mt==j?'（当前）':''}`,MT[j][1],BC(B(G.mt==j?'当前':'切换',`act(()=>setMt(${j}))`,G.mt==j||!!C)))).join('')}
 else if(k=='b'){const xi=G.bz[x]?x:0,z=G.bz[xi];tt=`灵兽袋<small>灵兽 ${G.bz.length}/${pcap()} · 出战 ${dN()}/${dmax()}</small>`;h=`<p class="no">以你${RN[rl()]}期的神识，最多可烙印 <b>${pcap()}</b> 只灵兽（金丹以下4、金丹5、元婴7、化神9），同时驱使 <b>${dmax()}</b> 只出战（金丹以下2、金丹3、元婴5、化神7）；灵兽等级最高可达 <b>${plv()}</b> 级（你的对应等级+1）。</p>`+(G.bz.length?`<div class="ch">${G.bz.map((y,j)=>`<button class="${j==xi?'p':''}" onclick="po('b',${j})">${MB[y.i][0]}${y.lv}级${y.d?'★':''}${tag('B'+y.i)}</button>`).join('')}</div>`+bp(z,xi):'<p class="no">灵兽袋空空如也。去历练、坊市中寻找灵兽吧。</p>')}
 else if(k=='s'){const ks=Object.keys(G.iv).sort();tt='储物袋';h=`<button class="stb" onclick="po('h','a')" title="点击查看灵石的来源与消耗记录"><span>灵石 <b>${G.st}</b></span><span class="sth">📜 收支记录 ›</span></button><p>阵盘 <b>${hv('W3')}</b>　阵旗 <b>${hv('W4')}</b></p>`+[['玉简与阵法书',q=>'STMZ'.includes(q[0])],['丹药',q=>q[0]=='P'],['法宝',q=>q[0]=='A'],['妖兽卵',q=>q[0]=='E'],['灵兽喂养材料',q=>['W0','W1','W2'].includes(q)],['布阵材料',q=>q=='W3'||q=='W4']].map(([t,f])=>{const r=ks.filter(f).map(row).join('');return r?`<h3>${t}</h3>`+r:''}).join('')}
 else if(k=='h'){tt='灵石账簿';h=ledger(x||'a')}
-else if(k=='lr'){tt='测灵根';const pc=LR.map((r,j)=>`<div class="lrr"><b>${lrT({t:j,e:j==1?0:EL.slice(0,r[7])}).replace(/·.*?</,'<').replace('雷灵根','变异灵根')}</b><span>${r[1]}%</span><small>速×${r[2]}</small><p>${r[8]}</p></div>`).join('');
-h=G.lr?R(lrN(G.lr),'灵根已定，无法更改。'):`<p class="no">修士须有灵根才能修行。灵根决定修炼速度与突破难易，也暗中影响此生的天命。共有 <b>3</b> 次测试机会：每次测出后可以「确定」，也可以放弃重测（放弃的结果不能找回）；第 3 次的结果必须接受。确定后终身不可更改。</p>`+(G.lrd?`<div class="lrres">${lrT(G.lrd)}<p>${LR[G.lrd.t][8]}${G.lrd.t==1?`<br>属性神通：${VE[G.lrd.e][1]}；所有伤害+25%。`:''}<br>修炼速度×${LR[G.lrd.t][2]}　筑基成功率${Math.round(LR[G.lrd.t][3][0]*100)}%　结丹成功率${Math.round(LR[G.lrd.t][3][1]*100)}%</p></div><div class="ch"><button class="p" onclick="act(confirmLR)">✔ 确定此灵根，踏上仙途</button>${G.lrc<3?`<button class="s" onclick="act(drawLR)">🔄 放弃，重新测试（剩${3-G.lrc}次）</button>`:''}</div>`:`<div class="ch"><button class="p" onclick="act(drawLR)">🔮 将手按上测灵石（第${G.lrc+1}/3次）</button></div>`)+'<h3>灵根一览</h3>'+pc}
+else if(k=='ud'){const U=udU(x);if(!U){$('dg').close();return}tt=U.me?'我方 · 修士':U.r?'我方 · 灵兽':U.D===G.dl?'我方 · 道侣':'我方 · 同伴';h=udHTML(x)}
+else if(k=='lr'){tt='入门 · 定名测灵';const pc=LR.map((r,j)=>`<div class="lrr"><b>${lrT({t:j,e:j==1?0:EL.slice(0,r[7])}).replace(/·.*?</,'<').replace('雷灵根','变异灵根')}</b><span>${r[1]}%</span><small>速×${r[2]}</small><p>${r[8]}</p></div>`).join('');
+h=G.lr?R(lrN(G.lr),'仙途已开启，名字、性别与灵根均已锁定，无法更改。'):`<div class="lock"><b>⚠ 开始仙途前请确认</b>名字、性别只能在此处设定；灵根可以<b>无限次重测</b>直到满意。点击「踏上仙途」后，三者<b>终身不可更改</b>。</div>
+<div class="lb">① 名字与性别</div><div class="pif"><label>名字<input id="pin" maxlength="8" value="${G.n}" placeholder="1～8个汉字/字母"></label><div class="pig"><span>性别</span><label><input type="radio" name="psx" value="0"${G.sex?'':' checked'}> ♂ 男修</label><label><input type="radio" name="psx" value="1"${G.sex?' checked':''}> ♀ 女修</label><small style="color:var(--dm)">（决定你会结识的有缘人）</small></div>${G.pie?`<p class="pie">${G.pie}</p>`:''}</div>
+<div class="lb">② 测灵根${G.lrc?`（已测${G.lrc}次）`:''}</div>`+(G.lrd?`<div class="lrres">${lrT(G.lrd)}<p>${LR[G.lrd.t][8]}${G.lrd.t==1?`<br>属性神通：${VE[G.lrd.e][1]}；所有伤害+25%。`:''}<br>修炼速度×${LR[G.lrd.t][2]} 筑基成功率${Math.round(LR[G.lrd.t][3][0]*100)}% 结丹成功率${Math.round(LR[G.lrd.t][3][1]*100)}%</p></div><div class="ch"><button class="p" onclick="act(confirmLR)">✔ 踏上仙途（锁定名字、性别与灵根）</button><button class="s" onclick="act(drawLR)">🔄 不满意，重新测试</button></div>`:`<div class="ch"><button class="p" onclick="act(drawLR)">🔮 将手按上测灵石</button></div>`)+'<h3>灵根一览</h3>'+pc}
 else if(k=='lri'){tt='灵根';const r=G.lr;h=r?R(lrN(r),`${LR[r.t][8]}${r.t==1?`<br>属性神通：${VE[r.e][1]}；所有伤害+25%（规则压制）。`:''}<br>修炼速度×${LR[r.t][2]}（打坐、历练所得修为）<br>小境界突破${Math.round(LR[r.t][4]*100)}%　筑基${Math.round(LR[r.t][3][0]*100)}%　结丹${Math.round(LR[r.t][3][1]*100)}%　元婴${Math.round(LR[r.t][3][2]*100)}%　化神${Math.round(LR[r.t][3][3]*100)}%　飞升${Math.round(LR[r.t][5]*100)}%<br>（破境丹等加成另计）`):no}
 
-else if(k=='u'){tt='修士信息';h=G.pi?R(`${G.n}　${G.sex?'女修':'男修'}`,'名字与性别已修改过一次，无法再次修改。'):`<p class="no">名字、性别<b>只能修改一次</b>，确认后不可撤销。性别会影响你在历练中结识的有缘人（只会结识异性有缘人）。</p><div class="pif"><label>名字<input id="pin" maxlength="8" value="${G.n}" placeholder="1～8个汉字/字母"></label><div class="pig"><span>性别</span><label><input type="radio" name="psx" value="0"${G.sex?'':' checked'}> ♂ 男修</label><label><input type="radio" name="psx" value="1"${G.sex?' checked':''}> ♀ 女修</label></div>${G.pie?`<p class="pie">${G.pie}</p>`:''}<button class="p" onclick="setPIu()">确认修改（仅此一次）</button></div>`}
+else if(k=='u'){tt='修士信息';h=G.lr?R(`${G.n}　${G.sex?'女修':'男修'}　${lrT(G.lr)}`,'仙途已开启，名字、性别与灵根均已锁定，无法更改。'):`<p class="no">名字与性别请在「入门 · 定名测灵」中设定。</p>`+BC(B('前往入门',"po('lr')"))}
 else if(k=='d'){tt='道侣';const D=G.dl,mb=(l,v,c,t='')=>`<div class="br" style="margin:4px 0"${t?` title="${t}"`:''}><b>${l}</b><div class="tr" style="--c:${c}"><i style="width:${v}%"></i><span>${v}/100</span></div></div>`;
 if(D){const c=DLC[D.k],T=dlS(D);h=R(`${c[0]}<span class="rt rtL">道侣</span>　${c[3]}·${T.n}`,`${c[4]}<br>灵根：${lrT(D.r)}　境界：${lab(D.s)}　修为：${D.s>=14?'已至化神后期':Math.round(D.x)+'/'+dlNeed()}<br>寿元：${nAge(D)}/${nLife(D)}岁${oldW(nAge(D),nLife(D))?' <b style="color:var(--hp)">寿元将尽</b>':''}<br>生命：${Math.round(D.h)}/${dlH()}　速度：${dlV()}${D.cap?'<br><b style="color:var(--hp)">被擒于'+(D.cz||'敌营')+'，暂时无法随你修行与战斗</b>':''}<br>流派天赋：${T.tl}<br>法术：${T.sp.map(i=>SP[i][0]).join('、')}${D.limR?`<br><b style="color:var(--hp)">道途：止步${lab(D.lim)}（天命瓶颈）</b>`:''}<br>结缘于${D.y}岁${(D.ng||0)>=2?`　<b style="color:var(--hp)">已冷落${TA(D.k)} ${D.ng} 年</b>`:''}`)+mb(`情缘·${stg(D.f)}`,D.f,'#d6559a')+mb('醋意',D.j||0,'#e0762a','与其他异性情缘上涨时醋意上升；醋意过高会引发争吵、最后通牒乃至心魔')+`<p class="no">情缘降到0，${TA(D.k)}会离你而去；久未亲近（冷落≥3年）情缘会慢慢流失；醋意过高、情缘过低时容易生出事端。你打坐时${TA(D.k)}随你同修；历练时与你同行、并肩作战，所得都会放进你的储物袋。</p><div class="ch">${G.dvc?`<button class="s" style="border-color:var(--hp);color:var(--hp)" onclick="act(divorce)">⚠ 确认和离（不可撤销）</button><button class="s" onclick="G.dvc=0;draw()">再想想</button>`:`<button class="s" onclick="act(divorce)"${C?' disabled':''}>💔 和离</button>`}</div>`+eqUI(D.eq,k=>`eqD('${k}')`,j=>`uneqD(${j})`)+(hv('P12')||hv('P13')?`<div class="lb">赠予灵丹</div><div class="ch">${hv('P12')?B(`赠逆天改命丹×${hv('P12')}`,`act(()=>giveDL('P12'))`,!!C):''}${hv('P13')?B(`赠洗灵丹×${hv('P13')}`,`act(()=>giveDL('P13'))`,!!C||!(D.r&&D.r.t in WUP)):''}</div>`:'')}else h=`<p class="no">尚无道侣。在历练中结识与你性别相异的有缘人；当${G.sex?'他':'她'}对你的情缘达到 <b>${WDF}</b>、且与你相处（情缘上涨）满 <b>${WDM}</b> 次后，才会向你表白。情缘有涨有落，选择不当会让好感骤降。</p>`;
 const ms=Object.keys(G.np).map(Number).filter(i=>!(D&&D.k==i));h+='<h3>缘分簿</h3>'+(ms.length?ms.map(i=>{const q=G.np[i];return`<div class="rw"><div style="flex:1;min-width:0"><b>${nmK(i)}</b>　<small style="color:var(--dm)">${DLC[i][3]}·${DT[DLC[i][2]].n}　${q.r?lrN(q.r)+'·':''}${q.st>=0||q.st==-1?lab(q.s)+'·':''}${dnS(q.st)}${q.st==0?`·${stg(q.f)}　相处${q.m||0}次${ready(i)?'　<b style="color:#d6559a">❤ 已情根深种</b>':''}`:''}</small>${q.st==0?mb('情缘',q.f,'#d6559a')+((q.j||0)>0?mb('醋意',q.j,'#e0762a'):''):''}</div></div>`}).join(''):no)}
@@ -1457,10 +1496,10 @@ $('hd').className=F?'cb':'';
 if(F){TE();const mu=F.EN.length>1;
 const oc=u=>u===F.P?'om':isE(u)?'oe':'ob';
 $('ordA').innerHTML=`<span class="ol">第${F.t}回合 · 出手顺序</span>${F.zf&&(F.zf.t>0||F.zfr)?'<span class="oz">阵法</span><i>→</i>':''}${F.Q.map((q,j)=>{const g=q.g.filter(u=>alive(u)||j<F.qi);if(!g.length)return'';const st=j<F.qi?' done':j==F.qi?' now':'';return`<span class="og${st}" title="${j<F.qi?'已出手':j==F.qi?'正在出手':'待出手'}${q.p>1?`（本回合第${q.p}次出手）`:''}">${j<F.qi?'<s>✓</s>':''}${g.map(u=>`<em class="${oc(u)}">${nmU(u)}<small>${q.v}</small></em>`).join('<b>＋</b>')}${q.p>1?`<sup>×${q.p}</sup>`:''}</span>`}).filter(Boolean).join('<i>→</i>')}<span class="oz">回合结束</span><button class="oh" onclick="po('o')" title="查看出手规则">ⓘ 规则</button>`;
-$('cbA').innerHTML=`<div class="lb">我方</div><div class="un"><b>${G.n}</b><small>${lab(G.s)}</small><span class="spd" title="速度：决定出手顺序与每回合出手次数">速${SPD(F.P)}</span>${bar('生命',p,h,'--hp','',F.P.sh)}${bar('灵力',G.mp,M,'--mp')}${tgsL(stl(F.P).concat(xt()))}</div>`+F.B.map(z=>`<div class="un"><b>${z.n}</b><small>${z.dl?`${lab(z.D.s)}<span class="rt rtL">${z.D===G.dl?'道侣':'同伴'}</span>`:`${z.lv}级${tag('B'+z.i)}`}</small><span class="spd">速${SPD(z)}</span>${bar('生命',z.h,z.H,'--gd','',z.sh)}${tgsL(stl(z))}</div>`).join('');
+$('cbA').innerHTML=`<div class="lb">我方 <small class="uh">（点击单位查看详情、调配法宝）</small></div><div class="un uk" onclick="po('ud',0)" title="点击查看详情"><b>${G.n}</b><small>${lab(G.s)}</small><span class="spd" title="速度：决定出手顺序与每回合出手次数">速${SPD(F.P)}</span>${bar('生命',p,h,'--hp','',F.P.sh)}${bar('灵力',G.mp,M,'--mp')}${tgsL(stl(F.P).concat(xt()))}</div>`+F.B.map((z,j)=>`<div class="un uk" onclick="po('ud',${j+1})" title="点击查看详情、调配法宝"><b>${z.n}</b>${(z.eq||[]).length?`<span class="eqn" title="佩戴法宝">🔮${z.eq.length}</span>`:''}<small>${z.dl?`${lab(z.D.s)}<span class="rt rtL">${z.D===G.dl?'道侣':'同伴'}</span>`:`${z.lv}级${tag('B'+z.i)}`}</small><span class="spd">速${SPD(z)}</span>${bar('生命',z.h,z.H,'--gd','',z.sh)}${tgsL(stl(z))}</div>`).join('');
 $('rt').innerHTML=`<div class="lb">敌方${mu?`（${F.EN.length}）`:''}</div>`+F.EN.map((E,j)=>{const cn=cap(E),sl=mu&&j==F.ti;return`<div class="un${mu?' ek':''}${sl?' sel':''}"${mu?` onclick="act(()=>tgt(${j}))" title="${F.lkE===E?'点击取消锁定':'点击锁定为攻击目标'}"`:''}><b>${E.n}</b><small>${elv(E)}${etag(E)}</small><span class="spd">速${SPD(E)}</span>${sl?`<span class="tm">${F.lkE?'🔒锁定':'◎目标'}</span>`:''}${cn?'<span class="cn">可烙印</span>':''}${bar('生命',E.h,E.H,'--dm',cn?'can':'',E.sh)}${tgsL(stl(E))}</div>`}).join('')}
 else{
-$('who').innerHTML=`${G.n}<small class="sx0">${G.sex?'♀ 女修':'♂ 男修'}</small><button class="lrb" onclick="po('${G.lr?'lri':'lr'}')">${lrT(G.lr)}</button><button class="pe" onclick="po('u')" title="${G.pi?'查看修士信息':'修改名字与性别（仅限一次）'}">${G.pi?'ⓘ':'✎ 改名'}</button>`+tgsL(pl0());$('rlm').textContent=G.hide?'气息尽敛':lab(G.s);
+$('who').innerHTML=`${G.n}<small class="sx0">${G.sex?'♀ 女修':'♂ 男修'}</small><button class="lrb" onclick="po('${G.lr?'lri':'lr'}')">${lrT(G.lr)}</button>${G.lr?'':`<button class="pe" onclick="po('lr')" title="开始仙途前可修改名字与性别">✎ 改名</button>`}`+tgsL(pl0());$('rlm').textContent=G.hide?'气息尽敛':lab(G.s);
 $('bars').innerHTML=bar('修为',G.x,n,'--jd')+bar('生命',p,h,'--hp')+bar('灵力',G.mp,M,'--mp')+bar('寿命',G.age,Lf,'--gd')+`<div class="br" title="速度：决定战斗中的出手顺序与每回合出手次数"><b>速度</b><span class="sv">${pspd0()}${G.vb?`<small>（身法+${Math.round(G.vb*100)}%）</small>`:''}</span></div>`+(G.limR?`<div class="br" title="天命瓶颈：此生无法再突破大境界"><b>道途</b><span class="sv" style="color:var(--hp)">止步${lab(G.lim)}</span></div>`:'');
 $('rt').innerHTML=`<button class="tg" onclick="po('m')">主修：《${MT[G.mt][0]}》</button><div class="lb">已学会</div><div class="ch">${[...G.sp.map(i=>'S'+i),...G.se.map(i=>'T'+i),...G.zf.map(i=>'Z'+i)].map(k=>`<button class="k${'STZ'.indexOf(k[0])}" onclick="po('t','${k}')">${IT[k][4]}${tag(k)}</button>`).join('')}</div><button class="tg" onclick="po('b',0)">灵兽袋（${G.bz.length}/${pcap()}只，出战${dN()}/${dmax()}）</button><button class="tg dlb" onclick="po('d')">${G.dl?`💞 道侣：${nmK(G.dl.k)}（${stg(G.dl.f)}·情缘${G.dl.f}${(G.dl.j||0)>=50?'·醋意'+G.dl.j:''}${G.dl.cap?'·被擒':''}）`:'💞 道侣：尚无'}</button><div class="lb">储物袋</div><button class="sk" onclick="po('s')"><span>灵石 ${fm(G.st)}</span><span>功法 ${cnt('STMZ')}</span><span>丹药 ${cnt('P')}</span><span>法宝 ${cnt('A')}</span><span>阵盘 ${hv('W3')}</span><span>材料 ${cnt('WE')-hv('W3')}</span></button>`}
 let py=-1;const L=$('lg');
@@ -1470,7 +1509,7 @@ $('al').textContent=G.over?'尘埃落定':F?`第${F.t}回合 · 轮到你出手`
 $('ac').innerHTML=G.over?b(G.over==2?'再入轮回，重修一世':'转世重生','reset()','p')
 :F?cm(b)
 :G.ev>=0?evC(EV[G.ev]).map((c,i)=>b(c[0],`pick(${i})`)).join('')
-:!G.lr?`<p class="no" style="margin:0 0 6px">修士须有灵根才能修行。先去测灵石前测一测你的灵根吧（共3次机会，确定后不可更改）。</p>`+b('🔮 测试灵根',"po('lr')",'p'):b('打坐修炼','act(sit)')+b('外出历练','act(go)')+b('尝试突破','act(bt)','p')+b('逛坊市',"po('p')");
+:!G.lr?`<p class="no" style="margin:0 0 6px">仙途未启。请先定下名字、性别，并测出满意的灵根（可无限重测）；踏上仙途后三者均不可更改。</p>`+b('🔮 入门：定名测灵',"po('lr')",'p'):b('打坐修炼','act(sit)')+b('外出历练','act(go)')+b('尝试突破','act(bt)','p')+b('逛坊市',"po('p')");
 if(G.over&&$('dg').open)$('dg').close();else rp();
 try{localStorage.setItem('xx',JSON.stringify(G))}catch(e){}}
 $('dg').onclose=()=>{PO=null};$('dg').onclick=e=>{if(e.target==e.currentTarget)e.currentTarget.close()};
