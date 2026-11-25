@@ -2,14 +2,14 @@
 <html lang="zh-CN"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>互动小说 · 文字修仙 v1.9.2</title>
+<title>互动小说 · 文字修仙 v1.9.4</title>
 <style>
-:root{--bg:#dfe7e2;--cd:#eef3ef;--c2:#e4ebe6;--ink:#17252c;--dm:#55686c;--jd:#2a6b64;--gd:#8b6b24;--ln:#bccac4;--hp:#a84a3f;--mp:#3f6f9a;--pu:#8a63c7;--sh:0 1px 3px rgba(20,40,40,.08);color-scheme:light}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e161c;--cd:#16222b;--c2:#1c2a34;--ink:#dbe5e0;--dm:#91a5a7;--jd:#6cc3b1;--gd:#d2b067;--ln:#2b3c46;--hp:#d4684f;--mp:#6aa0d4;--pu:#b18be6;--sh:0 1px 3px rgba(0,0,0,.4);color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#0e161c;--cd:#16222b;--c2:#1c2a34;--ink:#dbe5e0;--dm:#91a5a7;--jd:#6cc3b1;--gd:#d2b067;--ln:#2b3c46;--hp:#d4684f;--mp:#6aa0d4;--pu:#b18be6;--sh:0 1px 3px rgba(0,0,0,.4);color-scheme:dark}
+:root{--bg:#ece5d6;--bg2:#e3dac6;--cd:rgba(255,251,242,.78);--cds:rgba(255,251,242,.94);--c2:rgba(92,72,38,.065);--ink:#29251e;--dm:#7a6f5f;--jd:#2c7a6a;--gd:#9c6f18;--ln:rgba(120,92,44,.2);--hp:#b4432d;--mp:#386ca6;--pu:#7650b8;--gl:rgba(156,111,24,.28);--sh:0 10px 28px -14px rgba(70,50,20,.35),0 1px 2px rgba(70,50,20,.08);--mt1:rgba(90,78,58,.10);--mt2:rgba(70,60,44,.16);color-scheme:light}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1017;--bg2:#0f1822;--cd:rgba(19,29,39,.74);--cds:rgba(19,29,39,.96);--c2:rgba(255,255,255,.045);--ink:#e7ece6;--dm:#8ea1a3;--jd:#5fd2b9;--gd:#e4c06f;--ln:rgba(228,192,111,.15);--hp:#e2674f;--mp:#5ba8ea;--pu:#b48df2;--gl:rgba(228,192,111,.3);--sh:0 14px 34px -16px rgba(0,0,0,.75),0 1px 2px rgba(0,0,0,.3);--mt1:rgba(60,110,120,.12);--mt2:rgba(30,60,72,.35);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0a1017;--bg2:#0f1822;--cd:rgba(19,29,39,.74);--cds:rgba(19,29,39,.96);--c2:rgba(255,255,255,.045);--ink:#e7ece6;--dm:#8ea1a3;--jd:#5fd2b9;--gd:#e4c06f;--ln:rgba(228,192,111,.15);--hp:#e2674f;--mp:#5ba8ea;--pu:#b48df2;--gl:rgba(228,192,111,.3);--sh:0 14px 34px -16px rgba(0,0,0,.75),0 1px 2px rgba(0,0,0,.3);--mt1:rgba(60,110,120,.12);--mt2:rgba(30,60,72,.35);color-scheme:dark}
 *{box-sizing:border-box;scrollbar-width:thin;scrollbar-color:var(--ln) transparent}
 html,body{height:100%;margin:0}
-body{background:var(--bg);color:var(--ink);font:14px/1.7 'Noto Serif SC','Source Han Serif SC','Songti SC','STSong','SimSun',serif;-webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:100%;overscroll-behavior:none}
+body{background:radial-gradient(1100px 620px at 85% -8%,color-mix(in srgb,var(--jd) 13%,transparent),transparent 62%),radial-gradient(900px 560px at -5% 8%,color-mix(in srgb,var(--gd) 11%,transparent),transparent 60%),linear-gradient(180deg,var(--bg),var(--bg2));color:var(--ink);font:14px/1.7 'Noto Serif SC','Source Han Serif SC','Songti SC','STSong','SimSun',serif;-webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:100%;overscroll-behavior:none}
 button{font:inherit;font-size:13px;padding:7px 8px;border:1px solid var(--ln);border-radius:10px;background:var(--cd);color:var(--ink);cursor:pointer;touch-action:manipulation;transition:border-color .15s,background .15s,transform .08s}
 button:hover:not(:disabled){border-color:var(--jd)}button:active:not(:disabled){transform:scale(.97)}
 button:focus-visible{outline:2px solid var(--jd);outline-offset:2px}
@@ -37,7 +37,7 @@ button.lrb{padding:0;border:0;background:none}
 .tr{position:relative;height:16px;background:var(--c2);border-radius:5px;overflow:hidden}
 .tr i{position:absolute;inset:0 auto 0 0;background:var(--c);opacity:.62;transition:width .45s cubic-bezier(.2,.8,.2,1)}
 .tr span{position:relative;display:block;text-align:center;font-size:10.5px;line-height:16px;white-space:nowrap}
-.tr.full i{opacity:.85;animation:glw 1.6s ease-in-out infinite}
+.tr.full i{opacity:.95}
 @keyframes glw{50%{filter:brightness(1.25)}}
 #kv{display:flex;flex-wrap:wrap;gap:3px 5px;margin-top:5px}
 .kv{font-size:11px;padding:0 7px;border-radius:9px;background:var(--c2);color:var(--dm);white-space:nowrap;line-height:1.75}.kv b{font-weight:700;color:var(--ink);margin-left:2px}
@@ -48,15 +48,6 @@ button.lrb{padding:0;border:0;background:none}
 .mi i{font-style:normal;font-size:16px;line-height:1.2}.mi small{margin:0;font-size:10px;max-width:9em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .mi.dl{border-color:#d6559a;color:#b8457f}
 #lg{grid-area:story;min-height:0;overflow-y:auto;padding:8px 12px;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
-#lg p{margin:0 0 7px;padding-left:10px;border-left:2px solid transparent;color:var(--dm);line-height:1.85}
-#lg p:last-child{color:var(--ink);animation:fi .45s}
-#lg p.p{border-color:var(--jd)}#lg p.e{border-color:var(--hp)}#lg p.b{border-color:var(--gd)}
-#lg p.g,#lg p.k{color:var(--ink)}#lg p.k{font-weight:700}
-#lg p.n{color:var(--ink);border-color:var(--pu);background:linear-gradient(90deg,color-mix(in srgb,var(--pu) 11%,transparent),transparent 75%);border-radius:0 8px 8px 0;padding:4px 9px 4px 11px}
-#lg p.r{font-size:12px;border-color:#7a8a99;font-style:italic}
-#lg p.s{font-size:11.5px;color:var(--gd);opacity:.85}
-#lg em{font-style:normal;font-weight:700;color:var(--ink)}#lg i{font-style:normal;color:var(--gd)}
-.yr{display:flex;align-items:center;gap:8px;margin:10px 0 6px;font-size:12px;color:var(--dm)}.yr:before,.yr:after{content:"";flex:1;height:1px;background:var(--ln)}
 @keyframes fi{from{opacity:0;transform:translateY(5px)}}
 #side{grid-area:side;min-height:0;max-height:42dvh;display:flex;flex-direction:column;gap:5px;padding:7px 8px}
 #ac{flex:1 1 auto;min-height:0;overflow-y:auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:6px;align-content:start;overscroll-behavior:contain}
@@ -122,7 +113,7 @@ button.fb{border-color:#1aa6b7;background:#1aa6b7;color:#fff;font-weight:900;ani
 /* 弹窗 */
 dialog{width:min(94vw,560px);max-height:86dvh;overflow:auto;padding:0 16px 16px;border:1px solid var(--ln);border-radius:16px;background:var(--cd);color:var(--ink);font:inherit;box-shadow:0 12px 40px rgba(0,0,0,.3)}
 dialog[open]{animation:dgi .2s ease-out}@keyframes dgi{from{opacity:0;transform:translateY(10px) scale(.98)}}
-dialog::backdrop{background:rgba(5,15,20,.55);backdrop-filter:blur(2px)}
+dialog::backdrop{background:rgba(5,15,20,.55);}
 dialog h3{margin:14px 0 4px;font-size:13px;color:var(--gd)}
 .dh{position:sticky;top:0;z-index:3;display:flex;align-items:center;gap:8px;margin:0 -16px 8px;padding:10px 10px 8px 16px;background:var(--cd);border-bottom:1px solid var(--ln)}
 .dh b{flex:1;min-width:0;font-size:17px;line-height:1.3}.dh small{margin-left:8px;font-size:12px;font-weight:400;color:var(--gd)}
@@ -183,6 +174,155 @@ dialog .ch button{padding:5px 10px}
 @keyframes dgu{50%{box-shadow:0 0 12px 2px rgba(200,30,40,.6);background:color-mix(in srgb,#b0233b 10%,var(--c2))}}
 .un.d0{border-left:3px solid #2e9b62}
 .scr{margin:2px 0 8px;padding:8px;border-radius:10px;text-align:center;font-size:16px;font-weight:900;letter-spacing:.1em;border:1px solid}
+
+/* ================= v1.9.4 视觉层：水墨山影 · 金线卡片 · 灵光动效 ================= */
+body::before{content:"";position:fixed;left:0;right:0;bottom:0;height:42vh;z-index:0;pointer-events:none;background:linear-gradient(180deg,transparent,var(--mt2));-webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%201440%20360%22%20preserveAspectRatio%3D%22none%22%3E%3Cpath%20fill%3D%22%23fff%22%20fill-opacity%3D%22.55%22%20d%3D%22M0%20250%20L90%20205%20L170%20228%20L270%20150%20L360%20210%20L450%20175%20L540%20232%20L650%20120%20L760%20205%20L860%20168%20L960%20226%20L1060%20140%20L1170%20214%20L1270%20178%20L1360%20222%20L1440%20196%20V360%20H0Z%22/%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M0%20300%20Q120%20246%20240%20286%20T500%20276%20Q620%20232%20760%20290%20T1040%20280%20Q1160%20248%201280%20288%20T1440%20276%20V360%20H0Z%22/%3E%3C/svg%3E") bottom/100% 100% no-repeat;mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%201440%20360%22%20preserveAspectRatio%3D%22none%22%3E%3Cpath%20fill%3D%22%23fff%22%20fill-opacity%3D%22.55%22%20d%3D%22M0%20250%20L90%20205%20L170%20228%20L270%20150%20L360%20210%20L450%20175%20L540%20232%20L650%20120%20L760%20205%20L860%20168%20L960%20226%20L1060%20140%20L1170%20214%20L1270%20178%20L1360%20222%20L1440%20196%20V360%20H0Z%22/%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M0%20300%20Q120%20246%20240%20286%20T500%20276%20Q620%20232%20760%20290%20T1040%20280%20Q1160%20248%201280%20288%20T1440%20276%20V360%20H0Z%22/%3E%3C/svg%3E") bottom/100% 100% no-repeat;opacity:.9}
+body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse at 50% 120%,var(--mt1),transparent 60%)}
+#app{position:relative;z-index:2}
+#fxc{position:fixed;inset:0;z-index:80;pointer-events:none}
+#pil{position:fixed;left:50%;top:-10vh;bottom:-10vh;width:min(46vw,260px);z-index:79;pointer-events:none;transform:translateX(-50%) scaleX(0);opacity:0;background:linear-gradient(90deg,transparent,rgba(255,226,150,.18) 25%,rgba(255,248,220,.75) 50%,rgba(255,226,150,.18) 75%,transparent);}
+#pil.go{animation:pil 1.6s cubic-bezier(.2,.8,.2,1)}
+@keyframes pil{0%{opacity:0;transform:translateX(-50%) scaleX(.05)}18%{opacity:1;transform:translateX(-50%) scaleX(1)}60%{opacity:.75}100%{opacity:0;transform:translateX(-50%) scaleX(1.5)}}
+#vig{position:fixed;inset:0;z-index:78;pointer-events:none;opacity:0;background:radial-gradient(ellipse at center,transparent 45%,rgba(190,20,20,.55))}
+#vig.go{animation:vig .9s ease-out}@keyframes vig{0%{opacity:0}15%{opacity:1}100%{opacity:0}}
+.shk{animation:shk .5s cubic-bezier(.36,.07,.19,.97)}
+@keyframes shk{10%,90%{transform:translate(-1px,0)}20%,80%{transform:translate(3px,1px)}30%,50%,70%{transform:translate(-5px,-1px)}40%,60%{transform:translate(5px,1px)}}
+/* 卡片：磨砂底 + 金玉双色描边 */
+.cd{position:relative;background:var(--cds);border:1px solid var(--ln);border-radius:16px;box-shadow:var(--sh),inset 0 1px 0 rgba(255,255,255,.05);}
+.cd:not(#lg):not(#rt)::before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;pointer-events:none;background:linear-gradient(135deg,color-mix(in srgb,var(--gd) 60%,transparent),transparent 30%,transparent 70%,color-mix(in srgb,var(--jd) 50%,transparent));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+/* 标题 */
+#top{min-height:34px}
+h1{display:flex;align-items:center;gap:8px;font-size:17px;letter-spacing:.28em}
+h1 .tt{background:linear-gradient(100deg,var(--ink) 0%,var(--gd) 35%,color-mix(in srgb,var(--gd) 40%,#fff) 50%,var(--gd) 65%,var(--ink) 100%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent}
+@keyframes tshn{0%{background-position:120% 0}100%{background-position:-120% 0}}
+h1 small{margin-left:0;font-size:11px;letter-spacing:.12em;color:var(--dm);font-weight:400}
+.seal{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:5px;background:linear-gradient(135deg,#c8402e,#8e1f16);color:#fbe7d2;font-size:14px;letter-spacing:0;font-weight:900;box-shadow:0 0 0 1px rgba(255,255,255,.08) inset,0 2px 8px rgba(160,30,20,.45);transform:rotate(-6deg)}
+.tb button{padding:3px 11px;background:var(--cds)}
+/* 按钮 */
+button{background:linear-gradient(180deg,color-mix(in srgb,var(--cds) 92%,#fff 8%),var(--cds));border-color:var(--ln);border-radius:11px;transition:border-color .18s,box-shadow .18s,transform .1s,background .18s}
+button:hover:not(:disabled){border-color:color-mix(in srgb,var(--gd) 70%,transparent);box-shadow:0 0 0 3px color-mix(in srgb,var(--gd) 12%,transparent),0 6px 16px -10px var(--gl)}
+button.p{background:linear-gradient(135deg,color-mix(in srgb,var(--jd) 88%,#fff 12%),color-mix(in srgb,var(--jd) 75%,#000 25%));border-color:color-mix(in srgb,var(--jd) 80%,#fff);color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.25);position:relative;overflow:hidden}
+button.p small{color:rgba(255,255,255,.82)}
+@keyframes sheen{0%,55%{left:-60%}100%{left:130%}}
+button.k1{background:linear-gradient(180deg,color-mix(in srgb,var(--gd) 10%,var(--cds)),var(--cds))}
+#ac button{text-align:center;position:relative}
+#ac button:not(.p):not(.ih):not(:disabled)::before{content:"";position:absolute;left:0;top:22%;bottom:22%;width:2px;border-radius:2px;background:linear-gradient(var(--gd),var(--jd));opacity:.0;transition:opacity .2s}
+#ac button:not(.p):not(.ih):hover:not(:disabled)::before{opacity:.9}
+/* 进度条：渐变 + 流光 */
+.tr{height:15px;border-radius:8px;background:color-mix(in srgb,var(--ink) 8%,transparent);box-shadow:inset 0 1px 2px rgba(0,0,0,.18)}
+.tr i{opacity:1;border-radius:8px;background:linear-gradient(90deg,color-mix(in srgb,var(--c) 55%,#000 10%),var(--c) 70%,color-mix(in srgb,var(--c) 70%,#fff));overflow:hidden}
+@keyframes gls{0%{background-position:140% 0}100%{background-position:-60% 0}}
+.tr span{line-height:15px;font-size:10.5px;color:var(--ink);text-shadow:0 0 3px var(--cds),0 0 2px var(--cds);font-variant-numeric:tabular-nums}
+.tr.full{box-shadow:0 0 0 1px color-mix(in srgb,var(--jd) 60%,transparent),0 0 12px color-mix(in srgb,var(--jd) 45%,transparent)}
+.br>b{font-size:11px;letter-spacing:.1em}
+/* 状态区 */
+#who .nm{background:linear-gradient(90deg,var(--ink),color-mix(in srgb,var(--gd) 70%,var(--ink)));-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:.06em}
+#who .rl{padding:0 8px;border-radius:9px;background:color-mix(in srgb,var(--gd) 14%,transparent);border:1px solid color-mix(in srgb,var(--gd) 35%,transparent);font-size:12.5px}
+.kv{background:color-mix(in srgb,var(--ink) 6%,transparent);border:1px solid var(--ln)}
+/* 菜单 */
+.mi{gap:2px;padding:7px 6px 6px;border-radius:13px}
+.mi i{display:grid;place-items:center;width:32px;height:32px;margin-bottom:2px;border-radius:50%;font-size:16px;background:radial-gradient(circle at 35% 30%,color-mix(in srgb,var(--gd) 30%,transparent),transparent 70%),color-mix(in srgb,var(--ink) 6%,transparent);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--gd) 35%,transparent);transition:transform .25s}
+.mi:hover:not(:disabled) i{transform:translateY(-2px) rotate(-6deg);box-shadow:inset 0 0 0 1px var(--gd),0 0 12px var(--gl)}
+.mi.dl{color:inherit;border-color:color-mix(in srgb,#d6559a 45%,var(--ln))}.mi.dl i{background:radial-gradient(circle at 35% 30%,rgba(255,140,190,.4),transparent 70%),color-mix(in srgb,var(--ink) 6%,transparent);box-shadow:inset 0 0 0 1px rgba(214,85,154,.5)}
+/* 行动区 */
+#side{gap:7px}
+#side>.lb{font-size:11.5px;letter-spacing:.12em;color:color-mix(in srgb,var(--gd) 75%,var(--dm))}
+.lb:after{background:linear-gradient(90deg,var(--ln),transparent)}
+.ndh{padding:6px 10px;border-radius:10px;background:linear-gradient(90deg,color-mix(in srgb,var(--pu) 14%,transparent),transparent);border-left:3px solid var(--pu);font-size:12px}
+#it button{border-radius:16px;background:color-mix(in srgb,var(--ink) 5%,var(--cds))}
+/* 手下留情行（修复桌面端挤压换行） */
+.mcr{display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:8px;flex-wrap:nowrap;padding:5px 6px 5px 9px;border-style:solid;border-color:var(--ln);background:color-mix(in srgb,var(--ink) 4%,transparent)}
+.mcr .mc{min-width:0}.mcr .mc.sm{white-space:nowrap}
+#ac .mcr .ih,.mcr .ih{min-height:0;width:26px;height:26px;padding:0;border-radius:50%;line-height:24px;font-size:13px;display:grid;place-items:center}
+/* 战斗区 */
+#hd.cb #bt{animation:btin .3s ease-out}
+@keyframes btin{from{opacity:0;transform:translateY(-6px)}}
+.un{background:color-mix(in srgb,var(--ink) 4.5%,transparent);border:1px solid var(--ln);border-radius:11px;transition:border-color .2s,box-shadow .2s}
+.un .u1>b{font-size:13px;letter-spacing:.04em}
+#cbE .un{background:linear-gradient(135deg,color-mix(in srgb,var(--hp) 7%,transparent),transparent 70%)}
+#cbA .un:first-of-type{background:linear-gradient(135deg,color-mix(in srgb,var(--jd) 9%,transparent),transparent 70%)}
+.fdm{position:absolute;right:10px;top:-4px;z-index:3;font-size:15px;font-weight:900;font-variant-numeric:tabular-nums;pointer-events:none;animation:fdm 1.1s cubic-bezier(.2,.8,.2,1) forwards;text-shadow:0 1px 0 rgba(0,0,0,.35),0 0 8px currentColor}
+.fdm.dn{color:#ff6a50}.fdm.up{color:#4fdc9b}
+@keyframes fdm{0%{opacity:0;transform:translateY(8px) scale(.6)}18%{opacity:1;transform:translateY(-4px) scale(1.25)}70%{opacity:1}100%{opacity:0;transform:translateY(-22px) scale(1)}}
+#ordA .og.now{box-shadow:0 0 10px var(--gl)}
+/* ===== 修行纪事 ===== */
+#lg{padding:0 10px 10px;background:var(--cds)}
+.lgh{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:8px;margin:0 -10px 6px;padding:8px 12px 7px;background:var(--cds);border-bottom:1px solid var(--ln);font-size:12.5px;letter-spacing:.14em;color:var(--gd)}
+.lgh>b{font-weight:900}
+.lgf{margin-left:auto;display:flex;padding:2px;border-radius:12px;border:1px solid var(--ln);background:color-mix(in srgb,var(--ink) 5%,transparent)}
+.lgf button{padding:1px 10px;font-size:11.5px;border:0;border-radius:10px;background:none;color:var(--dm);letter-spacing:.08em;box-shadow:none!important}
+.lgf button.on{background:linear-gradient(135deg,var(--gd),color-mix(in srgb,var(--gd) 70%,#000));color:#fff}
+.yc{position:relative;margin:0 0 10px;padding:0 0 4px 22px}
+.lgm{display:none;padding:1px 9px;font-size:11px;border-radius:10px;letter-spacing:.04em;color:var(--dm)}
+.yc::before{content:"";position:absolute;left:8px;top:12px;bottom:-10px;width:1px;background:linear-gradient(var(--ln),color-mix(in srgb,var(--ln) 40%,transparent))}
+.yh{position:sticky;top:34px;z-index:3;display:flex;align-items:baseline;gap:6px;margin:0 0 4px -22px;padding:4px 0 5px 0;background:var(--cds)}
+.yh::before{content:"";flex:none;align-self:center;width:13px;height:13px;margin:0 3px 0 2px;border-radius:50%;background:radial-gradient(circle,var(--gd) 30%,transparent 34%),color-mix(in srgb,var(--gd) 15%,var(--cds));box-shadow:0 0 0 1px color-mix(in srgb,var(--gd) 55%,transparent)}
+.ya{font-size:19px;font-weight:900;line-height:1;font-variant-numeric:tabular-nums;color:var(--ink)}
+.yu{font-size:11px;color:var(--dm)}
+.yrl{margin-left:4px;padding:0 7px;border-radius:8px;font-size:10.5px;color:var(--gd);border:1px solid color-mix(in srgb,var(--gd) 35%,transparent)}
+.ych{margin-left:auto;display:flex;gap:4px}.ych span{font-size:10.5px;padding:0 6px;border-radius:8px;background:color-mix(in srgb,var(--ink) 6%,transparent);color:var(--dm);white-space:nowrap}
+.ych .yc-up{color:#fff;background:linear-gradient(135deg,#f1c55a,#c98a1c)}
+.yc.yup .yh::before{background:radial-gradient(circle,#fff 25%,transparent 30%),linear-gradient(135deg,#ffd76a,#d18f1d);box-shadow:0 0 10px rgba(255,200,80,.8)}
+.yc.ydn .yh::before{background:#6b2b2b;box-shadow:0 0 0 1px #b0233b}
+.yc.now .yh::before{box-shadow:0 0 0 3px color-mix(in srgb,var(--gd) 18%,transparent),0 0 0 1px var(--gd)}
+@keyframes ypl{50%{box-shadow:0 0 0 4px color-mix(in srgb,var(--gd) 18%,transparent),0 0 0 1px var(--gd)}}
+.yb{display:flex;flex-direction:column;gap:3px}
+.le{display:grid;grid-template-columns:18px minmax(0,1fr);gap:4px;align-items:start;padding:3px 8px 3px 4px;border-radius:9px;line-height:1.8}
+.le .li{font-style:normal;font-size:11px;height:24px;display:grid;place-items:center;color:var(--dm);opacity:.85}
+.le p{margin:0;color:var(--dm);font-size:13.5px;line-height:1.8}
+.yc.now .yb>.le:last-child p,.yc.now .yb>.le:last-child{animation:fi .5s}
+.le.me p,.le.pl p{color:color-mix(in srgb,var(--ink) 82%,var(--dm))}
+.le.key{background:linear-gradient(90deg,color-mix(in srgb,var(--gd) 13%,transparent),transparent 80%);box-shadow:inset 2px 0 0 var(--gd)}.le.key p{color:var(--ink);font-weight:700}.le.key .li{color:var(--gd)}
+.le.sty{margin:3px 0;padding:7px 10px 7px 6px;background:linear-gradient(135deg,color-mix(in srgb,var(--pu) 12%,transparent),transparent 85%);border:1px solid color-mix(in srgb,var(--pu) 22%,transparent)}.le.sty p{color:var(--ink);font-size:14px;letter-spacing:.02em}.le.sty .li{color:var(--pu);font-size:15px}
+.le.gn .li{color:var(--jd)}.le.gn p{color:var(--ink)}
+.le.bad .li{color:var(--hp)}.le.bad p{color:color-mix(in srgb,var(--hp) 55%,var(--ink))}
+.le.rum p{font-style:italic;font-size:12.5px}
+.le.sys p{font-size:11.5px;color:color-mix(in srgb,var(--gd) 70%,var(--dm))}.le.sys .li{font-size:9px}
+.le.up{padding:8px 10px 8px 6px;background:linear-gradient(100deg,rgba(255,206,90,.24),rgba(255,206,90,.05) 70%,transparent);border:1px solid rgba(220,170,60,.45);box-shadow:0 0 18px -6px rgba(255,190,60,.6)}.le.up p{color:var(--ink);font-weight:900}.le.up .li{font-size:15px}
+.le.dth{background:linear-gradient(90deg,rgba(120,30,30,.18),transparent);box-shadow:inset 2px 0 0 #9b2c2c}
+.le.lrn .li,.le.pet .li,.le.pil .li,.le.gem .li,.le.gft .li,.le.lov .li{font-size:13px;opacity:1}
+.le.lrn{box-shadow:inset 2px 0 0 var(--mp)}.le.lov{box-shadow:inset 2px 0 0 #d6559a}
+#lg p em{font-style:normal;font-weight:700;color:var(--ink)}#lg p i{font-style:normal;color:var(--gd)}#lg i{font-style:normal}
+.yq{display:flex;align-items:center;gap:8px;margin:0 0 10px 0;padding:5px 10px 5px 4px;border-radius:10px;font-size:12px;color:var(--dm);border:1px dashed var(--ln);background:color-mix(in srgb,var(--ink) 3%,transparent)}
+.yq i{font-style:normal;display:grid;place-items:center;width:18px}.yq span{font-variant-numeric:tabular-nums;font-weight:700;color:var(--ink)}.yq em{margin-left:auto;font-style:normal;color:var(--jd);font-weight:700}
+/* 战报 */
+.fc{margin:4px 0 5px;border-radius:12px;border:1px solid color-mix(in srgb,var(--hp) 28%,var(--ln));background:linear-gradient(135deg,color-mix(in srgb,var(--hp) 7%,transparent),transparent 60%);overflow:hidden}
+.fc.o-w{border-color:color-mix(in srgb,var(--jd) 35%,var(--ln));background:linear-gradient(135deg,color-mix(in srgb,var(--jd) 8%,transparent),transparent 60%)}
+.fc.o-ing{border-color:color-mix(in srgb,var(--hp) 55%,transparent);box-shadow:0 0 0 1px color-mix(in srgb,var(--hp) 18%,transparent),0 0 16px -6px color-mix(in srgb,var(--hp) 70%,transparent)}
+.fc summary{list-style:none;display:flex;align-items:center;gap:6px;padding:6px 10px 6px 8px;cursor:pointer;font-size:12.5px;user-select:none}
+.fc summary::-webkit-details-marker{display:none}
+.fc summary b{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--ink)}.fc summary b small{font-weight:400;color:var(--dm);font-size:11px}
+.fi{font-style:normal;font-size:13px}
+.fo{flex:none;padding:0 7px;border-radius:8px;font-size:10.5px;font-weight:700;color:#fff;background:#8a8f94}
+.o-w .fo{background:linear-gradient(135deg,#3fbf8f,#22806a)}.o-l .fo{background:linear-gradient(135deg,#d0503a,#8c2418)}.o-f .fo{background:linear-gradient(135deg,#4ea6c7,#2a6a88)}.o-ing .fo{background:linear-gradient(135deg,#ef7a3c,#c0381e)}
+.fr{flex:none;font-size:10.5px;color:var(--dm)}
+.fa{margin-left:auto;flex:none;color:var(--dm);transition:transform .25s}
+.fc details[open] .fa{transform:rotate(180deg)}
+.fd{padding:2px 10px 8px 12px;border-top:1px dashed var(--ln);max-height:340px;overflow-y:auto;overscroll-behavior:contain}
+.o-ing .fd{max-height:none}
+.fd .rd{display:flex;align-items:center;gap:6px;margin:6px 0 2px;font-style:normal;font-size:10.5px;letter-spacing:.12em;color:color-mix(in srgb,var(--gd) 80%,var(--dm))}.fd .rd::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--ln),transparent)}
+.fl{position:relative;margin:0;padding:1px 0 1px 11px;font-size:12.5px;line-height:1.7;color:var(--dm)}
+.fl::before{content:"";position:absolute;left:0;top:.72em;width:5px;height:5px;border-radius:50%;background:var(--ln)}
+.fl.me::before{background:var(--jd)}.fl.me{color:color-mix(in srgb,var(--ink) 85%,var(--dm))}
+.fl.al::before{background:var(--gd)}.fl.bad::before{background:var(--hp)}.fl.bad{color:color-mix(in srgb,var(--hp) 45%,var(--dm))}
+.fl.sys{font-size:11.5px;color:color-mix(in srgb,var(--gd) 70%,var(--dm))}.fl.sys::before{border-radius:1px;transform:rotate(45deg)}
+.fk{margin:0 6px 5px;padding:4px 8px 4px 2px}
+/* 弹窗 */
+dialog{border:1px solid var(--ln);border-radius:20px;background:var(--cds);box-shadow:0 30px 80px -20px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.03) inset}
+dialog[open]{animation:dgi .32s cubic-bezier(.2,.9,.3,1.1)}@keyframes dgi{from{opacity:0;transform:translateY(16px) scale(.96)}}
+dialog::backdrop{background:radial-gradient(ellipse at center,rgba(5,12,18,.45),rgba(5,12,18,.75));}
+.dh{background:linear-gradient(180deg,var(--cds) 80%,color-mix(in srgb,var(--cds) 70%,transparent));border-bottom:0}
+.dh::after{content:"";position:absolute;left:16px;right:16px;bottom:0;height:1px;background:linear-gradient(90deg,transparent,var(--gd),transparent);opacity:.6}
+.dh b{letter-spacing:.08em}
+dialog h3{display:flex;align-items:center;gap:6px;letter-spacing:.1em}dialog h3::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,color-mix(in srgb,var(--gd) 45%,transparent),transparent)}
+.rw{border-bottom-color:color-mix(in srgb,var(--ln) 70%,transparent)}
+/* 中央特效字 */
+#tst>div{border:1px solid rgba(255,255,255,.35);text-shadow:0 1px 2px rgba(0,0,0,.25)}
+#tst>div{position:relative;overflow:hidden}
+#tst>div::after{content:"";position:absolute;top:0;bottom:0;width:45%;left:-70%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.6),transparent);transform:skewX(-20deg);animation:tsh 1.1s .25s ease-out forwards}
+@keyframes tsh{to{left:140%}}
+/* 稀有度光泽 */
+.rtD{box-shadow:0 0 6px rgba(154,79,224,.6)}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 /* 桌面端 */
 @media(min-width:820px){
@@ -195,16 +335,60 @@ h1{font-size:18px}
 #side{max-height:none;padding:10px}
 #ac{grid-template-columns:1fr 1fr}
 #it{flex-wrap:wrap;overflow:visible;max-height:30%;overflow-y:auto}
-#lg p{font-size:15px}
+#app{grid-template-columns:minmax(0,1fr) 330px}
+#lg{padding:0 16px 14px}.lgh{margin:0 -16px 8px;padding:10px 18px 8px}
+.le p{font-size:14.5px}.le .li{height:26px}.le.sty p{font-size:15px}.fl{font-size:13px}
+.yh{top:46px}.ya{font-size:22px}
+
 .bs{max-height:38vh}
 .bs.many{display:grid;grid-template-columns:1fr 1fr;align-content:start}.bs.many>.lb{grid-column:1/-1}
 }
-@media(max-width:380px){#bars{grid-template-columns:1fr}.mi{min-width:58px;font-size:11px}#ac{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){h1 small{display:none}h1{font-size:15px;letter-spacing:.2em;gap:6px}.seal{width:20px;height:20px;font-size:12px}}
+
+/* ===== 手机端紧凑布局（v1.9.4）：把空间让给修行纪事 ===== */
+@media(max-width:819px){
+#app{gap:5px;grid-template-rows:auto auto minmax(180px,1fr) auto;padding:max(4px,env(safe-area-inset-top)) max(6px,env(safe-area-inset-right)) max(4px,env(safe-area-inset-bottom)) max(6px,env(safe-area-inset-left))}
+#top{min-height:28px}.tb button{padding:2px 9px;font-size:11.5px}
+h1{font-size:14px;letter-spacing:.18em;gap:6px}h1 small{display:none}.seal{width:19px;height:19px;font-size:11px;border-radius:4px}
+#nb{gap:5px}
+#stat{padding:6px 9px 7px}
+#who{margin-bottom:3px;gap:2px 5px}#who .nm{font-size:16px}#who .rl{font-size:11.5px;padding:0 6px}.lrt{font-size:10.5px}
+#bars{grid-template-columns:1fr 1fr;gap:3px 8px}
+.br{gap:4px;font-size:10.5px}.br>b{font-size:10px;letter-spacing:0}
+.tr{height:13px}.tr span{line-height:13px;font-size:9.5px}
+#kv{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-top:4px;gap:4px}#kv::-webkit-scrollbar{display:none}
+.kv{font-size:10.5px;flex:none}
+#rt{padding:4px;gap:4px;border-radius:13px}
+.mi{flex-direction:row;gap:4px;min-width:0;padding:5px 10px;border-radius:15px;font-size:12px;white-space:nowrap}
+.mi i{width:auto;height:auto;margin:0;background:none;box-shadow:none;font-size:14px}
+.mi small{display:none}.mi.dl i{background:none;box-shadow:none}
+#lg{padding:0 8px 8px}.lgh{margin:0 -8px 4px;padding:5px 10px;font-size:12px}
+.lgm{display:inline-block}
+.yc{padding-left:18px;margin-bottom:8px}.yc::before{left:6px}
+.yh{top:35px;margin-left:-18px;padding:2px 0 3px}.lgf button{padding:0 9px;line-height:1.6}.ya{font-size:16px}.yrl{font-size:10px;padding:0 5px}.ych span{font-size:10px;padding:0 5px}
+.le{grid-template-columns:15px minmax(0,1fr);gap:3px;padding:2px 4px 2px 2px}.le .li{height:22px;font-size:10px}
+.le p{font-size:13.5px;line-height:1.7}.le.sty{padding:5px 8px 5px 4px}.le.sty p{font-size:13.5px}
+.fc summary{padding:5px 8px 5px 6px;font-size:12px}.fd{padding:2px 8px 6px 10px;max-height:260px}.fl{font-size:12px}
+#side{max-height:36dvh;padding:6px 7px;gap:4px}
+#side>.lb{font-size:10.5px}
+#ac{gap:5px;grid-template-columns:repeat(auto-fill,minmax(120px,1fr))}
+#ac button{min-height:34px;padding:5px 7px;font-size:12.5px;line-height:1.3}#ac button small{font-size:10px;margin-top:0}
+#it button{padding:3px 9px;font-size:11.5px}
+.mcr{padding:3px 5px 3px 8px;gap:6px}.mc{font-size:12px}.mc small{font-size:10px}
+.ndh{padding:4px 8px;font-size:11.5px}
+.bs{max-height:24dvh}
+/* 收起状态栏：只留名字一行，纪事更大 */
+#app.mini #bars,#app.mini #kv,#app.mini #rt{display:none}
+#app.mini #who{margin-bottom:0}
+#app.mini .bs{max-height:17dvh}
+#app.mini #ordA{margin-bottom:3px;padding-bottom:3px}
+}
+@media(max-width:360px){#ac{grid-template-columns:1fr 1fr}.mi{padding:5px 8px;font-size:11.5px}}
 </style>
 </head>
 <body>
 <div id="app">
-<header id="top"><div class="tb l"><button onclick="po('help')" title="玩法说明">❓ 玩法</button></div><h1>互动小说<small>文字修仙 v1.9.2</small></h1><div class="tb r"><button onclick="po('set')" title="设置">⚙ 设置</button></div></header>
+<header id="top"><div class="tb l"><button onclick="po('help')" title="玩法说明">❓ 玩法</button></div><h1><span class="seal" aria-hidden="true">仙</span><span class="tt">互动小说</span><small>文字修仙 · v1.9.4</small></h1><div class="tb r"><button onclick="po('set')" title="设置">⚙ 设置</button></div></header>
 <div id="hd">
 <div id="nb"><section class="cd" id="stat"><div id="who"></div><div id="bars"></div><div id="kv"></div></section><nav class="cd" id="rt" aria-label="菜单"></nav></div>
 <section class="cd" id="bt"><div id="ordA"></div><div class="bf"><div class="bs" id="cbA"></div><div class="bs" id="cbE"></div></div></section>
@@ -215,7 +399,7 @@ h1{font-size:18px}
 <div id="tst"></div>
 <dialog id="dg"><div class="dh"><b id="dtt"></b><button class="dx" aria-label="关闭" title="关闭" onclick="$('dg').close()">✕</button></div><div id="dc"></div></dialog>
 <script>
-const SAVEV=25,RN=['炼气','筑基','金丹','元婴','化神'],SN=['初期','中期','后期'],LIFE=[90,200,500,1200,3000],YR=[2,5,12,30,80],SC=[1,3,9,27,81],NM=['玄清子','陆长生','云无心','柳青岚','白九霄','苏慕尘'],NG={wk:'虚弱',bn:'燃烧',bl:'致盲',po:'中毒',pa:'麻痹',ch:'魅惑',sw:'迟缓'},NK={bn:'燃烧',bn2:'燃烧',bl:'致盲',po:'中毒',pa:'麻痹',ch:'魅惑',cr:'暴击',th:'雷罚麻痹',dr:'虚弱',qs:'速度+',cb:'连咬',gw:'罡风迟缓'};
+const SAVEV=27,RN=['炼气','筑基','金丹','元婴','化神'],SN=['初期','中期','后期'],LIFE=[90,200,500,1200,3000],YR=[2,5,12,30,80],SC=[1,3,9,27,81],NM=['玄清子','陆长生','云无心','柳青岚','白九霄','苏慕尘'],NG={wk:'虚弱',bn:'燃烧',bl:'致盲',po:'中毒',pa:'麻痹',ch:'魅惑',sw:'迟缓'},NK={bn:'燃烧',bn2:'燃烧',bl:'致盲',po:'中毒',pa:'麻痹',ch:'魅惑',cr:'暴击',th:'雷罚麻痹',dr:'虚弱',qs:'速度+',cb:'连咬',gw:'罡风迟缓'};
 const BRN=['炼气期','筑基初期','筑基中期','筑基后期','金丹初期','金丹中期','金丹后期','元婴初期','元婴中期','元婴后期','化神初期','化神中期','化神后期'];
 const $=i=>document.getElementById(i),rnd=(a,b)=>a+Math.random()*(b-a),ri=(a,b)=>Math.floor(rnd(a,b+1)),pt=p=>Math.random()*100<p;
 const need=s=>Math.round(400*Math.pow(1.55,s)),lab=s=>RN[s/3|0]+SN[s%3],KK=x=>Math.pow(1.45,x),sq=L=>L<2?1:L+1,ek=L=>L<2?1:KK(L+1),bigR=L=>L<2?0:Math.min(4,(L+1)/3|0),lvl=L=>BRN[Math.min(L,13)-1];
@@ -304,7 +488,8 @@ const AF=[
 ['捆仙绳',5,'【控制】金绳飞出，缚仙锁魂：造成0.8倍伤害，并将目标困锁2回合（免疫中的目标无效）',{d:.8,lock:2},170],
 ['斩仙飞刀',6,'【斩杀】葫芦中飞出一道白光，“请宝贝转身”：造成4倍伤害；若目标气血因此低于30%，直接斩落（对修为高你两级及以上者无效；切磋中不斩杀）',{d:4,exe:.3},230],
 ['翻天印',5,'【群攻】大印翻天，镇压万物：对敌方全体造成2倍伤害，并有30%几率麻痹',{aoe:2,paA:30},230],
-['窥天镜',0,'【被动】镜中自有乾坤：持有者神识+10%，并获得「神识查探」之能（同秘术天眼通，放在储物袋或佩戴即生效）',{pas:'eye'},120]
+['窥天镜',0,'【被动】镜中自有乾坤：持有者神识+10%，并获得「神识查探」之能（同秘术天眼通，放在储物袋或佩戴即生效）',{pas:'eye'},120],
+['太虚魂灯',0,'【被动·神识】上古神修温养元神的魂灯，灯焰如豆、万年不灭：持有者神识+50%，神识伤害+25%（放在储物袋或佩戴即生效）',{pas:'hun'},280]
 ];
 const PL=[
 ['聚气丹','【修为】战斗外服用，立得「突破所需修为」的30%。',25],
@@ -324,7 +509,8 @@ const PL=[
 ['延寿丹','【增寿·超稀有】战斗外服用，寿元上限永久+25年。每人一生最多服用3颗。可赠送、喂灵兽。',320],
 ['万年灵芝','【增寿·天地奇珍】战斗外服用，寿元上限永久+60年，并立得50%突破所需修为。每人一生只能炼化1株。此物天生地长，无法炼制。',400],
 ['养魂丹','【神识】战斗外服用，神识永久+15%（最多叠加到+60%）。',80],
-['清心丹','【战斗用·解控】净化自身全部负面效果，并免疫负面效果2回合。',35]
+['清心丹','【战斗用·解控】净化自身全部负面效果，并免疫负面效果2回合。',35],
+['九窍玲珑丹','【神识·极稀有】以千年魂木之心、九窍玲珑草炼成的上古奇丹：战斗外服用，神识永久+40%（与养魂丹分开计算）。每人一生只能服用1颗。丹方失传已久，无法炼制。',360]
 ];
 // 主修功法：[名,说明,加成,价值]
 const MT=[
@@ -333,7 +519,8 @@ const MT=[
 ['太乙金身诀','打坐修为+15%，气血上限+40%',{xp:.15,hp:.4}],
 ['九霄御雷篇','打坐修为+20%，气血+30%，攻击时有25%几率造成双倍伤害',{xp:.2,hp:.3,dbl:25}],
 ['混元一气功','打坐修为+28%，气血+30%，灵力上限+40%，有40%几率抵挡一次负面效果，触发后冷却3回合',{xp:.28,hp:.3,mp:.4,rs:40}],
-['紫府养神经','打坐修为+15%，神识+60%（专修神识的功法）',{xp:.15,sn:.6}]
+['紫府养神经','打坐修为+15%，神识+60%，神识伤害+20%（专修神识的功法）',{xp:.15,sn:.6,snd:.2}],
+['太虚炼神诀','打坐修为+15%，神识+70%，神识伤害+20%；【神识化剑】普攻化为神识攻击（基础威力为普攻的六成）——无视护盾，神识比对方越强伤害越高，神识达到对方2倍时有40%几率震慑（上古神修的不传之秘）',{xp:.15,sn:.7,snd:.2,sna:1}]
 ];
 // 阵法：[名,[阵盘,阵旗,灵石],说明,效果,阵法书价值]；阵旗越多威力越大
 const ZF=[
@@ -362,11 +549,11 @@ MB.forEach((m,i)=>IT['E'+i]=[m[0]+'卵',`孵化后得到一只1级${m[0]}，需�
 // 稀有度：[档位序号,遇到概率权重]；全局稀有等级g（0~4）决定颜色与价格，g越高越稀有
 const RW={
 B:[[0,75],[0,75],[0,75],[1,55],[1,55],[1,55],[2,45],[2,45],[3,25],[3,25],[3,25],[4,10],[4,10],[4,10],[1,55],[2,45],[4,10],[0,75],[1,55],[3,25],[2,45]],
-M:[[0,75],[1,45],[1,45],[2,20],[3,10],[2,20]],
+M:[[0,75],[1,45],[1,45],[2,20],[3,10],[2,20],[3,4]],
 S:[[0,75],[1,45],[1,45],[2,20],[2,20],[3,15],[3,15],[2,20],[3,15],[0,75],[1,45],[2,20],[3,15],[1,45],[2,20],[3,15],[0,75]],
-T:[[0,75],[1,45],[3,10],[2,20],[3,10],[0,75],[2,20],[3,10],[1,45],[2,20],[3,6]],
-A:[[0,75],[1,45],[1,45],[2,20],[2,20],[3,15],[2,20],[3,15],[0,75],[1,45],[2,20],[3,15],[1,45],[2,20],[1,45],[2,20],[2,20],[3,8],[3,10],[1,45]],
-P:[[2,45],[1,60],[0,75],[3,15],[2,45],[2,45],[2,45],[3,15],[3,15],[3,15],[2,45],[3,15],[3,3],[3,5],[3,4],[3,2],[2,40],[1,55]],
+T:[[0,75],[1,45],[3,10],[2,20],[3,10],[0,75],[2,20],[3,10],[1,45],[2,20],[1,22]],
+A:[[0,75],[1,45],[1,45],[2,20],[2,20],[3,15],[2,20],[3,15],[0,75],[1,45],[2,20],[3,15],[1,45],[2,20],[1,45],[2,20],[2,20],[3,8],[3,10],[1,45],[3,5]],
+P:[[2,45],[1,60],[0,75],[3,15],[2,45],[2,45],[2,45],[3,15],[3,15],[3,15],[2,45],[3,15],[3,3],[3,5],[3,4],[3,2],[2,40],[1,55],[3,3]],
 Z:[[0,75],[1,45],[2,15],[3,10],[2,15],[0,75],[1,45],[2,15]]};
 const TN={B:['普通','卓越','稀有','传说','神话'],M:['黄级','玄级','地级','天级'],S:['黄级','玄级','地级','天级'],T:['1级','2级','3级','4级'],A:['法器','法宝','灵宝','通天灵宝'],P:['下品','中品','上品','极品'],Z:['凡阵','灵阵','仙阵','神阵']},GL={B:[0,1,2,3,4],P:[0,1,2,4]},RA={};
 for(const c in RW)RW[c].forEach(([t,w],i)=>{const r=[(GL[c]||[0,1,3,4])[t],w,TN[c][t]];RA[c+i]=r;if(c=='B')RA['E'+i]=r});
@@ -379,7 +566,7 @@ SP.forEach((s,i)=>IT['S'+i]=[s[0]+'（法术玉简）',`消耗灵力${s[1]}%${s[
 // 品级：1学徒(下品/法器) 2师(中品/法宝) 3大师(上品/灵宝) 4王(极品/通天灵宝，须上古丹方/图谱) 5圣(更高成功率)
 const DAO=[{n:'丹道',k:'d',c:'P',v:'炼丹',fu:'丹炉',rn:['未入门','丹徒','丹师','大丹师','丹王','丹圣'],el:'火木',rc:'丹方'},{n:'器道',k:'q',c:'A',v:'炼器',fu:'器炉',rn:['未入门','器徒','器师','大器师','器王','器圣'],el:'金火',rc:'图谱'}];
 const XPN=[0,0,30,90,220,480],TQN=['下品','中品','上品','极品'],TQA=['法器','法宝','灵宝','通天灵宝'];
-const CRL=[];PL.forEach((p,i)=>{if(i!=15)CRL.push({c:'P',i,t:RW.P[i][0],x:[9,12,13,14].includes(i)?1:0})});AF.forEach((a,i)=>CRL.push({c:'A',i,t:RW.A[i][0],x:RW.A[i][0]>=3?1:0}));
+const CRL=[];PL.forEach((p,i)=>{if(i!=15&&i!=18)CRL.push({c:'P',i,t:RW.P[i][0],x:[9,12,13,14].includes(i)?1:0})});AF.forEach((a,i)=>CRL.push({c:'A',i,t:RW.A[i][0],x:RW.A[i][0]>=3?1:0}));
 const crK=r=>r.c+r.i,crN=r=>r.c=='P'?PL[r.i][0]:AF[r.i][0],FRI={};
 IT.F0=['丹道入门（玉简）','【技艺入门】参悟后踏入丹道，成为「丹徒」，并掌握所有下品丹药的炼法。此后每开一炉都会积累熟练度，逐步晋升为丹师、大丹师……（品级上限受你的境界限制）。',40,0,'丹道入门'];
 IT.F1=['器道入门（玉简）','【技艺入门】参悟后踏入器道，成为「器徒」，并掌握所有法器的炼法。此后每开一炉都会积累熟练度，逐步晋升为器师、大器师……（品级上限受你的境界限制）。',40,0,'器道入门'];
@@ -387,7 +574,7 @@ RA.F0=[0,45,'入门'];RA.F1=[0,45,'入门'];
 CRL.forEach((r,j)=>{if(r.t<1)return;const k='F'+(j+2),pn=crN(r),D=DAO[r.c=='P'?0:1],up=r.t>=3;FRI[crK(r)]=k;IT[k]=[`${up?'上古':''}${pn}${D.rc}`,`【${D.rc}】记载着「${pn}」的${D.v}之法。参悟后可在丹房器房中${D.v}（需${D.n}达到「${D.rn[r.t+1]}」）。${up?'这是上古大能遗留的残卷，'+(r.x?'炼制还需天地灵物，成功率极低，许多人穷尽一生也炼不成一炉。':'成功率很低。'):''}`,0,0,`${pn}${D.rc}`];const pr=RA[crK(r)];RA[k]=[pr[0],Math.max(2,Math.round(pr[1]*.5)),pr[2]]});
 const ALL=Object.keys(IT).filter(k=>k[0]!='W');
 const inf=k=>{if(k[0]!='B')return IT[k];const[i,L]=k.slice(1).split(':').map(Number);return[`${MB[i][0]}（${L}级灵兽）`,'已烙印、可交易的灵兽；滴血认主后便不可再交易',Math.round(20*KK(sq(L))),1]};
-const LF=()=>LIFE[G.s/3|0]+(G.lb||0),rl=()=>G.s/3|0,K=()=>KK(G.s),bo=k=>G.mt>=0?(MT[G.mt][2][k]||0):0,mh=()=>Math.round(100*K()*(1+G.hb+bo('hp'))),pw=()=>Math.round(12*K()),mm=()=>Math.round((40+10*G.s)*(1+G.mb+bo('mp'))),sc=()=>SC[rl()],S=(t,k='')=>{G.lg.push({a:G.age,k,t});if(G.lg.length>320)G.lg.shift()},say=t=>S(t),hv=k=>G.iv[k]||0,add=(k,n=1)=>{G.iv[k]=hv(k)+n},tk=(k,n=1)=>{G.iv[k]=hv(k)-n;if(G.iv[k]<=0)delete G.iv[k]};
+const LF=()=>LIFE[G.s/3|0]+(G.lb||0),rl=()=>G.s/3|0,K=()=>KK(G.s),bo=k=>G.mt>=0?(MT[G.mt][2][k]||0):0,mh=()=>Math.round(100*K()*(1+G.hb+bo('hp'))),pw=()=>Math.round(12*K()),mm=()=>Math.round((40+10*G.s)*(1+G.mb+bo('mp'))),sc=()=>SC[rl()],S=(t,k='')=>{const e={a:G.age,k,t,s:G.s};if(C&&C.id){e.c=C.id;e.r=C.t||0}G.lg.push(e);if(G.lg.length>420)G.lg.shift()},say=t=>S(t),hv=k=>G.iv[k]||0,add=(k,n=1)=>{G.iv[k]=hv(k)+n},tk=(k,n=1)=>{G.iv[k]=hv(k)-n;if(G.iv[k]<=0)delete G.iv[k]};
 // 灵石账簿：所有灵石增减都经由ST记录（类别·细节）
 const ST=(d,r)=>{d=Math.round(d);if(!d)return;G.st+=d;if(d>0)G.si=(G.si||0)+d;else G.so=(G.so||0)-d;(G.sl=G.sl||[]).push({a:G.age,d,r,b:G.st});if(G.sl.length>500)G.sl.shift()};
 // 同时出战灵兽上限：金丹以下2、金丹3、元婴5、化神7
@@ -419,8 +606,8 @@ const LR=[
 ['变异灵根',5,2,[.9,.85,.75,.6],.95,.5,[0,10,30,60],1,'雷、冰、风三种异种灵根之一。修炼速度×2，所有伤害+25%，并带有属性神通（雷：攻击15%麻痹；冰：攻击使敌迟缓20%；风：速度+25%）。'],
 ['双灵根',14,1.6,[.8,.7,.55,.45],.93,.42,[5,25,45,25],2,'两种属性的上佳资质。修炼速度×1.6，筑基、结丹把握较大。'],
 ['三灵根',30,1,[.5,.45,.4,.35],.9,.36,[10,30,45,15],3,'最常见的资质。修炼速度×1：炼气期约需60年才能攒够筑基修为，筑基成功率五成，寿元往往是最大的敌人。'],
-['四灵根',28,.85,[.3,.3,.3,.3],.85,.32,[12,35,40,13],4,'伪灵根。修炼速度×0.85，筑基成功率只有三成，需要丹药与机缘相助。'],
-['五灵根',20,.4,[.15,.25,.25,.25],.8,.3,[15,35,35,15],5,'五行俱全却样样稀松的伪灵根。修炼速度×0.4，多数人一生止步炼气中期——除非遇上洗灵丹之类的逆天机缘。']];
+['四灵根',28,.88,[.36,.34,.32,.3],.87,.33,[10,33,42,15],4,'伪灵根。修炼速度×0.88，筑基成功率三成多，需要丹药与机缘相助。'],
+['五灵根',20,.55,[.22,.28,.28,.25],.84,.31,[13,35,37,15],5,'五行俱全却样样稀松的伪灵根。修炼速度×0.55，筑基成功率约两成——需要丹药、机缘，或洗灵丹之类的逆天造化。']];
 const EL='金木水火土',VE=[['雷','攻击时有15%几率麻痹敌人'],['冰','攻击时使敌人迟缓（20%）'],['风','速度永久+25%']],LRC=['A','B','C','D','E','F'];
 function rollRoot(){const t=wp(LR.map((x,j)=>j),j=>LR[j][1]),e=[...EL].sort(()=>Math.random()-.5);return{t,e:t==1?ri(0,2):e.slice(0,LR[t][7]).join('')}}
 const lrN=r=>!r?'未测灵根':r.t==1?VE[r.e][0]+'灵根':LR[r.t][0]+'·'+r.e,rsp=r=>r?LR[r.t][2]:1,lrT=r=>`<span class="lrt lr${r?LRC[r.t]:'X'}">${lrN(r)}</span>`;
@@ -472,9 +659,10 @@ const FP={W0:10,W1:25,W2:15},FPP={0:20,1:35,2:60,4:100},PYL=3,fcost=z=>Math.max(
 const petPills=()=>Object.keys(G.iv).filter(k=>k[0]=='P'&&!['P9','P12','P13','P17'].includes(k)).sort((a,b)=>+a.slice(1)-+b.slice(1));
 const pyN=z=>z.py&&z.py.y==G.age?z.py.n:0;
 function pxp(z,v,one){const cp=pLv(z);if(z.lv>=cp){z.xp=Math.min(z.xp+v,Math.max(0,xn(z.lv)-1));return 0}z.xp+=v;let up=0;while(z.lv<Math.min(13,cp)&&z.xp>=xn(z.lv)){z.xp-=xn(z.lv);z.lv++;up++;if(one){z.xp=Math.min(z.xp,Math.round(xn(z.lv)*.3));break}}if(z.lv>=13)z.xp=0;else if(z.lv>=cp)z.xp=Math.min(z.xp,xn(z.lv)-1);if(up){z.h=bH(z);if(z.lv>=8&&z.lv-up<8)hform(z)}if(z.lim<13&&z.lv>=z.lim&&z.lim<plv()&&!z.limR){z.limR=1;S(`${pN(z)}停在${z.lv}级再难寸进——它的天资似乎只能走到这里了。（天命瓶颈）`,'e')}return up}
-function feed(x,t){if(!G.lr)return;const z=G.bz[x];if(!['P14','P15','P16'].includes(t)&&z.lv>=13){say('它已臻最高等级13级，无需再喂养。');return}if(!['P14','P15','P16'].includes(t)&&z.lv>=pLv(z)&&z.xp>=xn(z.lv)-1){say(`受你的神识所限，${pN(z)}已到等级上限（${pLv(z)}级），待你境界提升后才能继续成长。`);return}const n=xn(z.lv);let p=0,s='',v=0;
+const FSP=['P14','P15','P16','P18'];
+function feed(x,t){if(!G.lr)return;const z=G.bz[x];if(!FSP.includes(t)&&z.lv>=13){say('它已臻最高等级13级，无需再喂养。');return}if(!FSP.includes(t)&&z.lv>=pLv(z)&&z.xp>=xn(z.lv)-1){say(`受你的神识所限，${pN(z)}已到等级上限（${pLv(z)}级），待你境界提升后才能继续成长。`);return}const n=xn(z.lv);let p=0,s='',v=0;
 if(t=='$'){const c=fcost(z);if(G.st<c){say('灵石不足。');return}ST(-c,`喂养灵兽·${pN(z)}`);v=c;s=c+'灵石'}
-else if(t=='P14'||t=='P15'||t=='P16'){if(!hv(t))return;if(t=='P14'&&(z.lbn||0)>=3){say(`${pN(z)}已服过三颗延寿丹，再也承受不住了。`);return}if(t=='P15'&&z.lzn){say(`${pN(z)}已炼化过一株万年灵芝。`);return}tk(t);if(t=='P14'){z.lb=(z.lb||0)+25;z.lbn=(z.lbn||0)+1;S(`${pN(z)}吞下延寿丹，寿元上限+25年（${z.ag}/${pLz(z)}岁）。`,'g')}else if(t=='P15'){z.lb=(z.lb||0)+60;z.lzn=1;pxp(z,xn(z.lv));S(`${pN(z)}吞下万年灵芝，寿元上限+60年（${z.ag}/${pLz(z)}岁），修为大进！`,'g')}else{z.snb=Math.min(.6,(z.snb||0)+.15);S(`${pN(z)}服下养魂丹，神识+15%。`,'g')}return}
+else if(FSP.includes(t)){if(!hv(t))return;if(t=='P18'&&z.snq){say(`${pN(z)}已服过九窍玲珑丹。`);return}if(t=='P14'&&(z.lbn||0)>=3){say(`${pN(z)}已服过三颗延寿丹，再也承受不住了。`);return}if(t=='P15'&&z.lzn){say(`${pN(z)}已炼化过一株万年灵芝。`);return}tk(t);if(t=='P14'){z.lb=(z.lb||0)+25;z.lbn=(z.lbn||0)+1;S(`${pN(z)}吞下延寿丹，寿元上限+25年（${z.ag}/${pLz(z)}岁）。`,'g')}else if(t=='P15'){z.lb=(z.lb||0)+60;z.lzn=1;pxp(z,xn(z.lv));S(`${pN(z)}吞下万年灵芝，寿元上限+60年（${z.ag}/${pLz(z)}岁），修为大进！`,'g')}else if(t=='P18'){z.snq=1;z.snx=(z.snx||0)+.4;S(`${pN(z)}吞下九窍玲珑丹，双瞳中星光流转——神识永久+40%。`,'g')}else{z.snb=Math.min(.6,(z.snb||0)+.15);S(`${pN(z)}服下养魂丹，神识+15%。`,'g')}return}
 else if(t[0]=='P'){if(!hv(t)||t=='P9')return;if(pyN(z)>=PYL){say(`${pN(z)}今年已炼化${PYL}颗丹药，药力尚未化开，明年再喂吧。`);return}tk(t);z.py={y:G.age,n:pyN(z)+1};p=FPP[rar(t)[0]];s=IT[t][0]}
 else{if(!hv(t))return;tk(t);p=FP[t];s=IT[t][0]}
 if(!v)v=Math.round(n*p/100);const up=pxp(z,v,1);
@@ -508,18 +696,20 @@ const mercyOn=()=>C&&G.mc&&!C.spar;
 const snB=L=>Math.round(20*Math.pow(1.3,Math.max(1,L)-1)),SNR={0:1.6,5:1.2,8:1.4,13:1.2,16:1.1,19:1.3,20:1.8};
 const hasPas=(U,p)=>U&&U.me?Object.keys(G.iv).some(k=>k[0]=='A'&&AF[+k.slice(1)][3].pas==p):uArts(U).some(k=>AF[+k.slice(1)][3].pas==p);
 function snOf(U){if(!U)return 1;let b,x=0;const kt=U.kt;
-if(U.me){b=snB(Lp());x=bo('sn')+(G.snb||0)}
+if(U.me){b=snB(Lp());x=bo('sn')+(G.snb||0)+(G.snx||0)}
 else if(U.r){b=snB(U.lv)*(SNR[U.i]||1);x=(U.r.snb||0)+kmt(kt,'sn')+((kt&&kt.snb)||0)}
 else if(U.dl){b=snB(U.lv)*(DLC[U.D.k][2]==3?1.2:1);x=kmt(kt,'sn')+((kt&&kt.snb)||0)}
 else if(U.cv){b=snB(cvL(U.cs));x=kmt(kt,'sn')}
 else{b=snB(U.lv)*(SNR[U.i]||1);x=kmt(kt,'sn')}
-if(hasPas(U,'sn'))x+=.3;if(hasPas(U,'eye'))x+=.1;return Math.round(b*(1+x))}
+if(!U.me&&kt&&kt.snx)x+=kt.snx;if(U.r&&U.r.snx)x+=U.r.snx;if(hasPas(U,'sn'))x+=.3;if(hasPas(U,'eye'))x+=.1;if(hasPas(U,'hun'))x+=.5;return Math.round(b*(1+x))}
+// 神识伤害加成（v1.9.4）：紫府养神经/太虚炼神诀 +20%，太虚魂灯 +25%
+const SNAM=.62,snD=U=>(U.me?bo('snd'):kmt(U.kt,'snd'))+(hasPas(U,'hun')?.25:0),snA=U=>U.me?!!bo('sna'):!!kmt(U.kt,'sna');
 const mySn=()=>snOf({me:1,get kt(){return null}});
 // 战斗外估算敌人神识（遭遇时）
-const snE=s=>{const kt=s[5]||null;if(s[0]>=0)return Math.round(snB(s[1])*(SNR[s[0]]||1)*(1+kmt(kt,'sn')+(kt&&kIt(kt).some(k=>k=='A14')?.3:0)));const cs=csOf(s);return Math.round(snB(cvL(cs))*(1+kmt(kt,'sn')+(kt&&kIt(kt).some(k=>k=='A14')?.3:0)))};
+const snKx=kt=>kt?kmt(kt,'sn')+(kt.snx||0)+(kIt(kt).includes('A14')?.3:0)+(kIt(kt).includes('A20')?.5:0):0,snE=s=>{const kt=s[5]||null;if(s[0]>=0)return Math.round(snB(s[1])*(SNR[s[0]]||1)*(1+snKx(kt)));const cs=csOf(s);return Math.round(snB(cvL(cs))*(1+snKx(kt)))};
 const canEye=()=>G.se.includes(8)||Object.keys(G.iv).some(k=>k=='A19');
 // 神识伤害：无视护盾，按双方神识之比（0.3～2.5倍）增减；对方神识不足一半时40%几率震慑（麻痹）
-function sHit(a,T,m){if(T.gh||T.bnd)return[0,0,1];const r=clamp(snOf(a)/Math.max(1,snOf(T)),.3,2.5),pv=T.h;let d=Math.round(a.a*m*r*rnd(.9,1.1)*(1+(a.bf?a.bf.p:0)/100)*(1-(a.wk?a.wk.p:0)/100));if(hasPas(T,'sn'))d=Math.round(d/2);T.h-=d;let dd=d;if(isE(T)&&mercyOn()&&(a===C.P||C.B.includes(a))&&mercy(T,pv))dd=pv-T.h;let x='';if(r>=2&&T.h>0&&pt(40)){const q=ap(T,'pa',100);if(q)x='，神识震慑——'+q}return[dd,0,0,x]}
+function sHit(a,T,m){if(T.gh||T.bnd)return[0,0,1];const r=clamp(snOf(a)/Math.max(1,snOf(T)),.3,2.5),pv=T.h;let d=Math.round(a.a*m*r*(1+snD(a))*rnd(.9,1.1)*(1+(a.bf?a.bf.p:0)/100)*(1-(a.wk?a.wk.p:0)/100));if(hasPas(T,'sn'))d=Math.round(d/2);T.h-=d;let dd=d;if(isE(T)&&mercyOn()&&(a===C.P||C.B.includes(a))&&mercy(T,pv))dd=pv-T.h;let x='';if(r>=2&&T.h>0&&pt(40)){const q=ap(T,'pa',100);if(q)x='，神识震慑——'+q}return[dd,0,0,x]}
 const sdt=r=>r[2]?'0点伤害（血影虚化，攻击落空）':`${r[0]}点神识伤害（无视护盾）${r[3]||''}`;
 // 驱散
 function dispel(T){const L=[];if(T.bf){T.bf=0;L.push('强化')}if(T.qk){T.qk=0;L.push('疾速')}if(T.sh>0){T.sh=0;L.push('护盾')}if(T.im){T.im=0;L.push('免疫')}if(T.gh){T.gh=0;L.push('血影虚化')}return L.length?`驱散了${nmX(T)}的${L.join('、')}`:''}
@@ -558,7 +748,7 @@ const L=c=='S'?kt.sp:c=='T'?kt.se:kt.zf;if(L.includes(i)||c=='S'&&sp0.includes(i
 return out}
 // 修炼用丹：战斗外的丹药会自己服下；战斗用丹（疗伤、金刚、爆元、御风）留到战斗中用
 function kPills(o,ty,kt,k){const r=[],use=(q,t)=>{ktk(kt,q);r.push(`服下【${IT[q][0]}】${t}`)};
-const life=()=>{if(khv(kt,'P14')&&(o.lbn||0)<3){use('P14','，寿元上限+25年');o.lb=(o.lb||0)+25;o.lbn=(o.lbn||0)+1}if(khv(kt,'P15')&&!o.lzn){use('P15','，寿元上限+60年');o.lb=(o.lb||0)+60;o.lzn=1;if(ty=='pet')pxp(o,xn(o.lv));else{o.x=(o.x||0)+Math.round(need(o.s)*.5)}}if(khv(kt,'P16')&&(kt.snb||0)<.6-1e-9){use('P16','，神识+15%');kt.snb=Math.min(.6,(kt.snb||0)+.15)}};
+const life=()=>{if(khv(kt,'P14')&&(o.lbn||0)<3){use('P14','，寿元上限+25年');o.lb=(o.lb||0)+25;o.lbn=(o.lbn||0)+1}if(khv(kt,'P15')&&!o.lzn){use('P15','，寿元上限+60年');o.lb=(o.lb||0)+60;o.lzn=1;if(ty=='pet')pxp(o,xn(o.lv));else{o.x=(o.x||0)+Math.round(need(o.s)*.5)}}if(khv(kt,'P16')&&(kt.snb||0)<.6-1e-9){use('P16','，神识+15%');kt.snb=Math.min(.6,(kt.snb||0)+.15)}if(khv(kt,'P18')&&!kt.snq){use('P18','，神识+40%');kt.snq=1;kt.snx=(kt.snx||0)+.4}};
 if(ty=='pet'){if(khv(kt,'P0')&&o.lv<13&&o.lv<pLv(o)){use('P0','，修为精进');pxp(o,Math.round(xn(o.lv)*.3))}if(khv(kt,'P12')&&o.lim<13){use('P12','');breakPet(o)}if(khv(kt,'P7')){use('P7','，气血上限永久提升15%');kt.hb=(kt.hb||0)+.15}life();return r}
 const D=o,sf0=ty=='dl'?dlSay(D):null;
 if(D.s<14&&khv(kt,'P0')){use('P0','，修为大进');D.x=(D.x||0)+Math.round(need(D.s)*.3);npCult(D,0,sf0)}
@@ -782,9 +972,9 @@ const soulOK=E=>G.se.includes(10)&&(E.cv||E.kt)&&mySn()>snOf(E),soulL=E=>[...new
 function capEnd(){if(BND().length)return;C.EN=C.EN.filter(e=>!e.bnd&&e.h>0);if(C.EN.length)return;if(C.kd.length)win();else{S('俘虏都已处置完毕。','p');C.won=1;const ow=C.ow;endF();if(ow&&!G.over)ow()}}
 function capAct(j,o){const E=BND()[j];if(!E||!C||!C.post)return;const rm=()=>{C.EN=C.EN.filter(e=>e!==E)};
 if(o==0){E.h=0;C.kd.push(E);rm();S(`你一掌震断了${E.n}的心脉。`,'p')}
-else if(o==1){if(E.kt)lootB(E);rm();S(`你收缴了${E.n}的储物袋，解开${E.cv?'TA':'它'}身上的禁制：“滚吧。”${E.n}踉跄着逃走了。`,'p');gdA(1)}
-else if(o==2){rm();S(`你解开了${E.n}身上的禁制。${E.n}愣了半晌，${E.cv?'冲你深深一揖，消失在林间':'低鸣一声，钻进了密林'}。`,'g');gdA(3)}
-else if(o==3){if(E.cv||!G.se.includes(1)||!petRoom())return;const b=mkb(E.i,E.lv);yin();if(E.kt)b.kt=E.kt;b.h=Math.max(1,Math.round(bH(b)*E.h/E.H));G.bz.push(b);rm();bang('收服灵兽',`${E.lv}级${MB[E.i][0]}`,'green');S(`你将烙印打入被封禁的${E.n}眉心——${E.lv}级${MB[E.i][0]}成为你的灵兽！${yinT()}`,'g')}
+else if(o==1){if(E.kt)lootB(E);(C.rlL=C.rlL||[]).push(E.i);(C.rnL=C.rnL||[]).push(E.n);rm();S(`你收缴了${E.n}的储物袋，解开${E.cv?'TA':'它'}身上的禁制：“滚吧。”${E.n}踉跄着逃走了。`,'p');gdA(1)}
+else if(o==2){(C.rlL=C.rlL||[]).push(E.i);(C.rnL=C.rnL||[]).push(E.n);rm();S(`你解开了${E.n}身上的禁制。${E.n}愣了半晌，${E.cv?'冲你深深一揖，消失在林间':'低鸣一声，钻进了密林'}。`,'g');gdA(3)}
+else if(o==3){if(E.cv||!G.se.includes(1)||!petRoom())return;const b=mkb(E.i,E.lv);yin();if(E.kt)b.kt=E.kt;b.h=Math.max(1,Math.round(bH(b)*E.h/E.H));G.bz.push(b);(C.cpL=C.cpL||[]).push(E.i);rm();bang('收服灵兽',`${E.lv}级${MB[E.i][0]}`,'green');S(`你将烙印打入被封禁的${E.n}眉心——${E.lv}级${MB[E.i][0]}成为你的灵兽！${yinT()}`,'g')}
 else if(o==4){if(!soulOK(E))return;const L=soulL(E);E.h=0;C.kd.push(E);rm();gdA(-6);const done=[],left=[];L.forEach(k=>{if(hv('W7')){tk('W7');add(k);done.push(k)}else left.push(k)});
 S(`你五指扣住${E.n}的天灵盖，神识如刀，硬生生剖开TA的识海——一声凄厉的惨叫后，${E.n}双目失神，识海崩碎而亡。${L.length?`你从TA的记忆里读出了：${L.map(k=>IT[k][4]+tag(k)).join('、')}。`:'可惜TA的识海里没有什么值得一提的功法。'}`,'e');
 if(done.length)S(`你以空白玉简刻录下：${done.map(k=>`【${IT[k][0]}】${tag(k)}`).join('、')}（已放入储物袋）。`,'g');
@@ -854,9 +1044,9 @@ const T=foeLow();if(!T)return;
 if(U.bl){U.bl=0;say(`${U.n}被致盲，一击落了空。`);return}
 // 敌方修士与你遵守同样的规则：丹药不占出手；法术、法宝、秘术、阵法各占一次出手，由出招决策挑选
 if(!only&&aiAct(U,10))return;if(!alive(U))return;
-CUR='普攻';if(U.mpM)U.mp=Math.min(U.mpM,U.mp+5);const T2=foeLow()||T,r=hit(U,T2,1);say(`${U.n}${CA[ri(0,CA.length-1)]}，${T2.n}受${dt(r)}。`)}
+CUR='普攻';if(U.mpM)U.mp=Math.min(U.mpM,U.mp+5);const T2=foeLow()||T,sn=snA(U),r=(sn?sHit:hit)(U,T2,sn?SNAM:1);say(`${U.n}${sn?'神识化剑，无形剑意直斩识海':CA[ri(0,CA.length-1)]}，${T2.n}受${(sn?sdt:dt)(r)}。`)}
 // 修士行动
-function pHit(m,db){const P=C.P,E=TE();if(P.bl){P.bl=0;return{t:'你被致盲，这一击落空了',d:0,ok:0}}const c=pt((db||0)+bo('dbl')),r=hit(P,E,m*(c?2:1)*(isVar()?1.25:1));let vx='';if(isVar()&&r[0]>0&&E.h>0){if(G.lr.e==0&&pt(15)){const x=ap(E,'pa',100);if(x)vx='，雷灵根引动天雷，'+x}else if(G.lr.e==1){const x=ap(E,'sw',20,3);if(x)vx='，冰灵根寒意侵骨，'+x}}return{t:(c?'伤害翻倍！':'')+`对${E.n}造成${dt(r)}`+vx,d:r[0],ok:1}}
+function pHit(m,db){const P=C.P,E=TE();if(P.bl){P.bl=0;return{t:'你被致盲，这一击落空了',d:0,ok:0}}const c=pt((db||0)+bo('dbl')),sn=snA(P),r=(sn?sHit:hit)(P,E,m*(c?2:1)*(isVar()?1.25:1)*(sn?SNAM:1));let vx='';if(isVar()&&r[0]>0&&E.h>0){if(G.lr.e==0&&pt(15)){const x=ap(E,'pa',100);if(x)vx='，雷灵根引动天雷，'+x}else if(G.lr.e==1){const x=ap(E,'sw',20,3);if(x)vx='，冰灵根寒意侵骨，'+x}}return{t:(c?'伤害翻倍！':'')+`对${E.n}造成${(sn?sdt:dt)(r)}`+vx,d:r[0],ok:1}}
 const SPX=o=>o.aoe||o.sd||o.sdm||o.brk||o.yao||o.dsp||o.exe;
 function fx(o,m,tx,key,fr=1){CUR=key||'普攻';const P=C.P,E=TE(),r=[];let d=0,miss=0;
 if(SPX(o)&&E){if(P.bl&&!o.aoe){P.bl=0;r.push('你被致盲，这一击落空了');miss=1}else{const[x,,h]=xHit(P,E,o,(m||0)*fr*(isVar()?1.25:1));r.push(...x);d=h?h[0]:0}}
@@ -884,7 +1074,7 @@ const bb=()=>(G.bn||0)+(C?C.bb:0);
 function pAct(k,i){if(k=='cp'){capAct(Math.floor(i/10),i%10);return}if(C.post)return;const P=C.P,E=TE(),fz=P.sk>0||P.pa>0;if(!fz)ourSide().forEach(t=>t.gh=0);
 if(P.sk>0||P.pa==2){if(P.sk>0)P.sk--;else P.pa=1;S('你被幻境或麻痹所困，动弹不得，白白错过这次出手。','e');return pDone()}
 if(P.pa==1){P.pa=0;k='n'}
-if(k=='n')fx({mp:.05},.8,'你挥剑斩出，剑气纵横，');
+if(k=='n')fx({mp:.05},.8,snA(C.P)?'你神识化剑，一道无形剑意直斩敌人识海，':'你挥剑斩出，剑气纵横，');
 else if(k=='s'){const s=SP[i],c=Math.ceil(mm()*s[1]/100);G.mp-=c;if(s[3].cd)C.cd['s'+i]=s[3].cd+1;fx(s[3],s[3].nd?0:spm(i),`你施展法术【${s[0]}】：${s[3].fl||s[2]}，`,s[0])}
 else if(k=='a'){const a=AF[i];C.cd['a'+i]=a[1]+1;fx(a[3],a[3].d||0,`你祭出法宝【${a[0]}】：${a[3].fl||a[2]}，`,a[0])}
 else if(k=='z'){const z=ZF[i],q=z[1];if((C.za[i]||0)>0){S(`【${z[0]}】阵势尚在运转，需待其消散后才能重新布阵。`,'p');return}const ms=zMiss(i);if(ms){S(`布阵材料不齐（${ms}），【${z[0]}】布不起来！生死关头，有灵石也买不到阵旗。`,'p');return}C.za[i]=z[3].zt;ST(-q[2],`布阵消耗·${z[0]}`);fx(z[3],z[3].d||0,`你祭出${q[0]}面阵盘、${q[1]}面阵旗，布下【${z[0]}】：${z[2]}，`,z[0],1)}
@@ -893,7 +1083,7 @@ if(i==1){const LL=C.EN.filter(e=>e.h>0),cE=C.lkE&&!C.lkE.cv&&AE().includes(C.lkE
 if(!E){S('驭兽烙印只能烙印妖兽，对人族修士毫无作用。','p');return}
 if(!petRoom()){S(yinL()>0?`灵兽袋已满（${G.bz.length}/${pcap()}），以你${RN[rl()]}期的神识再也烙印不下第${G.bz.length+1}只灵兽。`:`你一生的烙印次数已经用尽（${G.yin||0}/${pcap()}），驭兽烙印再也凝不出新的印记了。`,'p');return}
 if(E.h>=E.H*.1){S(`${E.n}气血仍旺，烙印之力被它挣脱。（需其气血低于10%）`,'p');return}
-const b=mkb(E.i,E.lv);yin();bang('收服灵兽',`${E.lv}级${MB[E.i][0]}`,'green');if(E.kt)b.kt=E.kt;b.h=Math.max(1,Math.round(bH(b)*E.h/E.H));b.ps=snap(E);G.bz.push(b);S(`你掐诀结印，烙印没入${E.n}眉心——${E.lv}级${MB[E.i][0]}成为你的灵兽！它继承了烙印时的状态，气血仅余${Math.round(E.h/E.H*100)}%，需休养恢复。可在灵兽袋中滴血认主、令其出战。${yinT()}`,'g');if(b.kt)S('它早已化为人形，所学功法与储物袋原样保留，仍归它自己所有。','g');
+const b=mkb(E.i,E.lv);yin();bang('收服灵兽',`${E.lv}级${MB[E.i][0]}`,'green');if(E.kt)b.kt=E.kt;b.h=Math.max(1,Math.round(bH(b)*E.h/E.H));b.ps=snap(E);G.bz.push(b);(C.cpL=C.cpL||[]).push(E.i);S(`你掐诀结印，烙印没入${E.n}眉心——${E.lv}级${MB[E.i][0]}成为你的灵兽！它继承了烙印时的状态，气血仅余${Math.round(E.h/E.H*100)}%，需休养恢复。可在灵兽袋中滴血认主、令其出战。${yinT()}`,'g');if(b.kt)S('它早已化为人形，所学功法与储物袋原样保留，仍归它自己所有。','g');
 C.EN=C.EN.filter(e=>e!==E);TE();if(!C.EN.length){if(C.kd.length)win();else{C.won=1;const ow=C.ow;endF();if(ow)ow()}return}if(!AE().length){chk();return}}
 if(i==2){if(bb()>=2)return;C.bb++;C.sd++;const mx=Math.max(...C.EN.map(e=>e.lv));if(mx-Lp()<=(C.sd>=2?3:2)){const pd=dlOK()&&C.dlj,pp=C.B.some(b=>!b.dl);S(`你${C.sd>=2?'再度':''}燃烧精血，化作一道血色遁光${pd?`，一把拉住${nmK(G.dl.k)}`:''}${pp?'，并将灵兽尽数收回灵兽袋':''}，瞬息百里${C.EN.length>1?'，将众敌远远甩在身后':''}！`,'p');if(C.egg&&mx-Lp()>=3)S('身后传来凶星不甘的怒吼，你却已遁出千里之外——好险！','g');endF();return}
 if(C.sd==1&&mx-Lp()==3&&bb()<2){ourSide().forEach(t=>t.gh=1);S('你燃烧精血，血光却被对方的威压死死压住，没能遁走——但血影已笼罩你与同伴全身，在你下次出手前，一切攻击都会落空！趁现在，再施展一次血影遁！','p')}
@@ -953,7 +1143,7 @@ const al=[...(o.allies||[]).map(du),...(o.ally?[du(o.ally)]:[]),...(!o.ally&&!o.
 // v1.7：金兰之交、徒弟可能闻讯赶来助阵（每场最多一人）
 if(!o.noDL&&!o.spar&&!o.solo){const H0=al.map(u=>u.D.k),cs=Object.keys(G.np).map(Number).filter(k=>{const q=G.np[k];return q.st==0&&!H0.includes(k)&&!isDL(k)&&!(q.aw>G.age)&&(q.sw||isTu(k))});const k=cs.length?pk(cs):null;if(k!=null&&pt(G.np[k].sw?18:28)){const u=du(tmpA(k,1));al.push(u);aj.push(u)}}
 G.mc=!o.spar&&G.mcd?1:0;C={P,EN,ti:0,kd:[],B:[...al,...G.bz.filter(b=>b.d&&b.h>0).map(be)],ow:o.ow||null,ofl:o.ofl||null,dlj:al.some(u=>u.D===G.dl)?1:0,spar:o.spar?1:0,t:0,Q:[],qi:0,ready:1,za:{},su:{},wait:null,again:0,ys:0,fl:0,cd:{},rsc:0,zf:0,bb:0,sd:0,mh:0,hint:0};
-[...C.B,...C.EN].forEach(u=>{u.pn=0;if(u.mpM){const en=C.EN.includes(u);u.mpM=Math.round((en&&!u.el?EMP:100)*(1+kmt(u.kt,'mp')));u.mp=u.mpM}});ld(C.P,G.ps);C.B.forEach(z=>ld(z,z.dl?(z.D===G.dl?G.dl.ps:0):z.r.ps));if(G.wk)addS(C.P,'wk','精血亏损',G.wk.p,99,{yr:1});
+C.id=G.cid=(G.cid||0)+1;fxRec(C,o);[...C.B,...C.EN].forEach(u=>{u.pn=0;if(u.mpM){const en=C.EN.includes(u);u.mpM=Math.round((en&&!u.el?EMP:100)*(1+kmt(u.kt,'mp')));u.mp=u.mpM}});ld(C.P,G.ps);C.B.forEach(z=>ld(z,z.dl?(z.D===G.dl?G.dl.ps:0):z.r.ps));if(G.wk)addS(C.P,'wk','精血亏损',G.wk.p,99,{yr:1});
 if(G.hide){G.hide=0;S('你出手的刹那，敛气术失效。')}
 S(EN.length>3?`【战斗】${EN.length}名敌人一齐杀来！${EN.some(e=>e.el)?'其中有精英，':''}（敌方详情见上方战斗栏）`:`【战斗】${EN.map(e=>e.cv?`${e.n}（${lab(e.cs)}）${e.el?'<span class="rt rtD">精英</span>':''}`:`${e.lv}级${e.n}${e.kt?'<span class="rt rtH">人形</span>':''}`).join('、')}${EN.length>1?'一齐杀来':'拦在你面前'}！`,'k');C.egg=EN.some(e=>e.lv-Lp()>=3);if(C.egg)S(G.se.includes(2)&&bb()==0?'（凶星当前，你身负血影遁——连续施展两次，必能带着同伴逃出生天！）':'（对方修为远在你之上，若无脱身之法，恐怕凶多吉少……）','s');
 al.forEach(u=>S(aj.includes(u)?`千钧一发之际，${u.n}（${lab(u.D.s)}）${isTu(u.D.k)?'提剑赶到：“师父，我来助你！”':`闻讯赶来：“${BRO()}，我来了！”`}`:`${u.n}（${lab(u.D.s)}）${u.D===G.dl?'祭出法器，与你并肩而立':'与你并肩迎敌'}！`,'b'));if(o.spar)S('（此战为切磋比试，点到为止：任何一方力竭即判负，不会伤及性命。）','s');if(canEye()){const sc=EN.filter(scOK);S(`🔍 神识查探：${EN.map(e=>scOK(e)?`${e.n}<span class="dgt dg${dgOf(e)}">${DGI[dgOf(e)]} ${DGN[dgOf(e)]}</span>`:`${e.n}<span class="dgt dgq">❔ ???</span>`).join('、')}`,'s');scanBang(EN)}}
@@ -975,7 +1165,9 @@ G.kc=(G.kc||0)+C.kd.filter(e=>e.cv).length;
 if(C.kd.some(e=>e.lv-Lp()>=3)){const q=lk(3),v=Math.round(t*2);gain(q);ST(v,'斩杀天外凶星');S(`你竟以弱胜强，斩落了天外凶星！凶星遗骸中光华流转：灵石${v}，还有【${inf(q)[0]}】${tag(q)}！`,'k')}
 if(C.dlj&&G.dl){const t2=Math.round(t*.5),q=pt(35)?lk():null;ST(t2,`道侣缴获·${nmK(G.dl.k)}`);if(q)add(q);S(`${nmK(G.dl.k)}也收获颇丰：灵石${t2}${q?`，还有【${inf(q)[0]}】${tag(q)}`:''}，一并放入了你的储物袋。`,'g')}
 if(n>=3||C.kd.some(e=>e.el||e.lv-Lp()>=2))bang('大获全胜',`击败${n}名敌人`,'green');tre();const ow=C.ow;C.won=1;endF();if(ow&&!G.over)ow()}
-function endF(){const _f=C&&!C.won?C.ofl:null;if(C){G.mc=0;G.ps=snap(C.P);C.B.forEach(z=>{if(z.dl){if(z.D===G.dl)G.dl.ps=snap(z)}else z.r.ps=snap(z)});C.B.forEach(z=>{if(z.bld&&z.h>0){z.h=Math.max(1,Math.round(z.h*.5));S(`${z.n}燃血过后精血亏损，气血折损一半。`,'e')}});if(G.dl&&G.dl.ko){G.dl.ko=0;G.dl.h=Math.max(1,Math.round(dlH()*.1))}if(C.bb){const n=Math.min(2,(G.bn||0)+C.bb),w=C.sd?(n>=2?{p:90,y:15}:{p:50,y:5}):(n>=2?{p:60,y:3}:{p:30,y:1});G.bn=n;if(!G.wk||G.wk.p<=w.p)G.wk=w;S(`${n>=2?'精血大幅亏损':'精血亏损'}，你元气大伤：虚弱（${w.p}%），持续${w.y}年。`,'e')}
+// 上一场战斗的结局（剧情据此判断：被收服 / 被放走 / 被斩杀）
+let LFO={cp:[],rl:[],rn:[],kd:[]};const fRel=n=>LFO.rn.some(x=>x&&n&&x.startsWith(n));const fOut=i=>LFO.cp.includes(i)?'cp':LFO.rl.includes(i)?'rl':'kd';
+function endF(){const _f=C&&!C.won?C.ofl:null;if(C&&C.id&&G.fx&&G.fx[C.id]){const q=G.fx[C.id];q.o=C.won?'w':C.spar?'l':G.hp<=0?'l':'f';q.t=C.t||0}if(C)LFO={cp:C.cpL||[],rl:C.rlL||[],rn:C.rnL||[],kd:(C.kd||[]).map(e=>e.i)};if(C){G.mc=0;G.ps=snap(C.P);C.B.forEach(z=>{if(z.dl){if(z.D===G.dl)G.dl.ps=snap(z)}else z.r.ps=snap(z)});C.B.forEach(z=>{if(z.bld&&z.h>0){z.h=Math.max(1,Math.round(z.h*.5));S(`${z.n}燃血过后精血亏损，气血折损一半。`,'e')}});if(G.dl&&G.dl.ko){G.dl.ko=0;G.dl.h=Math.max(1,Math.round(dlH()*.1))}if(C.bb){const n=Math.min(2,(G.bn||0)+C.bb),w=C.sd?(n>=2?{p:90,y:15}:{p:50,y:5}):(n>=2?{p:60,y:3}:{p:30,y:1});G.bn=n;if(!G.wk||G.wk.p<=w.p)G.wk=w;S(`${n>=2?'精血大幅亏损':'精血亏损'}，你元气大伤：虚弱（${w.p}%），持续${w.y}年。`,'e')}
 if(C.ys){if(!G.wk||G.wk.p<40||(G.wk.p==40&&G.wk.y<3))G.wk={p:40,y:3};S(G.wk.p>40?'魂火燃尽，精血再度亏损，好在原有的精血亏损更重，此番未再加深。':'魂火燃尽，精血亏损：虚弱（40%），持续3年。','e')}}C=null;if(_f&&!G.over)_f()}
 // 战斗外的友方：修士、全部灵兽、未被擒的道侣
 const offU=()=>[{...mk(G.n,0),me:1,get h(){return G.hp},set h(v){G.hp=v},get H(){return mh()}},...G.bz.map(be),...(dlOK()?[du(G.dl)]:[])];
@@ -1004,6 +1196,8 @@ if((n==12||n==13||n==14||n==15||n==16)&&C){say('此丹药力霸道，需在战�
 if(n==17&&!C){say('此丹需在战斗中服用。');return}
 if(n==14&&(G.lbn||0)>=3){say('你已服过三颗延寿丹，肉身再也承受不住它的药力了。');return}
 if(n==15&&G.lzn){say('你已炼化过一株万年灵芝，再服也无济于事（可赠予友方）。');return}
+if(n==18&&C){say('此丹药力霸道，需在战斗外静心炼化。');return}
+if(n==18&&G.snq){say('你已服过一颗九窍玲珑丹，识海九窍早已贯通，再服也无济于事（可赠予友方）。');return}
 if(n==16&&(G.snb||0)>=.6-1e-9){say('你的神识已被温养到极致（+60%），养魂丹已无用处。');return}
 if(n==13&&!(G.lr&&G.lr.t in WUP)){say(`你的灵根已是${lrN(G.lr)}，洗灵丹对你已无用处（可赠予道侣）。`);return}
 if(n==11&&(G.vb||0)>=.3-1e-9){say('你的身法已臻凌虚之境（速度+30%），再服凌虚丹也无济于事。');return}
@@ -1021,6 +1215,7 @@ else if(n==8){G.mb+=.25;t+='灵台清明，灵力上限永久提升25%'}
 else if(n==14){G.lb=(G.lb||0)+25;G.lbn=(G.lbn||0)+1;t+=`一股磅礴的生机涌入四肢百骸，寿元上限永久+25年（已服${G.lbn}/3颗，当前寿元上限${LF()}岁）`}
 else if(n==15){G.lb=(G.lb||0)+60;G.lzn=1;const g=Math.round(need(G.s)*.5);G.x+=g;t+=`万年灵芝化作滔天灵气，你寿元上限永久+60年（当前${LF()}岁），修为+${g}`}
 else if(n==16){G.snb=Math.min(.6,(G.snb||0)+.15);t+=`神魂温养，神识永久+15%（当前神识${mySn()}）`}
+else if(n==18){G.snq=1;G.snx=(G.snx||0)+.4;t+=`识海中九窍次第洞开，神魂如星河倒灌——神识永久+40%（当前神识${mySn()}）`;bang('九窍玲珑','神识永久+40%','purple')}
 else if(n==17){const c=f>=.3?clean(C.P):0,im=Math.round(2*f);if(im)immu(C.P,im);t+=c||im?`心神一清${c?`，净化了${c}个负面效果`:''}${im?`，并免疫负面效果${im}回合`:''}`:'药力已无法化开，毫无效果'}
 else if(n==9){G.rv=G.age+100;t+='药力化入四肢百骸，一缕不灭生机藏于丹田——百年之内若遇死劫，可以40%气血、40%灵力复活一次（获得「复生」状态）'}
 else if(n==12){if(breakP())t+='一道无形枷锁在你神魂深处轰然碎裂——天命瓶颈已被打破，此生大道再无桎梏';else{const g=Math.round(need(G.s)*.5);G.x+=g;t+=`药力化开，却并无异样——你的天命本就无拘无束。药力化作修为+${g}`}}
@@ -1153,7 +1348,7 @@ if(U.bl){U.bl=0;say(`${U.n}被致盲，一击落了空。`);dPost(U,ty);return}
 if(!only&&aiAct(U,10*(ty==0?1.2:ty==2?1.15:1))){dPost(U,ty);return}
 CUR=T0.n+'·'+(['剑心','回春','噬血','琴心','金身'][ty]);const x=[];let m=1,ex='';if(U.mpM)U.mp=Math.min(U.mpM,U.mp+5);
 if(ty==0&&pt(20)){m*=2;ex='剑气双发！'}
-const r=hit(U,T,m);x.push(`${T.n}受${dt(r)}`);
+const sn=snA(U),r=(sn?sHit:hit)(U,T,m*(sn?SNAM:1));x.push(`${T.n}受${(sn?sdt:dt)(r)}`);
 if(ty==2){if(r[0])x.push('噬血'+hTx(hLow(U,()=>r[0]*.3)));if(pt(20))x.push(ap(T,'po',5,'魔毒'))}
 say(`${U.n}出手攻敌${ex?'——'+ex:''}，${x.filter(Boolean).join('，')}。`);dPost(U,ty)}
 // 道侣、同伴的辅助天赋：无论这次出手做了什么，都按出手次数触发
@@ -1202,7 +1397,7 @@ const spar=(list,m,ow,ofl)=>sf(list,m,{spar:1,noDL:1,ow,ofl});
 const cvX=(nmx,b=0,sp)=>{const cs=clamp(G.s+b,0,14);return[-1,cvL(cs),nmx,sp||cvS(cvL(cs)),cs]};
 const xpG=m=>{const g=Math.round(yY()*m);G.x+=g;return g};
 const gainT=(q,w='')=>{gain(q);return`${w}【${inf(q)[0]}】${tag(q)}`};
-const anyP=()=>Object.keys(G.iv).filter(k=>k[0]=='P'&&!['P9','P12','P13','P14','P15','P16','P17'].includes(k)).sort((a,b)=>rar(b)[0]-rar(a)[0]);
+const anyP=()=>Object.keys(G.iv).filter(k=>k[0]=='P'&&!['P9','P12','P13','P14','P15','P16','P17','P18'].includes(k)).sort((a,b)=>rar(b)[0]-rar(a)[0]);
 // 有缘人、知交的「在意你的人」
 const caring=(f0=40)=>Object.keys(G.np).map(Number).filter(k=>ok0(k)&&lv(k)>=f0);
 // 收徒
@@ -1326,11 +1521,18 @@ nd('plague_ghost',d=>'子夜，你的洞府外忽然阴风大作。成百上千�
 nd('boy0',d=>{d.n=d.n||pk(['狗剩','石头','小六','阿七']);return'市集角落，几个半大的修士正围殴一个瘦弱少年，抢他怀里的半块馒头。少年被打得满脸是血，却死死护着馒头不放，眼神像一头不肯低头的小狼。'},d=>[['出手教训那几人',()=>{gdA(2);return'boy1'}],[`赠他些灵石（${2*sc()}），转身离去`,()=>{ST(-Math.min(G.st,2*sc()),'接济少年');gdA(2);later('boy_back',ri(20,35),{n:d.n,t:1});S('少年愣愣地看着手里的灵石，等他抬起头，你已经走远了。','p');return null}],['与我无关',()=>{later('boy_back',ri(20,35),{n:d.n,t:0});return null}]]);
 nd('boy1',d=>`那几人被你一瞪，一哄而散。少年抹了把脸上的血，把馒头掰成两半，把大的那半递给你：“……谢谢。我叫${d.n}。”`,d=>[...(G.td<0||!ok0(G.td)?[['收下馒头，收他为徒',()=>{mkTu(pk(['石小川','陈阿牛','许一诺']),0,0);return null}]]:[]),['摸摸他的头，留下几块灵石',()=>{ST(-Math.min(G.st,2*sc()),'接济少年');later('boy_back',ri(20,35),{n:d.n,t:2});return null}]]);
 nd('boy_back',d=>d.t?`一名${lab(clamp(G.s,1,14))}的青年修士在你洞府外长跪不起：“恩公可还记得当年市集里那个护着半块馒头的小子？我是${d.n}。这些年，我没有一天忘记过您。”`:`一个黑袍魔修拦在你面前，脸上有一道狰狞的旧疤：“你不记得我了？${d.n}——当年在市集里被人打得半死，满街修士没有一个停下来。你也是其中一个。”`,d=>d.t?[['扶他起来',()=>{const q=lk(2);gain(q);S(`${d.n}奉上一件${inf(q)[0]}${tag(q)}：“这是我在秘境里拼了命才得来的，恩公一定要收下。”`,'g');gdA(3);bio(`当年接济的少年${d.n}前来报恩`)}]]:[['“……对不起。”',()=>{if(pt(40+Math.max(0,G.gd)/2)){S(`${d.n}愣住了，半晌，冷笑一声：“一句对不起，就想抵我半条命？”可他终究没有出手，转身消失在风里。`,'p');gdA(2)}else{S(`“晚了！”${d.n}眼中魔光暴涨，悍然出手！`,'e');sf([cvX(d.n,1)],1.1,{solo:1})}}],['拔剑',()=>{sf([cvX(d.n,1)],1.1,{solo:1})}]]);
+
+// ===================== 洗魂泉（v1.9.4：稀有的神识机缘，一生一次） =====================
+nd('hun0',d=>`你追着一缕奇异的幽光，误入一处上古战场的断崖之下。崖底有一口幽蓝的古泉，泉水不起一丝波澜，倒映出的却不是你的脸，而是漫天流转的星辰。泉边残碑上刻着几行古篆：「洗魂泉。神魂入泉，九死一生；生则识海重开，神识倍增。」（当前神识 ${mySn()}）`,d=>{const ch=hunCh();return[[`以神魂入泉（成功率约${ch}%）`,()=>{G.hunq=1;if(pt(ch)){G.snx=(G.snx||0)+.5;bang('洗魂成功','神识永久+50%','purple');S(`泉水没过眉心的一刹那，你的识海轰然炸开——万千星辰倒灌而入，又一点点沉淀成你自己的东西。不知过了多久，你睁开眼，崖底的每一粒尘埃、每一缕风都清晰如掌纹。神识永久+50%（当前神识 ${mySn()}）。`,'k');bio('洗魂泉中洗炼神魂，识海重开')}else{G.snx=(G.snx||0)+.1;if(!G.wk||G.wk.p<30)G.wk={p:30,y:3};S(`泉水寒彻神魂，你的识海几乎被冻成齑粉！你拼尽最后一丝清明挣出泉面，神魂受创：虚弱（30%）持续3年。所幸识海经此一番淬炼，神识仍永久+10%（当前神识 ${mySn()}）。`,'e')}}],['以玉瓶取一瓶泉水带走',()=>{G.hunq=1;add('P16',2);S('你不敢以神魂相试，只用玉瓶小心盛了一瓶泉水。回到洞府，你以泉水为引炼出两颗【养魂丹】。古泉在你身后无声地干涸了。（养魂丹×2）','g')}],['此地太过凶险，离开',()=>{S('你退出断崖。身后的幽光闪了闪，熄灭了。','p');return null}]]});
+const hunCh=()=>clamp(Math.round(40+(bo('sn')>=.6?20:0)+(G.snb||0)*30+(canEye()?5:0)+((G.gd||0)>=40?5:0)),20,85);
 // ===================== 灵狐报恩 / 寻仇 =====================
-nd('fox0',d=>'密林深处，一头受了重伤的银狐将三只幼崽护在身下，冲你龇着牙。它的皮毛泛着淡淡银光，眼中灵光流转——是一头颇有灵性、离化形不远的银狐。后腿上的伤口很深，像是被猎妖修士的法器所伤。',d=>[['替它疗伤（疗伤丹×1）',()=>{tk('P1');S('银狐警惕地看着你替它敷药，最后，轻轻舔了舔你的手背。','g');gdA(4);later('fox_thank',ri(15,30),{t:1});return null},!hv('P1')],['放它们离开',()=>{S('你退后几步。银狐叼起幼崽，一瘸一拐地消失在密林里，临走前回头看了你一眼。','p');gdA(2);later('fox_thank',ri(20,35),{t:0});return null}],['斩杀母狐，取它的妖丹',()=>{add('W1',3);ST(10*sc(),'灵狐皮毛');S('你取下了七级灵狐的妖丹，剥下银色的皮毛。三只幼崽缩在草丛里瑟瑟发抖，其中一只死死盯着你，眼睛红得像血。（妖丹×3）','e');gdA(-6);later('fox_hate',ri(15,30),{});return null}],...(G.se.includes(1)&&petRoom()?[[`收服一只幼崽${yinT()}`,()=>{sf([[8,clamp(Lp(),1,7)]],.6,{fixed:1,ow:()=>{if(!petRoom()){S('你击退了母狐，可已无力再烙印幼崽。','p');return}const b=mkb(8,1,0);G.bz.push(b);yin();S('你击退了母狐，烙印了一只幼崽。母狐带着另外两只幼崽逃进了密林深处，那凄厉的哀鸣，在林间回荡了一整夜。（获得1级九尾狐）','e');gdA(-3);later('fox_hate',ri(15,30),{})}})}]]:[])]);
+nd('fox0',d=>'密林深处，一头受了重伤的银狐将三只幼崽护在身下，冲你龇着牙。它的皮毛泛着淡淡银光，眼中灵光流转——是一头颇有灵性、离化形不远的银狐。后腿上的伤口很深，像是被猎妖修士的法器所伤。',d=>[['替它疗伤（疗伤丹×1）',()=>{tk('P1');S('银狐警惕地看着你替它敷药，最后，轻轻舔了舔你的手背。','g');gdA(4);later('fox_thank',ri(15,30),{t:1});return null},!hv('P1')],['放它们离开',()=>{S('你退后几步。银狐叼起幼崽，一瘸一拐地消失在密林里，临走前回头看了你一眼。','p');gdA(2);later('fox_thank',ri(20,35),{t:0});return null}],['斩杀母狐，取它的妖丹',()=>{add('W1',3);ST(10*sc(),'灵狐皮毛');S('你取下了七级灵狐的妖丹，剥下银色的皮毛。三只幼崽缩在草丛里瑟瑟发抖，其中一只死死盯着你，眼睛红得像血。（妖丹×3）','e');gdA(-6);later('fox_hate',ri(15,30),{});return null}],...(G.se.includes(1)&&petRoom()?[[`收服一只幼崽${yinT()}`,()=>{sf([[8,clamp(Lp(),1,7)]],.6,{fixed:1,ow:()=>{const o=fOut(8),cub=()=>{if(!petRoom())return 0;const b=mkb(8,1,0);G.bz.push(b);yin();return 1};
+if(o=='cp'){const c=cub();S(`烙印没入母狐眉心，它眼中的凶光一点点熄灭，最后只是回头望着草丛里的幼崽，发出一声低低的哀鸣。${c?'你抱起其中一只幼崽，它在你掌心里发抖，却没有咬你。剩下两只幼崽钻进了密林深处，其中一只回头死死盯着你。（母狐与一只1级九尾狐成为你的灵兽）':'你的灵兽袋已再无余地，三只幼崽钻进了密林深处，其中一只回头死死盯着你。（母狐成为你的灵兽）'}`,'e');gdA(-4);later('fox_hate',ri(15,30),{});return}
+if(o=='rl'){const c=cub();S(c?'你解开母狐身上的禁制，从它身下抱走了一只幼崽。母狐踉跄着叼起另外两只幼崽，一步三回头地消失在密林里，那凄厉的哀鸣，在林间回荡了一整夜。（获得1级九尾狐）':'你解开母狐身上的禁制，可已无力再烙印幼崽。母狐叼起幼崽，头也不回地消失在密林里。','e');gdA(c?-2:1);if(c)later('fox_hate',ri(15,30),{});return}
+const c=cub();S(c?'母狐倒在血泊里，至死都护着身下的幼崽。你烙印了其中一只，另外两只幼崽钻进了密林深处——其中一只回头死死盯着你，眼睛红得像血。（获得1级九尾狐，妖丹×3）':'母狐倒在血泊里，至死都护着身下的幼崽。你已无力再烙印幼崽，三只幼崽钻进了密林深处。（妖丹×3）','e');add('W1',3);gdA(-6);later('fox_hate',ri(15,30),{})}})}]]:[])]);
 nd('fox_thank',d=>`一位银发${G.sex?'少年':'少女'}拦在你面前，盈盈一拜：“恩公，${d.t?'当年您为我娘疗伤':'当年您放我们一条生路'}，我娘临终前嘱咐我，此恩必报。”${G.sex?'他':'她'}已经化为人形，眉眼间还带着几分狐的灵动。`,d=>[['收下谢礼',()=>{const q=pool(['A','P','T'],g=>g>=2);gain(q);S(`${G.sex?'他':'她'}奉上一件${inf(q)[0]}${tag(q)}，又化作一道银光，消失在山林间。`,'g');gdA(2)}],...(petRoom()?[[`“若不嫌弃，留在我身边吧。”${yinT()}`,()=>{yin();if(Lp()>=8){const L=Math.min(8,Lp()),b=mkb(8,L,ri(80,150));b.bd=0;b.lim=Math.max(L,Math.min(b.lim,L+2));b.h=Math.round(bH(b)*.5);G.bz.push(b);kitOf(b);S(`${G.sex?'他':'她'}眼睛一亮，化作一道银光没入你的灵兽袋——一只${b.lv}级的九尾狐（人形），从此与你相伴。（仅烙印，只能发挥五成实力；${TA0f()}化形时耗尽了妖力，气血只剩一半，需要休养。）`,'k');bio('灵狐报恩，化形相随')}else{const b=mkb(8,1,0);b.bd=0;G.bz.push(b);S(`${G.sex?'他':'她'}看了看你，轻轻摇头：“恩公修为尚浅，我这身化形的妖力，会压垮你的神识。”说罢，${TA0f()}从怀中抱出一只刚睁眼的小狐狸，放进你的掌心：“这是我的小妹。等她长大，便由她替我报恩。”（获得1级九尾狐。你修到元婴后，化形的灵狐才愿意亲自追随你。）`,'k');bio('灵狐报恩，托付幼妹')}}]]:[])]);
 const TA0f=()=>G.sex?'他':'她';
-nd('fox_hate',d=>`月黑风高。一个银发${G.sex?'少年':'少女'}立在你洞府门前，银白的狐尾在身后张开，眼中是化不开的恨意：“还记得密林里那头银狐吗？——还我娘命来！”`,d=>[['迎战',()=>{sf([[8,clamp(Lp()+1,2,13)]],.95,{solo:1,ow:()=>{S('银狐倒在血泊中，眼里的恨意，到死都没有散去。','e');gdA(-2)}})}],['说出当年的苦衷，求TA放下',()=>{if(pt(30+Math.max(0,G.gd)/3)){S('“苦衷？”银狐笑出了眼泪，九尾缓缓收拢，“……你走吧。从此你我两清。”','p')}else{S('“花言巧语！”狐尾铺天盖地地卷来！','e');sf([[8,clamp(Lp()+1,2,13)]],.95,{solo:1})}}]]);
+nd('fox_hate',d=>`月黑风高。一个银发${G.sex?'少年':'少女'}立在你洞府门前，银白的狐尾在身后张开，眼中是化不开的恨意：“还记得密林里那头银狐吗？——还我娘命来！”`,d=>[['迎战',()=>{sf([[8,clamp(Lp()+1,2,13)]],.95,{solo:1,ow:()=>{const o=fOut(8);if(o=='cp'){S('烙印落下的那一刻，银狐眼里的恨意化作了茫然。它跪坐在地上，许久，才低声说：“……我娘当年，也是这样被你收走的吗？”','e');gdA(-1)}else if(o=='rl'){S('你解开了银狐身上的禁制：“当年是我欠你的。走吧。”银狐愣了很久，九尾缓缓收拢，转身消失在夜色里。','p');gdA(3)}else{S('银狐倒在血泊中，眼里的恨意，到死都没有散去。','e');gdA(-2)}}})}],['说出当年的苦衷，求TA放下',()=>{if(pt(30+Math.max(0,G.gd)/3)){S('“苦衷？”银狐笑出了眼泪，九尾缓缓收拢，“……你走吧。从此你我两清。”','p')}else{S('“花言巧语！”狐尾铺天盖地地卷来！','e');sf([[8,clamp(Lp()+1,2,13)]],.95,{solo:1})}}]]);
 
 // ===================== 凡间家书 =====================
 const FM=()=>G.fam,sbN=()=>FM().sb,fdead=()=>FM().dead;
@@ -1434,7 +1636,7 @@ fe(d=>`溪边饮水的${d}察觉到了你，低吼着逼近。`),
 [()=>{const k=G.ex.k,c=DLC[k],t=c[2];return t==0?`断崖边，一位白衣${c[3]}${c[0]}正独战${gd(G.enc)}，剑光虽冷，却已显凌乱。`:t==1?`药谷崖边，${c[3]}${c[0]}踮着脚去够崖顶一株灵草，脚下一滑，险些坠崖！`:t==2?`破庙中，一身红衣的${c[0]}倚墙喘息，衣襟染血；庙外传来喝骂声：“${c[1]?'魔女':'魔头'}，看你往哪逃！”`:t==3?`月夜江畔，一叶孤舟上，${c[3]}${c[0]}正在抚琴，琴声里有说不尽的寂寥。一曲终了，${TA(k)}头也不回地问：“岸上那位，听了这么久，可听出了什么？”`:`山道上，一块万斤巨石轰然滚落，眼看就要砸进山下的村落。${c[3]}${c[0]}大喝一声，竟用肩膀硬生生扛住了巨石，脸憋得通红：“喂！那边那个！搭把手！”`},()=>{const k=G.ex.k,t=DLC[k][2],q=meet;return t==0?[['拔剑相助',()=>{const D=q(k);sf(G.enc,1,{ally:{k,s:D.s,h:Math.round(dlH({k,s:D.s})*.6)},ow:()=>{S(`${nmK(k)}收剑入鞘，第一次正眼看你：“……多谢。我叫${nmK(k)}。”`,'g');ar(k,10,14)}})}],['袖手旁观',()=>{q(k);S(`${nmK(k)}独自斩尽妖兽，冷冷瞥了你一眼，御剑而去。`,'p')}],['悄然离去',()=>say('你不愿招惹是非，绕道而行。')]]:t==1?[['飞身相救',()=>{q(k);if(pt(75)){add('P2',2);S(`你一把将${TA(k)}拉了回来，顺手摘下那株灵草。${nmK(k)}红着脸道谢，赠你回灵丹×2。`,'g');ar(k,8,12)}else{hurt(.1,'你救下了人，自己却擦着崖壁滑落，');if(!G.over){S(`${nmK(k)}手忙脚乱地为你包扎伤口，眼眶都红了。`,'g');ar(k,5,8)}}}],['以灵草相赠',()=>{if(!hv('W0')){say('你囊中并无灵草。');return}tk('W0');q(k);S(`你递上一株灵草，${nmK(k)}又惊又喜：“这……这正是我要找的！”`,'g');ar(k,10,14)}],['离开',()=>say('你远远看了一眼，转身离开。')]]:t==3?[['“琴声里，有一个人在等另一个人。”',()=>{q(k);S(`琴声戛然而止。${nmK(k)}终于回过头来，月光下，${TA(k)}的眼睛亮得惊人：“……你是第一个听懂的人。”`,'g');ar(k,11,15)}],['“好琴，好曲，就是太苦了。”',()=>{q(k);S(`${nmK(k)}轻轻笑了一声：“苦？或许吧。”${TA(k)}拨了一个轻快的音，像是在回应你。`,'g');ar(k,6,9)}],['“听不懂，但很好听。”',()=>{q(k);S(`${nmK(k)}愣了一下，忍不住笑出声来：“……倒是个实在人。”`,'g');ar(k,4,7)}],['悄然离开',()=>say('你没有惊扰抚琴人，悄然离开。身后的琴声，响了很久。')]]:t==4?[['运起全身灵力帮TA扛住',()=>{q(k);hurt(.08,'万斤巨石压得你骨骼咯吱作响，');if(G.over)return;S(`你们一起把巨石推到了路边。${nmK(k)}一屁股坐在地上，冲你竖起大拇指：“好样的！我叫${nmK(k)}，你这个朋友我交定了！”`,'g');ar(k,10,14)}],['用法术把巨石轰碎',()=>{q(k);if(pt(60)){S(`你一道法术轰碎了巨石。${nmK(k)}眨巴着眼睛看你，又看看自己发红的肩膀：“……早说你会这个啊！”`,'g');ar(k,6,10)}else{S(`法术炸偏了，碎石劈头盖脸砸了${nmK(k)}一身。${TA(k)}顶着一头石灰瞪你：“你是来帮忙的还是来捣乱的？！”`,'e');ar(k,2,4)}}],['袖手旁观',()=>{q(k);S(`${nmK(k)}独自把巨石扛到了路边，经过你身边时，狠狠瞪了你一眼。`,'p')}]]:[['替'+TA(k)+'挡下追兵',()=>{const D=q(k);sf(G.enc,1,{ally:{k,s:D.s,h:Math.round(dlH({k,s:D.s})*.4)},ow:()=>{S(`${nmK(k)}擦去嘴角血迹，似笑非笑地看着你：“正道中人救魔修？有意思……这份情，我记下了。”`,'g');ar(k,12,16)}})}],['指一条小路',()=>{q(k);S(`你朝后山一指。${nmK(k)}深深看你一眼，身影消失在夜色里。`,'g');ar(k,6,9)}],['揭发'+TA(k)+'的行踪',()=>{const D=q(k);D.st=-1;D.f=0;const v=20*sc();ST(v,'揭发魔修·赏金');S(`追兵扑进破庙，${nmK(k)}拼死突围而去，临走前回头看了你一眼——那眼神，你这辈子都忘不了。（获得赏金${v}灵石）`,'e')}]]},()=>{const u=unmet();G.ex={k:pk(u)};const t=DLC[G.ex.k][2];G.enc=t==0?genB():t==2?genC(0,ri(1,2)).map(e=>{e[2]=['青云宗','天剑门','玄天观'][ri(0,2)]+'弟子'+e[2].slice(-2);return e}):null},()=>unmet().length?(G.dl?.5:1):0],
 [()=>{const k=G.ex.k,v=G.ex.v;return v==0?`坊市里偶遇${nmK(k)}，${TA(k)}正盯着一件【${inf(G.ex.q)[0]}】${tag(G.ex.q)}出神，摊主要价${G.ex.c}灵石。`:v==1?`月下松间，${nmK(k)}与你对坐品茶，忽然问道：“修道之人，你觉得最要紧的是什么？”`:v==2?`兽潮来袭，${nmK(k)}与你背靠背而立：“喂，别拖后腿。”来的是${gd(G.enc)}。`:`${nmK(k)}寻到一处上古遗迹的入口，回头看你：“里面机关重重……敢不敢一起进去？”`},()=>{const k=G.ex.k,v=G.ex.v,t=DLC[k][2];return v==0?[['买下相赠',()=>{const c=G.ex.c;if(G.st<c){say('你摸了摸干瘪的储物袋，只得作罢。');return}ST(-c,`赠礼·${nmK(k)}`);{const q0=G.np[k];kadd(kitOf(q0,q0.s/3|0),G.ex.q);kLog(q0.kt,`收到你赠的【${inf(G.ex.q)[0]}】`)}if(G.ex.lk){S(`${nmK(k)}接过${inf(G.ex.q)[0]}，眼睛一亮，嘴上却说：“谁要你破费。”（已放进${TA(k)}的储物袋）`,'g');ar(k,10,14)}else{S(`${nmK(k)}收下了【${inf(G.ex.q)[0]}】，只淡淡道了声谢——看来这并非${TA(k)}心头所好。（已放进${TA(k)}的储物袋）`,'p');ar(k,1,3)}}],['陪'+TA(k)+'闲逛',()=>{S(`你陪${nmK(k)}逛了一整天坊市，${TA(k)}话不多，却一直走在你身侧。`,'g');ar(k,3,6)}],['寒暄几句',()=>{say(`你与${nmK(k)}寒暄几句便各自散去。`);aff(k,1)}]]:v==1?ANS.map((a,j)=>[a,()=>{const c=ANSC[t][j];S(c==2?`${nmK(k)}${ANSG[t]}`:c==1?`${nmK(k)}不置可否，只是轻轻点了点头。`:`${nmK(k)}${ANSB[j]}`,c==2?'g':c==1?'p':'e');c==2?ar(k,7,11):c==1?aff(k,1):ar(k,-6,-2)}]):v==2?[['并肩迎战',()=>{const D=G.np[k];sf(G.enc,1,{ally:{k,s:D.s,h:dlH({k,s:D.s})},ow:()=>{S(`兽潮退去，${nmK(k)}背靠着你喘息，许久才低声道：“……你还不错。”`,'g');ar(k,9,13)}})}],['各自突围',()=>{hurt(.05,'你独自杀出一条血路，');if(!G.over){S(`${nmK(k)}看你的眼神多了几分轻视。`,'e');ar(k,-8,-4)}}]]:[['一同进去',()=>{if(pt(60)){const q=lk(1);add(q);S(`你们互为照应，一路破开机关，在遗迹深处寻得【${inf(q)[0]}】${tag(q)}。${nmK(k)}难得笑了。`,'g');ar(k,6,10)}else{hurt(.1,`机关骤发，${nmK(k)}一把将你推开，自己却被擦伤；你也没能全身而退，`);if(!G.over){S(`你为${TA(k)}包扎伤口时，${TA(k)}的耳根悄悄红了。`,'g');ar(k,4,7)}}}],['婉言谢绝',()=>{S(`${nmK(k)}撇撇嘴：“胆小鬼。”`,'p');aff(k,-3)}]]},()=>{const m=others().filter(i=>!ready(i));const k=wp(m,i=>1+G.np[i].f/8);G.ex={k,v:ri(0,3)};if(G.ex.v==0){const c=pk(['A','P','T','S']);G.ex.q=pool([c],g=>g<=2);G.ex.c=P$(G.ex.q);G.ex.lk=c==LIKE[DLC[k][2]]}if(G.ex.v==2)G.enc=genB()},()=>others().some(i=>!ready(i))?(G.dl?1.2:4):0],
 [()=>`${nmK(G.ex.k)}约你于桃花林相见。落英缤纷中，${TA(G.ex.k)}面颊微红，轻声道：“这些年……你可愿与我结为道侣，同参大道？”`,()=>{const k=G.ex.k;return[['执手相许，结为道侣',()=>wed(k)],['再等等',()=>{S(`${nmK(k)}的笑容僵了僵，低声道：“……我等你。”`,'e');ar(k,-10,-6)}],['婉言相拒',()=>{S(`${nmK(k)}怔了片刻，强笑道：“……是我唐突了。”转身时，你看见${TA(k)}抬手拭了拭眼角。`,'e');ar(k,-35,-25)}]]},()=>{G.ex={k:pk(others().filter(ready))}},()=>!G.dl&&others().some(ready)?8:0],
-[()=>`山道尽头，${nmK(G.ex.k)}拦在路中，冷笑：“当年那笔账，今日一并清算！”${TA(G.ex.k)}身后还跟着${G.enc.length-1?G.enc.length-1+'名同伙':'满身杀气'}。`,()=>{const k=G.ex.k;return[['拔剑应战',()=>sf(G.enc,1.1,{ow:()=>{G.np[k].st=-3;S(`${nmK(k)}倒在血泊中，望着天空喃喃道：“若当初……你没有……”话未说完，便已气绝。`,'e')}})],['跪地认错',()=>{if(pt(40)){Object.assign(G.np[k],{st:0,f:10,j:0});S(`${nmK(k)}的剑停在你颈侧，良久，${TA(k)}别过脸去：“……滚。别让我再看见你。”（恩怨暂了，关系回到初识）`,'g')}else{S(`“现在认错？晚了！”${nmK(k)}暴喝出手！`,'e');sf(G.enc,1.1,{ow:()=>{G.np[k].st=-3;S(`${nmK(k)}倒在你脚边，眼中的恨意终于熄灭。`,'e')}})}}]]},()=>{const h=Object.keys(G.np).map(Number).filter(i=>G.np[i].st==-1);const k=pk(h);G.ex={k};const D=G.np[k];D.s=clamp(Math.max(D.s,G.s)+1,0,14);G.enc=[[-1,cvL(D.s),nmK(k),DT[DLC[k][2]].sp,D.s,kitOf(D,D.s/3|0)],...((n=>n>0?genC(0,n):[])(ri(0,Math.min(2,EC[rl()].length-1))))]},()=>Object.values(G.np).some(q=>q.st==-1)?.7:0],
+[()=>`山道尽头，${nmK(G.ex.k)}拦在路中，冷笑：“当年那笔账，今日一并清算！”${TA(G.ex.k)}身后还跟着${G.enc.length-1?G.enc.length-1+'名同伙':'满身杀气'}。`,()=>{const k=G.ex.k;return[['拔剑应战',()=>sf(G.enc,1.1,{ow:()=>{if(fRel(nmK(k))){Object.assign(G.np[k],{st:0,f:5,j:0});S(`你解开了${nmK(k)}身上的禁制。${TA(k)}撑着剑站起来，看了你很久：“……这条命，算你还我的。从此你我两清。”（恩怨暂了，关系回到初识）`,'g');gdA(3);return}G.np[k].st=-3;S(`${nmK(k)}倒在血泊中，望着天空喃喃道：“若当初……你没有……”话未说完，便已气绝。`,'e')}})],['跪地认错',()=>{if(pt(40)){Object.assign(G.np[k],{st:0,f:10,j:0});S(`${nmK(k)}的剑停在你颈侧，良久，${TA(k)}别过脸去：“……滚。别让我再看见你。”（恩怨暂了，关系回到初识）`,'g')}else{S(`“现在认错？晚了！”${nmK(k)}暴喝出手！`,'e');sf(G.enc,1.1,{ow:()=>{if(fRel(nmK(k))){Object.assign(G.np[k],{st:0,f:5,j:0});S(`你解开了${nmK(k)}身上的禁制：“走吧。”${TA(k)}踉跄着离去，再没有回头。（恩怨暂了，关系回到初识）`,'g');gdA(3);return}G.np[k].st=-3;S(`${nmK(k)}倒在你脚边，眼中的恨意终于熄灭。`,'e')}})}}]]},()=>{const h=Object.keys(G.np).map(Number).filter(i=>G.np[i].st==-1);const k=pk(h);G.ex={k};const D=G.np[k];D.s=clamp(Math.max(D.s,G.s)+1,0,14);G.enc=[[-1,cvL(D.s),nmK(k),DT[DLC[k][2]].sp,D.s,kitOf(D,D.s/3|0)],...((n=>n>0?genC(0,n):[])(ri(0,Math.min(2,EC[rl()].length-1))))]},()=>Object.values(G.np).some(q=>q.st==-1)?.7:0],
 // ===== v1.3.1 新增：感情纠葛事件 =====
 [()=>{const k=G.dl.k,o=G.ex.o;return `${nmK(k)}这几日对你冷淡得很。问起缘由，${TA(k)}冷笑一声：“${o>=0?`你和${nmK(o)}走得那么近，还来问我？`:'你整日往外跑，是不是外面有人了？'}”`},()=>{const k=G.dl.k,o=G.ex.o;return[['耐心解释',()=>{if(pt(clamp(30+fOf(k)*.6-jOf(k)*.3,10,90))){S(`你一五一十地说清了来龙去脉。${nmK(k)}听完，别扭地哼了一声，靠进了你怀里。`,'g');sour(k,-30);ar(k,2,4)}else{S(`你越解释，${nmK(k)}的脸色越难看：“编，接着编。”`,'e');sour(k,5);ar(k,-10,-6)}}],[`送礼赔罪（${15*sc()}灵石）`,()=>{const c=15*sc();if(G.st<c){say('你掏遍储物袋也凑不出像样的礼物。');return}ST(-c,`赔罪礼·${nmK(k)}`);{const g0=pool(['P','A'],g=>g<=1);kadd(kitOf(G.dl,G.dl.s/3|0),g0);S(`你精心挑了一件【${inf(g0)[0]}】${tag(g0)}作为赔礼（已放进${TA(k)}的储物袋）。`,'p')}S(`${nmK(k)}收下了，${jOf(k)>60?'脸色却依旧阴沉':'嘴角终于有了笑意'}。`,'g');sour(k,-20);aff(k,1)}],...(o>=0?[[`立誓与${nmK(o)}保持距离`,()=>{S(`你当着${nmK(k)}的面立誓，从此与${nmK(o)}只论道、不论情。消息传到${nmK(o)}耳中，${TA(o)}一言不发地摔碎了手中的茶杯。`,'p');sour(k,-40);ar(k,4,6);ar(o,-18,-12);sour(o,15)}]]:[]),['冷处理',()=>{S(`你懒得解释，${nmK(k)}摔门而去，一连几日都不理你。`,'e');sour(k,10);ar(k,-8,-5)}]]},()=>{const o=others(1).sort((a,b)=>G.np[b].f-G.np[a].f)[0];G.ex={o:o==null?-1:o}},()=>dlOK()&&G.dl.j>=35?.5+G.dl.j/50:0],
 [()=>{const[a,b]=G.ex.p;return `${nmK(a)}与${nmK(b)}在坊市狭路相逢，四目相对，火花四溅。${nmK(a)}冷冷道：“${G.n}，你倒是说说，${TA(b)}是你什么人？”`},()=>{const[a,b]=G.ex.p,side=(x,y)=>()=>{S(`你站到了${nmK(x)}身边。${nmK(y)}脸色煞白，死死咬着嘴唇：“好，好得很。”`,'e');ar(x,8,12);ar(y,-18,-12);sour(y,20)};return[[`站在${nmK(a)}这边`,side(a,b)],[`站在${nmK(b)}这边`,side(b,a)],['打个圆场',()=>{if(pt(40)){S('你左右逢源、好话说尽，两人竟都被你逗得没了脾气。','g');aff(a,2);aff(b,2)}else{S('两人不约而同地瞪了你一眼，各自拂袖而去。','e');ar(a,-8,-5);ar(b,-8,-5)}}],['悄悄溜走',()=>{S('你趁两人对峙时脚底抹油。事后，两人都没给你好脸色。','e');ar(a,-10,-6);ar(b,-10,-6)}]]},()=>{const L=[...(dlOK()?[G.dl.k]:[]),...others(40)];const a=pk(L),b=pk(L.filter(x=>x!=a));G.ex={p:pt(50)?[a,b]:[b,a]}},()=>((dlOK()?1:0)+others(40).length)>=2?.6:0],
@@ -1544,6 +1746,7 @@ EV.push(
 {n:'rlm0',w:()=>rl()>=1&&G.age-(G.rlm||0)>=25?.6:0,i:()=>({})},
 {n:'trn0',w:()=>G.age>=18&&G.age-(G.trn||0)>=10?.55:0,i:()=>({})},
 {n:'soul0',cd:500,w:()=>rl()>=1&&!G.soul?.15:0,i:()=>({})},
+{n:'hun0',cd:999,w:()=>rl()>=1&&!G.hunq?.14:0,i:()=>({})},
 {n:'tale0',cd:6,w:()=>.45,i:()=>({})},
 {n:'pet_free',cd:20,w:()=>G.bz.some(z=>z.lv>=8)?.3:0,i:()=>({i:G.bz.findIndex(z=>z.lv>=8)})},
 {n:'pet_eat',cd:8,w:()=>G.bz.length&&anyP().length?.3:0,i:()=>{const p=anyP().slice(-1)[0];tk(p);return{i:ri(0,G.bz.length-1),p}}});
@@ -1572,12 +1775,12 @@ return r}
 const tgsL=l=>l.length?`<span class="tgs">${l.map(d=>{const t=TX[d[0]]+(PCT[d[0]]&&d[1]?d[1]+'%':'');const nn=d[4]&&d[0]!='po'?d[4].split('、').length:1;return `<button class="sx sx${d[0]}" title="${t}${d[2]?'，剩余'+d[2]:''}${nn>1?`（${nn}个来源叠加）`:''}（点击查看详情）" onclick="event.stopPropagation();po('e','${d.join('|')}')">${t}${nn>1?'×'+nn:''}${d[3]?'·'+d[3]:''}</button>`}).join('')}</span>`:'';
 const xt=()=>G.rv>G.age?[['rv',0,`${G.rv-G.age}年`,`${G.rv-G.age}年`]]:[];
 const pl0=()=>{const l=stl(G.ps||{}).filter(d=>!(G.wk&&d[0]=='wk'));if(G.wk)l.unshift(['wk',G.wk.p,G.wk.y+'年',G.wk.y+'年']);if(G.hide)l.push(['hd',0,'持续至你出手战斗','']);if(G.limR)l.push(['lm',0,`止步${lab(G.lim)}`,'']);if(G.soul)l.push(['sl',0,'','']);if(oldW(G.age,LF()))l.push(['ol',0,`剩${LF()-G.age}年`,`剩${LF()-G.age}年`]);return l.concat(xt())},bst=z=>{const l=stl(z.ps||{});return l.length?`<br>状态：${tgsL(l)}`:''};
-const pdis=k=>!G.lr||!!C&&!!C.post||['P12','P13','P14','P15','P16'].includes(k)&&!!C||k=='P17'&&!C||k=='P14'&&(G.lbn||0)>=3||k=='P15'&&!!G.lzn||k=='P16'&&(G.snb||0)>=.6-1e-9||k=='P13'&&!(G.lr&&G.lr.t in WUP)||k=='P9'&&G.rv>G.age||k=='P11'&&(!!C||(G.vb||0)>=.3-1e-9)||(k=='P4'||k=='P5'||k=='P10')&&!C;
+const pdis=k=>!G.lr||!!C&&!!C.post||['P12','P13','P14','P15','P16','P18'].includes(k)&&!!C||k=='P18'&&!!G.snq||k=='P17'&&!C||k=='P14'&&(G.lbn||0)>=3||k=='P15'&&!!G.lzn||k=='P16'&&(G.snb||0)>=.6-1e-9||k=='P13'&&!(G.lr&&G.lr.t in WUP)||k=='P9'&&G.rv>G.age||k=='P11'&&(!!C||(G.vb||0)>=.3-1e-9)||(k=='P4'||k=='P5'||k=='P10')&&!C;
 const cnt=cs=>Object.keys(G.iv).filter(k=>cs.includes(k[0])).reduce((x,k)=>x+G.iv[k],0);
 const RS=(h,t,bs,c='')=>`<div class="rw sr${c}"><div class="si"><b>${h}</b><p>${t}</p></div><div class="sb">${bs}</div></div>`,BB=(t,f,d=0,c='buy')=>`<button class="${c}" onclick="${f}"${d?' disabled':''}>${t}</button>`;
 const R=(h,t,x='')=>`<div class="rw"><div><b>${h}</b><p>${t}</p></div>${x}</div>`,B=(t,f,d=0)=>`<button class="s" onclick="${f}"${d?' disabled':''}>${t}</button>`,BC=(...a)=>`<div class="bc">${a.join('')}</div>`,no='<p class="no">暂无</p>';
 const tv=z=>{const M=MB[z.i],r=M[6].filter(s=>s.length>2).map(s=>`${NK[s[1]]}${Math.round(sv(s,z.lv,M[1]))}${s[1]=='po'?'%生命/回合':'%'}`);if(z.i==1)r.push(`寻宝${trP(z.lv)}%`);if(z.i==5)r.push(`回复${8+z.lv}%`);if(z.i==6)r.push(`护盾${10+1.5*z.lv}%`);if(z.i==10)r.push('必定双倍伤害');if(z.i==16)r.push('俯冲借速增伤');if(z.i==17)r.push(`回复${10+z.lv}%`);if(z.i==18)r.push(`群疗${8+z.lv}%`);if(z.i==19)r.push(`群盾${10+z.lv}%，免疫1回合`);if(z.i==20)r.push('攻击为神识攻击');return r.join('，')||'看穿迷障'};
-const bp=(z,x)=>{const M=MB[z.i];return R(`${pNF(z)}${z.lv>=8?'<span class="rt rtH">人形</span>':''}${tag('B'+z.i)}　${z.lv}级（${lvl(z.lv)}）`,`生命：${Math.max(0,Math.round(z.h))}/${bH(z)}　速度：${bsp(z.i,z.lv)}　神识：${snOf(be(z))}　寿元：${z.ag||0}/${pLz(z)}岁${oldW(z.ag||0,pLz(z))?' <b style="color:var(--hp)">寿元将尽</b>':''}　修炼：${z.lv>=13?'已满级':z.xp+'/'+xn(z.lv)} 等级上限：${pLv(z)}级${z.limR?'（天资所限）':''}<br>自动修炼：${z.lv>=13?'已满级':`每年约+${Math.round(xn(z.lv)*pcr(z))}（${pcrT(z)}）`}<br>契约：${z.bd?'滴血认主（完美发挥）':'仅烙印（只发挥5层实力）'}<div class="pif" style="margin-top:4px"><label>名字<input id="pnm" maxlength="8" value="${z.nm||''}" placeholder="给${M[0]}起个名字（1～8字）"><button class="s" onclick="pRen(${x})">✏ 命名</button></label>${G.pne?`<p class="pie">${G.pne}</p>`:''}</div><br>神通「${M[4]}」：${M[5]}<br>当前：${tv(z)}${bst(z)}`)+`<div class="ch">${B(z.d?'收回':dN()>=dmax()?'出战（已满）':'出战',`act(()=>dep(${x}))`,!!C||(!z.d&&dN()>=dmax()))}${z.bd?'':B(`滴血认主（余${bq()}）`,`act(()=>bond(${x}))`,!!C||bq()<1)}${z.bd?'':B(`出售${bv(z)}`,`act(()=>sellB(${x}))`,!!C)}</div>${eqUI(z.eq,k=>`eqP(${x},'${k}')`,j=>`uneqP(${x},${j})`)}${petKitUI(z,x)}${hv('P12')&&z.lv<13?`<div class="ch">${B(`喂逆天改命丹×${hv('P12')}`,`act(()=>feedNT(${x}))`,!!C)}</div>`:''}<div class="lb">${z.lv>=13?'已臻13级，无需再喂养':z.lv>=pLv(z)&&z.xp>=xn(z.lv)-1?`已达等级上限${pLv(z)}级（主人对应等级+1）`:'喂养培养（距下一级还需'+(xn(z.lv)-z.xp)+'，每次喂养最多升1级）'}</div><div class="ch">${(()=>{const lk=z.lv>=13||z.lv>=pLv(z)&&z.xp>=xn(z.lv)-1;return B(`灵石${fcost(z)}（+${fcost(z)}）`,`act(()=>feed(${x},'$'))`,G.st<fcost(z)||lk)+['W0','W2','W1'].map(w=>B(`${IT[w][0]}×${hv(w)}（+${FP[w]}%）`,`act(()=>feed(${x},'${w}'))`,!hv(w)||lk)).join('')})()}</div>${petPills().length?`<div class="lb">喂丹药（下品+20%、中品+35%、上品+60%、极品+100%；今年已炼化${pyN(z)}/${PYL}颗；延寿丹、万年灵芝、养魂丹另有奇效，不占次数）</div><div class="ch">${petPills().map(k=>{const sp=['P14','P15','P16'].includes(k);return B(`${IT[k][0]}×${hv(k)}（${k=='P14'?'寿元+25':k=='P15'?'寿元+60':k=='P16'?'神识+15%':'+'+FPP[rar(k)[0]]+'%'}）`,`act(()=>feed(${x},'${k}'))`,sp?(k=='P14'&&(z.lbn||0)>=3||k=='P15'&&z.lzn):(z.lv>=13||pyN(z)>=PYL||z.lv>=pLv(z)&&z.xp>=xn(z.lv)-1))}).join('')}</div>`:''}</div>`};
+const bp=(z,x)=>{const M=MB[z.i];return R(`${pNF(z)}${z.lv>=8?'<span class="rt rtH">人形</span>':''}${tag('B'+z.i)}　${z.lv}级（${lvl(z.lv)}）`,`生命：${Math.max(0,Math.round(z.h))}/${bH(z)}　速度：${bsp(z.i,z.lv)}　神识：${snOf(be(z))}　寿元：${z.ag||0}/${pLz(z)}岁${oldW(z.ag||0,pLz(z))?' <b style="color:var(--hp)">寿元将尽</b>':''}　修炼：${z.lv>=13?'已满级':z.xp+'/'+xn(z.lv)} 等级上限：${pLv(z)}级${z.limR?'（天资所限）':''}<br>自动修炼：${z.lv>=13?'已满级':`每年约+${Math.round(xn(z.lv)*pcr(z))}（${pcrT(z)}）`}<br>契约：${z.bd?'滴血认主（完美发挥）':'仅烙印（只发挥5层实力）'}<div class="pif" style="margin-top:4px"><label>名字<input id="pnm" maxlength="8" value="${z.nm||''}" placeholder="给${M[0]}起个名字（1～8字）"><button class="s" onclick="pRen(${x})">✏ 命名</button></label>${G.pne?`<p class="pie">${G.pne}</p>`:''}</div><br>神通「${M[4]}」：${M[5]}<br>当前：${tv(z)}${bst(z)}`)+`<div class="ch">${B(z.d?'收回':dN()>=dmax()?'出战（已满）':'出战',`act(()=>dep(${x}))`,!!C||(!z.d&&dN()>=dmax()))}${z.bd?'':B(`滴血认主（余${bq()}）`,`act(()=>bond(${x}))`,!!C||bq()<1)}${z.bd?'':B(`出售${bv(z)}`,`act(()=>sellB(${x}))`,!!C)}</div>${eqUI(z.eq,k=>`eqP(${x},'${k}')`,j=>`uneqP(${x},${j})`)}${petKitUI(z,x)}${hv('P12')&&z.lv<13?`<div class="ch">${B(`喂逆天改命丹×${hv('P12')}`,`act(()=>feedNT(${x}))`,!!C)}</div>`:''}<div class="lb">${z.lv>=13?'已臻13级，无需再喂养':z.lv>=pLv(z)&&z.xp>=xn(z.lv)-1?`已达等级上限${pLv(z)}级（主人对应等级+1）`:'喂养培养（距下一级还需'+(xn(z.lv)-z.xp)+'，每次喂养最多升1级）'}</div><div class="ch">${(()=>{const lk=z.lv>=13||z.lv>=pLv(z)&&z.xp>=xn(z.lv)-1;return B(`灵石${fcost(z)}（+${fcost(z)}）`,`act(()=>feed(${x},'$'))`,G.st<fcost(z)||lk)+['W0','W2','W1'].map(w=>B(`${IT[w][0]}×${hv(w)}（+${FP[w]}%）`,`act(()=>feed(${x},'${w}'))`,!hv(w)||lk)).join('')})()}</div>${petPills().length?`<div class="lb">喂丹药（下品+20%、中品+35%、上品+60%、极品+100%；今年已炼化${pyN(z)}/${PYL}颗；延寿丹、万年灵芝、养魂丹、九窍玲珑丹另有奇效，不占次数）</div><div class="ch">${petPills().map(k=>{const sp=FSP.includes(k);return B(`${IT[k][0]}×${hv(k)}（${k=='P14'?'寿元+25':k=='P15'?'寿元+60':k=='P16'?'神识+15%':k=='P18'?'神识+40%':'+'+FPP[rar(k)[0]]+'%'}）`,`act(()=>feed(${x},'${k}'))`,sp?(k=='P14'&&(z.lbn||0)>=3||k=='P15'&&z.lzn||k=='P18'&&z.snq):(z.lv>=13||pyN(z)>=PYL||z.lv>=pLv(z)&&z.xp>=xn(z.lv)-1))}).join('')}</div>`:''}</div>`};
 const row=k=>{const c=k[0],q=IT[k],b=[];
 if('STMZF'.includes(c))b.push(B('参悟',`act(()=>study('${k}'))`,!!C));
 if(c=='P')b.push(B('服用',`act(()=>eat('${k}'))`,pdis(k)));
@@ -1645,11 +1848,14 @@ else if(k=='help'){tt='玩法说明';h=`<div class="hp"><h3>🎯 目标</h3><p>�
 <h3>🐾 灵兽与同伴</h3><p>学会驭兽烙印后，可把气血低于10%的妖兽收为灵兽（一生次数有限）。灵兽8级化为人形，会自己修炼、收集宝物。可在灵兽袋中给灵兽起名字。道侣、金兰、徒弟都会与你并肩作战；你可以把主修、法术、秘术玉简与丹药、法宝赠给他们，他们参悟后会在战斗中使用。</p>
 <h3>💞 情缘与道心</h3><p>情缘达到70且相处5次以上，对方会向你表白。道心记录你的善恶：魔性深重会招来心魔劫与正道追杀，侠义之名则会让人记住你。</p>
 <h3>🔥 炼丹炼器</h3><p>可选的技艺之路：入门后一炉炉积累熟练度，品级上限受境界限制。顶级丹药法宝需要上古丹方、天地灵物，成功率极低。也可以请精通此道的道侣好友代炼。</p>
-<h3>💡 提示</h3><p>点击状态标签、物品、灵根都能看到说明；按钮下方的小字是它的效果或限制。进度自动保存在本机浏览器中。</p></div>`}
+<h3>👁 神识之道</h3><p>神识决定查探与神识攻击的强弱。专修神识的修士可以走「神识流」：主修《紫府养神经》或极稀有的《太虚炼神诀》（普攻化为神识攻击，无视护盾），再寻觅养魂丹、九窍玲珑丹、太虚魂灯与一生一次的「洗魂泉」机缘——神识越强，神识刺、噬魂钉、摄魂术越致命。</p>
+<h3>📜 修行纪事</h3><p>中间的纪事按年份分成卡片：左侧时间轴上的金点是每一年，右侧小标记统计这一年的突破🌟、战斗⚔、收获✧、习得📜。连续闭关的年份会合并为一行。每场战斗折叠成一张<b>战报</b>，标题写着对手、胜负与回合数，点开可看逐回合详情；战利品始终显示在战报下方。右上角「大事」只看剧情、收获、突破与险情。</p>
+<h3>💡 提示</h3><p>点击状态标签、物品、灵根都能看到说明；按钮下方的小字是它的效果或限制。进度自动保存在本机浏览器中。⚙ 设置里可切换明暗主题与特效强度。</p></div>`}
 else if(k=='lock'){tt='尚未踏上仙途';h=`<div class="lock"><b>🔒 请先完成入门</b>坊市、储物袋、灵兽、丹房等都要在踏上仙途之后才能使用。请先点「🔮 入门：定名测灵」定下名字、性别并测出灵根。</div>`+BC(B('🔮 前往入门',"po('lr')"))}
 else if(k=='set'){tt='设置';const th=(document.documentElement.dataset&&document.documentElement.dataset.theme)||'';
 h=`<h3>⛓ 手下留情</h3><label class="mc"><input type="checkbox"${G.mcd?' checked':''} onchange="G.mcd=this.checked?1:0;draw()"><span>每场战斗默认开启手下留情<small>开启后，致命一击会改为封禁敌人，战后由你处置；切磋不受影响。战斗中也可以随时临时切换。</small></span></label>
 <h3>◐ 主题</h3><div class="tabs">${[['','跟随系统'],['light','亮色'],['dark','暗色']].map(([v,n])=>`<button class="${th==v?'on':''}" onclick="setThm('${v}')">${n}</button>`).join('')}</div>
+<h3>✨ 特效</h3><div class="tabs">${[['1','华丽'],['0','简洁']].map(([v,n])=>`<button class="${((()=>{try{return localStorage.getItem('xxfx')||'1'}catch(e){return'1'}})())==v?'on':''}" onclick="setFx('${v}')">${n}</button>`).join('')}</div><p class="no">华丽：只在关键时刻播放——突破天光、收服与胜利的粒子光环、道侣花瓣、险境震屏。简洁：关闭这些特效（更省电）。系统开启「减弱动态效果」时自动简洁。</p>
 <h3>💾 存档</h3><p class="no">进度在每次操作后自动保存在本机浏览器中。清除浏览器数据会丢失存档。</p>`}
 else if(k=='mcH'){tt='手下留情与封禁';h=`<div class="hp"><p><b>没开启</b>：你和同伴的攻击照常致命，敌人气血归零即阵亡。</p><p><b>开启后</b>：只有在「这一击会打死敌人」时才生效——敌人不会死，而是被<b>⛓封禁</b>：经脉被封、四肢被缚，<b>无法行动，也不能被任何人治疗</b>。</p><p>敌人全部倒下或被封禁后，战斗进入<b>战后处置</b>，你逐个决定：斩杀、收缴储物袋后放走、直接放走、驭兽烙印（妖兽）、搜魂（需学会搜魂术，魔道）。</p><p>持续伤害（燃烧、中毒）与斩仙飞刀同样遵守手下留情。切磋比试中不能使用。</p><p>「默认开启」勾选后，以后每场战斗开始时自动开启；也可以在右上角 ⚙ 设置中修改。</p></div>`}
 else if(k=='o'){tt='战斗规则';h=R('① 出手顺序','每回合开始时，按全场单位的<b>当前速度</b>从快到慢排好出手队列（顶部那一行），速度相同者同时出手。疾速、迟缓等变化从<b>下一回合</b>起生效。')+R('② 一次出手','施展一门法术、祭出一件法宝（包括灵兽、同伴佩戴的法宝）、施展一门秘术、布下一座阵法、普攻，各占<b>一次出手</b>；<b>服用丹药不占出手</b>，可在出手前随时服用，但同一场战斗里每多服一颗药力就打一次折扣（100%→75%→56%→42%……最低10%）。敌我双方完全相同。')+R('③ 多次出手','速度达到对方阵营最快者的<b>2倍</b>，本回合可出手2次；达到<b>3倍</b>可出手3次。')+R('④ 锁定目标','我方默认攻击敌方<b>剩余血量比例最低</b>的一员；点击敌人可手动锁定，再点一次取消。敌方同样优先攻击我方血量比例最低的单位。')+R('⑤ 回合结束','所有人出手后，结算燃烧、中毒等持续伤害与状态回合数，每人回复5点灵力（同伴、敌人的灵力上限为100），然后进入下一回合。')+R('⑥ 效果叠加','不同法术、法宝、秘术、丹药带来的同类效果（强化、虚弱、疾速、迟缓、燃烧、中毒、护盾、治疗）<b>叠加生效</b>；同一来源重复施加只刷新回合。')+R('⑦ 手下留情与封禁','没开启时，致命一击照常击杀敌人。开启后，你和同伴（含持续伤害、斩仙飞刀）的<b>致命一击</b>不会杀死敌人，而是将其<b>封禁</b>（无法行动、不能被治疗）；可勾选「默认开启」。来敌全部倒下或被封禁后，战斗结束，你逐个决定封禁者的生死。')+R('⑧ 胜负','击败全部敌人即胜利；你的气血归零即死亡（涅槃、九转还魂丹、金兰舍命可能救你一命）。战斗中没有逃跑按钮，只有血影遁、燃魂疾影能脱身。')+(C?R('当前速度',allU().map(u=>`${nmU(u)}：${SPD(u)}（本回合出手${nAct(u)}次）`).join('<br>')):'')}
@@ -1659,14 +1865,71 @@ if(k=='e'){const[c,p,rm,rs,src]=String(x).split('|');tt='状态说明';h=R(`${TX
 $('dtt').innerHTML=tt;$('dc').innerHTML=h}
 const PRE=['lr','lri','help','e','o','t','set','mcH'];
 function po(k,x=0){if(!G.lr&&!PRE.includes(k)){k='lock'}if(k!='d')G.dvc=0;const sw=!PO||PO[0]!=k;PO=[k,x];rp();if(sw)$('dg').scrollTop=0;const d=$('dg');if(!d.open){if(d.showModal)d.showModal();else d.setAttribute('open','')}}
+
+// ===== 修行纪事（v1.9.4）=====
+// 每条记录带年龄 a、境界 s；战斗中的记录带战斗编号 c 与回合 r。纪事按「年」分卡片，同一场战斗折叠为一张战报。
+function fxRec(C,o){G.fx=G.fx||{};const nm=[...new Set(C.EN.map(e=>e.n.replace(/[甲乙丙丁戊己庚辛]$/,'')))];G.fx[C.id]={n:nm.slice(0,3).join('、')+(nm.length>3?'等':''),k:C.EN.length,sp:o.spar?1:0,o:''};const ks=Object.keys(G.fx).map(Number).sort((a,b)=>a-b);while(ks.length>60)delete G.fx[ks.shift()]}
+let LGF=(()=>{try{return localStorage.getItem('xxlf')||'all'}catch(e){return'all'}})();const LGO=new Set(),LGX=new Set();
+let MINI=(()=>{try{return localStorage.getItem('xxmini')=='1'}catch(e){return false}})();
+function lgMini(){MINI=!MINI;try{localStorage.setItem('xxmini',MINI?'1':'0')}catch(e){}draw()}
+function lgF(f){LGF=f;try{localStorage.setItem('xxlf',f)}catch(e){}draw()}
+function lgT(ev,c){ev.preventDefault();const d=ev.currentTarget.parentNode,o=!d.open;d.open=o;if(o){LGO.add(c);LGX.delete(c)}else{LGX.add(c);LGO.delete(c)}}
+const LGI=[[/突破至|突破大境界|结成|凝结元婴|飞升/,'up','🌟'],[/身殒|坐化|气绝|陨落|寿元已尽|永远地离开/,'dth','🕯'],[/参悟|学会|领悟|刻录|传你|得传/,'lrn','📜'],[/结为道侣|定情|心意|红线|情缘/,'lov','💞'],[/烙印|灵兽|化形|认主/,'pet','🐾'],[/服下【|炼化/,'pil','💊'],[/灵石/,'gem','💰'],[/获得|翻出|寻得|买下|拾起|收起|奉上|赠|塞|得到|收获|缴获/,'gft','🎁']];
+const LGK={k:['key','✦'],n:['sty','❝'],g:['gn','✧'],e:['bad','⚠'],p:['me','·'],b:['al','·'],r:['rum','💬'],s:['sys','◇'],'':['pl','·']};
+function lgCls(e){let[c,i]=LGK[e.k]||LGK[''];if(e.k!='s'&&e.k!='r'){for(const[re,cc,ic]of LGI)if(re.test(e.t)){if(cc=='up'&&!/成功|突破至/.test(e.t))continue;if(cc=='up'||cc=='dth'||e.k=='g'||e.k=='k'||cc=='lrn'){c+=' '+cc;i=ic}break}}return[c,i]}
+const lgBig=e=>e.k=='k'||e.k=='n'||e.k=='g'||e.k=='e'||/突破至|参悟|学会|领悟/.test(e.t);
+function lgLine(e,cls=''){const[c,i]=lgCls(e);return`<div class="le ${c} ${cls}"><i class="li">${i}</i><p>${hl(e.t)}</p></div>`}
+function lgFight(L,live){const c=L[0].c,q=(G.fx||{})[c]||{},big=LGF=='big',op=live?!LGX.has(c):LGO.has(c);
+const body=L.filter(e=>!e.t.startsWith('【战斗】')&&!/^—— 第\d+回合 ——$/.test(e.t)),keys=body.filter(e=>e.k=='g'||e.k=='k'),rr=Math.max(0,...L.map(e=>e.r||0));
+const O=live?['ing','交战中']:q.o=='w'?['w',q.sp?'胜出':'大胜']:q.o=='l'?['l',q.sp?'惜败':'落败']:q.o=='f'?['f','脱身']:G.over&&c==G.cid?['l','身陨']:['f','终'];
+let pr=-1;const det=body.filter(e=>!(e.k=='g'||e.k=='k')).map(e=>{const d=(e.r||0)!==pr&&e.r?`<i class="rd">第${e.r}回合</i>`:'';pr=e.r||0;const[cc]=lgCls(e);return d+`<p class="fl ${cc}">${hl(e.t)}</p>`}).join('');
+return`<div class="fc o-${O[0]}"><details${op&&!big?' open':''}><summary onclick="lgT(event,${c})"><i class="fi">${q.sp?'🤺':'⚔'}</i><b>${q.sp?'切磋':'迎战'} · ${q.n||'来敌'}${q.k>1?`<small>（${q.k}人）</small>`:''}</b><span class="fo">${O[1]}</span>${rr?`<span class="fr">${rr}回合</span>`:''}<span class="fa">▾</span></summary><div class="fd">${det||'<p class="fl sys">（无详细记录）</p>'}</div></details>${keys.map(e=>lgLine(e,'fk')).join('')}</div>`}
+function drLg(){const A=G.lg,big=LGF=='big',Y=[];let cur=null;
+A.forEach(e=>{if(!cur||cur.a!==e.a){cur={a:e.a,s:e.s,L:[]};Y.push(cur)}cur.L.push(e);if(e.s!=null)cur.s=e.s});
+const quiet=y=>y.L.every(e=>/^你闭关打坐一年/.test(e.t))||big&&!y.L.some(e=>lgBig(e)||e.c);
+const out=[];let i=0;
+while(i<Y.length){const y=Y[i];if(quiet(y)&&i<Y.length-1){let j=i,g=0;while(j<Y.length-1&&quiet(Y[j])){Y[j].L.forEach(e=>{const m=e.t.match(/^你闭关打坐一年.*?修为\+(\d+)/);if(m)g+=+m[1]});j++}const a0=Y[i].a,a1=Y[j-1].a;out.push(`<div class="yq"><i>🧘</i><span>${a0==a1?a0+'岁':`${a0}–${a1}岁`}</span><b>闭关清修${a1-a0+1>1?` ${a1-a0+1} 年`:''}</b>${g?`<em>修为 +${fm(g)}</em>`:''}</div>`);i=j;continue}
+const fc=new Set(y.L.filter(e=>e.c).map(e=>e.c)).size,gn=y.L.filter(e=>e.k=='g').length,lr=y.L.filter(e=>/参悟|学会|领悟/.test(e.t)).length,up=y.L.some(e=>/突破至/.test(e.t)),dn=y.L.some(e=>/身殒|坐化/.test(e.t)&&e.k=='k');
+const ch=[up?'<span class="yc-up">🌟 突破</span>':'',fc?`<span>⚔ ${fc}</span>`:'',gn?`<span>✧ ${gn}</span>`:'',lr?`<span>📜 ${lr}</span>`:''].join('');
+let body='',k=0;const L=y.L;while(k<L.length){const e=L[k];if(e.c){let m=k;while(m<L.length&&L[m].c===e.c)m++;body+=lgFight(L.slice(k,m),!!(C&&C.id===e.c));k=m;continue}if(!big||lgBig(e))body+=lgLine(e);k++}
+const last=i==Y.length-1;out.push(`<section class="yc${last?' now':''}${up?' yup':''}${dn?' ydn':''}"><header class="yh"><b class="ya">${y.a}</b><span class="yu">岁</span>${y.s!=null?`<span class="yrl">${lab(y.s)}</span>`:''}<span class="ych">${ch}</span></header><div class="yb">${body||'<p class="no">（这一年没有大事）</p>'}</div></section>`);i++}
+return`<div class="lgh"><b>📜 修行纪事</b><button class="lgm" onclick="lgMini()" title="${MINI?'展开状态栏与菜单':'收起状态栏与菜单，让修行纪事显示更多'}">${MINI?'▾ 展开状态':'▴ 收起状态'}</button><span class="lgf"><button class="${big?'':'on'}" onclick="lgF('all')">全部</button><button class="${big?'on':''}" onclick="lgF('big')" title="只看大事：剧情、收获、突破、险情与战报摘要">大事</button></span></div>`+out.join('')}
 // ===== 界面渲染（v1.9）=====
-function bang(t,s,c){const e=$('tst');if(!e)return;e.innerHTML=`<div class="t-${c||'gold'}">${t}${s?`<small>${s}</small>`:''}</div>`;if(typeof setTimeout!='undefined'){clearTimeout(bang.t);bang.t=setTimeout(()=>{e.innerHTML=''},2500)}}
+
+// ===== 特效引擎（v1.9.4）：关键时刻的爆发粒子、冲击光环、天光、震屏 =====
+// 只在关键时刻（突破、收服、胜利、道侣……）短暂播放粒子与光环，平时不占用任何性能；可在 ⚙ 设置中关闭。
+const FX={p:[],r:[],raf:0,W:0,H:0,dp:1,f:0,sp:{}};
+const fxOK=()=>{try{return typeof window!='undefined'&&!!document.createElement&&localStorage.getItem('xxfx')!=='0'&&!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)}catch(e){return false}};
+const fxDark=()=>{const d=document.documentElement.dataset||{};return d.theme=='dark'||d.theme!='light'&&!!(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)};
+function fxSpr(c){if(FX.sp[c])return FX.sp[c];const s=document.createElement('canvas');s.width=s.height=64;const g=s.getContext('2d'),r=g.createRadialGradient(32,32,0,32,32,32);r.addColorStop(0,`rgba(${c},1)`);r.addColorStop(.25,`rgba(${c},.55)`);r.addColorStop(1,`rgba(${c},0)`);g.fillStyle=r;g.fillRect(0,0,64,64);return FX.sp[c]=s}
+function fxInit(){if(FX.cv||typeof window=='undefined'||!document.createElement)return;const mk=(id,z)=>{const c=document.createElement('canvas');c.id=id;c.setAttribute('aria-hidden','true');document.body.appendChild(c);return c};FX.cv=mk('fxc');
+['pil','vig'].forEach(id=>{if(!$(id)){const d=document.createElement('div');d.id=id;document.body.appendChild(d)}});
+const rs=()=>{FX.dp=Math.min(1.5,window.devicePixelRatio||1);FX.W=innerWidth;FX.H=innerHeight;[FX.cv].forEach(c=>{c.width=FX.W*FX.dp;c.height=FX.H*FX.dp;c.style.width=FX.W+'px';c.style.height=FX.H+'px'})};FX.rs=rs;rs();addEventListener('resize',()=>{FX.dz=1});
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)fxGo()});
+fxGo()}
+function fxGo(){if(!FX.cv||FX.raf||document.hidden)return;let lt=0;const st=t=>{FX.raf=0;if(document.hidden)return;const dt=Math.min(3,(t-(lt||t))/16.7||1);lt=t;fxDraw(dt);if(FX.p.length||FX.r.length)FX.raf=requestAnimationFrame(st);else{const g=FX.cv.getContext('2d');g.setTransform(1,0,0,1,0,0);g.clearRect(0,0,FX.cv.width,FX.cv.height)}};FX.raf=requestAnimationFrame(st)}
+function fxDraw(dt){const dk=fxDark(),dp=FX.dp;FX.f++;
+const g=FX.cv.getContext('2d');g.setTransform(dp,0,0,dp,0,0);g.clearRect(0,0,FX.W,FX.H);g.globalCompositeOperation=dk?'lighter':'source-over';
+FX.r=FX.r.filter(r=>{r.l-=dt;if(r.l<=0)return false;const k=1-r.l/r.L;g.globalAlpha=(1-k)*.9;g.strokeStyle=`rgba(${r.c},1)`;g.lineWidth=r.w*(1-k)+.5;g.beginPath();g.arc(r.x,r.y,r.m*(1-Math.pow(1-k,3)),0,6.283);g.stroke();return true});
+FX.p=FX.p.filter(p=>{p.l-=dt;if(p.l<=0)return false;p.vx*=.97;p.vy=p.vy*.97+p.g*dt;p.x+=p.vx*dt;p.y+=p.vy*dt;const k=p.l/p.L;g.globalAlpha=Math.min(1,k*1.6);const s=p.s*(.4+.6*k);g.drawImage(fxSpr(p.c),p.x-s/2,p.y-s/2,s,s);return true});g.globalAlpha=1}
+function fxBurst(x,y,pal,n=40,spd=4,sz=1,grav=.04){if(!FX.cv||!fxOK())return;for(let i=0;i<n;i++){const a=Math.random()*6.283,v=spd*(.3+Math.random()),L=rnd(35,80);FX.p.push({x,y,vx:Math.cos(a)*v,vy:Math.sin(a)*v-spd*.25,g:grav,l:L,L,s:rnd(10,26)*sz,c:pal[i%pal.length]})}if(FX.p.length>420)FX.p.splice(0,FX.p.length-420);fxGo()}
+function fxRing(x,y,c,m=160,w=5,L=55){if(!FX.cv||!fxOK())return;FX.r.push({x,y,c,m,w,l:L,L});fxGo()}
+const FXP={gold:['255,221,130','255,246,210','255,170,60'],green:['110,230,170','200,255,225','80,200,160'],red:['255,90,70','255,150,110','200,40,40'],pink:['255,150,195','255,215,235','240,110,170'],purple:['185,145,255','230,212,255','140,100,240'],sc0:['110,220,150'],sc1:['220,215,200'],sc2:['255,214,90','255,240,170'],sc3:['255,150,60','255,200,120'],sc4:['255,60,60','200,20,30'],scq:['170,140,240']};
+function fxFlash(id,c,ms){const e=$(id);if(!e||!e.classList)return;e.className='';void e.offsetWidth;e.className=c;clearTimeout(e._t);e._t=setTimeout(()=>{e.className=''},ms)}
+function fxBang(c){if(!FX.cv||!fxOK())return;if(FX.dz){FX.dz=0;FX.rs()}const x=FX.W/2,y=FX.H*.36,P=FXP[c]||FXP.gold;
+if(c=='gold'){fxBurst(x,y,P,90,6.5,1.2,.03);fxRing(x,y,P[0],Math.max(FX.W,FX.H)*.55,7,70);setTimeout(()=>fxRing(x,y,P[1],FX.W*.35,4,55),180);fxFlash('pil','go',1700)}
+else if(c=='red'||c=='sc4'){fxBurst(x,y,P,55,5,1,.12);fxRing(x,y,P[0],FX.W*.4,6,50);fxFlash('vig','go',900);const a=$('app');if(a&&a.classList){a.classList.remove('shk');void a.offsetWidth;a.classList.add('shk');setTimeout(()=>a.classList.remove('shk'),600)}}
+else if(c=='pink'){for(let i=0;i<46;i++)FX.p.push({x:Math.random()*FX.W,y:-20-Math.random()*FX.H*.3,vx:rnd(-.6,.6),vy:rnd(1,2.2),g:.004,l:rnd(110,170),L:170,s:rnd(12,22),c:P[i%3]});fxBurst(x,y,P,40,4.5);fxGo()}
+else{fxBurst(x,y,P,c=='sc3'?60:48,c=='sc0'||c=='sc1'?3.5:5);fxRing(x,y,P[0],FX.W*.32,5,50)}}
+function bang(t,s,c){const e=$('tst');if(!e)return;try{fxBang(c||'gold')}catch(x){}e.innerHTML=`<div class="t-${c||'gold'}">${t}${s?`<small>${s}</small>`:''}</div>`;if(typeof setTimeout!='undefined'){clearTimeout(bang.t);bang.t=setTimeout(()=>{e.innerHTML=''},2500)}}
+function setFx(v){try{localStorage.setItem('xxfx',v)}catch(e){}if(v=='0'){FX.p=[];FX.r=[];fxGo()}rp()}
 function setThm(c){const d=document.documentElement;if(d.dataset){if(c)d.dataset.theme=c;else delete d.dataset.theme}try{localStorage.setItem('xxt',c)}catch(e){}rp()}
 function thm(){const d=document.documentElement,o=['','light','dark'],c=o[(o.indexOf(d.dataset?d.dataset.theme||'':'')+1)%3];if(d.dataset){if(c)d.dataset.theme=c;else delete d.dataset.theme}try{localStorage.setItem('xxt',c)}catch(e){}}
 const btRate=()=>{if(G.s<14&&G.s>=(G.lim==null?14:G.lim))return -1;return Math.round(Math.max(.05,Math.min(.97,brR(G.lr,G.s)+G.pill*.2+(G.dx||0)+((G.gd||0)>=50?.05:0)))*100)};
 const sitG=()=>Math.round(1.15*yY()*(1+bo('xp')+(G.soul?.3:0)));
 const PH=typeof WeakMap!='undefined'?new WeakMap():null;
-function fl(u){if(!PH)return'';const p=PH.get(u),h=Math.max(0,Math.round(u.h));PH.set(u,h);return p==null?'':h<p?' hit':h>p?' heal':''}
+function fl(u){if(!PH)return'';const p=PH.get(u),h=Math.max(0,Math.round(u.h));PH.set(u,h);u.__d=p==null?0:h-p;return p==null?'':h<p?' hit':h>p?' heal':''}
+const fdm=u=>{const d=u.__d||0;u.__d=0;return d?`<b class="fdm ${d<0?'dn':'up'}">${d>0?'+':'−'}${fm(Math.abs(d))}</b>`:''};
 const spTag=o=>o.nd?(o.hlA?'群疗':o.shA?'群盾':'辅助'):o.aoe?'群攻':o.sdm?'神识':o.brk?'破盾':o.dsp?'驱散':o.hl?'攻+治疗':o.dr?'吸血':o.sh?'攻+护盾':o.cl?'攻+净化':o.swA?'群体迟缓':o.qk?'攻+加速':o.po?'中毒':o.bn?'燃烧':o.pa?'麻痹':o.bl?'致盲':'攻击';
 const afTag=o=>o.aoe?'群攻':o.sd?'神识':o.exe?'斩杀':o.lock?'困锁':o.brk?'破盾':o.yao?'克妖':o.again?'再动':o.bfA?'群体强化':o.hlA&&o.shA?'群疗群盾':o.hlA?'攻+群疗':o.shA?'群盾':o.sh?'护盾':o.clA?'净化':o.swA?'群体迟缓':o.wk?'虚弱':o.self?'自伤':'攻击';
 function draw(){kick();
@@ -1679,7 +1942,7 @@ $('ordA').innerHTML=`<span class="ol">第${F.t}回合</span>${F.Q.map((q,j)=>{co
 const card=(u,j,en)=>{const cn=en&&cap(u),sl=en&&mu&&j==F.ti,me=u===F.P;
 const sub=me?lab(G.s):u.dl?`${lab(u.D.s)}<span class="rt rtL">${u.D===G.dl?'道侣':'同伴'}</span>`:en?`${elv(u)}${!u.cv&&u.kt?'<span class="rt rtH">人形</span>':''}${u.el?'<span class="rt rtD">精英</span>':''}${etag(u)}`:`${u.lv}级${u.kt?'<span class="rt rtH">人形</span>':''}${tag('B'+u.i)}${(u.eq||[]).length?`<span title="佩戴法宝">🔮${u.eq.length}</span>`:''}`;
 const ck=en?(mu?`act(()=>tgt(${j}))`:''):`po('ud',${j})`,ttl=en?(mu?(F.lkE===u?'点击取消锁定':'点击锁定为攻击目标'):''):'点击查看详情、调配法宝';
-return`<div class="un${fl(u)}${sl?' sel':''}${u.bnd?' ko':''}${en&&canEye()&&scOK(u)?' d'+dgOf(u):''}"${ck&&!u.bnd?` onclick="${ck}"`:''}${ttl?` title="${ttl}"`:''}><div class="u1"><b>${me?G.n:u.n}</b><span class="ux">${sl?`<span class="tm">${F.lkE?'🔒锁定':'◎目标'}</span>`:''}${u.bnd?'<span class="cn">⛓封禁</span>':cn?'<span class="cn">可烙印</span>':''}${en&&canEye()?(scOK(u)?dgChip(dgOf(u),j):dgQ(j)):''}</span></div><div class="u2">${sub}<span>速${SPD(u)}·识${snOf(u)}</span></div>${bar('',me?p:u.h,me?h:u.H,me?'--hp':en?'--dm':'--gd',cn?'can':'',u.sh)}${me?bar('',G.mp,M,'--mp','mpb'):u.mpM?bar('',u.mp,u.mpM,'--mp','mpb'):''}${tgsL(me?stl(u).concat(xt()):stl(u))}</div>`};
+return`<div class="un${fl(u)}${sl?' sel':''}${u.bnd?' ko':''}${en&&canEye()&&scOK(u)?' d'+dgOf(u):''}"${ck&&!u.bnd?` onclick="${ck}"`:''}${ttl?` title="${ttl}"`:''}>${fdm(u)}<div class="u1"><b>${me?G.n:u.n}</b><span class="ux">${sl?`<span class="tm">${F.lkE?'🔒锁定':'◎目标'}</span>`:''}${u.bnd?'<span class="cn">⛓封禁</span>':cn?'<span class="cn">可烙印</span>':''}${en&&canEye()?(scOK(u)?dgChip(dgOf(u),j):dgQ(j)):''}</span></div><div class="u2">${sub}<span>速${SPD(u)}·识${snOf(u)}</span></div>${bar('',me?p:u.h,me?h:u.H,me?'--hp':en?'--dm':'--gd',cn?'can':'',u.sh)}${me?bar('',G.mp,M,'--mp','mpb'):u.mpM?bar('',u.mp,u.mpM,'--mp','mpb'):''}${tgsL(me?stl(u).concat(xt()):stl(u))}</div>`};
 $('cbA').className='bs'+(F.B.length>=4?' many':'');$('cbA').innerHTML=`<div class="lb">我方（${1+F.B.length}）· 点击看详情</div>`+card(F.P,0,0)+F.B.map((z,j)=>card(z,j+1,0)).join('');
 $('cbE').className='bs'+(F.EN.length>=4?' many':'');$('cbE').innerHTML=`<div class="lb">敌方（${F.EN.length}）${mu?'· 点击锁定':''}</div>`+F.EN.map((E,j)=>card(E,j,1)).join('')}
 else{
@@ -1690,8 +1953,7 @@ const kv=(l,v,c='',t='')=>`<span class="kv ${c}"${t?` title="${t}"`:''}>${l}<b>$
 $('kv').innerHTML=kv('神识',mySn()+(canEye()?'·可查探':''),'','神识：查探与神识攻击的强弱，随修为提升')+kv('速度',pspd0(),'','速度：决定战斗中的出手顺序与次数')+kv('道心',gdT(G.gd||0)+'·'+gdN(G.gd||0),(G.gd||0)>=25?'good':(G.gd||0)<=-25?'bad':'','道心：由你的抉择决定，影响心魔劫、宗门与正道追杀')+(G.sect?kv('宗门',`${SECT[G.sect.id].n}·${RK[G.sect.rk]}`):G.hunt?kv('宗门',`被${SECT[G.hunt.id].n}追杀`,'bad'):'')+(G.limR?kv('道途',`止步${lab(G.lim)}`,'bad','天命瓶颈：此生无法再突破大境界'):'')+[0,1].filter(c=>crS(c).on).map(c=>kv(DAO[c].n,DAO[c].rn[crGr(c)])).join('')+kv('灵石',fm(G.st));
 const lk0=!G.lr,mi=(ic,t,s,f,c='')=>`<button class="mi ${c}" onclick="${f}"${lk0?' disabled title="踏上仙途后才能使用"':''}><i>${ic}</i>${t}<small>${lk0?'🔒 入门后开放':s}</small></button>`;
 $('rt').innerHTML=mi('📜','功法',`《${MT[G.mt][0]}》`,"po('kf')")+mi('🎒','储物袋',`灵石${fm(G.st)}`,"po('s')")+mi('🐾','灵兽',`${G.bz.length}/${pcap()}只 · 出战${dN()}`,"po('b',0)")+mi('💞','道侣',G.dl?`${nmK(G.dl.k)}${G.dl.cap?'·被擒':''}`:'尚无',"po('d')",'dl')+mi('👥','人物志',`${Object.keys(G.np).length}人`,"po('rw')")+mi('🔥','丹房器房',[0,1].filter(c=>crS(c).on).map(c=>DAO[c].rn[crGr(c)]).join('·')||'未入门',"po('cr')")+mi('📖','生平',`${(G.bio||[]).length}件大事`,"po('bio')")+mi('🏮','坊市','每年换货',"po('p')")}
-let py=-1;const L=$('lg');
-L.innerHTML=G.lg.map(e=>{const m=e.a!==py?`<div class="yr">${e.a}岁</div>`:'';py=e.a;return m+`<p class="${e.k}">${hl(e.t)}</p>`}).join('');L.scrollTop=L.scrollHeight;
+const L=$('lg'),ak=$('app');if(ak&&ak.classList)ak.classList.toggle('mini',!!MINI);const lk=[G.lg.length,G.lg[0],G.lg[G.lg.length-1],LGF,MINI,C&&C.id,C&&C.won,G.over,0,0];if(!drLg.k||lk.some((v,i)=>v!==drLg.k[i])){drLg.k=lk;L.innerHTML=drLg();L.scrollTop=L.scrollHeight}
 const pk0=Object.keys(G.iv).filter(k=>k[0]=='P').sort((a,b)=>+a.slice(1)-+b.slice(1)).filter(k=>!F||!pdis(k));
 $('itl').title=F?'同一场战斗里，每多服一颗丹药，身体吸收的药力就打一次折扣：第1颗100%、第2颗75%、第3颗56%、第4颗42%……最低10%。战斗结束后恢复。':'';$('itl').textContent=!G.lr?'丹药 · 踏上仙途后才能服用':F?`丹药 · 不占出手 · ${(F.pn||0)?`本场已服${F.pn}颗，下一颗药力${pEffT(F.pn)}%`:'下一颗药力100%'}`:'丹药 · 点击服用（灰色＝此时不能服）';
 $('it').innerHTML=pk0.map(k=>b(`${IT[k][0]}×${G.iv[k]}`,`act(()=>eat('${k}'))`,'s',pdis(k),IT[k][1])).join('')||'<span class="no">囊中暂无可用的丹药</span>';
@@ -1707,7 +1969,7 @@ if(G.over&&$('dg').open)$('dg').close();else rp();
 try{localStorage.setItem('xx',JSON.stringify(G))}catch(e){}}
 $('dg').onclose=()=>{PO=null};$('dg').onclick=e=>{if(e.target==e.currentTarget)e.currentTarget.close()};
 try{const t=localStorage.getItem('xxt');if(t&&document.documentElement.dataset)document.documentElement.dataset.theme=t}catch(e){}
-load();draw();
+load();draw();try{fxInit()}catch(e){}
 </script>
 
 
