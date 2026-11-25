@@ -2,7 +2,7 @@
 <html lang="zh-CN"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>互动小说 · 文字修仙 v1.9</title>
+<title>互动小说 · 文字修仙 v1.9.2</title>
 <style>
 :root{--bg:#dfe7e2;--cd:#eef3ef;--c2:#e4ebe6;--ink:#17252c;--dm:#55686c;--jd:#2a6b64;--gd:#8b6b24;--ln:#bccac4;--hp:#a84a3f;--mp:#3f6f9a;--pu:#8a63c7;--sh:0 1px 3px rgba(20,40,40,.08);color-scheme:light}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e161c;--cd:#16222b;--c2:#1c2a34;--ink:#dbe5e0;--dm:#91a5a7;--jd:#6cc3b1;--gd:#d2b067;--ln:#2b3c46;--hp:#d4684f;--mp:#6aa0d4;--pu:#b18be6;--sh:0 1px 3px rgba(0,0,0,.4);color-scheme:dark}}
@@ -60,7 +60,7 @@ button.lrb{padding:0;border:0;background:none}
 @keyframes fi{from{opacity:0;transform:translateY(5px)}}
 #side{grid-area:side;min-height:0;max-height:42dvh;display:flex;flex-direction:column;gap:5px;padding:7px 8px}
 #ac{flex:1 1 auto;min-height:0;overflow-y:auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:6px;align-content:start;overscroll-behavior:contain}
-#ac>.lb,#ac>.one,#ac>p,#ac>.mc,#ac>.flh,#ac>.th{grid-column:1/-1}
+#ac>.lb,#ac>.one,#ac>p,#ac>.mc,#ac>.mcr,#ac>.flh,#ac>.th{grid-column:1/-1}
 #ac button{min-height:40px;line-height:1.35}
 #ac p{margin:0}
 #it{flex:none;display:flex;gap:5px;overflow-x:auto;scrollbar-width:none;padding-bottom:1px}
@@ -104,7 +104,8 @@ button.lrb{padding:0;border:0;background:none}
 .tr u{position:absolute;top:0;bottom:0;background:repeating-linear-gradient(135deg,rgba(110,190,255,.9) 0 5px,rgba(70,145,225,.9) 5px 10px);transition:width .4s,left .4s}
 .tr.hs{box-shadow:0 0 0 1px rgba(80,160,235,.9),0 0 6px rgba(80,160,235,.5)}
 .tr b.shv{margin-left:4px;padding:0 3px;border-radius:3px;background:rgba(35,105,185,.92);color:#fff;font-size:9px;line-height:12px;display:inline-block;vertical-align:1px}
-.mc{display:flex;align-items:center;gap:6px;font-size:12.5px;cursor:pointer;padding:2px}.mc input{width:16px;height:16px;margin:0;accent-color:var(--jd)}
+.mc{display:flex;align-items:center;gap:6px;font-size:12.5px;cursor:pointer;padding:2px;line-height:1.35}.mc input{flex:none;width:16px;height:16px;margin:0;accent-color:var(--jd)}.mc small{display:block;font-size:10.5px;color:var(--dm)}
+.mcr{display:flex;align-items:center;gap:4px 10px;flex-wrap:wrap;padding:4px 8px;border-radius:9px;border:1px dashed var(--ln)}.mcr .mc:first-child{flex:1 1 auto;min-width:0}.mc.sm{font-size:11.5px;color:var(--dm)}.ih{padding:0 8px;border-radius:12px;font-size:12px;line-height:1.6}
 .flh{padding:5px 8px;border-radius:8px;font-size:11.5px;color:#0e6f7b;background:color-mix(in srgb,#1aa6b7 15%,transparent);border:1px dashed #1aa6b7}
 button.fb{border-color:#1aa6b7;background:#1aa6b7;color:#fff;font-weight:900;animation:flb 1.4s ease-in-out infinite}
 @keyframes flb{0%,100%{box-shadow:0 0 2px rgba(26,166,183,.4)}50%{box-shadow:0 0 10px rgba(26,166,183,.95)}}
@@ -114,7 +115,7 @@ button.fb{border-color:#1aa6b7;background:#1aa6b7;color:#fff;font-weight:900;ani
 .rtE{background:linear-gradient(135deg,#ffe27a,#ffb02e 55%,#ff7a45);color:#3a1a00;font-weight:700;box-shadow:0 0 7px rgba(255,170,50,.8)}
 .rtL{background:linear-gradient(135deg,#ff8fb1,#d6559a)}.rtX{background:#8a2f2f}.rtH{background:linear-gradient(135deg,#5fc9b9,#2a7f78)}
 .sx{padding:0 4px;font-size:10px;line-height:1.5;border-radius:4px;border:1px solid var(--tc);color:color-mix(in srgb,var(--tc) 72%,var(--ink));background:color-mix(in srgb,var(--tc) 14%,transparent);cursor:pointer;white-space:nowrap}
-.sxwk{--tc:#8f6fd0}.sxbf{--tc:#2e9b62}.sxbn{--tc:#e0762a}.sxbl{--tc:#7a8a94}.sxpo{--tc:#7fa327}.sxpa{--tc:#d1a21a}.sxch{--tc:#d6559a}.sxinj{--tc:#d6453d}.sxhd{--tc:#5a7bd8}.sxrv{--tc:#d4a017}.sxim{--tc:#e6b422}.sxgh{--tc:#b0233b}.sxlm{--tc:#59616b}.sxol{--tc:#8a5a2b}.sxqk{--tc:#1aa6b7}.sxsw{--tc:#6d7fa8}.sxsl{--tc:#7d4fb0}
+.sxwk{--tc:#8f6fd0}.sxbf{--tc:#2e9b62}.sxbn{--tc:#e0762a}.sxbl{--tc:#7a8a94}.sxpo{--tc:#7fa327}.sxpa{--tc:#d1a21a}.sxch{--tc:#d6559a}.sxinj{--tc:#d6453d}.sxhd{--tc:#5a7bd8}.sxrv{--tc:#d4a017}.sxim{--tc:#e6b422}.sxgh{--tc:#b0233b}.sxlm{--tc:#59616b}.sxol{--tc:#8a5a2b}.sxqk{--tc:#1aa6b7}.sxsw{--tc:#6d7fa8}.sxsl{--tc:#7d4fb0}.sxbd{--tc:#8a5a2b}
 .tgs{display:flex;flex-wrap:wrap;gap:3px;margin-top:3px}
 .lrt{display:inline-block;padding:0 6px;border-radius:5px;font-size:11px;font-weight:700;line-height:1.6;color:#fff;white-space:nowrap;vertical-align:middle}
 .lrA{background:linear-gradient(135deg,#ffe27a,#ffb02e 55%,#ff7a45);color:#3a1a00}.lrB{background:linear-gradient(135deg,#9a4fe0,#5b2bb5)}.lrC{background:#2a6fd0}.lrD{background:#278a55}.lrE{background:#7b858b}.lrF{background:#4f5559}.lrX{background:transparent;color:var(--hp);border:1px dashed var(--hp)}
@@ -163,6 +164,25 @@ dialog .ch button{padding:5px 10px}
 .t-green{background:linear-gradient(135deg,#2f8f6d,#1e6b62);color:#e6fff4;box-shadow:0 0 36px 4px rgba(50,180,130,.5)}
 .t-pink{background:linear-gradient(135deg,#ffb3cc,#d6559a);color:#fff;box-shadow:0 0 40px 6px rgba(214,85,154,.55)}
 .t-purple{background:linear-gradient(135deg,#b69af0,#6e43c2);color:#fff;box-shadow:0 0 40px 6px rgba(130,80,220,.55)}
+.t-sc0{background:linear-gradient(135deg,#5cc98d,#24875a);color:#fff;box-shadow:0 0 30px 4px rgba(46,155,98,.5)}.t-sc1{background:linear-gradient(135deg,#e9e4d8,#a9a291);color:#2a261c;box-shadow:0 0 30px 4px rgba(160,150,130,.5)}.t-sc2{background:linear-gradient(135deg,#ffe27a,#d1a21a);color:#3a2b00;box-shadow:0 0 40px 6px rgba(240,190,40,.6)}.t-sc3{background:linear-gradient(135deg,#f6a35a,#c9540f);color:#fff;box-shadow:0 0 50px 8px rgba(230,110,30,.7);animation:tsp .5s ease-in-out 3}.t-sc4{background:radial-gradient(circle,#c2262e,#3c0208);color:#ffe0e0;box-shadow:0 0 70px 14px rgba(210,20,30,.8);animation:tsx .35s ease-in-out 6}.t-scq{background:linear-gradient(135deg,#8f7cc0,#3b2d66);color:#fff;box-shadow:0 0 30px 4px rgba(110,80,190,.5)}
+@keyframes tsp{50%{filter:brightness(1.25)}}@keyframes tsx{25%{transform:translateX(-4px) scale(1.04)}75%{transform:translateX(4px) scale(1.04)}}
+
+/* 神识查探分级 */
+.dgb,.dgt{display:inline-block;padding:0 6px;border-radius:9px;font-size:10px;font-weight:700;line-height:1.6;border:1px solid;white-space:nowrap;vertical-align:middle;margin-left:3px}
+.dgb{cursor:pointer}
+.dg0{color:#24875a;border-color:#2e9b62;background:color-mix(in srgb,#2e9b62 13%,transparent)}
+.dg1{color:var(--dm);border-color:var(--ln);background:var(--c2)}
+.dg2{color:#a07800;border-color:#d1a21a;background:color-mix(in srgb,#f2c230 22%,transparent)}
+.dg3{color:#fff;border-color:#e0762a;background:linear-gradient(135deg,#f09a4a,#d45f1c);animation:dgp 1.6s ease-in-out infinite}
+.dg4{color:#fff;border-color:#8a0f1f;background:linear-gradient(135deg,#d43a3a,#7a0d1c);animation:dgx 1s ease-in-out infinite}
+.dgq{color:var(--pu);border-color:var(--pu);border-style:dashed;background:color-mix(in srgb,var(--pu) 10%,transparent)}
+@keyframes dgp{50%{box-shadow:0 0 8px 1px rgba(224,118,42,.75)}}
+@keyframes dgx{0%,100%{box-shadow:0 0 3px rgba(200,30,40,.5)}50%{box-shadow:0 0 12px 3px rgba(220,30,40,.9);transform:scale(1.06)}}
+.un.d3{border-color:#e0762a;box-shadow:0 0 6px rgba(224,118,42,.45)}
+.un.d4{border-color:#b0233b;animation:dgu 1.4s ease-in-out infinite}
+@keyframes dgu{50%{box-shadow:0 0 12px 2px rgba(200,30,40,.6);background:color-mix(in srgb,#b0233b 10%,var(--c2))}}
+.un.d0{border-left:3px solid #2e9b62}
+.scr{margin:2px 0 8px;padding:8px;border-radius:10px;text-align:center;font-size:16px;font-weight:900;letter-spacing:.1em;border:1px solid}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 /* 桌面端 */
 @media(min-width:820px){
@@ -184,7 +204,7 @@ h1{font-size:18px}
 </head>
 <body>
 <div id="app">
-<header id="top"><div class="tb l"><button onclick="po('help')" title="玩法说明">❓ 玩法</button></div><h1>互动小说<small>文字修仙 v1.9</small></h1><div class="tb r"><button id="thm" onclick="thm()" title="切换明暗主题">◐</button></div></header>
+<header id="top"><div class="tb l"><button onclick="po('help')" title="玩法说明">❓ 玩法</button></div><h1>互动小说<small>文字修仙 v1.9.2</small></h1><div class="tb r"><button onclick="po('set')" title="设置">⚙ 设置</button></div></header>
 <div id="hd">
 <div id="nb"><section class="cd" id="stat"><div id="who"></div><div id="bars"></div><div id="kv"></div></section><nav class="cd" id="rt" aria-label="菜单"></nav></div>
 <section class="cd" id="bt"><div id="ordA"></div><div class="bf"><div class="bs" id="cbA"></div><div class="bs" id="cbE"></div></div></section>
@@ -195,11 +215,11 @@ h1{font-size:18px}
 <div id="tst"></div>
 <dialog id="dg"><div class="dh"><b id="dtt"></b><button class="dx" aria-label="关闭" title="关闭" onclick="$('dg').close()">✕</button></div><div id="dc"></div></dialog>
 <script>
-const SAVEV=23,RN=['炼气','筑基','金丹','元婴','化神'],SN=['初期','中期','后期'],LIFE=[90,200,500,1200,3000],YR=[2,5,12,30,80],SC=[1,3,9,27,81],NM=['玄清子','陆长生','云无心','柳青岚','白九霄','苏慕尘'],NG={wk:'虚弱',bn:'燃烧',bl:'致盲',po:'中毒',pa:'麻痹',ch:'魅惑',sw:'迟缓'},NK={bn:'燃烧',bn2:'燃烧',bl:'致盲',po:'中毒',pa:'麻痹',ch:'魅惑',cr:'暴击',th:'雷罚麻痹',dr:'虚弱',qs:'速度+',cb:'连咬',gw:'罡风迟缓'};
+const SAVEV=25,RN=['炼气','筑基','金丹','元婴','化神'],SN=['初期','中期','后期'],LIFE=[90,200,500,1200,3000],YR=[2,5,12,30,80],SC=[1,3,9,27,81],NM=['玄清子','陆长生','云无心','柳青岚','白九霄','苏慕尘'],NG={wk:'虚弱',bn:'燃烧',bl:'致盲',po:'中毒',pa:'麻痹',ch:'魅惑',sw:'迟缓'},NK={bn:'燃烧',bn2:'燃烧',bl:'致盲',po:'中毒',pa:'麻痹',ch:'魅惑',cr:'暴击',th:'雷罚麻痹',dr:'虚弱',qs:'速度+',cb:'连咬',gw:'罡风迟缓'};
 const BRN=['炼气期','筑基初期','筑基中期','筑基后期','金丹初期','金丹中期','金丹后期','元婴初期','元婴中期','元婴后期','化神初期','化神中期','化神后期'];
 const $=i=>document.getElementById(i),rnd=(a,b)=>a+Math.random()*(b-a),ri=(a,b)=>Math.floor(rnd(a,b+1)),pt=p=>Math.random()*100<p;
 const need=s=>Math.round(400*Math.pow(1.55,s)),lab=s=>RN[s/3|0]+SN[s%3],KK=x=>Math.pow(1.45,x),sq=L=>L<2?1:L+1,ek=L=>L<2?1:KK(L+1),bigR=L=>L<2?0:Math.min(4,(L+1)/3|0),lvl=L=>BRN[Math.min(L,13)-1];
-const fm=x=>x>=1e4?(x/1e4).toFixed(1).replace('.0','')+'万':x,hl=t=>t.replace(/<span class=.rt[^>]*>[^<]*<\/span>|【([^】]+)】|\d+/g,(m,n)=>m[0]=='<'?m:n?`<i>【${n}】</i>`:`<em>${m}</em>`);
+const fm=x=>x>=1e4?(x/1e4).toFixed(1).replace('.0','')+'万':x,hl=t=>t.replace(/<span class=.(?:rt|dgt)[^>]*>[^<]*<\/span>|<[^>]+>|【([^】]+)】|\d+/g,(m,n)=>m[0]=='<'?m:n?`<i>【${n}】</i>`:`<em>${m}</em>`);
 let G,C=null,PO=null;
 // 妖兽：[名,常见等级,攻击倍率,攻击方式,天赋名,说明,天赋表[周期,类型,起始值,每级增加,上限]]
 const MB=[
@@ -252,15 +272,16 @@ const SP=[
 // 秘术：[名,说明,价值]，不耗法力；效果见 pAct
 const SE=[
 ['敛气术','【战斗外】收敛气息，伪装成凡人。开启后：拍卖会竞拍成功率+20%；遇到劫修「示弱周旋」、仇家「敛息遁走」等脱身选项时更容易成功。一旦出手战斗即自动失效；神识比你强1.5倍以上的敌人能看穿。',100],
-['驭兽烙印','【收服灵兽】战斗中，当妖兽气血低于10%时施展，可将它烙印为你的灵兽（继承当时的状态）。孵化妖兽卵也需要会此术。注意：一生可烙印的次数有限（金丹以下4、金丹5、元婴7、化神9）。只对妖兽有效。',150],
+['驭兽烙印','【收服灵兽】战斗中，当妖兽气血低于10%时施展，可将它烙印为你的灵兽（继承当时的状态）；也可在战后对被「手下留情」封禁的妖兽施展。孵化妖兽卵也需要会此术。注意：一生可烙印的次数有限（金丹以下4、金丹5、元婴7、化神9）。只对妖兽有效。',150],
 ['血影遁','【逃跑】燃烧精血化作血光遁走，带上道侣、收回灵兽：敌方最高者不超过你2个级别时必定逃脱；同一场连用两次，可从高你3个级别的敌人手中逃脱。代价：事后虚弱50%持续5年；两次则虚弱90%持续15年。与燃血秘术共用「精血」次数（合计最多2次）。',200],
 ['燃血秘术','【爆发】燃烧精血：本场战斗强化50%（伤害+50%）；同场再用一次升为强化90%。代价：事后虚弱30%持续1年；用两次则虚弱60%持续3年。与血影遁共用「精血」次数（合计最多2次）。',160],
 ['燃魂疾影','【加速/逃跑】本场战斗疾速100%（速度翻倍），并解锁「疾影脱身」按钮：每次尝试有50%几率逃离战斗。每场限一次。代价：事后虚弱40%持续3年。',220],
 ['金刚护体','【保命】为自己凝出30%气血的护盾，并免疫负面效果2回合。每场限一次，不耗灵力。',110],
 ['龟息归元','【保命】回复自己50%气血与30%灵力，净化全部负面效果，并免疫负面效果3回合。每场限一次，不耗灵力。',180],
 ['涅槃秘法','【复活】每场限一次，消耗3年寿元。主动施展：全体友方回复60%气血、净化并免疫负面效果3回合，同时种下「涅槃火种」——本场你倒下时以50%气血复活。即使没有主动施展，你倒下时也会自动触发复活。剩余寿元不足3年时无效。',230],
-['天眼通','【神识查探·被动】学会即生效：遇敌时自动扫视对方的神识、秘术与宝物；战斗中可点敌人旁的🔍查看其全部底细（不占出手）。你的神识需达到对方的七成，否则会被弹回。',140],
-['摄魂术','【神识控制】每场限2次，不耗灵力：若你的神识达到目标的1.2倍，目标陷入幻境2回合（无法行动）并受到神识伤害；否则被反震，你损失10%气血。',200]
+['天眼通','【神识查探·被动】学会即生效：只能看穿神识比你弱的对手。遇敌时自动扫视对方的修为高低（🟢弱于你 ⚪旗鼓相当 🟡高你一级 🟠高你两级 💀高你三级）、秘术与宝物；战斗中点敌人身上的查探标签可看全部底细（不占出手）。神识不弱于你的对手只显示 ???。',140],
+['摄魂术','【神识控制】每场限2次，不耗灵力：若你的神识达到目标的1.2倍，目标陷入幻境2回合（无法行动）并受到神识伤害；否则被反震，你损失10%气血。',200],
+['搜魂术','【魔道·战后】战斗结束后，对被你「封禁」的敌方修士或人形妖兽施展：强行翻检其识海，读出TA学过的法术与秘术，用「空白玉简」刻录成玉简。需你的神识高于对方；被搜魂者识海崩碎而亡。手头没有空白玉简时，记忆可保留一年，一年内买到空白玉简仍可补刻。每次施展魔性+6。',260]
 ];
 // 法宝：[名,冷却回合,说明,效果,价值]
 const AF=[
@@ -325,7 +346,7 @@ const ZF=[
 ['四象护元阵',[1,8,20],'青龙白虎朱雀玄武四象虚影环绕护持',{shA:.3,imA:2,zt:4},750],
 ['周天星斗大阵',[1,16,45],'周天星斗垂落清辉，星力灌体',{hlA:.3,shA:.35,imA:3,zt:5},1400]
 ];
-const MA=[['灵草',6],['妖丹',18],['兽骨',10],['阵盘',80,1],['阵旗',15,1],['灵铁',12],['天地灵物',300,1]];
+const MA=[['灵草',6],['妖丹',18],['兽骨',10],['阵盘',80,1],['阵旗',15,1],['灵铁',12],['天地灵物',300,1],['空白玉简',20,1]];
 const FZ=o=>[o.d&&`伤害×${o.d}`,o.hlA&&`全体友方回复${Math.round(o.hlA*100)}%气血`,o.lock&&`困锁${o.lock}回合`,o.wk&&`虚弱${o.wk}%`,o.shA&&`全体友方护盾${Math.round(o.shA*100)}%气血`,o.imA&&`全体友方免疫负面效果${o.imA}回合`,o.bf&&`强化${o.bf}%`,o.zf&&`剑气持续${o.zf[0]}回合，每回合再造成伤害×${o.zf[1]}`,o.qkA&&`全体友方疾速${o.qkA}%（${o.qt}回合）`,o.zt&&`阵势持续${o.zt}回合（期间无法重复布阵）`].filter(Boolean).join('，');
 // 物品表：键=类别字母+序号；[名,说明,价值,是否固定价,本名]
 const IT={};
@@ -335,7 +356,7 @@ AF.forEach((a,i)=>IT['A'+i]=[a[0],a[3].pas?a[2]:`${a[2]}（冷却${a[1]}回合�
 SE.forEach((s,i)=>IT['T'+i]=[s[0]+'（秘术玉简）',s[1],s[2],0,s[0]]);
 MT.forEach((m,i)=>IT['M'+i]=[m[0]+'（主修玉简）',m[1],m[3],0,m[0]]);
 ZF.forEach((z,i)=>IT['Z'+i]=[z[0]+'（阵法书）',`布阵：${z[1][0]}阵盘、${z[1][1]}阵旗、${z[1][2]}灵石（须事先备齐，缺一不可）。${z[2]}。效果：${FZ(z[3])}`,z[4],1,z[0]]);
-const MD=['【炼丹主料 / 灵兽饲料】炼丹的基础药材；喂给灵兽可得当前等级升级所需10%的修炼。','【炼丹辅料 / 灵兽饲料】妖兽的内丹，中品以上丹药、灵宝以上法宝都要用到；喂给灵兽可得25%的修炼。','【炼器辅料 / 灵兽饲料】炼制法宝的骨架；喂给灵兽可得15%的修炼。','【布阵材料】每座阵法需要1个阵盘。阵势运转时被占用，消散后收回，可反复使用。','【布阵材料】每座阵法需要的阵旗数见阵法书，少一面都布不起来。阵势运转时被占用，消散后收回，可反复使用。','【炼器主料】蕴含灵气的精铁，炼制一切法宝都离不开它。坊市常备，也能从恶修的储物袋里找到。','【天材地宝·极稀有】千年灵乳、九天玄铁、凤血晶之类可遇不可求的天地奇珍。炼制极品丹药与通天灵宝必不可少，坊市买不到，只能靠古墓、秘境、遗府和精英敌人的储物袋。'];
+const MD=['【炼丹主料 / 灵兽饲料】炼丹的基础药材；喂给灵兽可得当前等级升级所需10%的修炼。','【炼丹辅料 / 灵兽饲料】妖兽的内丹，中品以上丹药、灵宝以上法宝都要用到；喂给灵兽可得25%的修炼。','【炼器辅料 / 灵兽饲料】炼制法宝的骨架；喂给灵兽可得15%的修炼。','【布阵材料】每座阵法需要1个阵盘。阵势运转时被占用，消散后收回，可反复使用。','【布阵材料】每座阵法需要的阵旗数见阵法书，少一面都布不起来。阵势运转时被占用，消散后收回，可反复使用。','【炼器主料】蕴含灵气的精铁，炼制一切法宝都离不开它。坊市常备，也能从恶修的储物袋里找到。','【天材地宝·极稀有】千年灵乳、九天玄铁、凤血晶之类可遇不可求的天地奇珍。炼制极品丹药与通天灵宝必不可少，坊市买不到，只能靠古墓、秘境、遗府和精英敌人的储物袋。','【搜魂术用】未刻录内容的玉简。施展搜魂术后，每刻录一门法术或秘术消耗1枚。坊市常备。'];
 MA.forEach((m,i)=>IT['W'+i]=[m[0],MD[i],m[1],m[2]||0,m[0]]);
 MB.forEach((m,i)=>IT['E'+i]=[m[0]+'卵',`孵化后得到一只1级${m[0]}，需会驭兽烙印`,Math.round(40*(1+.4*(m[1]-1))),0,m[0]+'卵']);
 // 稀有度：[档位序号,遇到概率权重]；全局稀有等级g（0~4）决定颜色与价格，g越高越稀有
@@ -343,7 +364,7 @@ const RW={
 B:[[0,75],[0,75],[0,75],[1,55],[1,55],[1,55],[2,45],[2,45],[3,25],[3,25],[3,25],[4,10],[4,10],[4,10],[1,55],[2,45],[4,10],[0,75],[1,55],[3,25],[2,45]],
 M:[[0,75],[1,45],[1,45],[2,20],[3,10],[2,20]],
 S:[[0,75],[1,45],[1,45],[2,20],[2,20],[3,15],[3,15],[2,20],[3,15],[0,75],[1,45],[2,20],[3,15],[1,45],[2,20],[3,15],[0,75]],
-T:[[0,75],[1,45],[3,10],[2,20],[3,10],[0,75],[2,20],[3,10],[1,45],[2,20]],
+T:[[0,75],[1,45],[3,10],[2,20],[3,10],[0,75],[2,20],[3,10],[1,45],[2,20],[3,6]],
 A:[[0,75],[1,45],[1,45],[2,20],[2,20],[3,15],[2,20],[3,15],[0,75],[1,45],[2,20],[3,15],[1,45],[2,20],[1,45],[2,20],[2,20],[3,8],[3,10],[1,45]],
 P:[[2,45],[1,60],[0,75],[3,15],[2,45],[2,45],[2,45],[3,15],[3,15],[3,15],[2,45],[3,15],[3,3],[3,5],[3,4],[3,2],[2,40],[1,55]],
 Z:[[0,75],[1,45],[2,15],[3,10],[2,15],[0,75],[1,45],[2,15]]};
@@ -379,17 +400,17 @@ const PCAP=[4,4,5,7,9],pcap=()=>PCAP[rl()],yinL=()=>Math.max(0,pcap()-(G.yin||0)
 const DM=[2,2,3,5,7],dmax=()=>DM[rl()],dN=()=>G.bz.filter(z=>z.d).length;
 // 灵兽价格 = 稀有度底价 + 已投入修炼量×0.5×稀有度系数RM（等级越高越值钱）
 const RM=[1,1.3,1.7,2.3,3],cxp=L=>{let t=0;for(let j=1;j<L;j++)t+=xn(j);return t};
-const BASE=[20,50,125,310,780],CM={P:.8,A:1.2,S:1,T:1.15,M:1.1,Z:1.25,E:.9,F:1},WV=[6,18,10,80,15,12,300],CW={P:30,S:16,M:8,T:8,A:12,Z:6,E:12,B:8,F:9},Lp=()=>Math.max(1,G.s-1);
+const BASE=[20,50,125,310,780],CM={P:.8,A:1.2,S:1,T:1.15,M:1.1,Z:1.25,E:.9,F:1},WV=[6,18,10,80,15,12,300,20],CW={P:30,S:16,M:8,T:8,A:12,Z:6,E:12,B:8,F:9},Lp=()=>Math.max(1,G.s-1);
 const V=k=>{if(k[0]=='W')return WV[+k.slice(1)];const g=rar(k)[0];if(k[0]=='B'){const L=+k.split(':')[1];return Math.round(BASE[g]*1.2*(1+.04*(L-1))+.5*RM[g]*cxp(L))}return Math.round(BASE[g]*CM[k[0]])},P$=k=>Math.round(V(k)*1.2);
 const wp=(ks,w)=>{let t=0;ks.forEach(k=>t+=w(k));let r=Math.random()*t;for(const k of ks){r-=w(k);if(r<=0)return k}return ks[ks.length-1]};
 function pool(cats,ok,boost=0){const c=wp(cats,x=>CW[x]),k0=(c=='B'?MB.map((m,i)=>'B'+i):ALL.filter(k=>k[0]==c)),k1=k0.filter(k=>ok(rar(k)[0])),ks=k1.length?k1:k0,k=wp(ks,q=>rar(q)[1]*(1+boost*rar(q)[0]));return c=='B'?k+':'+Math.max(1,Math.min(13,Lp()+ri(-2,1))):k}
 const lk=(b=0)=>pool(['P','S','M','T','A','Z','E','F'],()=>true,b);
 const bH=b=>Math.round(70*KK(sq(b.lv))*(b.bd?1:.5)*(1+kHP(b.kt))),bA=b=>12*KK(sq(b.lv))*MB[b.i][2]*(b.bd?1:.5),xn=L=>Math.round(40*KK(sq(L))),bv=z=>V('B'+z.i+':'+z.lv),bq=()=>G.s>=12?99:Math.max(0,2-G.bdN),mkb=(i,lv,ag)=>{const b={i,lv,xp:0,bd:0,d:0,h:0,eq:[],lim:Math.max(lv,BLIM[rollT()]),ag:ag!=null?ag:Math.round(pLife(lv)*rnd(.1,.45))};b.h=bH(b);return b};
-function fresh(){G={lr:null,lrd:null,lrc:0,lim:14,limR:0,egg:0,n:NM[ri(0,5)],s:0,x:0,hp:1,mp:1,st:30,age:16,pill:0,over:0,ev:-1,enc:null,iv:{P1:2,P0:1},sp:[0],se:[],mo:[0],mt:0,sw:0,zf:[],bz:[],bdN:0,hb:0,mb:0,wk:0,hide:0,rv:0,lot:null,sex:0,pi:0,np:{},dl:null,kc:0,dx:0,ex:{},sa:-1,shop:[],ec:0,bn:0,v:SAVEV,cr:{d:{on:0,xp:0,rc:[]},q:{on:0,xp:0,rc:[]}},yin:0,lb:0,snb:0,vb:0,gd:0,sect:null,fam:null,nn:{},td:-1,pq:[],nd:null,nxp:0,rel:{},rum:[],bio:[],soul:null,eld:0,rlm:0,sinv:0,hunt:null,swr:0,trn:0,evc:{},slk:null,sec:null,dvc:0,lg:[],sl:[{a:16,d:30,r:'初入仙途·随身盘缠',b:30}],si:30,so:0};G.fam=mkFam();G.pq=[{id:'war0',at:16+ri(70,130),d:{}}];G.hp=mh();G.mp=mm();S('你立于青云山门前，凡躯一副，道心一颗。','k');S(`临行那天，娘往你怀里塞了半块长命锁和一包烙饼，爹站在村口的老槐树下，一直没有说话。${G.fam.sx?'妹妹':'弟弟'}${G.fam.sb}追着你跑了很远，喊着让你早点回家。`,'n');S('入门第一件事：定下名字、性别，并测出灵根。点击右侧「🔮 入门：定名测灵」。灵根可无限重测，踏上仙途后名字、性别、灵根均不可更改。','k');S('打坐积攒修为，修为圆满后尝试突破；外出历练会遇见妖兽、恶修、有缘人与种种奇遇。去坊市添置法术、法宝与丹药吧。')}
+function fresh(){G={lr:null,lrd:null,lrc:0,lim:14,limR:0,egg:0,n:NM[ri(0,5)],s:0,x:0,hp:1,mp:1,st:30,age:16,pill:0,over:0,ev:-1,enc:null,iv:{P1:2,P0:1},sp:[0],se:[],mo:[0],mt:0,sw:0,zf:[],bz:[],bdN:0,hb:0,mb:0,wk:0,hide:0,rv:0,lot:null,sex:0,pi:0,np:{},dl:null,kc:0,dx:0,ex:{},sa:-1,shop:[],ec:0,bn:0,mcd:0,v:SAVEV,cr:{d:{on:0,xp:0,rc:[]},q:{on:0,xp:0,rc:[]}},yin:0,lb:0,snb:0,vb:0,gd:0,sect:null,fam:null,nn:{},td:-1,pq:[],nd:null,nxp:0,rel:{},rum:[],bio:[],soul:null,eld:0,rlm:0,sinv:0,hunt:null,swr:0,trn:0,evc:{},slk:null,sec:null,dvc:0,lg:[],sl:[{a:16,d:30,r:'初入仙途·随身盘缠',b:30}],si:30,so:0};G.fam=mkFam();G.pq=[{id:'war0',at:16+ri(70,130),d:{}}];G.hp=mh();G.mp=mm();S('你立于青云山门前，凡躯一副，道心一颗。','k');S(`临行那天，娘往你怀里塞了半块长命锁和一包烙饼，爹站在村口的老槐树下，一直没有说话。${G.fam.sx?'妹妹':'弟弟'}${G.fam.sb}追着你跑了很远，喊着让你早点回家。`,'n');S('入门第一件事：定下名字、性别，并测出灵根。点击右侧「🔮 入门：定名测灵」。灵根可无限重测，踏上仙途后名字、性别、灵根均不可更改。','k');S('打坐积攒修为，修为圆满后尝试突破；外出历练会遇见妖兽、恶修、有缘人与种种奇遇。去坊市添置法术、法宝与丹药吧。')}
 function load(){try{const d=JSON.parse(localStorage.getItem('xx'));if(d&&d.iv&&d.v===SAVEV){d.nd=d.nd||null;return G=d}}catch(e){}fresh()}
 function end(w,t){G.over=w?2:1;C=null;G.nd=null;S(t,'k');bang(w?'破碎虚空':'身殒道消',w?'飞升仙界':'本世终了','gold'.replace('gold',w?'gold':'red'));try{epitaph(w)}catch(e){}}
 function die(t){if(C&&!C.spar&&nirvP())return 0;if(C&&!C.spar&&swRes())return 1;if(G.rv>G.age){G.rv=0;G.hp=Math.round(mh()*.4);G.mp=Math.round(mm()*.4);S('危急关头，九转还魂丹药力爆发，你于鬼门关前夺回一命！（以40%气血、40%灵力复活，「复生」状态消散）','k');return 0}C=null;end(0,t);return 1}
-function adv(y,pm=1){if(G.over)return;G.age+=y;if(y>0){G.ps=0;G.bz.forEach(z=>z.ps=0);petCult(y,pm);dlYear(y);ageAll(y);worldYear(y);famYear(y);sectYear(y)}if(G.wk){G.wk.y-=y;if(G.wk.y<=0){G.wk=0;G.bn=0;S('精血亏损造成的虚弱终于散去。')}}if(G.age>=LF())end(0,`寿元耗尽，${G.n}以${lrN(G.lr)}之资苦修${G.age-16}载，终究止步于【${lab(G.s)}】，于${G.age}岁坐化洞府，未能窥得大道。`)}
+function adv(y,pm=1){if(G.over)return;G.age+=y;if(G.soulM&&G.soulM.length){const ex=G.soulM.filter(m=>G.age>m.a+1);if(ex.length)S(`搜魂所得的记忆渐渐模糊——${ex.map(m=>m.ks.map(k=>IT[k][4]).join('、')).join('、')}再也想不起来了。`,'s');G.soulM=G.soulM.filter(m=>G.age<=m.a+1)}if(y>0){G.ps=0;G.bz.forEach(z=>z.ps=0);petCult(y,pm);dlYear(y);ageAll(y);worldYear(y);famYear(y);sectYear(y)}if(G.wk){G.wk.y-=y;if(G.wk.y<=0){G.wk=0;G.bn=0;S('精血亏损造成的虚弱终于散去。')}}if(G.age>=LF())end(0,`寿元耗尽，${G.n}以${lrN(G.lr)}之资苦修${G.age-16}载，终究止步于【${lab(G.s)}】，于${G.age}岁坐化洞府，未能窥得大道。`)}
 function hurt(p,t){const d=Math.ceil(mh()*p*rnd(.7,1.2));G.hp-=d;S(`${t}气血-${d}。`,'e');if(G.hp<=0)die(`${G.n}气血枯竭，身殒道消，享年${G.age}岁。`)}
 // ===== 灵根（v1.6）=====
 // [名, 抽取概率%, 修炼速度倍率, 大境界突破率[筑基,金丹,元婴,化神], 小境界突破率, 飞升率, 天命表[止步筑基,止步金丹,止步元婴,无上限]%, 属性数, 说明]
@@ -427,19 +448,22 @@ if(Math.random()<p){if(last){end(2,`九天雷劫散尽，霞光万道，${G.n}${
 G.x-=need(G.s);G.s++;G.hp=mh();G.mp=mm();G.bz.forEach(b=>b.h=bH(b));S(`灵气汇聚，你成功突破至【${lab(G.s)}】！`+(maj?`寿元增至${LF()}载。`:''),'k');bang(maj?'突破大境界':'突破成功',lab(G.s),'gold');if(maj){bio(`突破至${lab(G.s)}`);rumMe(`${G.n}突破至【${lab(G.s)}】`)}}
 else{G.x=Math.round(G.x*.6);bang('突破失败','修为损失四成','red');hurt(last?.7:maj?.3:.12,last?'天雷轰顶，你肉身几近崩毁。':'突破失败，灵力反噬，修为受损。')}
 adv(1)}
-function study(k){if(k[0]=='F'){const j=+k.slice(1);if(j<2){const s=G.cr[DAO[j].k];if(s.on){say(`你早已踏入${DAO[j].n}，无需再参悟入门玉简。`);return}tk(k);s.on=1;S(`你参悟了《${DAO[j].n}入门》，踏入${DAO[j].n}，成为「${DAO[j].rn[1]}」！可在「丹房器房」中${DAO[j].v}${j?'法器':'下品丹药'}。`,'k');bio(`踏入${DAO[j].n}`);return}const r=CRL[j-2],c=r.c=='P'?0:1,s=crS(c);if(!s.on){say(`你尚未踏入${DAO[c].n}，看不懂其中的火候口诀。请先参悟《${DAO[c].n}入门》。`);return}if(s.rc.includes(k)){say(`你早已通晓【${IT[k][0]}】。`);return}tk(k);s.rc.push(k);S(`你参悟了【${IT[k][0]}】${tag(k)}！${crGr(c)>=r.t+1?'现在就可以开炉了。':`（需${DAO[c].n}达到「${DAO[c].rn[r.t+1]}」才能炼制）`}`,'g');return}
+function study(k){if(!G.lr)return;if(k[0]=='F'){const j=+k.slice(1);if(j<2){const s=G.cr[DAO[j].k];if(s.on){say(`你早已踏入${DAO[j].n}，无需再参悟入门玉简。`);return}tk(k);s.on=1;S(`你参悟了《${DAO[j].n}入门》，踏入${DAO[j].n}，成为「${DAO[j].rn[1]}」！可在「丹房器房」中${DAO[j].v}${j?'法器':'下品丹药'}。`,'k');bio(`踏入${DAO[j].n}`);return}const r=CRL[j-2],c=r.c=='P'?0:1,s=crS(c);if(!s.on){say(`你尚未踏入${DAO[c].n}，看不懂其中的火候口诀。请先参悟《${DAO[c].n}入门》。`);return}if(s.rc.includes(k)){say(`你早已通晓【${IT[k][0]}】。`);return}tk(k);s.rc.push(k);S(`你参悟了【${IT[k][0]}】${tag(k)}！${crGr(c)>=r.t+1?'现在就可以开炉了。':`（需${DAO[c].n}达到「${DAO[c].rn[r.t+1]}」才能炼制）`}`,'g');return}
 const c=k[0],i=+k.slice(1),L={S:G.sp,T:G.se,M:G.mo,Z:G.zf}[c];if(L.includes(i)){say(`你早已通晓【${IT[k][4]}】，无需再参悟。`);return}tk(k);L.push(i);S(`你闭关参悟，终于习得【${IT[k][4]}】${tag(k)}！`,'g')}
-function sell(k,n){const v=V(k)*n;tk(k,n);ST(v,`出售物品·${IT[k][0]}×${n}`);S(`你将【${IT[k][0]}】${tag(k)}×${n}卖给坊市，得灵石${v}。`,'g')}
+function sell(k,n){if(!G.lr)return;const v=V(k)*n;tk(k,n);ST(v,`出售物品·${IT[k][0]}×${n}`);S(`你将【${IT[k][0]}】${tag(k)}×${n}卖给坊市，得灵石${v}。`,'g')}
 // 坊市每年刷新一次；可锁定一件商品（G.slk），刷新时保留，购买或取消锁定后解除
 function shopGen(){G.sa=G.age;const s=G.slk&&G.shop.includes(G.slk)?[G.slk]:[];if(!s.length)G.slk=null;let n=0;while(s.length<8&&n++<80){const k=pool(['P','S','M','T','A','Z','E','F'],g=>g<=2);if(!s.includes(k))s.push(k)}G.shop=s}
 function lockS(q){if(G.slk==q){G.slk=null;S(`你取消了对【${inf(q)[0]}】的预留。`)}else{const o=G.slk;G.slk=q;S(o?`你改为请掌柜预留【${inf(q)[0]}】${tag(q)}，原先预留的【${inf(o)[0]}】不再保留。`:`你请掌柜将【${inf(q)[0]}】${tag(q)}预留下来，来年货品更替时它也不会被撤下。`)}}
 function gain(k,n=1){if(k[0]=='B'){const[a,L]=k.slice(1).split(':').map(Number);if(!petRoom()){const v=V(k);ST(v,`无法烙印·转卖${MB[a][0]}`);S(`${yinL()>0?`灵兽袋已满（${G.bz.length}/${pcap()}）`:`你一生的烙印次数已经用尽（${G.yin||0}/${pcap()}）`}，无法为这只${L}级${MB[a][0]}重新烙印，只好转手卖出，得灵石${v}。`,'p');return}yin();G.bz.push(mkb(a,L));S(`你为${L}级${MB[a][0]}重新烙下神魂印记，它成了你的灵兽。${yinT()}`,'p')}else add(k,n)}
-function buyK(q,n){const p=P$(q)*n;if(G.st<p)return;ST(-p,`坊市购买·${inf(q)[0]}${n>1?'×'+n:''}`);const i=G.shop.indexOf(q);if(i>=0)G.shop.splice(i,1);if(G.slk==q)G.slk=null;gain(q,n);S(`你花费${p}灵石买下${n>1?n+'个':''}【${inf(q)[0]}】${tag(q)}。`,'g')}
-function hideT(){G.hide^=1;S(G.hide?'你运转敛气术，气息尽数内敛，宛如凡人。':'你散去敛气术，气息复归。')}
-function setMt(j){const c=50*Math.pow(2,G.sw);if(G.st<c){say(`切换主修功法需要${c}灵石。`);return}ST(-c,`切换主修·${MT[j][0]}`);G.sw++;G.mt=j;G.hp=Math.min(G.hp,mh());G.mp=Math.min(G.mp,mm());S(`你花费${c}灵石改修《${MT[j][0]}》：${MT[j][1]}。`)}
-function dep(x){const z=G.bz[x];if(!z.d&&dN()>=dmax()){say(`以你${RN[rl()]}期的神识，最多只能同时驱使${dmax()}只灵兽出战，需先收回一只。`);return}z.d=z.d?0:1;S(`你将${MB[z.i][0]}${z.d?'唤出灵兽袋，令其随行出战':'收回灵兽袋'}。`)}
-function bond(x){const z=G.bz[x];if(z.bd||bq()<1)return;G.bdN++;z.bd=1;z.h=bH(z);S(`你咬破指尖，一滴精血没入${MB[z.i][0]}眉心，契约缔结！从此它能完美发挥全部实力。`,'g')}
-function sellB(x){const z=G.bz[x];if(z.bd)return;const v=bv(z);G.bz.splice(x,1);retEq(z.eq,'出售前，你取下了它佩戴的法宝');ST(v,`出售灵兽·${z.lv}级${MB[z.i][0]}`);S(`你将${z.lv}级${MB[z.i][0]}转让给坊市，得灵石${v}。`,'g')}
+function buyK(q,n){if(!G.lr)return;const p=P$(q)*n;if(G.st<p)return;ST(-p,`坊市购买·${inf(q)[0]}${n>1?'×'+n:''}`);const i=G.shop.indexOf(q);if(i>=0)G.shop.splice(i,1);if(G.slk==q)G.slk=null;gain(q,n);S(`你花费${p}灵石买下${n>1?n+'个':''}【${inf(q)[0]}】${tag(q)}。`,'g')}
+function hideT(){if(!G.lr)return;G.hide^=1;S(G.hide?'你运转敛气术，气息尽数内敛，宛如凡人。':'你散去敛气术，气息复归。')}
+function setMt(j){if(!G.lr)return;const c=50*Math.pow(2,G.sw);if(G.st<c){say(`切换主修功法需要${c}灵石。`);return}ST(-c,`切换主修·${MT[j][0]}`);G.sw++;G.mt=j;G.hp=Math.min(G.hp,mh());G.mp=Math.min(G.mp,mm());S(`你花费${c}灵石改修《${MT[j][0]}》：${MT[j][1]}。`)}
+function dep(x){if(!G.lr)return;const z=G.bz[x];if(!z.d&&dN()>=dmax()){say(`以你${RN[rl()]}期的神识，最多只能同时驱使${dmax()}只灵兽出战，需先收回一只。`);return}z.d=z.d?0:1;S(`你将${pN(z)}${z.d?'唤出灵兽袋，令其随行出战':'收回灵兽袋'}。`)}
+function bond(x){if(!G.lr)return;const z=G.bz[x];if(z.bd||bq()<1)return;G.bdN++;z.bd=1;z.h=bH(z);S(`你咬破指尖，一滴精血没入${pN(z)}眉心，契约缔结！从此它能完美发挥全部实力。`,'g')}
+function sellB(x){if(!G.lr)return;const z=G.bz[x];if(z.bd)return;const v=bv(z);G.bz.splice(x,1);retEq(z.eq,'出售前，你取下了它佩戴的法宝');ST(v,`出售灵兽·${z.lv}级${pN(z)}`);S(`你将${z.lv}级${pN(z)}转让给坊市，得灵石${v}。`,'g')}
+
+// 灵兽命名（v1.9.1）
+function pRen(x){const z=G.bz[x],e=$('pnm');if(!z||!e)return;const n=String(e.value||'').trim();if(!n){if(z.nm){S(`你收回了给${z.nm}起的名字，它又只是一只${MB[z.i][0]}了。`);delete z.nm}G.pne='';draw();return}if(!/^[\u4e00-\u9fa5A-Za-z0-9·]{1,8}$/.test(n)){G.pne='名字需为1～8个汉字、字母或数字。';draw();return}G.pne='';const o=pN(z);z.nm=n;S(`你轻抚${o}的头顶：“从今往后，你就叫『${n}』。”${MB[z.i][0]}${z.lv>=8?'郑重地点了点头':'蹭了蹭你的掌心'}，像是记住了这个名字。`,'g');draw()}
 // ===== 灵兽培养（v1.4 修正）=====
 // 等级上限：主人对应等级+1（受主人神识所限，喂养与自动修炼都无法突破此上限）
 // 喂养：灵石 1灵石=1点修炼（每次花费升级所需的20%）；材料与丹药按当前等级升级所需的百分比提供修炼
@@ -447,28 +471,38 @@ function sellB(x){const z=G.bz[x];if(z.bd)return;const v=bv(z);G.bz.splice(x,1);
 const FP={W0:10,W1:25,W2:15},FPP={0:20,1:35,2:60,4:100},PYL=3,fcost=z=>Math.max(5,Math.ceil(xn(z.lv)*.2));
 const petPills=()=>Object.keys(G.iv).filter(k=>k[0]=='P'&&!['P9','P12','P13','P17'].includes(k)).sort((a,b)=>+a.slice(1)-+b.slice(1));
 const pyN=z=>z.py&&z.py.y==G.age?z.py.n:0;
-function pxp(z,v,one){const cp=pLv(z);if(z.lv>=cp){z.xp=Math.min(z.xp+v,Math.max(0,xn(z.lv)-1));return 0}z.xp+=v;let up=0;while(z.lv<Math.min(13,cp)&&z.xp>=xn(z.lv)){z.xp-=xn(z.lv);z.lv++;up++;if(one){z.xp=Math.min(z.xp,Math.round(xn(z.lv)*.3));break}}if(z.lv>=13)z.xp=0;else if(z.lv>=cp)z.xp=Math.min(z.xp,xn(z.lv)-1);if(up){z.h=bH(z);if(z.lv>=8&&z.lv-up<8)hform(z)}if(z.lim<13&&z.lv>=z.lim&&z.lim<plv()&&!z.limR){z.limR=1;S(`${MB[z.i][0]}停在${z.lv}级再难寸进——它的天资似乎只能走到这里了。（天命瓶颈）`,'e')}return up}
-function feed(x,t){const z=G.bz[x];if(!['P14','P15','P16'].includes(t)&&z.lv>=13){say('它已臻最高等级13级，无需再喂养。');return}if(!['P14','P15','P16'].includes(t)&&z.lv>=pLv(z)&&z.xp>=xn(z.lv)-1){say(`受你的神识所限，${MB[z.i][0]}已到等级上限（${pLv(z)}级），待你境界提升后才能继续成长。`);return}const n=xn(z.lv);let p=0,s='',v=0;
-if(t=='$'){const c=fcost(z);if(G.st<c){say('灵石不足。');return}ST(-c,`喂养灵兽·${MB[z.i][0]}`);v=c;s=c+'灵石'}
-else if(t=='P14'||t=='P15'||t=='P16'){if(!hv(t))return;if(t=='P14'&&(z.lbn||0)>=3){say(`${MB[z.i][0]}已服过三颗延寿丹，再也承受不住了。`);return}if(t=='P15'&&z.lzn){say(`${MB[z.i][0]}已炼化过一株万年灵芝。`);return}tk(t);if(t=='P14'){z.lb=(z.lb||0)+25;z.lbn=(z.lbn||0)+1;S(`${MB[z.i][0]}吞下延寿丹，寿元上限+25年（${z.ag}/${pLz(z)}岁）。`,'g')}else if(t=='P15'){z.lb=(z.lb||0)+60;z.lzn=1;pxp(z,xn(z.lv));S(`${MB[z.i][0]}吞下万年灵芝，寿元上限+60年（${z.ag}/${pLz(z)}岁），修为大进！`,'g')}else{z.snb=Math.min(.6,(z.snb||0)+.15);S(`${MB[z.i][0]}服下养魂丹，神识+15%。`,'g')}return}
-else if(t[0]=='P'){if(!hv(t)||t=='P9')return;if(pyN(z)>=PYL){say(`${MB[z.i][0]}今年已炼化${PYL}颗丹药，药力尚未化开，明年再喂吧。`);return}tk(t);z.py={y:G.age,n:pyN(z)+1};p=FPP[rar(t)[0]];s=IT[t][0]}
+function pxp(z,v,one){const cp=pLv(z);if(z.lv>=cp){z.xp=Math.min(z.xp+v,Math.max(0,xn(z.lv)-1));return 0}z.xp+=v;let up=0;while(z.lv<Math.min(13,cp)&&z.xp>=xn(z.lv)){z.xp-=xn(z.lv);z.lv++;up++;if(one){z.xp=Math.min(z.xp,Math.round(xn(z.lv)*.3));break}}if(z.lv>=13)z.xp=0;else if(z.lv>=cp)z.xp=Math.min(z.xp,xn(z.lv)-1);if(up){z.h=bH(z);if(z.lv>=8&&z.lv-up<8)hform(z)}if(z.lim<13&&z.lv>=z.lim&&z.lim<plv()&&!z.limR){z.limR=1;S(`${pN(z)}停在${z.lv}级再难寸进——它的天资似乎只能走到这里了。（天命瓶颈）`,'e')}return up}
+function feed(x,t){if(!G.lr)return;const z=G.bz[x];if(!['P14','P15','P16'].includes(t)&&z.lv>=13){say('它已臻最高等级13级，无需再喂养。');return}if(!['P14','P15','P16'].includes(t)&&z.lv>=pLv(z)&&z.xp>=xn(z.lv)-1){say(`受你的神识所限，${pN(z)}已到等级上限（${pLv(z)}级），待你境界提升后才能继续成长。`);return}const n=xn(z.lv);let p=0,s='',v=0;
+if(t=='$'){const c=fcost(z);if(G.st<c){say('灵石不足。');return}ST(-c,`喂养灵兽·${pN(z)}`);v=c;s=c+'灵石'}
+else if(t=='P14'||t=='P15'||t=='P16'){if(!hv(t))return;if(t=='P14'&&(z.lbn||0)>=3){say(`${pN(z)}已服过三颗延寿丹，再也承受不住了。`);return}if(t=='P15'&&z.lzn){say(`${pN(z)}已炼化过一株万年灵芝。`);return}tk(t);if(t=='P14'){z.lb=(z.lb||0)+25;z.lbn=(z.lbn||0)+1;S(`${pN(z)}吞下延寿丹，寿元上限+25年（${z.ag}/${pLz(z)}岁）。`,'g')}else if(t=='P15'){z.lb=(z.lb||0)+60;z.lzn=1;pxp(z,xn(z.lv));S(`${pN(z)}吞下万年灵芝，寿元上限+60年（${z.ag}/${pLz(z)}岁），修为大进！`,'g')}else{z.snb=Math.min(.6,(z.snb||0)+.15);S(`${pN(z)}服下养魂丹，神识+15%。`,'g')}return}
+else if(t[0]=='P'){if(!hv(t)||t=='P9')return;if(pyN(z)>=PYL){say(`${pN(z)}今年已炼化${PYL}颗丹药，药力尚未化开，明年再喂吧。`);return}tk(t);z.py={y:G.age,n:pyN(z)+1};p=FPP[rar(t)[0]];s=IT[t][0]}
 else{if(!hv(t))return;tk(t);p=FP[t];s=IT[t][0]}
 if(!v)v=Math.round(n*p/100);const up=pxp(z,v,1);
-S(`你以${s}喂养${MB[z.i][0]}，灵气化入其体内，修炼+${v}。`+(up?`它突破至${z.lv}级（${lvl(z.lv)}）！`:'')+(z.lv>=pLv(z)&&z.lv<13?`（已达等级上限${pLv(z)}级）`:''),'g')}
+S(`你以${s}喂养${pN(z)}，灵气化入其体内，修炼+${v}。`+(up?`它突破至${z.lv}级（${lvl(z.lv)}）！`:'')+(z.lv>=pLv(z)&&z.lv<13?`（已达等级上限${pLv(z)}级）`:''),'g')}
 // 自动修炼：每年按升级所需的10%自行修炼；低于主人对应等级×2.5，与主人同阶×1，达到上限（主人+1）后停止；滴血认主×1.3；打坐之年×1.5
 const pcr=z=>{if(z.lv>=13||z.lv>=pLv(z))return 0;const d=z.lv-Lp();return .1*(d<0?2.5:1)*(z.bd?1.3:1)*(1+kmt(z.kt,'xp'))},pcrT=z=>{const d=z.lv-Lp();return z.lv>=13?'已满级':z.limR&&z.lv>=z.lim?'天资所限，止步于此（天命瓶颈）':z.lv>=pLv(z)?`已达等级上限${pLv(z)}级，待你境界提升`:d<0?'低于主人，借你灵气加速修炼（×2.5）':'与主人同阶，正常修炼'};
-function petCult(y,m=1){const up=[];G.bz.forEach(z=>{z.h=Math.min(bH(z),z.h+Math.round(bH(z)*.3*y));for(let k=0;k<y;k++){const v=Math.round(xn(z.lv)*pcr(z)*m);if(v>0&&pxp(z,v))up.push(`${MB[z.i][0]}→${z.lv}级`)}});if(up.length)S(`灵兽们自行吐纳修炼，${up.join('、')}！`,'g')}
-function hatch(k){if(!G.se.includes(1)){say('你尚未学会驭兽烙印，幼兽破壳后无法与你缔结联系。');return}if(!petRoom()){say(yinL()>0?`灵兽袋已满（${G.bz.length}/${pcap()}），以你${RN[rl()]}期的神识养不了更多灵兽。可先出售灵兽，或待境界提升。`:`你一生的烙印次数已经用尽（${G.yin||0}/${pcap()}），待境界提升后才能再烙印。`);return}const c=20*sc();if(G.st<c){say(`孵化需耗费${c}灵石温养灵力。`);return}ST(-c,`孵化灵兽·${MB[+k.slice(1)][0]}`);tk(k);const b=mkb(+k.slice(1),1,0);G.bz.push(b);yin();S(`你以灵力温养妖兽卵，一只1级${MB[b.i][0]}破壳而出，认你为主！${yinT()}`,'g');adv(1)}
+function petCult(y,m=1){const up=[];G.bz.forEach(z=>{z.h=Math.min(bH(z),z.h+Math.round(bH(z)*.3*y));for(let k=0;k<y;k++){const v=Math.round(xn(z.lv)*pcr(z)*m);if(v>0&&pxp(z,v))up.push(`${pN(z)}→${z.lv}级`)}});if(up.length)S(`灵兽们自行吐纳修炼，${up.join('、')}！`,'g')}
+function hatch(k){if(!G.lr)return;if(!G.se.includes(1)){say('你尚未学会驭兽烙印，幼兽破壳后无法与你缔结联系。');return}if(!petRoom()){say(yinL()>0?`灵兽袋已满（${G.bz.length}/${pcap()}），以你${RN[rl()]}期的神识养不了更多灵兽。可先出售灵兽，或待境界提升。`:`你一生的烙印次数已经用尽（${G.yin||0}/${pcap()}），待境界提升后才能再烙印。`);return}const c=20*sc();if(G.st<c){say(`孵化需耗费${c}灵石温养灵力。`);return}ST(-c,`孵化灵兽·${MB[+k.slice(1)][0]}`);tk(k);const b=mkb(+k.slice(1),1,0);G.bz.push(b);yin();S(`你以灵力温养妖兽卵，一只1级${MB[b.i][0]}破壳而出，认你为主！${yinT()}`,'g');adv(1)}
 // 噬金鼠寻宝（v1.6.2 下调）：1级10%，每高一级约+2.9%，13级45%
 const trP=L=>Math.round(10+(Math.min(13,L)-1)*35/12);
 function tre(){const b=G.bz.filter(z=>z.d&&z.i==1).sort((p,q)=>q.lv-p.lv)[0];if(b&&pt(trP(b.lv))){const q=lk();add(q);S(`出战的噬金鼠嗅到宝气，刨出一件【${inf(q)[0]}】${tag(q)}！`,'g')}}
 const mk=(n,H)=>({n,h:H,H,wk:0,bf:0,bn:0,bl:0,po:{},pa:0,sk:0,inj:0,sh:0,cbl:0,cpa:0,cch:0});
-const be=b=>({...mk(MB[b.i][0],0),r:b,i:b.i,lv:b.lv,get kt(){return b.lv>=8?kitOf(b):null},get eq(){return b.eq||[]},get h(){return b.h},set h(v){b.h=v},get H(){return bH(b)},get a(){return bA(b)},get v0(){return Math.round(bsp(b.i,b.lv)*(1+((b.lv>=8&&b.kt&&b.kt.vb)||0)))}});
+const pN=z=>z&&z.nm?z.nm:z?MB[z.i][0]:'',pNF=z=>z.nm?`${z.nm}（${MB[z.i][0]}）`:MB[z.i][0];
+const be=b=>({...mk(pN(b),0),r:b,i:b.i,lv:b.lv,...(b.lv>=8?{mpM:100,mp:100}:{}),get kt(){return b.lv>=8?kitOf(b):null},get eq(){return b.eq||[]},get h(){return b.h},set h(v){b.h=v},get H(){return bH(b)},get a(){return bA(b)},get v0(){return Math.round(bsp(b.i,b.lv)*(1+((b.lv>=8&&b.kt&&b.kt.vb)||0)))}});
 const sv=(s,L,b)=>Math.max(s[2]*.3,Math.min(s[4]||95,s[2]+s[3]*(L-b)));
 const SK=['im','wk','bf','qk','sw','bn','bl','po','pa','sk','inj','cbl','cpa','cch'],cl=v=>JSON.parse(JSON.stringify(v));
-const snap=T=>{const o={};let n=0;SK.forEach(k=>{let v=T[k];if('wkbfqksw'.includes(k)&&v&&(v.t>=99||v.yr||v.ft))v=0;if(k=='po'&&!Object.keys(v||{}).length)v=0;if(v){o[k]=cl(v);n++}});return n?o:0};
+const snap=T=>{const o={};let n=0;SK.forEach(k=>{let v=T[k];if(['wk','bf','qk','sw','bn'].includes(k)&&v&&v.L){const w={};w[k]=cl(v);for(const s in w[k].L){const q=w[k].L[s];if(q.t>=99||q.yr||q.ft)delete w[k].L[s]}recS(w,k);v=w[k]}else if(['wk','bf','qk','sw'].includes(k)&&v&&(v.t>=99||v.yr||v.ft))v=0;if(k=='po'&&!Object.keys(v||{}).length)v=0;if(v){o[k]=cl(v);n++}});return n?o:0};
 const ld=(T,ps)=>{if(ps)SK.forEach(k=>{if(ps[k])T[k]=cl(ps[k])})};
-const mercyOn=()=>C&&G.mc&&G.se.includes(1);
+
+// ===== 状态叠加（v1.9.1）：虚弱、强化、疾速、迟缓、燃烧按「来源」记录；不同来源的同类效果叠加生效，同一来源重复施加只刷新 =====
+let CUR='';
+const SCAP={wk:90,sw:90,bf:300,qk:300,bn:5};
+function recS(T,k){const o=T[k];if(!o||!o.L){return}let p=0,t=0,ft=0,yr=0;const ks=Object.keys(o.L);if(!ks.length){T[k]=0;return}ks.forEach(s=>{const c=o.L[s];p+=c.p;t=Math.max(t,c.t);if(c.ft)ft=1;if(c.yr)yr=1});o.p=Math.min(SCAP[k],Math.round(p*100)/100);o.t=t;o.ft=ft;o.yr=yr;o.n=ks.length}
+function addS(T,k,src,p,t,fl){src=src||'未知';let o=T[k];if(!o||!o.L)o=T[k]={p:0,t:0,L:{}};const c=o.L[src];if(c){c.p=Math.max(c.p,p);c.t=Math.max(c.t,t);if(fl)Object.assign(c,fl)}else o.L[src]=Object.assign({p,t},fl||{});recS(T,k);return o}
+function tickS(T,k){const o=T[k];if(!o||!o.L)return;for(const s in o.L){const c=o.L[s];if(c.yr||c.ft)continue;if(--c.t<=0)delete o.L[s]}recS(T,k)}
+function cleanS(T,k){const o=T[k];if(!o||!o.L){T[k]=0;return}for(const s in o.L)if(!o.L[s].yr)delete o.L[s];recS(T,k)}
+const srcL=o=>o&&o.L?Object.keys(o.L):[];
+const mercyOn=()=>C&&G.mc&&!C.spar;
 // ===== 神识系统（v1.8）=====
 // 神识 = 20 × 1.3^(对应等级-1)；功法、丹药、法宝、妖兽种族天赋另有加成。可用于查探（天眼通 / 窥天镜）与神识攻击（神识刺、摄魂术、噬魂钉、梦貘）
 const snB=L=>Math.round(20*Math.pow(1.3,Math.max(1,L)-1)),SNR={0:1.6,5:1.2,8:1.4,13:1.2,16:1.1,19:1.3,20:1.8};
@@ -485,7 +519,7 @@ const mySn=()=>snOf({me:1,get kt(){return null}});
 const snE=s=>{const kt=s[5]||null;if(s[0]>=0)return Math.round(snB(s[1])*(SNR[s[0]]||1)*(1+kmt(kt,'sn')+(kt&&kIt(kt).some(k=>k=='A14')?.3:0)));const cs=csOf(s);return Math.round(snB(cvL(cs))*(1+kmt(kt,'sn')+(kt&&kIt(kt).some(k=>k=='A14')?.3:0)))};
 const canEye=()=>G.se.includes(8)||Object.keys(G.iv).some(k=>k=='A19');
 // 神识伤害：无视护盾，按双方神识之比（0.3～2.5倍）增减；对方神识不足一半时40%几率震慑（麻痹）
-function sHit(a,T,m){if(T.gh)return[0,0,1];const r=clamp(snOf(a)/Math.max(1,snOf(T)),.3,2.5),pv=T.h;let d=Math.round(a.a*m*r*rnd(.9,1.1)*(1+(a.bf?a.bf.p:0)/100)*(1-(a.wk?a.wk.p:0)/100));if(hasPas(T,'sn'))d=Math.round(d/2);T.h-=d;let dd=d;if(isE(T)&&!T.cv&&mercyOn()&&(a===C.P||C.B.includes(a))&&mercy(T,pv))dd=pv-T.h;let x='';if(r>=2&&T.h>0&&pt(40)){const q=ap(T,'pa',100);if(q)x='，神识震慑——'+q}return[dd,0,0,x]}
+function sHit(a,T,m){if(T.gh||T.bnd)return[0,0,1];const r=clamp(snOf(a)/Math.max(1,snOf(T)),.3,2.5),pv=T.h;let d=Math.round(a.a*m*r*rnd(.9,1.1)*(1+(a.bf?a.bf.p:0)/100)*(1-(a.wk?a.wk.p:0)/100));if(hasPas(T,'sn'))d=Math.round(d/2);T.h-=d;let dd=d;if(isE(T)&&mercyOn()&&(a===C.P||C.B.includes(a))&&mercy(T,pv))dd=pv-T.h;let x='';if(r>=2&&T.h>0&&pt(40)){const q=ap(T,'pa',100);if(q)x='，神识震慑——'+q}return[dd,0,0,x]}
 const sdt=r=>r[2]?'0点伤害（血影虚化，攻击落空）':`${r[0]}点神识伤害（无视护盾）${r[3]||''}`;
 // 驱散
 function dispel(T){const L=[];if(T.bf){T.bf=0;L.push('强化')}if(T.qk){T.qk=0;L.push('疾速')}if(T.sh>0){T.sh=0;L.push('护盾')}if(T.im){T.im=0;L.push('免疫')}if(T.gh){T.gh=0;L.push('血影虚化')}return L.length?`驱散了${nmX(T)}的${L.join('、')}`:''}
@@ -495,7 +529,7 @@ if(o.aoe){const mm=typeof o.aoe=='number'?o.aoe:m*.45,en=isE(U),L=en?ourSide():A
 if(o.sd||o.sdm){const h=sHit(U,T,o.sd||m);r.push(`对${nmX(T)}造成${sdt(h)}`);return[r,1]}
 let mm=m;if(o.brk&&T.sh>0){mm*=2;T.sh=0;r.push(`击碎了${nmX(T)}的护盾`)}if(o.yao&&!T.cv&&T.i>=0)mm*=o.yao;if(o.dsp){const x=dispel(T);if(x)r.push(x)}
 if(!mm)return[r,0];const h=hit(U,T,mm);r.push(`对${nmX(T)}造成${dt(h)}${o.yao&&!T.cv&&T.i>=0?'（照妖镜克制妖兽）':''}`);
-if(o.exe&&T.h>0&&T.h<T.H*o.exe&&C&&!C.spar&&!(T.lv-(isE(U)?Lp():Lp())>=2&&isE(T))){T.h=0;r.push(`白光一闪，斩落了${nmX(T)}！`)}
+if(o.exe&&T.h>0&&T.h<T.H*o.exe&&C&&!C.spar&&!(T.lv-(isE(U)?Lp():Lp())>=2&&isE(T))){if(isE(T)&&mercyOn()&&!isE(U)){T.h=1;bindE(T);r.push(`白光一闪，飞刀停在${nmX(T)}颈侧——你收住了杀招`)}else{T.h=0;r.push(`白光一闪，斩落了${nmX(T)}！`)}}
 return[r,1,h]}
 function paAll(U,p){const r=[];(isE(U)?ourSide():AE()).forEach(t=>{const x=ap(t,'pa',p);if(x)r.push(x)});return r}
 
@@ -513,13 +547,13 @@ function kitOf(o,R){if(!o)return null;if(!o.kt){o.kt=mkKit();if(R!=null){o.kt.st
 function dRec(D){return !D?null:D===G.dl?G.dl:(G.np&&G.np[D.k])||null}
 function dKt(D){const r=dRec(D);return r?kitOf(r,r.s/3|0):null}
 // 灵兽化形：达到8级时化去兽类模样
-function hform(z){kitOf(z);bang('灵兽化形',MB[z.i][0],'purple');S(`${MB[z.i][0]}渡过化形之劫，彻底化去兽类模样，化为人形！从此它与人类修士无异：会自寻机缘、自备储物袋、参悟玉简（你也可以赠它法术、秘术玉简），战斗中施展法术、秘术、法宝与阵法。`,'k')}
+function hform(z){kitOf(z);bang('灵兽化形',pN(z),'purple');S(`${pN(z)}渡过化形之劫，彻底化去兽类模样，化为人形！从此它与人类修士无异：会自寻机缘、自备储物袋、参悟玉简（你也可以赠它法术、秘术玉简），战斗中施展法术、秘术、法宝与阵法。`,'k')}
 // 遗物：道侣坐化、灵兽陨落时，储物袋归你
 function kInherit(kt,w){if(!kt)return;const ks=kIt(kt),st=Math.max(0,Math.round(kt.st||0));if(!ks.length&&!st)return;ks.forEach(k=>add(k,kt.iv[k]));if(st)ST(st,'遗物·'+w);S(`你收起了${w}：${[st?'灵石'+st:'',...ks.map(k=>`【${inf(k)[0]}】${tag(k)}${kt.iv[k]>1?'×'+kt.iv[k]:''}`)].filter(Boolean).join('、')}。`,'p');kt.iv={};kt.st=0}
 // 参悟：每年最多参悟2枚玉简（他人赠送的优先）；已会的拿去坊市卖掉
 function kLearn(kt,sp0=[]){const out=[];kt.lq=(kt.lq||[]).filter(k=>khv(kt,k)>0);
-for(let n=0;n<2;n++){const k=kt.lq.shift()||kIt(kt).find(q=>'STZM'.includes(q[0]));if(!k)break;ktk(kt,k);const c=k[0],i=+k.slice(1),nm=IT[k][4];
-if(c=='M'){if(kt.mt<0||rar(k)[0]>rar('M'+kt.mt)[0]){kt.mt=i;out.push(`参悟主修《${nm}》${tag(k)}并改修此功`)}else{kt.st+=V(k);out.push(`把用不上的【${IT[k][0]}】卖给了坊市`)}continue}
+for(let n=0;n<2;n++){const gv=kt.lq.length>0,k=kt.lq.shift()||kIt(kt).find(q=>'STZM'.includes(q[0]));if(!k)break;ktk(kt,k);const c=k[0],i=+k.slice(1),nm=IT[k][4];
+if(c=='M'){if(gv&&kt.mt!=i||kt.mt<0||rar(k)[0]>rar('M'+kt.mt)[0]){kt.mt=i;out.push(`参悟主修《${nm}》${tag(k)}并改修此功`)}else{kt.st+=V(k);out.push(`把用不上的【${IT[k][0]}】卖给了坊市`)}continue}
 const L=c=='S'?kt.sp:c=='T'?kt.se:kt.zf;if(L.includes(i)||c=='S'&&sp0.includes(i)){kt.st+=V(k);out.push(`把重复的【${IT[k][0]}】卖给了坊市`)}else{L.push(i);out.push(`参悟了【${nm}】${tag(k)}`)}}
 return out}
 // 修炼用丹：战斗外的丹药会自己服下；战斗用丹（疗伤、金刚、爆元、御风）留到战斗中用
@@ -536,7 +570,7 @@ if(khv(kt,'P12')&&(D.lim==null?14:D.lim)<14){use('P12','，打破天命枷锁');
 if(khv(kt,'P13')&&D.r&&D.r.t in WUP){use('P13','');D.k=k;washRoot(D,0)}
 return r}
 // 每过一年：攒灵石、凭机缘得物、参悟玉简、备齐阵法材料、服丹修炼
-function kYear(o,ty,y,k){if(!o)return;const pet=ty=='pet',R=pet?lvR(o.lv):Math.min(4,o.s/3|0),kt=kitOf(o,pet?null:R),nm=pet?MB[o.i][0]:nmK(k),sp0=pet?[]:DT[DLC[k][2]].sp,out=[];
+function kYear(o,ty,y,k){if(!o)return;const pet=ty=='pet',R=pet?lvR(o.lv):Math.min(4,o.s/3|0),kt=kitOf(o,pet?null:R),nm=pet?pN(o):nmK(k),sp0=pet?[]:DT[DLC[k][2]].sp,out=[];
 for(let n=0;n<Math.min(y,20);n++){kt.st+=Math.round(ri(2,6)*SC[R]);
 out.push(...kLearn(kt,sp0));
 if(pt(14)){const q=kPool(R);kadd(kt,q);out.push(`得了一份机缘：【${inf(q)[0]}】${tag(q)}`)}
@@ -547,22 +581,22 @@ out.push(...kPills(o,ty,kt,k))}
 out.forEach(t=>kLog(kt,t));
 if(out.length&&(ty=='dl'||pet))S(`【活人感】${nm}${pet?'（人形）':''}：${out.join('；')}。`,'b')}
 // 主角赠送法术、秘术玉简（灵兽须8级化形后才能参悟）
-const kKnow=(kt,k,sp0=[])=>{const i=+k.slice(1);return(k[0]=='S'?kt.sp.includes(i)||sp0.includes(i):kt.se.includes(i))||khv(kt,k)>0};
+const kKnow=(kt,k,sp0=[])=>{const i=+k.slice(1);return(k[0]=='S'?kt.sp.includes(i)||sp0.includes(i):k[0]=='M'?kt.mt==i:kt.se.includes(i))||khv(kt,k)>0};
 const NOG=['P2','P8'];
-function giveJ(t,x,k){if(C||!hv(k)||!'STPA'.includes(k[0]))return;const o=t=='d'?G.dl:t=='n'?G.np[x]:G.bz[x];if(!o)return;
-if(t=='b'&&o.lv<8){say(`${MB[o.i][0]}尚未化为人形（需8级），还无法收下这些东西（丹药可直接在灵兽袋中喂给它）。`);return}
+function giveJ(t,x,k){if(!G.lr)return;if(C||!hv(k)||!'STPAM'.includes(k[0]))return;const o=t=='d'?G.dl:t=='n'?G.np[x]:G.bz[x];if(!o)return;
+if(t=='b'&&o.lv<8){say(`${pN(o)}尚未化为人形（需8级），还无法收下这些东西（丹药可直接在灵兽袋中喂给它）。`);return}
 if(t=='n'&&(o.st!=0||isDL(x)))return;if(NOG.includes(k)){say('TA 没有灵力，用不上这枚丹药。');return}
-const kk=t=='d'?o.k:x,nm=t=='b'?MB[o.i][0]:nmK(kk),sp0=t=='b'?[]:DT[DLC[kk][2]].sp,kt=t=='b'?kitOf(o):kitOf(o,o.s/3|0),who=t=='b'?'化为人形的它':TA(kk);
-if('ST'.includes(k[0])){if(kKnow(kt,k,sp0)){say(`${nm}已经通晓或正在参悟【${IT[k][4]}】，无需再送。`);return}tk(k);kadd(kt,k);kt.lq.push(k);kLog(kt,`收到你赠的【${IT[k][4]}】`);
-S(`你将【${IT[k][0]}】${tag(k)}赠予${nm}。${who}郑重收下：“待我参悟透彻，下次并肩作战时便能施展。”（约一年后参悟完成）`,'g');return}
+const kk=t=='d'?o.k:x,nm=t=='b'?pN(o):nmK(kk),sp0=t=='b'?[]:DT[DLC[kk][2]].sp,kt=t=='b'?kitOf(o):kitOf(o,o.s/3|0),who=t=='b'?'化为人形的它':TA(kk);
+if('STM'.includes(k[0])){if(kKnow(kt,k,sp0)){say(`${nm}已经通晓或正在参悟【${IT[k][4]}】，无需再送。`);return}tk(k);kadd(kt,k);kt.lq.unshift(k);kLog(kt,`收到你赠的【${IT[k][4]}】`);
+S(k[0]=='M'?`你将【${IT[k][0]}】${tag(k)}赠予${nm}。${who}捧着玉简看了许久：“我会改修此功。”（约一年后参悟完成，之后改以《${IT[k][4]}》为主修，获得它的全部加成：${MT[+k.slice(1)][1]}）`:`你将【${IT[k][0]}】${tag(k)}赠予${nm}。${who}郑重收下：“待我参悟透彻，下次并肩作战时便能施展。”（约一年后参悟完成）`,'g');return}
 tk(k);kadd(kt,k);kLog(kt,`收到你赠的【${IT[k][0]}】`);
 S(`你将【${IT[k][0]}】${tag(k)}赠予${nm}。${who}${k[0]=='A'?'掂了掂，眼睛一亮：“好东西！下次并肩作战时就用它。”（法宝放进 TA 的储物袋，战斗中自动使用，不占佩戴栏）':'郑重收下。（战斗外的丹药 TA 会在下一年自行服用，战斗用的丹药留到战斗中使用）'}`,'g');
 if(k[0]=='P'&&!C){const R0=t=='d'?G.dl:t=='n'?G.np[x]:o;const r=kPills(R0,t=='d'?'dl':t=='n'?'np':'pet',kt,kk);if(r.length)S(`${nm}${r.join('；')}。`,'g')}}
-function giftUI(t,x,kt,sp0){const L=Object.keys(G.iv).filter(k=>'STPA'.includes(k[0])).sort(),g=c=>L.filter(k=>c.includes(k[0]));const row=(ks,lab)=>ks.length?`<div class="ch">${ks.map(k=>{const kn='ST'.includes(k[0])&&kKnow(kt,k,sp0),ng=NOG.includes(k);return B(`赠${IT[k][4]}${tag(k)}×${hv(k)}${kn?'（已会）':ng?'（用不上）':''}`,`act(()=>giveJ('${t}',${x},'${k}'))`,!!C||kn||ng)}).join('')}</div>`:'';
-return`<div class="lb">赠送玉简、丹药、法宝（玉简约一年后参悟完成；丹药 TA 会自行服用；法宝战斗中自动使用）</div>`+(L.length?row(g('ST'))+row(g('P'))+row(g('A')):'<p class="no">储物袋中没有可以赠送的玉简、丹药或法宝。</p>')}
+function giftUI(t,x,kt,sp0){const L=Object.keys(G.iv).filter(k=>'STPAM'.includes(k[0])).sort(),g=c=>L.filter(k=>c.includes(k[0]));const row=(ks,lab)=>ks.length?`<div class="ch">${ks.map(k=>{const kn='STM'.includes(k[0])&&kKnow(kt,k,sp0),ng=NOG.includes(k);return B(`赠${IT[k][4]}${tag(k)}×${hv(k)}${kn?'（已会）':ng?'（用不上）':''}`,`act(()=>giveJ('${t}',${x},'${k}'))`,!!C||kn||ng)}).join('')}</div>`:'';
+return`<div class="lb">赠送（玉简约一年后参悟；主修玉简会让 TA 改修此功、获得全局加成；丹药 TA 自行服用；法宝战斗中自动使用）</div>`+(L.length?row(g('M'))+row(g('ST'))+row(g('P'))+row(g('A')):'<p class="no">储物袋中没有可以赠送的玉简、丹药或法宝。</p>')}
 function kitHTML(kt,sp0=[],bt=0){if(!kt)return'';const li=a=>a.length?a.join('、'):'<span class="no">无</span>',sp=[...new Set([...sp0,...kt.sp])],ks=kIt(kt),pend=ks.filter(k=>'STZM'.includes(k[0])),oth=ks.filter(k=>!'STZM'.includes(k[0]));
 return`${bt?'<h3>修行 · 储物袋</h3>':'<div class="lb">修行 · 储物袋（活人感：TA 会自寻机缘、参悟玉简、服丹修炼）</div>'}<div class="kgv">主修：${kt.mt>=0?`《${MT[kt.mt][0]}》${tag('M'+kt.mt)}`:'<span class="no">无</span>'}<br>法术：${li(sp.map(i=>SP[i][0]+tag('S'+i)))}<br>秘术：${li(kt.se.map(i=>SE[i][0]+tag('T'+i)))}<br>阵法：${li(kt.zf.map(i=>ZF[i][0]+tag('Z'+i)))}<br>储物袋：灵石 ${fm(Math.round(kt.st||0))}${oth.length?'、'+oth.map(k=>`${inf(k)[0]}${tag(k)}${kt.iv[k]>1?'×'+kt.iv[k]:''}`).join('、'):''}${pend.length?`<br>待参悟：${pend.map(k=>IT[k][4]+tag(k)).join('、')}`:''}${!bt&&kt.lg&&kt.lg.length?`<br><small style="color:var(--dm)">近来：${kt.lg.slice(-4).reverse().map(e=>`${e.a}岁·${e.t}`).join('；')}</small>`:''}</div>`}
-const petKitUI=(z,x)=>z.lv>=8?kitHTML(kitOf(z))+giftUI('b',x,kitOf(z),[]):`<p class="no" style="margin:6px 0 0">🐾 灵兽达到8级（元婴级）时会化为人形，之后能自寻机缘、自备储物袋，你也可以赠它法术、秘术玉简。</p>`;
+const petKitUI=(z,x)=>z.lv>=8?kitHTML(kitOf(z))+giftUI('b',x,kitOf(z),[]):`<p class="no" style="margin:6px 0 0">🐾 灵兽达到8级（元婴级）时会化为人形，之后能自寻机缘、自备储物袋，你也可以赠它主修、法术、秘术玉简与丹药、法宝。</p>`;
 // ----- 敌方的修行档案：按境界生成（多人围攻时按人数系数降低） -----
 function genKit(cs,f=1,bst=0,el=0){const R=Math.min(4,cs/3|0),kt=mkKit(),gm=Math.min(4,R+1+(el?1:0)),bo=R*.5+(el?1.5:0),P=g=>g<=gm;f*=bst?.6:1;if(el){f=Math.max(f,1);kadd(kt,pool(['A'],g=>g<=gm&&g>=Math.min(3,R),bo));if(pt(50))kadd(kt,pool(['A'],P,bo));const L=[2,3,4,5,6,7,9].filter(i=>rar('T'+i)[0]<=gm);kt.se.push(wp(L,i=>RA['T'+i][1]+(rar('T'+i)[0]>=2?20:0)));kadd(kt,pool(['P'],P,bo));}
 kt.st=Math.round(ri(1,4)*SC[R]);
@@ -579,68 +613,107 @@ return kt}
 // ----- 战斗中：有修行档案的单位使用的法宝、法术、秘术、丹药、阵法 -----
 const uArts=U=>{const L=[...(U.eq||[])],kt=U.kt;if(kt)kIt(kt).forEach(k=>{if(k[0]=='A'&&!L.includes(k))L.push(k)});return L};
 const uSpL=U=>[...new Set([...(U.cv?U.cv.sp:[]),...(U.dl?dlS(U.D).sp:[]),...(U.kt?U.kt.sp:[])])];
-function pickSp(U,L,p=55){if(!L.length||U.ccd>0)return-1;const al=allyOf(U);if(!al.length)return-1;const av=al.reduce((a,t)=>a+hpr(t),0)/al.length,lo=hpr(lowest(al)),noSh=al.filter(t=>t.sh<t.H*.05).length,deb=al.some(t=>nDeb(t)>0);
-const sup=L.filter(i=>{const o=SP[i][3];return o.nd&&(o.hlA&&(av<.7||lo<.4)||o.shA&&(av<.8||lo<.5)&&noSh>=Math.ceil(al.length/2))});if(sup.length&&pt(80))return pk(sup);
-const dm=L.filter(i=>!SP[i][3].nd),cl=dm.filter(i=>SP[i][3].cl&&deb);if(cl.length&&pt(70))return cl[0];
-return dm.length&&pt(p)?pk(dm):-1}
-function uSp(U,si){const s=SP[si],o=s[3],en=isE(U),T=en?foeLow():TE(),x=[];U.ccd=o.cd||1;let ex='';
+
+function uSp(U,si){CUR=SP[si][0];const s=SP[si],o=s[3],en=isE(U),T=en?foeLow():TE(),x=[];if(U.mpM!=null)U.mp=Math.max(0,U.mp-s[1]);if(o.cd){U.scd=U.scd||{};U.scd[si]=o.cd+1}let ex='';
 if(!o.nd&&T&&SPX(o)){const[xx,,h]=xHit(U,T,o,spm(si)/1.2);x.push(...xx);if(!o.aoe&&T.h>0){['bl','pa'].forEach(q=>{if(o[q])x.push(ap(T,q,o[q]))})}}
 else if(!o.nd&&T){let m=spm(si)/1.2;if(o.dbl&&pt(o.dbl)){m*=2;ex='伤害翻倍！'}const r=hit(U,T,m);x.push(`${T.n}受${dt(r)}`);if(!r[2]){['bn','bl','pa'].forEach(q=>{if(o[q])x.push(ap(T,q,o[q]))});if(o.po)x.push(ap(T,'po',o.po,s[0]));if(o.dr&&r[0])x.push(hTx(hLow(U,()=>r[0]*o.dr),'吸血回复'))}}
 if(o.hl)x.push(hTx(hLow(U,t=>t.H*o.hl)));if(o.sh)x.push(sTx(sLow(U,t=>t.H*o.sh)));
 x.push(...grp(U,o));if(o.qk)x.push(ap(U,'qk',o.qk,o.qt));if(o.swA)(en?ourSide():AE()).forEach(t=>x.push(ap(t,'sw',o.swA,3)));
 S(`${U.n}掐诀施展【${s[0]}】，${ex}${x.filter(Boolean).join('，')}。`,en?'e':'b')}
 function zOK(U,i){const kt=U.kt,q=ZF[i][1];if(!kt||!kt.zf.includes(i)||U.za&&U.za[i]>0)return 0;let a=0,b=0;for(const j in U.za||{})if(U.za[j]>0){a+=ZF[j][1][0];b+=ZF[j][1][1]}return khv(kt,'W3')-a>=q[0]&&khv(kt,'W4')-b>=q[1]&&kt.st>=q[2]}
-function uZf(U,i){const z=ZF[i],o=z[3],q=z[1],kt=U.kt,en=isE(U),T=en?foeLow():TE(),r=[];U.za=U.za||{};U.za[i]=o.zt;kt.st-=q[2];
+function uZf(U,i){CUR=ZF[i][0];const z=ZF[i],o=z[3],q=z[1],kt=U.kt,en=isE(U),T=en?foeLow():TE(),r=[];U.za=U.za||{};U.za[i]=o.zt;kt.st-=q[2];
 if(o.d&&T){const h=hit(U,T,o.d);r.push(`对${T.n}造成${dt(h)}`);if(!h[2]){if(o.wk){const x=ap(T,'wk',o.wk);if(x)r.push(x)}if(o.lock&&!T.im){T.sk=Math.max(T.sk||0,o.lock);r.push(`${T.n}被困锁${o.lock}回合`)}}}
 r.push(...grp(U,o));if(o.bf){const x=ap(U,'bf',o.bf);if(x)r.push(x)}
 if(o.qkA)allyOf(U).forEach(t=>{const x=ap(t,'qk',o.qkA,o.qt);if(x)r.push(x)});
 if(o.zf){(C.zx=C.zx||[]).push({u:U,t:o.zf[0],m:o.zf[1],n:z[0]});r.push(`剑气弥漫战场，将持续${o.zf[0]}回合`)}
 S(`${U.n}祭出${q[0]}面阵盘、${q[1]}面阵旗，布下【${z[0]}】：${z[2]}，${r.filter(Boolean).join('，')}。`,en?'e':'b')}
 
-// 神识查探（天眼通 / 窥天镜）
-function scanHTML(E){const a=mySn(),b=snOf(E);if(a<b*.7)return R(`${E.n} ${elv(E)}`,`你的神识（${a}）刚一触到对方，便被一股更强大的神识（约${b}）狠狠弹了回来！对方的底细，你一无所知。`);
-const kt=E.kt,ks=kIt(kt);return R(`${E.n} ${elv(E)}${E.el?'<span class="rt rtD">精英</span>':''}`,`神识 ${b}（你 ${a}）· 气血 ${Math.max(0,Math.round(E.h))}/${Math.round(E.H)} · 速度 ${SPD(E)}${E.i>=0?`<br>天赋「${MB[E.i][4]}」：${MB[E.i][5]}`:''}`)+(kt?kitHTML(kt,E.cv?E.cv.sp:[],1):'<p class="no">没有储物袋，也没有修习功法。</p>')}
-function scanTxt(L){if(!canEye()||!L||!L.length)return'';const a=mySn();return'🔍 你的神识悄然扫过——'+L.map(s=>{const n=s[0]>=0?`${s[1]}级${MB[s[0]][0]}`:s[2],b=snE(s);if(a<b*.7)return`${n}：神识被弹回（对方神识更强）`;const kt=s[5],ks=kt?kIt(kt).filter(k=>'ASTPZM'.includes(k[0])).sort((x,y)=>rar(y)[0]-rar(x)[0]):[],se=kt?(kt.se||[]).map(i=>SE[i][0]):[];return`${n}（神识${b}）：${[...se.map(x=>'秘术'+x),...ks.slice(0,3).map(k=>inf(k)[0]+tag(k))].join('、')||'身无长物'}${kt&&kt.st?`，灵石约${kt.st}`:''}`}).join('；')+'。'}
+
+// 神识查探（v1.9.2）：只能看穿神识比你弱的对手；神识不弱于你的，一律显示 ???
+const scOK=E=>canEye()&&snOf(E)<mySn(),scOKs=s=>canEye()&&snE(s)<mySn();
+const DGN=['弱于你','旗鼓相当','高你一级','高你两级','高你三级'],DGI=['🟢','⚪','🟡','🟠','💀'],dgD=d=>d<0?0:Math.min(4,d+1);
+const dgOf=E=>dgD((E.cv?cvL(E.cs):E.lv)-Lp()),dgOfs=s=>dgD((s[0]>=0?s[1]:cvL(csOf(s)))-Lp());
+const dgChip=(t,j)=>`<button class="dgb dg${t}" ${j!=null?`onclick="event.stopPropagation();po('sc',${j})"`:''} title="神识查探：${DGN[t]}（点击查看详情）">${DGI[t]} ${DGN[t]}</button>`,dgQ=j=>`<button class="dgb dgq" ${j!=null?`onclick="event.stopPropagation();po('sc',${j})"`:''} title="对方神识不弱于你，看不穿">❔ ???</button>`;
+function scanHTML(E){const a=mySn(),b=snOf(E);if(!scOK(E))return`<div class="scr dgq">❔ ???</div>`+R(`${E.n}`,`你的神识（${a}）刚一触到对方，便被一股不弱于你的神识狠狠弹了回来！对方的修为、宝物与底细，你一无所知。<br><small>神识查探只能看穿神识比你弱的对手。修炼《紫府养神经》、服用养魂丹、持有养魂木都能提升神识。</small>`);
+const t=dgOf(E),kt=E.kt;return`<div class="scr dg${t}">${DGI[t]} ${DGN[t]}</div>`+R(`${E.n} ${elv(E)}${E.el?'<span class="rt rtD">精英</span>':''}`,`神识 ${b}（你 ${a}）· 气血 ${Math.max(0,Math.round(E.h))}/${Math.round(E.H)} · 速度 ${SPD(E)}${E.i>=0?`<br>天赋「${MB[E.i][4]}」：${MB[E.i][5]}`:''}`)+(kt?kitHTML(kt,E.cv?E.cv.sp:[],1):'<p class="no">没有储物袋，也没有修习功法。</p>')}
+function scanTxt(L){if(!canEye()||!L||!L.length)return'';return'🔍 你的神识悄然扫过——'+L.map(s=>{const n=s[0]>=0?`${MB[s[0]][0]}`:s[2];if(!scOKs(s))return`${n}：<span class="dgt dgq">❔ ???</span>（神识被弹回）`;const t=dgOfs(s),kt=s[5],ks=kt?kIt(kt).filter(k=>'ASTPZM'.includes(k[0])).sort((x,y)=>rar(y)[0]-rar(x)[0]):[],se=kt?(kt.se||[]).map(i=>SE[i][0]):[];return`${n}<span class="dgt dg${t}">${DGI[t]} ${DGN[t]}</span>：${[...se.map(x=>'秘术'+x),...ks.slice(0,3).map(k=>inf(k)[0]+tag(k))].join('、')||'身无长物'}${kt&&kt.st?`，灵石约${kt.st}`:''}`}).join('；')+'。'}
+const DGS=['此敌修为弱于你，可放手一搏','与你修为相当，胜负难料','对方修为高你一级，谨慎应对','对方修为高你两级，务必小心！','对方修为高你三级——快想办法脱身！'];
+function scanBang(L){if(!canEye()||!L.length)return;const ok=L.filter(scOK),ts=ok.map(dgOf),m=ts.length?Math.max(...ts):-1,q=L.length-ok.length;if(m<0)bang('❔ 看不穿','神识查探 · 对方神识不弱于你','scq');else bang(`${DGI[m]} ${DGN[m]}`,`神识查探 · ${DGS[m]}${q?`（另有${q}人看不穿）`:''}`,'sc'+m)}
 // 敌人血影遁走：连同储物袋一起逃掉
 function flee(U){C.EN=C.EN.filter(e=>e!==U);if(C.lkE===U)C.lkE=null;S(`${U.n}见势不妙，燃烧精血施展【血影遁】，化作一道血光遁走${kIt(U.kt).length||U.kt&&U.kt.st?'，连同储物袋一起逃之夭夭':''}！`,'e');TE()}
 const kLeft=U=>{if(U.r)return pLz(U.r)-(U.r.ag||0);const r=U.D&&dRec(U.D);return r?nLife(r)-nAge(r):99},kAge=(U,y)=>{if(U.r)U.r.ag=(U.r.ag||0)+y;else{const r=U.D&&dRec(U.D);if(r)r.ao=(r.ao||0)+y}};
-function kAct(U){const kt=U.kt;if(!kt||!C||!alive(U))return 0;const en=isE(U),al=allyOf(U),lo=lowest(al),hr=hpr(U),av=al.reduce((a,t)=>a+hpr(t),0)/Math.max(1,al.length),se=kt.se||[],su=U.su=U.su||{},n=U.n,say=x=>S(x,en?'e':'b');
-if(en&&se.includes(2)&&!su[2]&&hr<.25&&pt(60)){su[2]=1;flee(U);return 1}
-if(se.includes(7)&&!su[7]&&av<.45&&kLeft(U)>3){su[7]=1;U.nv=1;kAge(U,3);const t=al.reduce((a,x)=>a+heal(x,Math.round(x.H*.6)),0),c=al.reduce((a,x)=>a+clean(x),0);al.forEach(x=>immu(x,3));say(`${n}燃烧三年寿元施展【涅槃秘法】，凤凰虚影冲天，涅槃真火席卷${en?'敌阵':'我方'}：共回复${t}点气血${c?`，净化${c}个负面效果`:''}，并免疫负面效果3回合，还种下了涅槃火种！`);return 1}
-if(se.includes(9)&&(U.shm||0)<2&&pt(35)){const T=en?foeLow():TE();if(T){U.shm=(U.shm||0)+1;const a=snOf(U),b=snOf(T);if(a>=b*1.2&&!T.im&&!T.gh){const h=sHit(U,T,1.2);T.sk=Math.max(T.sk||0,2);say(`${n}施展【摄魂术】，神识狠狠压入${nmX(T)}的识海：${nmX(T)}陷入幻境2回合，并受到${sdt(h)}！`)}else{const x=Math.round(U.H*.1);U.h=Math.max(1,U.h-x);say(`${n}施展【摄魂术】，却被${nmX(T)}的神识反震，气血-${x}。`)}return 1}}
-if(nDeb(U)>=2&&khv(kt,'P17')){ktk(kt,'P17');const c=clean(U);immu(U,2);say(`${n}服下【清心丹】，净化了${c}个负面效果，并免疫负面效果2回合。`);return 1}
-if(se.includes(6)&&!su[6]&&hr<.45){su[6]=1;const y=heal(U,Math.round(U.H*.5)),c=clean(U);immu(U,3);say(`${n}施展【龟息归元】，元气归根：回复${y}点气血${c?`，净化${c}个负面效果`:''}，并免疫负面效果3回合。`);return 1}
-if(se.includes(5)&&!su[5]&&hr<.7){su[5]=1;const x=Math.round(U.H*.3);U.sh+=x;immu(U,2);say(`${n}运转【金刚护体】，周身金光大作：获得${x}点护盾，并免疫负面效果2回合。`);return 1}
-if(lo&&hpr(lo)<.4&&khv(kt,'P1')){ktk(kt,'P1');say(`${n}服下【疗伤丹】，${hTx(hLow(U,t=>t.H*.6))}。`);return 1}
-if(lo&&hpr(lo)<.6&&lo.sh<lo.H*.05&&khv(kt,'P4')){ktk(kt,'P4');say(`${n}服下【金刚丹】，${sTx(sLow(U,t=>t.H*.3))}。`);return 1}
-const zs=kt.zf.filter(i=>zOK(U,i));if(zs.length&&pt(70)){uZf(U,pk(zs));return 1}
-if(se.includes(3)&&!su[3]&&C.t<=3&&pt(45)){su[3]=1;U.bld=1;U.bf={p:Math.max(50,U.bf?U.bf.p:0),t:99,ft:1};say(`${n}咬破舌尖施展【燃血秘术】，精血化作赤红战意（强化50%，持续整场战斗）！`);return 1}
-if(se.includes(4)&&!su[4]&&C.t<=3&&pt(35)){su[4]=1;U.qk={p:100,t:99,ft:1};say(`${n}施展【燃魂疾影】，身形化作一道疾影（疾速100%，持续整场战斗）！`);return 1}
-if(!U.bf&&khv(kt,'P5')&&pt(50)){ktk(kt,'P5');const c=Math.round(U.H*.15);U.h=Math.max(1,U.h-c);U.bf={p:80,t:3};say(`${n}服下【爆元丹】，气血沸腾（损失${c}点气血），3回合攻击威力×1.8。`);return 1}
-if(!U.qk&&khv(kt,'P10')&&pt(40)){ktk(kt,'P10');U.qk={p:40,t:4};say(`${n}服下【御风丹】，清风绕体，疾速（40%）持续4回合。`);return 1}
-return 0}
+
+
+// ===== 聪明的战斗（v1.9.1）：同伴、灵兽、敌人共用的出招决策 =====
+// 每次出手前，先按需服用丹药（不占出手）；再给所有可用的法术、法宝、秘术、阵法打分，选分数最高的一项（占一次出手）；
+// 都不如普攻 / 天赋攻击划算时就普攻。打分会看：伤害倍率、克制（破盾打护盾、照妖镜打妖兽、神识攻击打神识弱者、驱散打增益、斩杀打残血）、
+// 我方伤势（越危急越优先治疗、护盾、保命）、负面效果（净化）、人数（群攻、群疗）、稀有度（同分时优先更稀有的）。
+const RAR=k=>{const r=rar(k);return r?r[0]:0};
+function aiX(U){const en=isE(U),al=allyOf(U),fo=en?ourSide():AE(),T=en?foeLow():TE();if(!T||!al.length)return null;const lo=lowest(al);
+return{en,al,fo,T,loU:lo,lo:hpr(lo),av:al.reduce((a,t)=>a+hpr(t),0)/al.length,deb:al.reduce((a,t)=>a+nDeb(t),0),me:hpr(U)}}
+function effV(U,o,m,X){let v=0;const T=X.T,n=X.fo.length,bst=!T.cv&&T.i>=0;
+if(m||o.aoe||o.sd||o.sdm){let mm=m||0;if(o.aoe)mm=(typeof o.aoe=='number'?o.aoe:mm*.45)*n;
+if(o.sd||o.sdm){mm=(o.sd||mm)*clamp(snOf(U)/Math.max(1,snOf(T)),.3,2.5)*(hasPas(T,'sn')?.5:1);if(T.sh>T.H*.1)mm*=1.25}
+else{if(o.brk&&T.sh>0)mm*=1.8;if(o.yao&&bst)mm*=o.yao;if(!o.brk&&T.sh>T.H*.2)mm*=.8}
+if(o.exe&&hpr(T)<.45&&!(T.lv-Lp()>=2&&isE(T)))mm+=2.5;if(o.dbl)mm*=1+o.dbl/100;if(T.gh)mm*=.2;v+=10*mm;
+const ok=!T.im;['bl','pa','ch'].forEach(q=>{if(o[q]&&ok)v+=o[q]/100*3});if(o.bn&&ok)v+=o.bn/100*2*(o.aoe?n:1);if(o.po&&ok)v+=o.po/10*2.5;if(o.wk&&ok)v+=o.wk/30*1.5;if(o.lock&&ok)v+=n>1?5:3;
+if(o.swA)v+=o.swA/100*1.5*n;if(o.paA)v+=o.paA/100*3*n;if(o.dsp&&(T.bf||T.qk||T.sh>0||T.im))v+=4+(T.sh>0?T.sh/T.H*12:0);if(o.dr)v+=o.dr*m*(1-X.lo)*8;if(o.self)v-=o.self*(X.me<.4?12:4)}
+const urg=X.lo<.3?2.5:X.lo<.5?1.7:X.lo<.7?1.2:.7;
+if(o.hlA)v+=X.al.reduce((a,t)=>a+Math.min(1-hpr(t),o.hlA),0)*15*urg;if(o.hl)v+=Math.min(1-X.lo,o.hl)*15*urg;
+if(o.shA)v+=X.al.filter(t=>t.sh<t.H*.1).length*o.shA*10*(n>1?1.2:1)*(X.av<.8?1.3:1);if(o.sh)v+=(X.loU.sh<X.loU.H*.1?o.sh*14:o.sh*3)*(X.lo<.6?1.5:1);
+if(o.clA)v+=X.deb*3.5;if(o.cl)v+=Math.min(3,nDeb(debT(U)))*3.5;if(o.imA)v+=X.al.filter(t=>!t.im).length*(X.deb?1.5:.5);if(o.imT)v+=1;
+if(o.bfA)v+=X.al.length*o.bfA/100*5;if(o.bf)v+=o.bf/100*6*(U.bf?.6:1);if(o.qk)v+=U.qk?.5:2;if(o.qkA)v+=X.al.length*.8;if(o.again)v+=7;
+return v}
+// 秘术（不耗灵力，多为每场限次）
+function seV(U,i,X){const su=U.su||{},hr=X.me,T=X.T;if(i==2)return X.en&&!su[2]&&hr<.25?40:0;
+if(i==7)return!su[7]&&X.av<.45&&kLeft(U)>3?28+X.al.length*2:0;if(i==6)return!su[6]&&hr<.45?22:0;if(i==5)return!su[5]&&hr<.7?12+(X.fo.length>2?3:0):0;
+if(i==3)return!su[3]&&C.t<=3?14:0;if(i==4)return!su[4]&&C.t<=3&&!U.qk?8:0;if(i==9)return(U.shm||0)<2&&!T.im&&!T.gh&&snOf(U)>=snOf(T)*1.2?(T.H>U.H?20:15):0;return 0}
+function seDo(U,i,X){const al=X.al,n=U.n,say=x=>S(x,X.en?'e':'b'),su=U.su=U.su||{};CUR=SE[i][0];
+if(i==2){su[2]=1;flee(U);return}
+if(i==7){su[7]=1;U.nv=1;kAge(U,3);const t=al.reduce((a,x)=>a+heal(x,Math.round(x.H*.6)),0),c=al.reduce((a,x)=>a+clean(x),0);al.forEach(x=>immu(x,3));say(`${n}燃烧三年寿元施展【涅槃秘法】，凤凰虚影冲天：${X.en?'敌方':'我方'}全体共回复${t}点气血${c?`，净化${c}个负面效果`:''}，免疫负面效果3回合，并种下涅槃火种！`);return}
+if(i==6){su[6]=1;const y=heal(U,Math.round(U.H*.5)),c=clean(U);immu(U,3);if(U.mpM)U.mp=Math.min(U.mpM,U.mp+30);say(`${n}施展【龟息归元】：回复${y}点气血${c?`，净化${c}个负面效果`:''}，免疫负面效果3回合。`);return}
+if(i==5){su[5]=1;const x=Math.round(U.H*.3);U.sh+=x;immu(U,2);say(`${n}运转【金刚护体】：获得${x}点护盾，免疫负面效果2回合。`);return}
+if(i==3){su[3]=1;U.bld=1;addS(U,'bf','燃血秘术',50,99,{ft:1});say(`${n}咬破舌尖施展【燃血秘术】：强化50%，持续整场战斗！`);return}
+if(i==4){su[4]=1;addS(U,'qk','燃魂疾影',100,99,{ft:1});say(`${n}施展【燃魂疾影】：疾速100%，持续整场战斗！`);return}
+if(i==9){U.shm=(U.shm||0)+1;const T=X.T,h=sHit(U,T,1.2);T.sk=Math.max(T.sk||0,2);say(`${n}施展【摄魂术】，神识狠狠压入${nmX(T)}的识海：${nmX(T)}陷入幻境2回合，并受到${sdt(h)}！`)}}
+// 丹药：不占出手，按需服用（每次出手前最多两颗）
+function aiPill(U){const kt=U.kt;if(!kt||!C)return;const en=isE(U),al=allyOf(U),say=x=>S(x,en?'e':'b');let n=0,f=1;const use=k=>{ktk(kt,k);n++;CUR=PL[+k.slice(1)][0];f=pEff(U.pn||0);U.pn=(U.pn||0)+1};
+const lo=lowest(al),ok=()=>pEff(U.pn||0)>=.3;if(nDeb(U)>=2||U.sk>0||U.pa==2){if(khv(kt,'P17')){use('P17');const c=clean(U);immu(U,Math.max(1,Math.round(2*f)));say(`${U.n}服下【清心丹】（不占出手），净化了${c}个负面效果，免疫负面效果2回合。`)}}
+if(n<2&&ok()&&lo&&hpr(lo)<.4&&khv(kt,'P1')){use('P1');say(`${U.n}服下【疗伤丹】（不占出手），${hTx(hLow(U,t=>t.H*.6*f))}。`)}
+if(n<2&&ok()&&lo&&hpr(lo)<.6&&lo.sh<lo.H*.05&&khv(kt,'P4')){use('P4');say(`${U.n}服下【金刚丹】（不占出手），${sTx(sLow(U,t=>t.H*.3*f))}。`)}
+if(n<2&&ok()&&U.mpM&&U.mp<30&&khv(kt,'P2')){use('P2');U.mp=Math.min(U.mpM,U.mp+Math.round(60*f));say(`${U.n}服下【回灵丹】（不占出手），灵力大涨。`)}
+if(n<2&&ok()&&hpr(U)>.5&&!srcL(U.bf).includes('爆元丹')&&C.t<=4&&khv(kt,'P5')){use('P5');const c=Math.round(U.H*.15);U.h=Math.max(1,U.h-c);addS(U,'bf','爆元丹',Math.round(80*f),3);say(`${U.n}服下【爆元丹】（不占出手）：损失${c}点气血，3回合攻击×1.8。`)}
+if(n<2&&ok()&&!srcL(U.qk).includes('御风丹')&&khv(kt,'P10')){use('P10');addS(U,'qk','御风丹',Math.round(40*f),4);say(`${U.n}服下【御风丹】（不占出手）：疾速40%，持续4回合。`)}}
+// 出招：返回 1 表示已经出手（占用这次行动）
+var EMP=50,EMS=.35;
+function aiAct(U,base){const X=aiX(U);if(!X)return 0;if(X.en&&!U.el&&pt(EMS*100))return 0;const kt=U.kt,C0=[];const nz=()=>rnd(0,1.2);
+uSpL(U).forEach(si=>{const s=SP[si];if(U.mpM!=null&&U.mp<s[1])return;if(U.scd&&U.scd[si]>0)return;C0.push([effV(U,s[3],s[3].nd?0:spm(si)/1.2,X)+RAR('S'+si)*.4+nz(),()=>uSp(U,si)])});
+uArts(U).forEach(k=>{const o=AF[+k.slice(1)][3];if(o.pas||U.ecd&&U.ecd[k]>0)return;C0.push([effV(U,o,o.d||0,X)+RAR(k)*.4+nz(),()=>useEq(U,k)])});
+if(kt){(kt.se||[]).forEach(i=>{const v=seV(U,i,X);if(v>0)C0.push([v+RAR('T'+i)*.4+nz(),()=>seDo(U,i,X)])});
+(kt.zf||[]).filter(i=>zOK(U,i)).forEach(i=>{const o=ZF[i][3];C0.push([effV(U,o,o.d||0,X)*1.25+(o.zf?o.zf[0]*o.zf[1]*6:0)+3+nz(),()=>uZf(U,i)])})}
+if(!C0.length)return 0;C0.sort((a,b)=>b[0]-a[0]);if(C0[0][0]<=base+nz())return 0;C0[0][1]();return 1}
 // 战后拾取敌方储物袋：袋中所有物品与灵石尽归你所有
 function lootB(E){const kt=E.kt,ks=kIt(kt),st=Math.max(0,Math.round(kt.st||0));ks.forEach(k=>add(k,kt.iv[k]));if(st)ST(st,`拾取储物袋·${E.n}`);const tx=[st?`灵石${st}`:'',...ks.map(k=>`【${inf(k)[0]}】${tag(k)}${kt.iv[k]>1?'×'+kt.iv[k]:''}`)].filter(Boolean);kt.iv={};kt.st=0;kt.lq=[];S(`你拾起${E.n}${E.cv?'':'（人形）'}的储物袋，袋中所有物品尽归你所有：${tx.length?tx.join('、'):'袋中空空如也'}。`,'g')}
 
 // 多敌人：C.EN为敌方列表，C.ti为当前攻击目标
 // 实时速度：基础速度×(1+疾速%)×(1-迟缓%)
 const SPD=T=>Math.max(1,Math.round((T.v0||1)*(1+(T.qk?T.qk.p:0)/100)*(1-(T.sw?T.sw.p:0)/100))),pspd0=()=>Math.round(sB(Math.max(1,G.s-1))*(1+(G.vb||0))*(isVar()&&G.lr.e==2?1.25:1));
-const AE=()=>C?C.EN.filter(e=>e.h>0):[],isE=T=>!!C&&C.EN.includes(T),cap=E=>!!E&&!E.cv&&G.se.includes(1)&&E.h>0&&E.h<E.H*.1;
+const AE=()=>C?C.EN.filter(e=>e.h>0&&!e.bnd):[],BND=()=>C?C.EN.filter(e=>e.h>0&&e.bnd):[],isE=T=>!!C&&C.EN.includes(T),cap=E=>!!E&&!E.cv&&G.se.includes(1)&&E.h>0&&E.h<E.H*.1;
 // ===== 锁敌（v1.4）=====
 // 默认：我方攻击敌方「剩余血量百分比」最低者，敌方攻击我方血量百分比最低者（同比例时打血量少的）。
-// 点击敌方单位可手动锁定目标，再次点击取消锁定；开启手下留情时，自动锁敌会跳过已可烙印的妖兽。
+// 点击敌方单位可手动锁定目标，再次点击取消锁定。
 const hpr=u=>Math.max(0,u.h)/Math.max(1,u.H),lowest=L=>L.length?L.reduce((a,b)=>hpr(b)<hpr(a)-1e-9||Math.abs(hpr(b)-hpr(a))<1e-9&&b.h<a.h?b:a):null;
 const ourSide=()=>C?[C.P,...C.B.filter(b=>b.h>0)]:[],allyOf=u=>isE(u)?AE():ourSide(),lowAlly=u=>lowest(allyOf(u)),foeLow=()=>lowest(ourSide());
 const nmX=T=>T&&T.me?'你':T?T.n:'';
 function TE(){if(!C)return null;const L=AE();if(!L.length){C.ti=0;return C.EN[0]||null}if(C.lkE&&L.includes(C.lkE)){C.ti=C.EN.indexOf(C.lkE);return C.lkE}C.lkE=null;
-const q=mercyOn()?L.filter(e=>!cap(e)):L,E=lowest(q.length?q:L);C.ti=C.EN.indexOf(E);return E}
+const E=lowest(L);C.ti=C.EN.indexOf(E);return E}
 function tgt(j){const E=C&&C.EN[j];if(!E||E.h<=0)return;C.lkE=C.lkE===E?null:E;TE()}
 // 单体治疗 / 护盾：自动施加给血量百分比最低的友方
 function hLow(u,f){const T=lowAlly(u);if(!T)return[null,0];const y=heal(T,Math.round(f(T)));return[T,y]}
 function sLow(u,f){const T=lowAlly(u);if(!T)return[null,0];const x=Math.round(f(T));T.sh+=x;return[T,x]}
 // 免疫 / 净化（v1.5）：免疫期间不会被施加任何负面效果；净化移除负面效果（按年计的精血亏损虚弱除外）
 const nDeb=T=>(T.wk&&!T.wk.yr?1:0)+(T.bn?1:0)+(T.bl?1:0)+Object.keys(T.po||{}).length+(T.pa?1:0)+(T.sk>0?1:0)+(T.sw?1:0)+(T.inj?1:0);
-function clean(T){const n=nDeb(T);if(T.wk&&!T.wk.yr)T.wk=0;T.bn=0;T.bl=0;T.po={};T.pa=0;T.sk=0;T.sw=0;T.inj=0;return n}
+function clean(T){const n=nDeb(T);cleanS(T,'wk');T.bn=0;T.bl=0;T.po={};T.pa=0;T.sk=0;T.sw=0;T.inj=0;return n}
 function immu(T,t){if(!T.im||T.im.t<t)T.im={t}}
 const debT=u=>{const L=allyOf(u);let b=null;L.forEach(t=>{if(!b||nDeb(t)>nDeb(b)||nDeb(t)==nDeb(b)&&hpr(t)<hpr(b))b=t});return b};
 function grp(u,o,fr=1){const r=[],L=allyOf(u);
@@ -652,17 +725,20 @@ if(o.bfA){let n=0;L.forEach(t=>{if(ap(t,'bf',o.bfA,o.bt||3))n++});r.push(n?`全�
 if(o.cl||o.imT){const T=debT(u);if(T){const n=o.cl?clean(T):0;if(o.imT)immu(T,o.imT);r.push(`${n?`净化了${nmX(T)}的${n}个负面效果，`:''}${o.imT?`${nmX(T)}免疫负面效果${o.imT}回合`:''}`)}}
 return r}
 const hTx=([T,y],w='回复')=>y?`为${nmX(T)}${w}${y}点气血`:'友方气血皆满',sTx=([T,x])=>`为${nmX(T)}凝出${x}点护盾`;
-function mercy(T,pv){const lo=Math.max(1,Math.ceil(T.H*.01));if(T.h>=lo)return 0;T.h=Math.max(1,Math.min(pv,Math.max(lo,Math.round(T.H*rnd(.01,.1)))));C.mh=1;return 1}
-const hit=(a,T,m)=>{if(T.gh)return[0,0,1];const pv=T.h,d=Math.round(a.a*m*rnd(.88,1.12)*(1+(a.bf?a.bf.p:0)/100)*(1-(a.wk?a.wk.p:0)/100)),s=Math.min(T.sh,d);T.sh-=s;T.h-=d-s;let dd=d;if(isE(T)&&!T.cv&&mercyOn()&&(a===C.P||C.B.includes(a))&&mercy(T,pv))dd=pv-T.h+s;return[dd,s]};
-const dt=r=>r[2]?'0点伤害（血影虚化，攻击落空）':`${r[0]}点伤害`+(r[1]?`（护盾抵挡${r[1]}点）`:''),heal=(T,x)=>{if(T.inj)x=Math.round(x/2);const y=Math.max(0,Math.min(x,T.H-T.h));T.h+=y;return y};
-const blk=T=>T===C.P&&bo('rs')&&!C.rsc&&pt(bo('rs'))&&(C.rsc=3);
+// 手下留情（v1.9.2）：只有「这一击会打死敌人」时才生效——敌人不死，改为被封禁；没开手下留情时照常阵亡
+function mercy(T,pv){if(T.bnd||T.h>0)return 0;T.h=1;bindE(T);return 1}
+// 封禁（v1.9.1）：手下留情时，将要倒下的敌人被封住经脉、捆缚当场——不能行动、不能被治疗，战后由你处置
+function bindE(T){T.bnd=1;T.sh=0;T.po={};T.bn=0;T.pa=0;T.sk=0;T.im=0;T.bf=0;T.qk=0;if(C.lkE===T)C.lkE=null;(C.bnL=C.bnL||[]).push(T.n)}
+const hit=(a,T,m)=>{if(T.gh||T.bnd)return[0,0,1];if(!a.me&&a.kt&&pt(kmt(a.kt,'dbl')))m*=2;const pv=T.h,d=Math.round(a.a*m*rnd(.88,1.12)*(1+(a.bf?a.bf.p:0)/100)*(1-(a.wk?a.wk.p:0)/100)),s=Math.min(T.sh,d);T.sh-=s;T.h-=d-s;let dd=d;if(isE(T)&&mercyOn()&&(a===C.P||C.B.includes(a))&&mercy(T,pv))dd=pv-T.h+s;return[dd,s]};
+const dt=r=>r[2]?'0点伤害（血影虚化，攻击落空）':`${r[0]}点伤害`+(r[1]?`（护盾抵挡${r[1]}点）`:''),heal=(T,x)=>{if(T.bnd)return 0;if(T.inj)x=Math.round(x/2);const y=Math.max(0,Math.min(x,T.H-T.h));T.h+=y;return y};
+const blk=T=>T===C.P?bo('rs')&&!C.rsc&&pt(bo('rs'))&&(C.rsc=3):!!T.kt&&kmt(T.kt,'rs')>0&&!(T.rsc>0)&&pt(kmt(T.kt,'rs'))&&(T.rsc=3);
 // 效果：虚弱wk 强化bf 燃烧bn 致盲bl 中毒po 麻痹pa 魅惑ch；虚弱/强化（x%）默认持续x回合
 function ap(T,k,p,x){p=Math.round(p);let ok=0,t='';const n=x||p;
 switch(k){
-case'wk':case'bf':ok=!T[k];t=`${T.n}${k=='wk'?'虚弱':'强化'}${p}%（${n}回合）`;break;
-case'qk':ok=!T.qk||(!T.qk.ft&&T.qk.p<p);t=`${T.n}疾速${p}%（${x||3}回合）`;break;
-case'sw':ok=!T.sw;t=`${T.n}迟缓${p}%（${x||3}回合）`;break;
-case'bn':ok=!T.bn&&pt(p);t=`${T.n}被点燃，持续燃烧3回合`;break;
+case'wk':case'bf':ok=p>0;t=`${T.n}${k=='wk'?'虚弱':'强化'}${p}%（${n}回合）`;break;
+case'qk':ok=p>0;t=`${T.n}疾速${p}%（${x||3}回合）`;break;
+case'sw':ok=p>0;t=`${T.n}迟缓${p}%（${x||3}回合）`;break;
+case'bn':ok=pt(p);t=`${T.n}被点燃，持续燃烧3回合`;break;
 case'bl':ok=!T.bl&&!T.cbl&&pt(p);t=`${T.n}被致盲，下一击必定落空`;break;
 case'po':ok=!T.po[x]&&p>0;t=`${T.n}中毒（每回合损失${p}%生命，3回合）`;break;
 case'pa':ok=!T.pa&&!T.cpa&&pt(p);t=`${T.n}被麻痹，下回合无法行动`;break;
@@ -670,37 +746,55 @@ case'ch':ok=!T.cch&&pt(p);t=`${T.n}陷入幻境，虚弱30%且下回合无法行
 if(!ok)return'';
 if(k!='bf'&&k!='qk'&&(T.im||T.gh))return T.gh?'':`${nmX(T)}免疫了${NG[k]}`;
 if(k!='bf'&&k!='qk'&&blk(T))return`混元之气护体，抵挡了一次${NG[k]}`;
-if(k=='wk'||k=='bf')T[k]={p,t:n};
-else if(k=='qk'||k=='sw')T[k]={p,t:x||3};
-else if(k=='bn')T.bn={t:3,m:x||1};
+const src=CUR||NG[k]||k;let nv=0;
+if(k=='wk'||k=='bf'){const o0=T[k];const had=srcL(o0).length&&!(o0.L[src]);addS(T,k,src,p,n);nv=had}
+else if(k=='qk'||k=='sw'){const o0=T[k];const had=srcL(o0).length&&!(o0.L[src]);addS(T,k,src,p,x||3);nv=had}
+else if(k=='bn'){const o0=T.bn;const had=srcL(o0).length&&!(o0.L[src]);addS(T,'bn',src,x||1,3);nv=had}
 else if(k=='bl'){T.bl=1;T.cbl=3}
 else if(k=='po')T.po[x]={p,t:3};
 else if(k=='pa'){T.pa=2;T.cpa=4}
-else if(k=='ch'){T.cch=3;T.sk=1;if(!T.wk)T.wk={p:30,t:30}}
+else if(k=='ch'){T.cch=3;T.sk=1;addS(T,'wk','魅惑',30,3)}
+if(nv&&T[k]&&T[k].p!=null)t+=`（叠加→${Math.round(T[k].p*(k=='bn'?100:1))/(k=='bn'?100:1)}${k=='bn'?'倍':'%'}）`;
 return t}
 function tickE(T){const pv=T.h,r=[];
-if(T.bn){const x=Math.max(1,Math.round(T.H*.05*T.bn.m));T.h-=x;r.push(`燃烧${x}点`);if(--T.bn.t<=0)T.bn=0}
+if(T.bn){const x=Math.max(1,Math.round(T.H*.05*T.bn.p));T.h-=x;r.push(`燃烧${x}点`);tickS(T,'bn')}
 for(const k in T.po){const x=Math.max(1,Math.round(T.H*T.po[k].p/100));T.h-=x;r.push(`${k}毒伤${x}点`);if(--T.po[k].t<=0)delete T.po[k]}
-['wk','bf','qk','sw'].forEach(k=>{const v=T[k];if(v&&!v.yr&&!v.ft&&--v.t<=0)T[k]=0});
+['wk','bf','qk','sw'].forEach(k=>tickS(T,k));
 if(T.im&&--T.im.t<=0)T.im=0;
 ['cbl','cpa','cch'].forEach(k=>{if(T[k]>0)T[k]--});
-if(isE(T)&&!T.cv&&mercyOn())mercy(T,pv);if(r.length)S(`${T.n}受持续伤害：${r.join('，')}。`,T===C.P||C.B.includes(T)?'e':'p')}
+if(isE(T)&&mercyOn())mercy(T,pv);if(r.length)S(`${T.n}受持续伤害：${r.join('，')}。`,T===C.P||C.B.includes(T)?'e':'p')}
 // 灵兽死亡反噬：仅烙印虚弱（30%）持续30回合，滴血认主虚弱（50%）持续50回合；多只不叠加，取高者
-const bk=p=>{const P=C.P,w=P.wk;if(!w||w.p<p)P.wk={p,t:p}};
-function chk(){const P=C.P;if(!C.spar){C.B.forEach(z=>{if(z.h<=0)nirvU(z)});C.EN.forEach(e=>{if(e.h<=0)nirvU(e)})}if(C.mh){C.mh=0;if(!C.hint){C.hint=1;S('你与灵兽收住了杀招，妖兽只剩一口气，血光微闪——正是烙印之机。','g')}}
-C.B=C.B.filter(z=>{if(z.h>0)return true;if(C.spar&&!z.dl){z.h=1;S(`${z.n}力竭退下。`,'e');return false}if(z.dl){S(`${z.n}力竭倒地，被你护在身后，暂时退出战斗。`,'e');if(z.D===G.dl)G.dl.ko=1;return false}const r=z.r;G.bz=G.bz.filter(y=>y!==r);S(`${MB[r.i][0]}不敌强敌，当场陨落！你心神剧震，遭到虚弱（${r.bd?50:30}%）反噬，持续${r.bd?50:30}回合。`,'e');retEq(r.eq,`你含泪从${MB[r.i][0]}的遗骸旁拾回了它佩戴的法宝`);kInherit(r.kt,`${MB[r.i][0]}的储物袋`);bk(r.bd?50:30);return false});
+const bk=p=>addS(C.P,'wk','灵兽陨落反噬',p,p);
+function chk(){const P=C.P;if(!C.spar){C.B.forEach(z=>{if(z.h<=0)nirvU(z)});C.EN.forEach(e=>{if(e.h<=0)nirvU(e)})}if(C.bnL&&C.bnL.length){S(`⛓ ${C.bnL.join('、')}气息奄奄，被你封住经脉、捆缚当场——再也无力反抗，也无人能为TA疗伤。（封禁：战斗结束后由你处置）`,'g');C.bnL=[]}
+C.B=C.B.filter(z=>{if(z.h>0)return true;if(C.spar&&!z.dl){z.h=1;S(`${z.n}力竭退下。`,'e');return false}if(z.dl){S(`${z.n}力竭倒地，被你护在身后，暂时退出战斗。`,'e');if(z.D===G.dl)G.dl.ko=1;return false}const r=z.r;G.bz=G.bz.filter(y=>y!==r);S(`${pN(r)}不敌强敌，当场陨落！你心神剧震，遭到虚弱（${r.bd?50:30}%）反噬，持续${r.bd?50:30}回合。`,'e');retEq(r.eq,`你含泪从${pN(r)}的遗骸旁拾回了它佩戴的法宝`);kInherit(r.kt,`${pN(r)}的储物袋`);bk(r.bd?50:30);return false});
 const dd=C.EN.filter(e=>e.h<=0);if(dd.length){const cur=C.EN[C.ti];dd.forEach(e=>{C.kd.push(e);S(`${e.n}${C.spar?'力竭认输，收了手':e.cv?'惨叫一声，气绝身亡':'轰然倒地'}。`,'g')});C.EN=C.EN.filter(e=>e.h>0);C.ti=Math.max(0,C.EN.indexOf(cur));TE()}
 if(!C.EN.length&&C.spar){S('胜负已分——你赢下了这场比试！','g');C.won=1;const ow=C.ow;endF();if(ow&&!G.over)ow();return 1}
 if(P.h<=0&&C.spar){G.hp=Math.max(1,Math.round(mh()*.05));S('你力竭认输，这场比试输了。','e');C.won=0;endF();return 1}
+if(!AE().length&&BND().length){if(!C.post){C.post=1;S(`来敌或死或擒，战斗结束。${BND().map(e=>e.n).join('、')}被你封禁在地，生死只在你一念之间——`,'k')}return 1}
 if(!C.EN.length){if(C.kd.length)win();else{S('来敌尽数遁走，战斗就此结束。','p');C.won=1;const ow=C.ow;endF();if(ow&&!G.over)ow()}return 1}
 if(P.h<=0)return die(`${G.n}不敌${C.EN[0].n}${C.EN.length>1?'等强敌':''}，身殒道消，享年${G.age}岁。`);
 return 0}
 // 妖兽单位行动（灵兽与敌方妖兽通用）
 
+
+// ===== 战后处置俘虏（v1.9.1）=====
+const soulOK=E=>G.se.includes(10)&&(E.cv||E.kt)&&mySn()>snOf(E),soulL=E=>[...new Set([...(E.cv?E.cv.sp:[]),...(E.kt?E.kt.sp:[])])].map(i=>'S'+i).concat(E.kt?(E.kt.se||[]).map(i=>'T'+i):[]);
+function capEnd(){if(BND().length)return;C.EN=C.EN.filter(e=>!e.bnd&&e.h>0);if(C.EN.length)return;if(C.kd.length)win();else{S('俘虏都已处置完毕。','p');C.won=1;const ow=C.ow;endF();if(ow&&!G.over)ow()}}
+function capAct(j,o){const E=BND()[j];if(!E||!C||!C.post)return;const rm=()=>{C.EN=C.EN.filter(e=>e!==E)};
+if(o==0){E.h=0;C.kd.push(E);rm();S(`你一掌震断了${E.n}的心脉。`,'p')}
+else if(o==1){if(E.kt)lootB(E);rm();S(`你收缴了${E.n}的储物袋，解开${E.cv?'TA':'它'}身上的禁制：“滚吧。”${E.n}踉跄着逃走了。`,'p');gdA(1)}
+else if(o==2){rm();S(`你解开了${E.n}身上的禁制。${E.n}愣了半晌，${E.cv?'冲你深深一揖，消失在林间':'低鸣一声，钻进了密林'}。`,'g');gdA(3)}
+else if(o==3){if(E.cv||!G.se.includes(1)||!petRoom())return;const b=mkb(E.i,E.lv);yin();if(E.kt)b.kt=E.kt;b.h=Math.max(1,Math.round(bH(b)*E.h/E.H));G.bz.push(b);rm();bang('收服灵兽',`${E.lv}级${MB[E.i][0]}`,'green');S(`你将烙印打入被封禁的${E.n}眉心——${E.lv}级${MB[E.i][0]}成为你的灵兽！${yinT()}`,'g')}
+else if(o==4){if(!soulOK(E))return;const L=soulL(E);E.h=0;C.kd.push(E);rm();gdA(-6);const done=[],left=[];L.forEach(k=>{if(hv('W7')){tk('W7');add(k);done.push(k)}else left.push(k)});
+S(`你五指扣住${E.n}的天灵盖，神识如刀，硬生生剖开TA的识海——一声凄厉的惨叫后，${E.n}双目失神，识海崩碎而亡。${L.length?`你从TA的记忆里读出了：${L.map(k=>IT[k][4]+tag(k)).join('、')}。`:'可惜TA的识海里没有什么值得一提的功法。'}`,'e');
+if(done.length)S(`你以空白玉简刻录下：${done.map(k=>`【${IT[k][0]}】${tag(k)}`).join('、')}（已放入储物袋）。`,'g');
+if(left.length){(G.soulM=G.soulM||[]).push({a:G.age,n:E.n,ks:left});S(`手头的空白玉简不够，还有${left.map(k=>IT[k][4]).join('、')}没能刻录。这些记忆能在你识海中留存一年——${G.age+1}岁之前买到空白玉简，就能在储物袋中补刻。`,'s')}}
+capEnd()}
+function soulCarve(j){const m=(G.soulM||[])[j];if(!m)return;const done=[];while(m.ks.length&&hv('W7')){tk('W7');const k=m.ks.shift();add(k);done.push(k)}if(done.length)S(`你闭目回想${m.n}的记忆，以空白玉简刻录下：${done.map(k=>`【${IT[k][0]}】${tag(k)}`).join('、')}。`,'g');if(!m.ks.length)G.soulM.splice(j,1)}
 // ===== 灵兽、道侣佩戴法宝（v1.5）：每位最多2件，战斗中自动使用 =====
 const retEq=(L,w)=>{if(L&&L.length){L.forEach(k=>add(k));S(`${w}（${L.map(k=>IT[k][0]).join('、')}已收回储物袋）`,'p')}};
-function eqP(x,k){const z=G.bz[x];if(!z||C)return;z.eq=z.eq||[];if(z.eq.length>=2||!hv(k)||k[0]!='A')return;tk(k);z.eq.push(k);S(`你将【${IT[k][0]}】${tag(k)}交给${MB[z.i][0]}佩戴，战斗中它会自行催动。`,'g')}
-function uneqP(x,j){const z=G.bz[x];if(!z||C||!z.eq||!z.eq[j])return;const k=z.eq.splice(j,1)[0];add(k);S(`你从${MB[z.i][0]}身上取下了【${IT[k][0]}】。`)}
+function eqP(x,k){const z=G.bz[x];if(!z||C)return;z.eq=z.eq||[];if(z.eq.length>=2||!hv(k)||k[0]!='A')return;tk(k);z.eq.push(k);S(`你将【${IT[k][0]}】${tag(k)}交给${pN(z)}佩戴，战斗中它会自行催动。`,'g')}
+function uneqP(x,j){const z=G.bz[x];if(!z||C||!z.eq||!z.eq[j])return;const k=z.eq.splice(j,1)[0];add(k);S(`你从${pN(z)}身上取下了【${IT[k][0]}】。`)}
 function eqD(k){const D=G.dl;if(!D||C)return;D.eq=D.eq||[];if(D.eq.length>=2||!hv(k)||k[0]!='A')return;tk(k);D.eq.push(k);S(`你将【${IT[k][0]}】${tag(k)}赠予${nmK(D.k)}，${TA(D.k)}笑着收下了。`,'g')}
 function uneqD(j){const D=G.dl;if(!D||C||!D.eq||!D.eq[j])return;const k=D.eq.splice(j,1)[0];add(k);S(`你从${nmK(D.k)}那里取回了【${IT[k][0]}】。`)}
 const eqUI=(L,on,off)=>{L=L||[];const bag=Object.keys(G.iv).filter(k=>k[0]=='A').sort();return`<div class="lb">佩戴法宝（${L.length}/2 · 战斗中自动使用：辅助类不占出手，攻击类代替普攻）</div><div class="ch">${L.map((k,j)=>B(`${IT[k][0]}${tag(k)} ✕`,`act(()=>${off(j)})`,!!C)).join('')||'<span class="no">尚未佩戴</span>'}</div>${L.length<2&&bag.length?`<div class="ch">${bag.map(k=>B(`＋${IT[k][0]}${tag(k)}`,`act(()=>${on(k)})`,!!C)).join('')}</div>`:''}`};
@@ -721,21 +815,19 @@ S(tx+r.filter(Boolean).join('，')+'。',isE(U)?'e':'b')}
 // 自动使用策略：攻击型冷却好就用；治疗/护盾在友方受伤时用；净化/免疫在友方中了负面效果或伤势较重时用
 // 友方（灵兽、道侣、同伴）自动使用法宝（v1.6.1）：辅助类优先、不占出手——
 // 治疗：只要有友方不满血就用；护盾：有友方没有护盾就用；净化/免疫：有友方中了负面效果或尚未免疫就用；强化/疾速：自身没有就用；攻击类：冷却好就用
-function pickEq(U){const L=uArts(U);if(!L.length)return null;const al=allyOf(U),low=lowest(al);if(!low)return null;const T=isE(U)?foeLow():TE(),hurt=al.some(t=>hpr(t)<.995),noSh=al.some(t=>t.sh<t.H*.05),deb=al.some(t=>nDeb(t)>0),noIm=al.some(t=>!t.im);
-for(const k of [...L].sort((a,b)=>isSup(b)-isSup(a))){if(U.ecd&&U.ecd[k]>0)continue;const o=AF[+k.slice(1)][3];if(o.pas)continue;if(o.bfA&&al.some(t=>!t.bf))return k;
-if((o.hl||o.hlA)&&hurt)return k;if((o.sh||o.shA)&&noSh)return k;if((o.clA||o.imA)&&(deb||noIm))return k;
-if(o.bf&&!U.bf)return k;if(o.qk&&!U.qk)return k;
-if(o.d||o.sd||o.aoe)return k;if(o.wk&&T&&!T.wk)return k;if(o.swA)return k}return null}
+
 const isSup=k=>{const o=AF[+k.slice(1)][3];return!o.d&&!o.wk&&!o.swA&&!o.sd&&!o.aoe&&!o.lock&&!o.pas};
-function useEq(U,k){const a=AF[+k.slice(1)];U.ecd=U.ecd||{};U.ecd[k]=a[1]+1;uFx(U,a[3],`${nmX(U)}祭出法宝【${a[0]}】：`)}
-function uAct(U,en){const M=MB[U.i],say=x=>S(x,en?'e':'b');
+function useEq(U,k){const a=AF[+k.slice(1)];CUR=a[0];U.ecd=U.ecd||{};U.ecd[k]=a[1]+1;uFx(U,a[3],`${nmX(U)}祭出法宝【${a[0]}】：`)}
+function uAct(U,en){const M=MB[U.i],say=x=>S(x,en?'e':'b');CUR=M[4];aiPill(U);
 if(U.sk>0){U.sk--;say(`${U.n}陷入幻境，无法行动。`);return}
 if(U.pa==2){U.pa=1;say(`${U.n}被麻痹，动弹不得。`);return}
 const only=U.pa==1;if(only)U.pa=0;
 const live=C.B.filter(b=>b.h>0),T=en?foeLow():TE();if(!T)return;
 if(U.bl){U.bl=0;say(`${U.n}被致盲，${M[3]}扑了个空。`);return}
 let m=1,aoe=0,ex='';const sp=only?[]:M[6].filter(s=>s[1]!='qs'&&!((U.ac||1)%s[0]));
-if(!only&&(!en||U.kt)){const q=pickEq(U);if(q&&isSup(q))useEq(U,q);else if(q&&!sp.some(s=>s[0]>1)){useEq(U,q);return}if(!alive(U))return;if(U.kt&&!sp.some(s=>s[0]>1)){if(kAct(U))return;const si=pickSp(U,uSpL(U),en?30:45);if(si>=0){uSp(U,si);return}}}
+// 天赋发动的回合（每3回合一次的神通）优先发动天赋；其余回合由出招决策比较「天赋攻击」与法术、法宝、秘术、阵法
+if(!only&&!sp.some(s=>s[0]>1)){const base=10*M[2]+(sp.length?2:0);if(aiAct(U,base))return;if(!alive(U))return}
+CUR=M[4];if(U.mpM)U.mp=Math.min(U.mpM,U.mp+5);
 sp.forEach(s=>{const k=s[1];if(k=='cr'&&pt(sv(s,U.lv,M[1]))){m*=3;ex='暴击！'}if(k=='cb'&&pt(sv(s,U.lv,M[1]))){m*=2;ex='疾风连咬！'}if(k=='dv'){const a=SPD(U),b=SPD(T);if(a>b){m*=1+Math.min(.5,(a-b)/b);ex='借势俯冲！'}}if(k=='x2')m*=2;if(k=='th'){m*=2.5;ex='天雷轰顶！'}if(k=='dr'){m*=1.5;aoe=1}});
 const sdA=M[6].some(s=>s[1]=='sdA'),tg=aoe?(en?[C.P,...live]:AE()):[T],out=tg.map(t=>sdA?`${t.n}受${sdt(sHit(U,t,m))}`:`${t.n}受${dt(hit(U,t,m))}`),r=[];
 sp.forEach(s=>{const k=s[1],v=sv(s,U.lv,M[1]);
@@ -754,19 +846,19 @@ const rr=r.filter(Boolean);
 say(`${U.n}${sp.length?`发动天赋【${M[4]}】：`:''}${M[3]}${ex?'——'+ex:''}，${out.join('；')}。`+rr.join('，')+(rr.length?'。':''))}
 // 敌方修士行动：普攻或施展所修法术
 const CA=['祭出飞剑斩来','挥掌拍出','催动法器轰击','袖中暗器连发','并指点出一道剑气'];
-function cAct(U){const say=x=>S(x,'e');
+function cAct(U){const say=x=>S(x,'e');aiPill(U);
 if(U.sk>0){U.sk--;say(`${U.n}陷入幻境，无法行动。`);return}
 if(U.pa==2){U.pa=1;say(`${U.n}被麻痹，动弹不得。`);return}
 const only=U.pa==1;if(only)U.pa=0;
 const T=foeLow();if(!T)return;
 if(U.bl){U.bl=0;say(`${U.n}被致盲，一击落了空。`);return}
-// v1.6.2 活人感：敌方修士与人类一样——先用辅助法宝（不占出手），再视情况施展秘术、服丹、布阵、施法，或以攻击法宝代替普攻
-if(!only){const q=pickEq(U);if(q){useEq(U,q);if(!isSup(q))return}if(!alive(U))return;if(kAct(U))return;const si=pickSp(U,uSpL(U),55);if(si>=0){uSp(U,si);return}}
-const T2=foeLow()||T,r=hit(U,T2,1);say(`${U.n}${CA[ri(0,CA.length-1)]}，${T2.n}受${dt(r)}。`)}
+// 敌方修士与你遵守同样的规则：丹药不占出手；法术、法宝、秘术、阵法各占一次出手，由出招决策挑选
+if(!only&&aiAct(U,10))return;if(!alive(U))return;
+CUR='普攻';if(U.mpM)U.mp=Math.min(U.mpM,U.mp+5);const T2=foeLow()||T,r=hit(U,T2,1);say(`${U.n}${CA[ri(0,CA.length-1)]}，${T2.n}受${dt(r)}。`)}
 // 修士行动
 function pHit(m,db){const P=C.P,E=TE();if(P.bl){P.bl=0;return{t:'你被致盲，这一击落空了',d:0,ok:0}}const c=pt((db||0)+bo('dbl')),r=hit(P,E,m*(c?2:1)*(isVar()?1.25:1));let vx='';if(isVar()&&r[0]>0&&E.h>0){if(G.lr.e==0&&pt(15)){const x=ap(E,'pa',100);if(x)vx='，雷灵根引动天雷，'+x}else if(G.lr.e==1){const x=ap(E,'sw',20,3);if(x)vx='，冰灵根寒意侵骨，'+x}}return{t:(c?'伤害翻倍！':'')+`对${E.n}造成${dt(r)}`+vx,d:r[0],ok:1}}
 const SPX=o=>o.aoe||o.sd||o.sdm||o.brk||o.yao||o.dsp||o.exe;
-function fx(o,m,tx,key,fr=1){const P=C.P,E=TE(),r=[];let d=0,miss=0;
+function fx(o,m,tx,key,fr=1){CUR=key||'普攻';const P=C.P,E=TE(),r=[];let d=0,miss=0;
 if(SPX(o)&&E){if(P.bl&&!o.aoe){P.bl=0;r.push('你被致盲，这一击落空了');miss=1}else{const[x,,h]=xHit(P,E,o,(m||0)*fr*(isVar()?1.25:1));r.push(...x);d=h?h[0]:0}}
 else if(m){const h=pHit(m*fr,o.dbl);r.push(h.t);d=h.d;miss=!h.ok}
 if(!miss&&E){
@@ -780,8 +872,8 @@ if(o.swA)AE().forEach(e=>{const x=ap(e,'sw',o.swA,3);if(x)r.push(x)})}
 if(o.hl)r.push(hTx(hLow(P,t=>t.H*o.hl)));
 if(o.sh)r.push(sTx(sLow(P,t=>t.H*o.sh*fr)));
 r.push(...grp(P,o,fr));
-if(o.bf){const x=ap(P,'bf',o.bf,o.bt);r.push(x||'你已处于强化状态，效果不叠加')}
-if(o.qk){const x=ap(P,'qk',o.qk,o.qt);r.push(x||'你已处于更强的疾速状态')}
+if(o.bf){const x=ap(P,'bf',o.bf,o.bt);if(x)r.push(x)}
+if(o.qk){const x=ap(P,'qk',o.qk,o.qt);if(x)r.push(x)}
 if(o.qkA){const q=Math.round(o.qkA*fr);[P,...C.B].forEach(t=>{const x=ap(t,'qk',q,o.qt);if(x)r.push(x)})}
 if(o.again){C.again=1;r.push('身形一晃，抢先再出一手')}
 if(o.mp)G.mp=Math.min(mm(),G.mp+Math.round(mm()*o.mp));
@@ -789,7 +881,7 @@ if(o.self){const x=Math.round(pw()*o.self);P.h-=x;r.push(`余波震伤自身${x}
 if(o.zf){C.zf={t:o.zf[0],m:o.zf[1]*fr,n:key};r.push(`剑气弥漫战场，将持续${o.zf[0]}回合`)}
 S((r.length?tx+r.join('，'):tx.replace(/[，：]$/,''))+'。','p')}
 const bb=()=>(G.bn||0)+(C?C.bb:0);
-function pAct(k,i){const P=C.P,E=TE(),fz=P.sk>0||P.pa>0;if(!fz)ourSide().forEach(t=>t.gh=0);
+function pAct(k,i){if(k=='cp'){capAct(Math.floor(i/10),i%10);return}if(C.post)return;const P=C.P,E=TE(),fz=P.sk>0||P.pa>0;if(!fz)ourSide().forEach(t=>t.gh=0);
 if(P.sk>0||P.pa==2){if(P.sk>0)P.sk--;else P.pa=1;S('你被幻境或麻痹所困，动弹不得，白白错过这次出手。','e');return pDone()}
 if(P.pa==1){P.pa=0;k='n'}
 if(k=='n')fx({mp:.05},.8,'你挥剑斩出，剑气纵横，');
@@ -797,17 +889,17 @@ else if(k=='s'){const s=SP[i],c=Math.ceil(mm()*s[1]/100);G.mp-=c;if(s[3].cd)C.cd
 else if(k=='a'){const a=AF[i];C.cd['a'+i]=a[1]+1;fx(a[3],a[3].d||0,`你祭出法宝【${a[0]}】：${a[3].fl||a[2]}，`,a[0])}
 else if(k=='z'){const z=ZF[i],q=z[1];if((C.za[i]||0)>0){S(`【${z[0]}】阵势尚在运转，需待其消散后才能重新布阵。`,'p');return}const ms=zMiss(i);if(ms){S(`布阵材料不齐（${ms}），【${z[0]}】布不起来！生死关头，有灵石也买不到阵旗。`,'p');return}C.za[i]=z[3].zt;ST(-q[2],`布阵消耗·${z[0]}`);fx(z[3],z[3].d||0,`你祭出${q[0]}面阵盘、${q[1]}面阵旗，布下【${z[0]}】：${z[2]}，`,z[0],1)}
 else if(k=='e'){
-if(i==1){const cE=C.lkE&&!C.lkE.cv&&AE().includes(C.lkE)?C.lkE:lowest(AE().filter(cap))||lowest(AE().filter(e=>!e.cv)),E=cE;
+if(i==1){const LL=C.EN.filter(e=>e.h>0),cE=C.lkE&&!C.lkE.cv&&AE().includes(C.lkE)&&cap(C.lkE)?C.lkE:lowest(LL.filter(cap))||lowest(LL.filter(e=>!e.cv)),E=cE;
 if(!E){S('驭兽烙印只能烙印妖兽，对人族修士毫无作用。','p');return}
 if(!petRoom()){S(yinL()>0?`灵兽袋已满（${G.bz.length}/${pcap()}），以你${RN[rl()]}期的神识再也烙印不下第${G.bz.length+1}只灵兽。`:`你一生的烙印次数已经用尽（${G.yin||0}/${pcap()}），驭兽烙印再也凝不出新的印记了。`,'p');return}
 if(E.h>=E.H*.1){S(`${E.n}气血仍旺，烙印之力被它挣脱。（需其气血低于10%）`,'p');return}
 const b=mkb(E.i,E.lv);yin();bang('收服灵兽',`${E.lv}级${MB[E.i][0]}`,'green');if(E.kt)b.kt=E.kt;b.h=Math.max(1,Math.round(bH(b)*E.h/E.H));b.ps=snap(E);G.bz.push(b);S(`你掐诀结印，烙印没入${E.n}眉心——${E.lv}级${MB[E.i][0]}成为你的灵兽！它继承了烙印时的状态，气血仅余${Math.round(E.h/E.H*100)}%，需休养恢复。可在灵兽袋中滴血认主、令其出战。${yinT()}`,'g');if(b.kt)S('它早已化为人形，所学功法与储物袋原样保留，仍归它自己所有。','g');
-C.EN=C.EN.filter(e=>e!==E);TE();if(!C.EN.length){if(C.kd.length)win();else{C.won=1;const ow=C.ow;endF();if(ow)ow()}return}}
+C.EN=C.EN.filter(e=>e!==E);TE();if(!C.EN.length){if(C.kd.length)win();else{C.won=1;const ow=C.ow;endF();if(ow)ow()}return}if(!AE().length){chk();return}}
 if(i==2){if(bb()>=2)return;C.bb++;C.sd++;const mx=Math.max(...C.EN.map(e=>e.lv));if(mx-Lp()<=(C.sd>=2?3:2)){const pd=dlOK()&&C.dlj,pp=C.B.some(b=>!b.dl);S(`你${C.sd>=2?'再度':''}燃烧精血，化作一道血色遁光${pd?`，一把拉住${nmK(G.dl.k)}`:''}${pp?'，并将灵兽尽数收回灵兽袋':''}，瞬息百里${C.EN.length>1?'，将众敌远远甩在身后':''}！`,'p');if(C.egg&&mx-Lp()>=3)S('身后传来凶星不甘的怒吼，你却已遁出千里之外——好险！','g');endF();return}
 if(C.sd==1&&mx-Lp()==3&&bb()<2){ourSide().forEach(t=>t.gh=1);S('你燃烧精血，血光却被对方的威压死死压住，没能遁走——但血影已笼罩你与同伴全身，在你下次出手前，一切攻击都会落空！趁现在，再施展一次血影遁！','p')}
 else S('你燃烧精血化作遁光，却被对方牢牢锁定，没能逃脱！','p')}
-if(i==3){if(bb()>=2)return;C.bb++;const q=bb()>=2?90:50;P.bf={p:Math.max(q,P.bf?P.bf.p:0),t:99,ft:1};S(q>50?'你再度燃烧精血，赤红战意冲天而起！（强化90%，持续整场战斗）':'你咬破舌尖，精血化作赤红战意，周身气势暴涨！（强化50%，持续整场战斗）','p')}
-if(i==4){if(C.ys)return;C.ys=1;C.fl=1;P.qk={p:100,t:99,ft:1};S('你以魂火点燃精血，身形化作一道疾影——速度翻倍（疾速100%，持续整场战斗，自下一回合起影响出手顺序）！可伺机「疾影脱身」。','p')}
+if(i==3){if(bb()>=2)return;C.bb++;const q=bb()>=2?90:50;addS(P,'bf','燃血秘术',q,99,{ft:1});S(q>50?'你再度燃烧精血，赤红战意冲天而起！（强化90%，持续整场战斗）':'你咬破舌尖，精血化作赤红战意，周身气势暴涨！（强化50%，持续整场战斗）','p')}
+if(i==4){if(C.ys)return;C.ys=1;C.fl=1;addS(P,'qk','燃魂疾影',100,99,{ft:1});S('你以魂火点燃精血，身形化作一道疾影——速度翻倍（疾速100%，持续整场战斗，自下一回合起影响出手顺序）！可伺机「疾影脱身」。','p')}
 if(i==9){if((C.shm||0)>=2)return;C.shm=(C.shm||0)+1;const E=TE();if(!E)return pDone();const a=snOf(P),b=snOf(E);if(a>=b*1.2&&!E.im&&!E.gh){const h=sHit(P,E,1.2);E.sk=Math.max(E.sk||0,2);S(`你神识如潮，狠狠压入${E.n}的识海（神识${a} 对 ${b}）：${E.n}陷入幻境2回合，并受到${sdt(h)}！`,'p')}else{const x=Math.round(P.H*.1);P.h-=x;S(`你以神识强压${E.n}（神识${a} 对 ${b}），却被${E.im||E.gh?'护体灵光':'对方的神识'}狠狠反震，气血-${x}！`,'e')}}
 if(i>=5&&i<=7){if(C.su[i])return;if(i==7&&LF()-G.age<=3){S('你的剩余寿元已不足三年，燃不起涅槃之火。','p');return}C.su[i]=1;
 if(i==5){P.sh+=Math.round(P.H*.3);immu(P,2);S(`你运转金刚诀，周身金光大作：获得${Math.round(P.H*.3)}点护盾，并免疫负面效果2回合。`,'p')}
@@ -827,9 +919,9 @@ if(kt&&khv(kt,'P9')){ktk(kt,'P9');U.h=Math.round(U.H*.4);S(`${U.n}体内的九�
 // 2) 第一轮：全体存活单位按速度从快到慢依次出手，速度相同者同时出手；
 // 3) 多次出手：自身速度达到对方阵营最快者的2倍，可在第二轮再出手1次；达到3倍，第三轮再出手1次（每回合最多3次）；
 // 4) 阵法持续伤害在回合开始时最先结算；回合末结算燃烧、中毒等持续效果。
-const allU=()=>C?[C.P,...C.B.filter(b=>b.h>0),...C.EN.filter(e=>e.h>0)]:[];
-const alive=u=>!!C&&(u===C.P?C.P.h>0:(C.EN.includes(u)||C.B.includes(u))&&u.h>0);
-const foes=u=>isE(u)?[C.P,...C.B.filter(b=>b.h>0)]:C.EN.filter(e=>e.h>0);
+const allU=()=>C?[C.P,...C.B.filter(b=>b.h>0),...AE()]:[];
+const alive=u=>!!C&&(u===C.P?C.P.h>0:(C.EN.includes(u)||C.B.includes(u))&&u.h>0&&!u.bnd);
+const foes=u=>isE(u)?[C.P,...C.B.filter(b=>b.h>0)]:AE();
 const nAct=u=>{const f=foes(u);if(!f.length)return 1;const m=Math.max(...f.map(SPD));return Math.max(1,Math.min(3,Math.floor(SPD(u)/m)))};
 const nmU=u=>u===C.P?'你':u.n;
 function startRound(){C.t++;const us=allU(),sp=new Map(us.map(u=>[u,SPD(u)])),na=new Map(us.map(u=>[u,nAct(u)]));C.Q=[];C.qi=0;
@@ -848,10 +940,10 @@ C.qi++;g.forEach(actU)}}
 function pDone(){if(!C)return;if(C.again){C.again=0;return}C.qi++;const w=(C.wait||[]).slice();C.wait=null;w.forEach(actU);flow()}
 // 战斗在剧情结算完毕后才正式开打（避免历练收获插在战斗记录中间）
 function kick(){if(C&&C.ready){C.ready=0;startRound();flow()}}
-function er(){const P=C.P;[P,...C.B,...C.EN].forEach(tickE);[...C.EN,...C.B].forEach(e=>{if(e.ccd>0)e.ccd--;if(e.za)for(const q in e.za)if(e.za[q]>0)e.za[q]--});if(C.zx)C.zx=C.zx.filter(a=>a.t>0);if(chk())return;G.mp=Math.min(mm(),G.mp+Math.ceil(mm()*.05));if(C.rsc>0)C.rsc--;for(const q in C.za)if(C.za[q]>0){C.za[q]--;if(!C.za[q]&&C.zf&&C.zf.t>0&&C.zf.n==ZF[q][0])C.za[q]=1;if(!C.za[q])S(`【${ZF[q][0]}】阵势消散，阵旗归位，可再次布阵。`,'s')}}
+function er(){const P=C.P;[P,...C.B,...AE()].forEach(tickE);[P,...C.B,...C.EN].forEach(u=>{if(u.rsc>0)u.rsc--;if(u.mpM)u.mp=Math.min(u.mpM,u.mp+5);if(u.scd)for(const q in u.scd)if(u.scd[q]>0)u.scd[q]--});[...C.EN,...C.B].forEach(e=>{if(e.ccd>0)e.ccd--;if(e.za)for(const q in e.za)if(e.za[q]>0)e.za[q]--});if(C.zx)C.zx=C.zx.filter(a=>a.t>0);if(chk())return;G.mp=Math.min(mm(),G.mp+Math.ceil(mm()*.05));if(C.rsc>0)C.rsc--;for(const q in C.za)if(C.za[q]>0){C.za[q]--;if(!C.za[q]&&C.zf&&C.zf.t>0&&C.zf.n==ZF[q][0])C.za[q]=1;if(!C.za[q])S(`【${ZF[q][0]}】阵势消散，阵旗归位，可再次布阵。`,'s')}}
 // 敌方单位：妖兽[i,L]；修士[-1,L,名,法术]
 // 敌方单位（v1.6.2）：修士与8级以上（已化人形）的妖兽带有储物袋与所学功法 kt；s[5] 可指定（0=无储物袋，如傀儡），s[6]=1 表示不可拾取（如心魔道侣）
-const mkE=(s,m,f=1)=>{const[i,L]=s,k=ek(L),x=s[7]||{},el=x.el?1:0;m*=x.m||1;if(i>=0){const M=MB[i];return{...mk(M[0],Math.round(60*k*m)),i,lv:L,a:8*k*M[2]*m,m,el,v0:Math.round(bsp(i,L)*rnd(.95,1.05)),kt:s[5]!=null?(s[5]||null):L>=8?genKit(Math.min(14,L+1),f,1):null}}const cs=csOf(s),q=KK(cs);return{...mk(s[2],Math.round(64*q*m)),i:-1,cv:{sp:s[3]||[]},lv:L,cs,a:8.6*q*m,m,el,v0:Math.round(sB(L)*rnd(.92,1.08)),kt:s[5]===0?null:(s[5]||genKit(cs,f,0)),nl:s[6]?1:0}};
+const mkE=(s,m,f=1)=>{const[i,L]=s,k=ek(L),x=s[7]||{},el=x.el?1:0;m*=x.m||1;if(i>=0){const M=MB[i];return{...mk(M[0],Math.round(60*k*m)),i,lv:L,a:8*k*M[2]*m,m,el,...(L>=8?{mpM:100,mp:100}:{}),v0:Math.round(bsp(i,L)*rnd(.95,1.05)),kt:s[5]!=null?(s[5]||null):L>=8?genKit(Math.min(14,L+1),f,1):null}}const cs=csOf(s),q=KK(cs);return{...mk(s[2],Math.round(64*q*m)),i:-1,cv:{sp:s[3]||[]},lv:L,cs,a:8.6*q*m,m,el,mpM:100,mp:100,v0:Math.round(sB(L)*rnd(.92,1.08)),kt:s[5]===0?null:(s[5]||genKit(cs,f,0)),nl:s[6]?1:0}};
 // 多敌人强度系数：人数越多，单个敌人的气血与攻击越低（总强度约为1、1.5、1.9、2.2、2.5、2.8、3、3.2倍）
 const GF=[1,1,.75,.62,.55,.5,.46,.43,.4];
 const etag=E=>E.cv?'<span class="rt rtX">恶修</span>':tag('B'+E.i),elv=E=>E.cv?lab(E.cs):E.lv+'级';
@@ -860,11 +952,11 @@ const gf=GF[Math.min(8,list.length)],EN=list.map(s=>mkE(s,m*gf,gf)),nc={},ix={};
 const al=[...(o.allies||[]).map(du),...(o.ally?[du(o.ally)]:[]),...(!o.ally&&!o.noDL&&!o.spar&&dlOK()&&G.dl.h>0?[du(G.dl)]:[])],aj=[];
 // v1.7：金兰之交、徒弟可能闻讯赶来助阵（每场最多一人）
 if(!o.noDL&&!o.spar&&!o.solo){const H0=al.map(u=>u.D.k),cs=Object.keys(G.np).map(Number).filter(k=>{const q=G.np[k];return q.st==0&&!H0.includes(k)&&!isDL(k)&&!(q.aw>G.age)&&(q.sw||isTu(k))});const k=cs.length?pk(cs):null;if(k!=null&&pt(G.np[k].sw?18:28)){const u=du(tmpA(k,1));al.push(u);aj.push(u)}}
-C={P,EN,ti:0,kd:[],B:[...al,...G.bz.filter(b=>b.d&&b.h>0).map(be)],ow:o.ow||null,ofl:o.ofl||null,dlj:al.some(u=>u.D===G.dl)?1:0,spar:o.spar?1:0,t:0,Q:[],qi:0,ready:1,za:{},su:{},wait:null,again:0,ys:0,fl:0,cd:{},rsc:0,zf:0,bb:0,sd:0,mh:0,hint:0};
-ld(C.P,G.ps);C.B.forEach(z=>ld(z,z.dl?(z.D===G.dl?G.dl.ps:0):z.r.ps));if(G.wk)C.P.wk={p:G.wk.p,t:99,yr:1};
+G.mc=!o.spar&&G.mcd?1:0;C={P,EN,ti:0,kd:[],B:[...al,...G.bz.filter(b=>b.d&&b.h>0).map(be)],ow:o.ow||null,ofl:o.ofl||null,dlj:al.some(u=>u.D===G.dl)?1:0,spar:o.spar?1:0,t:0,Q:[],qi:0,ready:1,za:{},su:{},wait:null,again:0,ys:0,fl:0,cd:{},rsc:0,zf:0,bb:0,sd:0,mh:0,hint:0};
+[...C.B,...C.EN].forEach(u=>{u.pn=0;if(u.mpM){const en=C.EN.includes(u);u.mpM=Math.round((en&&!u.el?EMP:100)*(1+kmt(u.kt,'mp')));u.mp=u.mpM}});ld(C.P,G.ps);C.B.forEach(z=>ld(z,z.dl?(z.D===G.dl?G.dl.ps:0):z.r.ps));if(G.wk)addS(C.P,'wk','精血亏损',G.wk.p,99,{yr:1});
 if(G.hide){G.hide=0;S('你出手的刹那，敛气术失效。')}
 S(EN.length>3?`【战斗】${EN.length}名敌人一齐杀来！${EN.some(e=>e.el)?'其中有精英，':''}（敌方详情见上方战斗栏）`:`【战斗】${EN.map(e=>e.cv?`${e.n}（${lab(e.cs)}）${e.el?'<span class="rt rtD">精英</span>':''}`:`${e.lv}级${e.n}${e.kt?'<span class="rt rtH">人形</span>':''}`).join('、')}${EN.length>1?'一齐杀来':'拦在你面前'}！`,'k');C.egg=EN.some(e=>e.lv-Lp()>=3);if(C.egg)S(G.se.includes(2)&&bb()==0?'（凶星当前，你身负血影遁——连续施展两次，必能带着同伴逃出生天！）':'（对方修为远在你之上，若无脱身之法，恐怕凶多吉少……）','s');
-al.forEach(u=>S(aj.includes(u)?`千钧一发之际，${u.n}（${lab(u.D.s)}）${isTu(u.D.k)?'提剑赶到：“师父，我来助你！”':`闻讯赶来：“${BRO()}，我来了！”`}`:`${u.n}（${lab(u.D.s)}）${u.D===G.dl?'祭出法器，与你并肩而立':'与你并肩迎敌'}！`,'b'));if(o.spar)S('（此战为切磋比试，点到为止：任何一方力竭即判负，不会伤及性命。）','s')}
+al.forEach(u=>S(aj.includes(u)?`千钧一发之际，${u.n}（${lab(u.D.s)}）${isTu(u.D.k)?'提剑赶到：“师父，我来助你！”':`闻讯赶来：“${BRO()}，我来了！”`}`:`${u.n}（${lab(u.D.s)}）${u.D===G.dl?'祭出法器，与你并肩而立':'与你并肩迎敌'}！`,'b'));if(o.spar)S('（此战为切磋比试，点到为止：任何一方力竭即判负，不会伤及性命。）','s');if(canEye()){const sc=EN.filter(scOK);S(`🔍 神识查探：${EN.map(e=>scOK(e)?`${e.n}<span class="dgt dg${dgOf(e)}">${DGI[dgOf(e)]} ${DGN[dgOf(e)]}</span>`:`${e.n}<span class="dgt dgq">❔ ???</span>`).join('、')}`,'s');scanBang(EN)}}
 function win(){let t=0;const mt=[0,0,0],its=[],bg=[],ms0=[],n=C.kd.length,f=GF[Math.min(8,n)],mxi=n>=4?4:3;
 const drop=(E,q)=>{if(its.length<mxi){add(q);its.push([E,q])}};
 C.kd.forEach(E=>{const lf=Math.max(.6,Math.min(1.6,1+.15*(E.lv-Lp())));t+=Math.round(ri(8,16)*sc()*E.m*lf*(E.cv?1.6:1));
@@ -891,18 +983,21 @@ const offU=()=>[{...mk(G.n,0),me:1,get h(){return G.hp},set h(v){G.hp=v},get H()
 // ===== 逆天改命（v1.6）=====
 function breakP(){if(G.lim>=14)return 0;G.lim=14;G.limR=0;return 1}
 function breakDL(){const D=G.dl;if(!D||D.lim>=14)return 0;D.lim=14;D.limR=0;S(`${nmK(D.k)}周身灵光冲霄，困住${TA(D.k)}多年的天命枷锁轰然碎裂！（道侣天命瓶颈已打破）`,'k');return 1}
-function breakPet(z){if(!z||z.lim>=13)return 0;z.lim=13;z.limR=0;S(`${MB[z.i][0]}仰天长啸，血脉中沉睡的上古之力尽数苏醒——天资枷锁尽碎，从此可一路成长至13级！`,'k');return 1}
+function breakPet(z){if(!z||z.lim>=13)return 0;z.lim=13;z.limR=0;S(`${pN(z)}仰天长啸，血脉中沉睡的上古之力尽数苏醒——天资枷锁尽碎，从此可一路成长至13级！`,'k');return 1}
 // 洗灵根：五→四→三→双→天；天命按新灵根重新推演（取较好者）
 const WUP={5:4,4:3,3:2,2:0};
 function washRoot(q,me){const r=me?q.lr:q.r;if(!r||!(r.t in WUP))return 0;const nt=WUP[r.t],o=lrN(r);r.t=nt;r.e=[...r.e].slice(0,LR[nt][7]).join('');const nl=dLim(r,q.s);if(nl>(q.lim==null?14:q.lim)){q.lim=nl;if(q.limR&&q.lim>q.s)q.limR=0}
 S(me?`一股清流冲刷你的四肢百骸，杂质尽去——灵根由【${o}】蜕变为【${lrN(r)}】！修炼速度变为×${LR[nt][2]}，冥冥中的天命也随之改写。`:`${nmK(q.k)}的灵根由【${o}】蜕变为【${lrN(r)}】！`,'k');return 1}
 function giveDL(k){const D=G.dl;if(!D||C||!hv(k))return;if(k=='P13'&&!(D.r&&D.r.t in WUP)){say(`${nmK(D.k)}的灵根已是${lrN(D.r)}，无需再洗。`);return}tk(k);if(k=='P12'){if(!breakDL()){const g=dlCult(1.5);S(`${nmK(D.k)}服下逆天改命丹，却并无异样——${TA(D.k)}的天命本就无拘无束。药力化作修为+${g}。`,'p')}}else washRoot(D,0)}
-function feedNT(x){const z=G.bz[x];if(!z||C||!hv('P12'))return;tk('P12');if(!breakPet(z)){pxp(z,xn(z.lv));S(`${MB[z.i][0]}吞下逆天改命丹，并无异样——它的天资本就没有上限。药力化作修炼。`,'p')}}
+function feedNT(x){const z=G.bz[x];if(!z||C||!hv('P12'))return;tk('P12');if(!breakPet(z)){pxp(z,xn(z.lv));S(`${pN(z)}吞下逆天改命丹，并无异样——它的天资本就没有上限。药力化作修炼。`,'p')}}
 // 灵根测试（开局，共3次机会，确定后不可更改）
 function savePI(){if(G.lr)return 1;const e=$('pin'),r=document.querySelector?document.querySelector('input[name=psx]:checked'):null;if(e&&e.value!=null){const n=String(e.value||'').trim();if(!/^[\u4e00-\u9fa5A-Za-z0-9·]{1,8}$/.test(n)){G.pie='名字需为1～8个汉字、字母或数字。';return 0}G.n=n}if(r)G.sex=+r.value?1:0;G.pie='';return 1}
 function drawLR(){if(G.lr)return;savePI();G.lrd=rollRoot();G.lrc++;}
 function confirmLR(){if(G.lr||!G.lrd)return;if(!savePI())return;G.pi=1;G.lr=G.lrd;G.lrd=null;if(!G.limR)G.lim=dLim(G.lr,G.s);S(`${G.n}（${G.sex?'女':'男'}修）踏上仙途！灵根已定：【${lrN(G.lr)}】，修炼速度×${LR[G.lr.t][2]}。名字、性别、灵根从此不可更改。`,'k');bio(`踏上仙途，测得${lrN(G.lr)}`);S(`${G.lr.t<=1?'测灵长老两眼放光，当场便要收你为亲传弟子！':G.lr.t==2?'长老微微颔首：“资质尚可，好生修炼。”':G.lr.t==3?'长老淡淡道：“中规中矩，勤能补拙。”':'长老摇了摇头：“伪灵根……仙路艰难，望你另有机缘。”'}`,'k');if($('dg').open)$('dg').close()}
-function eat(k){const n=+k.slice(1),p=PL[n];if(!hv(k)||n==9&&G.rv>G.age)return;
+
+// 丹药吸收极限（v1.9.2）：同一场战斗里，每多服一颗丹药，药力就打一次折扣（第1颗100%、第2颗75%、第3颗56%……最低10%）
+const pEff=n=>Math.max(.1,Math.pow(.75,n)),pEffT=n=>Math.round(pEff(n)*100);
+function eat(k){if(!G.lr){say('你还没有踏上仙途。');return}const n=+k.slice(1),p=PL[n];CUR=p[0];if(!hv(k)||n==9&&G.rv>G.age)return;
 if((n==4||n==5||n==10)&&!C){say('此丹需在战斗中服用。');return}
 if(n==11&&C){say('凌虚丹药力绵长，需在战斗外静心炼化。');return}
 if((n==12||n==13||n==14||n==15||n==16)&&C){say('此丹药力霸道，需在战斗外静心炼化。');return}
@@ -912,29 +1007,27 @@ if(n==15&&G.lzn){say('你已炼化过一株万年灵芝，再服也无济于事�
 if(n==16&&(G.snb||0)>=.6-1e-9){say('你的神识已被温养到极致（+60%），养魂丹已无用处。');return}
 if(n==13&&!(G.lr&&G.lr.t in WUP)){say(`你的灵根已是${lrN(G.lr)}，洗灵丹对你已无用处（可赠予道侣）。`);return}
 if(n==11&&(G.vb||0)>=.3-1e-9){say('你的身法已臻凌虚之境（速度+30%），再服凌虚丹也无济于事。');return}
-if(n==10&&C.P.qk&&C.P.qk.p>=40){say('你已处于更强的疾速状态，御风丹的药力无处安放。');return}
-if(n==5&&C.P.bf){say('你已处于强化状态，爆元丹的药力无处安放。');return}
-tk(k);let t=`服下【${p[0]}】，`;
+tk(k);let t=`服下【${p[0]}】，`;const f=C?pEff(C.pn||0):1;if(C)C.pn=(C.pn||0)+1;
 
 if(n==0){const g=Math.round(need(G.s)*.3);G.x+=g;t+=`修为+${g}`}
-else if(n==1)t+=hTx(C?hLow(C.P,u=>u.H*.6):(T=>[T,heal(T,Math.round(T.H*.6))])(lowest(offU())));
-else if(n==2){const x=Math.round(mm()*.6);G.mp=Math.min(mm(),G.mp+x);t+=`回复${x}点灵力`}
+else if(n==1)t+=hTx(C?hLow(C.P,u=>u.H*.6*f):(T=>[T,heal(T,Math.round(T.H*.6))])(lowest(offU())));
+else if(n==2){const x=Math.round(mm()*.6*f);G.mp=Math.min(mm(),G.mp+x);t+=`回复${x}点灵力`}
 else if(n==3){G.pill=1;t+='下次突破成功率提升'}
-else if(n==4)t+='金光护体，'+sTx(sLow(C.P,u=>u.H*.3));
-else if(n==5){const c=Math.round(mh()*.15);G.hp-=c;ap(C.P,'bf',80,3);t+=`气血沸腾，损失${c}点气血，3回合攻击威力×1.8`}
+else if(n==4)t+='金光护体，'+sTx(sLow(C.P,u=>u.H*.3*f));
+else if(n==5){const c=Math.round(mh()*.15),q=Math.round(80*f);G.hp-=c;addS(C.P,'bf','爆元丹',q,3);t+=`气血沸腾，损失${c}点气血，3回合强化${q}%`}
 else if(n==6){const b=pt(25),g=Math.round(need(G.s)*(b?1.5:.1));G.x+=g;t+=b?`忽然顿悟，修为+${g}！`:`并无异象，修为+${g}`}
 else if(n==7){G.hb+=.15;t+='骨骼清响，气血上限永久提升15%'}
 else if(n==8){G.mb+=.25;t+='灵台清明，灵力上限永久提升25%'}
 else if(n==14){G.lb=(G.lb||0)+25;G.lbn=(G.lbn||0)+1;t+=`一股磅礴的生机涌入四肢百骸，寿元上限永久+25年（已服${G.lbn}/3颗，当前寿元上限${LF()}岁）`}
 else if(n==15){G.lb=(G.lb||0)+60;G.lzn=1;const g=Math.round(need(G.s)*.5);G.x+=g;t+=`万年灵芝化作滔天灵气，你寿元上限永久+60年（当前${LF()}岁），修为+${g}`}
 else if(n==16){G.snb=Math.min(.6,(G.snb||0)+.15);t+=`神魂温养，神识永久+15%（当前神识${mySn()}）`}
-else if(n==17){const c=clean(C.P);immu(C.P,2);t+=`心神一清，净化了${c}个负面效果，并免疫负面效果2回合`}
+else if(n==17){const c=f>=.3?clean(C.P):0,im=Math.round(2*f);if(im)immu(C.P,im);t+=c||im?`心神一清${c?`，净化了${c}个负面效果`:''}${im?`，并免疫负面效果${im}回合`:''}`:'药力已无法化开，毫无效果'}
 else if(n==9){G.rv=G.age+100;t+='药力化入四肢百骸，一缕不灭生机藏于丹田——百年之内若遇死劫，可以40%气血、40%灵力复活一次（获得「复生」状态）'}
 else if(n==12){if(breakP())t+='一道无形枷锁在你神魂深处轰然碎裂——天命瓶颈已被打破，此生大道再无桎梏';else{const g=Math.round(need(G.s)*.5);G.x+=g;t+=`药力化开，却并无异样——你的天命本就无拘无束。药力化作修为+${g}`}}
 else if(n==13){t='';washRoot(G,1)}
-else if(n==10){C.P.qk={p:40,t:4};t+='清风绕体，身轻如燕，疾速（40%）持续4回合'}
+else if(n==10){const q=Math.round(40*f);addS(C.P,'qk','御风丹',q,4);t+=`清风绕体，疾速（${q}%）持续4回合`}
 else if(n==11){G.vb=Math.min(.3,(G.vb||0)+.05);t+=`筋骨轻灵，身法精进，速度永久提升5%（当前+${Math.round(G.vb*100)}%，速度${pspd0()}）`}
-if(t)S(t+'。','p');if(C)pDone()}
+if(t)S(t+(C?`（服丹不占出手${f<1?`；身体已近吸收极限，药力只发挥${Math.round(f*100)}%`:''}）`:'')+'。','p')}
 function A(k,i){act(()=>pAct(k,i))}
 function act(f){if(G.over)return;kick();const inB=!!C;f();if(!C&&!G.nd&&G.ev<0&&G.nxp&&!G.over){G.nxp=0;trip(inB)}draw()}
 function reset(){C=null;PO=null;fresh();draw()}
@@ -944,15 +1037,20 @@ function reset(){C=null;PO=null;fresh();draw()}
 const zUse=()=>{let a=0,b=0;if(C)for(const j in C.za)if(C.za[j]>0){a+=ZF[j][1][0];b+=ZF[j][1][1]}return[a,b]};
 function zMiss(i){const q=ZF[i][1],[ua,ub]=zUse(),fa=hv('W3')-ua,fb=hv('W4')-ub,m=[];if(fa<q[0])m.push(`阵盘${Math.max(0,fa)}/${q[0]}`);if(fb<q[1])m.push(`阵旗${Math.max(0,fb)}/${q[1]}`);if(G.st<q[2])m.push(`灵石${G.st}/${q[2]}`);return m.join('、')}
 function cm(b){const P=C.P,o=[],lb=t=>`<div class="lb">${t}</div>`,bst=C.EN.some(e=>!e.cv),T=TE();
-const mcb=G.se.includes(1)&&bst?`<label class="mc" title="勾选后，你与同伴出手时会留妖兽一口气（气血1~10%），方便驭兽烙印；只对本场战斗有效"><input type="checkbox"${G.mc?' checked':''} onchange="G.mc=this.checked?1:0;draw()"><span>手下留情（留活口以便烙印，仅本场）</span></label>`:'';
-const th=T?`<div class="th">🎯 当前目标：<b>${T.n}</b>${C.EN.length>1?(C.lkE?'（已手动锁定，再点一次敌人取消）':'（自动攻击血量最低者 · 点击敌人可锁定）'):''}</div>`:'';
+if(C.post){const L=BND();o.push(`<p class="ndh">⛓ 战后处置 · 被封禁的敌人生死由你决定</p>`);L.forEach((E,j)=>{const bs=!E.cv,so=soulOK(E),sl=soulL(E);o.push(lb(`${E.n} · ${elv(E)}${E.kt?' · 带储物袋':''}`));
+o.push(b(`斩杀<small>${E.kt?'拾取储物袋与战利品':'取得战利品'}</small>`,`A('cp',${j*10})`));
+if(E.kt)o.push(b(`收缴储物袋，放走<small>侠义+1</small>`,`A('cp',${j*10+1})`));
+o.push(b(`放走${E.kt?'（连同储物袋）':''}<small>侠义+3，什么也得不到</small>`,`A('cp',${j*10+2})`,'s'));
+if(bs)o.push(b(`驭兽烙印<small>${!G.se.includes(1)?'未学会驭兽烙印':!petRoom()?(yinL()>0?'灵兽袋已满':'烙印次数已用尽'):`收为灵兽 · ${yinT().replace(/[（）]/g,'')}`}</small>`,`A('cp',${j*10+3})`,'g',!G.se.includes(1)||!petRoom()));
+if(G.se.includes(10)&&(E.cv||E.kt))o.push(b(`搜魂（魔道）<small>${so?`可读出${sl.length}门功法 · 空白玉简${hv('W7')} · 魔性+6`:`需神识高于对方（你${mySn()}／对方${snOf(E)}）`}</small>`,`A('cp',${j*10+4})`,'k1',!so))});return o.join('')}
+const mcb=C.spar?'':`<div class="mcr"><label class="mc" title="开启后，你和同伴的致命一击不会杀死敌人，而是将其封禁（无法行动、不能被治疗），战后由你处置"><input type="checkbox"${G.mc?' checked':''} onchange="G.mc=this.checked?1:0;draw()"><span>⛓ 手下留情<small>${G.mc?'致命一击改为封禁':'未开启：致命一击直接击杀'}</small></span></label><label class="mc sm" title="勾选后，以后每场战斗开始时自动开启手下留情（切磋除外）；也可在右上角 ⚙ 设置中修改"><input type="checkbox"${G.mcd?' checked':''} onchange="G.mcd=this.checked?1:0;draw()"><span>默认开启</span></label><button class="s ih" onclick="po('mcH')" title="手下留情说明">ⓘ</button></div>`;const th=T?`<div class="th">🎯 当前目标：<b>${T.n}</b>${BND().length?`　⛓ 已封禁${BND().length}人`:''}${C.EN.length>1?(C.lkE?'（已手动锁定，再点一次敌人取消）':'（自动攻击血量最低者 · 点击敌人可锁定）'):''}</div>`:'';
 const fl=C.fl?`<div class="flh">⚡ 身化疾影，速度翻倍！此刻可尝试脱身（每次50%）</div>`+b('疾影脱身<small>50%几率逃离战斗</small>',"A('f')",'fb one'):'';
 if(P.sk>0||P.pa==2)return th+fl+b('（被困住，无法行动）<small>点击跳过本次出手</small>',"A('w')",'s one');
 o.push(th+fl+mcb+b('⚔ 普攻<small>回复5%灵力</small>',"A('n')",P.pa==1?'one':''));if(P.pa==1){o.push('<p class="no">麻痹余波：本次只能普攻。</p>');return o.join('')}
 if(G.sp.length){o.push(lb(`法术 · 灵力${G.mp}/${mm()}`));G.sp.forEach(i=>{const s=SP[i],c=Math.ceil(mm()*s[1]/100),cd=C.cd['s'+i]||0;o.push(b(`${s[0]}<small>${cd?`冷却${cd}回合`:G.mp<c?`灵力不足（需${c}）`:`耗灵${c} · ${spTag(s[3])}`}</small>`,`A('s',${i})`,'',G.mp<c||cd>0,IT['S'+i][1]))})}
-const se=G.se.filter(i=>i>0&&i!=8);
+const se=G.se.filter(i=>i>0&&i!=8&&i!=10);
 if(se.length){o.push(lb('秘术 · 不耗灵力'));se.forEach(i=>{let sub='',dis=0,cls='k1';const left=2-bb();
-if(i==1){const ok=C.EN.some(cap);sub=!bst?'对修士无效':ok?'可烙印！':'需妖兽气血<10%';dis=!bst;if(ok)cls='hot'}
+if(i==1){const ok=C.EN.some(e=>e.h>0&&cap(e));sub=!bst?'对修士无效':ok?'可烙印！':'需妖兽气血<10%';dis=!bst;if(ok)cls='hot'}
 else if(i==2||i==3){sub=left>0?`精血还可燃${left}次`:'精血已枯竭';dis=left<=0}
 else if(i==4){sub=C.ys?'本场已用':'速度翻倍，可脱身';dis=C.ys}
 else if(i==9){sub=`剩${2-(C.shm||0)}次 · 神识${snOf(P)}对${T?snOf(T):'?'}`;dis=(C.shm||0)>=2}
@@ -978,7 +1076,7 @@ function gearF(){const a=Object.keys(G.iv).filter(k=>k[0]=='A'&&!AF[+k.slice(1)]
 const uEqN=o=>[...(o.eq||[]),...(o.kt?kIt(o.kt).filter(k=>k[0]=='A'):[])].length,eqF=o=>1+.25*Math.min(3,uEqN(o)),wU=r=>Math.pow(Math.min(1.5,r),1.5);
 function partyW(){const b=pStr();let w=0;G.bz.filter(z=>z.d&&z.h>0).forEach(z=>{w+=wU(Math.sqrt(bH(z)*bA(z))/b)*eqF(z)});if(dlOK()&&G.dl.h>0){const D=G.dl;w+=wU(Math.sqrt(dlH(D)*dlA(D))/b)*eqF(D)}return(1+w)*Math.sqrt(gearF())}
 // 随机遭遇：数量按战力需求增加；25%几率敌人多来一两个；20%几率（我方较强时）人数少但为精英（法宝、秘术更稀有）
-var PWE=.6;function scaleN(n0,M){M=Math.pow(M,PWE);const nmax=Math.min(8,EC[rl()].length+2,n0+2);let T=GFT(n0)*M,mode=0;const r=Math.random();if(r<.25&&M>1.05){T*=rnd(1.15,1.35);mode=1}else if(r<.45&&M>1.3)mode=2;
+var PWE=.47;function scaleN(n0,M){M=Math.pow(M,PWE);const nmax=Math.min(8,EC[rl()].length+2,n0+2);let T=GFT(n0)*M,mode=0;const r=Math.random();if(r<.25&&M>1.05){T*=rnd(1.15,1.35);mode=1}else if(r<.45&&M>1.3)mode=2;
 let n=n0;while(n<nmax&&GFT(n+1)<=T*.9)n++;if(mode==1)n=Math.min(Math.min(8,EC[rl()].length+2),n+ri(1,2));if(mode==2)n=Math.max(1,n-ri(1,2));return{n,m:clamp(T/GFT(n),mode==1?.85:1,2.6),el:mode==2}}
 const enX=(e,m,el,n)=>{e[7]={m:Math.round(m*100)/100,el:el?1:0};return e};
 function genB(n){const M=partyW(),sc0=n?{n,m:Math.max(1,Math.pow(M,PWE)),el:0}:scaleN(encN(),M);return Array.from({length:sc0.n},()=>{const e=ENC(),f=GF[Math.min(8,sc0.n)];e[5]=e[1]>=8?genKit(Math.min(14,e[1]+1),f,1,sc0.el):0;return enX(e,sc0.m,sc0.el)})}
@@ -998,7 +1096,7 @@ const DT=[{n:'剑修',H:.9,A:1.25,V:1.08,sp:[2,1],tl:'剑心：每次出手有20
 const DNS=['有缘人','道侣','结仇','已离去','已陨落','已与他人结为道侣'],dnS=st=>DNS[st==1?1:st==-1?2:st==-2?3:st==-3?4:st==-4?5:0];
 const nmK=k=>G&&G.nn&&G.nn[k]||DLC[k][0],TA=k=>DLC[k][1]?'她':'他',dlS=D=>DT[DLC[D.k][2]],dlOK=()=>!!G.dl&&!G.dl.cap;
 const dlH=(D=G.dl)=>Math.round(95*KK(D.s)*dlS(D).H*(1+kHP(dKt(D)))),dlA=(D=G.dl)=>11.5*KK(D.s)*dlS(D).A,dlV=(D=G.dl)=>Math.round(sB(Math.max(1,D.s-1))*dlS(D).V*(1+((dKt(D)||{}).vb||0)));
-const du=D=>({...mk(nmK(D.k),0),dl:1,D,lv:Math.max(1,D.s-1),get kt(){return dKt(D)},get eq(){return D.eq||[]},get h(){return D.h},set h(v){D.h=v},get H(){return dlH(D)},get a(){return dlA(D)},get v0(){return dlV(D)}});
+const du=D=>({...mk(nmK(D.k),0),dl:1,mpM:100,mp:100,D,lv:Math.max(1,D.s-1),get kt(){return dKt(D)},get eq(){return D.eq||[]},get h(){return D.h},set h(v){D.h=v},get H(){return dlH(D)},get a(){return dlA(D)},get v0(){return dlV(D)}});
 const KND=k=>DLC[k]?DLC[k][5]||0:0,isFr=k=>KND(k)==1,isTu=k=>KND(k)==2,fcands=()=>DLC.map((c,i)=>i).filter(i=>KND(i)==1&&DLC[i][1]==G.sex),funmet=()=>fcands().filter(i=>!G.np[i]),fmet=()=>fcands().filter(i=>G.np[i]&&G.np[i].st==0);
 const cands=()=>DLC.map((c,i)=>i).filter(i=>KND(i)==0&&DLC[i][1]!=G.sex),unmet=()=>cands().filter(i=>!G.np[i]),metOk=()=>cands().filter(i=>G.np[i]&&G.np[i].st==0);
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v)),pk=a=>a[ri(0,a.length-1)];
@@ -1040,29 +1138,29 @@ function dlSit(){if(!dlOK())return;const D=G.dl;D.h=dlH();const g=dlCult(.4);if(
 // 岁月流逝：道侣、有缘人自行修炼与衰老；灵兽衰老
 function ageAll(y){const D=G.dl;if(D){if(!D.cap){dlCult(y);kYear(D,'dl',y,D.k)}if(nAge(D)>=nLife(D)){const k=D.k;S(`${nmK(k)}终究没能熬过岁月——${lab(D.s)}的寿元耗尽，${TA(k)}于你怀中含笑坐化，享年${nAge(D)}岁。`,'k');retEq(D.eq,'你含泪收起了道侣的遗物');kInherit(D.kt,`${nmK(k)}留下的储物袋`);Object.assign(G.np[k],{st:-3,f:D.f,ly:G.age});bio(`道侣${nmK(k)}寿终坐化`);npDead(k);if(G.sec==k)G.sec=null;G.dl=null}}
 Object.keys(G.np).map(Number).forEach(k=>{const q=G.np[k];if(!(q.st==0||q.st==-4)||isDL(k))return;const s0=q.s;npCult(q,y*(isTu(k)?1.1:.9),w=>{if(w=='up'&&q.s%3==0&&q.s>s0&&(q.f>=20||isTu(k)))rum(`${nmK(k)}${isTu(k)?'（你的徒弟）':''}突破至【${lab(q.s)}】`)});kYear(q,'np',y,k);if(nAge(q)>=nLife(q)){q.st=-3;q.ly=G.age;if(G.sec==k)G.sec=null;npDead(k);if(isTu(k)){S(`你的徒弟${nmK(k)}寿元耗尽，坐化于${lab(q.s)}。你亲手为${TA(k)}合上了双眼——白发人送黑发人，原来修仙之人也逃不过。`,'e');bio(`徒弟${nmK(k)}坐化`);G.td=-1}else if(isFr(k)&&q.f>=30){S(`你听闻${q.sw?'金兰之交':'好友'}${nmK(k)}寿元耗尽，已于${lab(q.s)}坐化，享年${nAge(q)}岁。${q.sw?'你在桃园旧地摆了两只酒碗，一碗洒在地上，一碗一饮而尽。':'你举杯遥祭，久久无言。'}`,'e');if(q.sw)bio(`金兰之交${nmK(k)}坐化`)}else if(q.f>=30)S(`你听闻${nmK(k)}寿元耗尽，已于${lab(q.s)}坐化，享年${nAge(q)}岁。你望着远山，怅然良久。`,'e')}});
-G.bz=G.bz.filter(z=>{z.ag=(z.ag||0)+y;if(z.lv>=8)kYear(z,'pet',y);if(z.ag<pLz(z))return true;S(`${MB[z.i][0]}（${z.lv}级）寿元已尽，伏在你脚边安详地闭上了眼睛，享年${z.ag}岁。`,'e');retEq(z.eq,'你收起了它佩戴的法宝');kInherit(z.kt,`${MB[z.i][0]}的储物袋`);return false})}
+G.bz=G.bz.filter(z=>{z.ag=(z.ag||0)+y;if(z.lv>=8)kYear(z,'pet',y);if(z.ag<pLz(z))return true;S(`${pN(z)}（${z.lv}级）寿元已尽，伏在你脚边安详地闭上了眼睛，享年${z.ag}岁。`,'e');retEq(z.eq,'你收起了它佩戴的法宝');kInherit(z.kt,`${pN(z)}的储物袋`);return false})}
 // 每过一年：道侣恢复气血；久未与道侣亲近（冷落≥3年）情缘每年-1；醋意每年-4；其他人醋意-5，情缘高于50时每3年自然淡去1点
 function dlYear(y){const D=G.dl;if(D&&!D.cap){D.h=Math.min(dlH(),D.h+Math.round(dlH()*.25*y));D.ng=(D.ng||0)+y;D.j=Math.max(0,(D.j||0)-4*y);if(D.ng>=3){D.f=clamp(D.f-y,0,100);if(D.f<=0)dlLeave('受尽冷落、心灰意冷')}}
 others().forEach(i=>{const q=G.np[i];q.j=Math.max(0,(q.j||0)-5*y);if(q.f>50&&G.age%3==0)q.f--})}
 // 历练时道侣同行：分得修为，并有几率另有收获
 function dlTrip(px){if(!dlOK())return;const D=G.dl;if(pt(18)){const r=Math.random();if(r<.4){const v=ri(5,12)*sc();ST(v,`道侣收获·${nmK(D.k)}途中所得`);S(`同行的${nmK(D.k)}在途中拾得灵石${v}，顺手放进了你的储物袋。`,'g')}else if(r<.75){const w='W'+ri(0,2);add(w);S(`${nmK(D.k)}采得一份【${IT[w][0]}】交给了你。`,'g')}else{const q=lk();add(q);S(`${nmK(D.k)}在途中寻得【${inf(q)[0]}】${tag(q)}，笑着塞进你的储物袋。`,'g')}}}
 // 道侣在战斗中的行动
-function dAct(U){const say=x=>S(x,'b'),T0=dlS(U.D),ty=DLC[U.D.k][2];
+function dAct(U){const say=x=>S(x,'b'),T0=dlS(U.D),ty=DLC[U.D.k][2];aiPill(U);
 if(U.sk>0){U.sk--;say(`${U.n}陷入幻境，无法行动。`);return}
 if(U.pa==2){U.pa=1;say(`${U.n}被麻痹，动弹不得。`);return}
 const only=U.pa==1;if(only)U.pa=0;const T=TE();if(!T)return;
-if(U.bl){U.bl=0;say(`${U.n}被致盲，一击落了空。`);return}
-if(!only){const q=pickEq(U);if(q){useEq(U,q);if(!isSup(q))return}if(kAct(U))return}
-let m=1,ex='',sn=null;const x=[];
-if(!only){const si=pickSp(U,uSpL(U),50);if(si>=0){if(SP[si][3].nd||SPX(SP[si][3])){uSp(U,si);return}sn=SP[si];U.ccd=sn[3].cd||1;m=spm(si)/1.2}}
-if(ty==0&&pt(20)){m*=2;ex='剑气双发！'}if(sn&&sn[3].dbl&&pt(sn[3].dbl)){m*=2;ex+='伤害翻倍！'}
+if(U.bl){U.bl=0;say(`${U.n}被致盲，一击落了空。`);dPost(U,ty);return}
+if(!only&&aiAct(U,10*(ty==0?1.2:ty==2?1.15:1))){dPost(U,ty);return}
+CUR=T0.n+'·'+(['剑心','回春','噬血','琴心','金身'][ty]);const x=[];let m=1,ex='';if(U.mpM)U.mp=Math.min(U.mpM,U.mp+5);
+if(ty==0&&pt(20)){m*=2;ex='剑气双发！'}
 const r=hit(U,T,m);x.push(`${T.n}受${dt(r)}`);
-if(sn){const o=sn[3];['bn','bl','pa'].forEach(q=>{if(o[q])x.push(ap(T,q,o[q]))});if(o.po)x.push(ap(T,'po',o.po,sn[0]));if(o.hl)x.push(hTx(hLow(U,t=>t.H*o.hl)));if(o.dr&&r[0])x.push(hTx(hLow(U,()=>r[0]*o.dr),'吸血回复'));if(o.sh)x.push(sTx(sLow(U,t=>t.H*o.sh)));if(o.qk)x.push(ap(U,'qk',o.qk,o.qt));if(o.swA)AE().forEach(t=>x.push(ap(t,'sw',o.swA,3)));x.push(...grp(U,o))}
 if(ty==2){if(r[0])x.push('噬血'+hTx(hLow(U,()=>r[0]*.3)));if(pt(20))x.push(ap(T,'po',5,'魔毒'))}
-if(ty==1&&U.ac%2==0)x.push('回春之术'+hTx(hLow(U,t=>t.H*.2)));
-if(ty==3&&U.ac%3==0)x.push('琴心一曲，'+grp(U,{hlA:.1,imA:1}).join('，'));
-if(ty==4&&U.ac%2==0)x.push('金身护持，'+sTx(sLow(U,t=>t.H*.15)));
-say(`${U.n}${sn?`掐诀施展【${sn[0]}】`:'出手攻敌'}${ex?'——'+ex:''}，${x.filter(Boolean).join('，')}。`)}
+say(`${U.n}出手攻敌${ex?'——'+ex:''}，${x.filter(Boolean).join('，')}。`);dPost(U,ty)}
+// 道侣、同伴的辅助天赋：无论这次出手做了什么，都按出手次数触发
+function dPost(U,ty){if(!C||!alive(U))return;CUR=['剑心','回春','噬血','琴心','金身'][ty];const say=x=>S(x,'b');
+if(ty==1&&U.ac%2==0)say(`${U.n}的天赋【回春】：${hTx(hLow(U,t=>t.H*.2))}。`);
+if(ty==3&&U.ac%3==0)say(`${U.n}的天赋【琴心】：${grp(U,{hlA:.1,imA:1}).join('，')}。`);
+if(ty==4&&U.ac%2==0)say(`${U.n}的天赋【金身】：${sTx(sLow(U,t=>t.H*.15))}。`)}
 function cave(){const k=lk(3),a=ri(10,25)*sc(),w=pt(25);gain(k);if(w)add('W6');ST(a,'洞府遗宝·灵石');S(`你在洞府深处觅得遗宝：【${inf(k)[0]}】${tag(k)}与灵石${a}${w?'，还有一份天地灵物':''}！`,'g')}
 function bid(m,p){const k=G.lot[0],x=Math.round(G.lot[1]*m);if(k[0]=='B'&&!petRoom()){say(yinL()>0?`你的灵兽袋已满（${G.bz.length}/${pcap()}），容不下这只灵兽，只得作罢。`:`你一生的烙印次数已用尽，买下也无法为它烙印，只得作罢。`);return}if(G.st<x){say('你灵石不足，举牌的手僵在半空，拍卖师摇了摇头。');return}if(Math.random()<p+(G.hide?.2:0)){ST(-x,`拍卖会·${inf(k)[0]}`);gain(k);S(`几轮叫价后，你以${x}灵石拍得【${inf(k)[0]}】${tag(k)}！`,'g')}else say(`你出价${x}灵石，却被一位神秘富商高价截走。`)}
 
@@ -1230,7 +1328,8 @@ nd('boy1',d=>`那几人被你一瞪，一哄而散。少年抹了把脸上的血
 nd('boy_back',d=>d.t?`一名${lab(clamp(G.s,1,14))}的青年修士在你洞府外长跪不起：“恩公可还记得当年市集里那个护着半块馒头的小子？我是${d.n}。这些年，我没有一天忘记过您。”`:`一个黑袍魔修拦在你面前，脸上有一道狰狞的旧疤：“你不记得我了？${d.n}——当年在市集里被人打得半死，满街修士没有一个停下来。你也是其中一个。”`,d=>d.t?[['扶他起来',()=>{const q=lk(2);gain(q);S(`${d.n}奉上一件${inf(q)[0]}${tag(q)}：“这是我在秘境里拼了命才得来的，恩公一定要收下。”`,'g');gdA(3);bio(`当年接济的少年${d.n}前来报恩`)}]]:[['“……对不起。”',()=>{if(pt(40+Math.max(0,G.gd)/2)){S(`${d.n}愣住了，半晌，冷笑一声：“一句对不起，就想抵我半条命？”可他终究没有出手，转身消失在风里。`,'p');gdA(2)}else{S(`“晚了！”${d.n}眼中魔光暴涨，悍然出手！`,'e');sf([cvX(d.n,1)],1.1,{solo:1})}}],['拔剑',()=>{sf([cvX(d.n,1)],1.1,{solo:1})}]]);
 // ===================== 灵狐报恩 / 寻仇 =====================
 nd('fox0',d=>'密林深处，一头受了重伤的银狐将三只幼崽护在身下，冲你龇着牙。它的皮毛泛着淡淡银光，眼中灵光流转——是一头颇有灵性、离化形不远的银狐。后腿上的伤口很深，像是被猎妖修士的法器所伤。',d=>[['替它疗伤（疗伤丹×1）',()=>{tk('P1');S('银狐警惕地看着你替它敷药，最后，轻轻舔了舔你的手背。','g');gdA(4);later('fox_thank',ri(15,30),{t:1});return null},!hv('P1')],['放它们离开',()=>{S('你退后几步。银狐叼起幼崽，一瘸一拐地消失在密林里，临走前回头看了你一眼。','p');gdA(2);later('fox_thank',ri(20,35),{t:0});return null}],['斩杀母狐，取它的妖丹',()=>{add('W1',3);ST(10*sc(),'灵狐皮毛');S('你取下了七级灵狐的妖丹，剥下银色的皮毛。三只幼崽缩在草丛里瑟瑟发抖，其中一只死死盯着你，眼睛红得像血。（妖丹×3）','e');gdA(-6);later('fox_hate',ri(15,30),{});return null}],...(G.se.includes(1)&&petRoom()?[[`收服一只幼崽${yinT()}`,()=>{sf([[8,clamp(Lp(),1,7)]],.6,{fixed:1,ow:()=>{if(!petRoom()){S('你击退了母狐，可已无力再烙印幼崽。','p');return}const b=mkb(8,1,0);G.bz.push(b);yin();S('你击退了母狐，烙印了一只幼崽。母狐带着另外两只幼崽逃进了密林深处，那凄厉的哀鸣，在林间回荡了一整夜。（获得1级九尾狐）','e');gdA(-3);later('fox_hate',ri(15,30),{})}})}]]:[])]);
-nd('fox_thank',d=>`一位银发${G.sex?'少年':'少女'}拦在你面前，盈盈一拜：“恩公，${d.t?'当年您为我娘疗伤':'当年您放我们一条生路'}，我娘临终前嘱咐我，此恩必报。”${G.sex?'他':'她'}已经化为人形，眉眼间还带着几分狐的灵动。`,d=>[['收下谢礼',()=>{const q=pool(['A','P','T'],g=>g>=2);gain(q);S(`${G.sex?'他':'她'}奉上一件${inf(q)[0]}${tag(q)}，又化作一道银光，消失在山林间。`,'g');gdA(2)}],...(petRoom()?[[`“若不嫌弃，留在我身边吧。”${yinT()}`,()=>{yin();const b=mkb(8,Math.max(8,Math.min(plv(),Lp()+1)),ri(80,150));b.bd=0;b.h=bH(b);G.bz.push(b);kitOf(b);S(`${G.sex?'他':'她'}眼睛一亮，化作一道银光没入你的灵兽袋——一只${b.lv}级的九尾狐（人形），从此与你相伴。`,'k');bio('灵狐报恩，化形相随')}]]:[])]);
+nd('fox_thank',d=>`一位银发${G.sex?'少年':'少女'}拦在你面前，盈盈一拜：“恩公，${d.t?'当年您为我娘疗伤':'当年您放我们一条生路'}，我娘临终前嘱咐我，此恩必报。”${G.sex?'他':'她'}已经化为人形，眉眼间还带着几分狐的灵动。`,d=>[['收下谢礼',()=>{const q=pool(['A','P','T'],g=>g>=2);gain(q);S(`${G.sex?'他':'她'}奉上一件${inf(q)[0]}${tag(q)}，又化作一道银光，消失在山林间。`,'g');gdA(2)}],...(petRoom()?[[`“若不嫌弃，留在我身边吧。”${yinT()}`,()=>{yin();if(Lp()>=8){const L=Math.min(8,Lp()),b=mkb(8,L,ri(80,150));b.bd=0;b.lim=Math.max(L,Math.min(b.lim,L+2));b.h=Math.round(bH(b)*.5);G.bz.push(b);kitOf(b);S(`${G.sex?'他':'她'}眼睛一亮，化作一道银光没入你的灵兽袋——一只${b.lv}级的九尾狐（人形），从此与你相伴。（仅烙印，只能发挥五成实力；${TA0f()}化形时耗尽了妖力，气血只剩一半，需要休养。）`,'k');bio('灵狐报恩，化形相随')}else{const b=mkb(8,1,0);b.bd=0;G.bz.push(b);S(`${G.sex?'他':'她'}看了看你，轻轻摇头：“恩公修为尚浅，我这身化形的妖力，会压垮你的神识。”说罢，${TA0f()}从怀中抱出一只刚睁眼的小狐狸，放进你的掌心：“这是我的小妹。等她长大，便由她替我报恩。”（获得1级九尾狐。你修到元婴后，化形的灵狐才愿意亲自追随你。）`,'k');bio('灵狐报恩，托付幼妹')}}]]:[])]);
+const TA0f=()=>G.sex?'他':'她';
 nd('fox_hate',d=>`月黑风高。一个银发${G.sex?'少年':'少女'}立在你洞府门前，银白的狐尾在身后张开，眼中是化不开的恨意：“还记得密林里那头银狐吗？——还我娘命来！”`,d=>[['迎战',()=>{sf([[8,clamp(Lp()+1,2,13)]],.95,{solo:1,ow:()=>{S('银狐倒在血泊中，眼里的恨意，到死都没有散去。','e');gdA(-2)}})}],['说出当年的苦衷，求TA放下',()=>{if(pt(30+Math.max(0,G.gd)/3)){S('“苦衷？”银狐笑出了眼泪，九尾缓缓收拢，“……你走吧。从此你我两清。”','p')}else{S('“花言巧语！”狐尾铺天盖地地卷来！','e');sf([[8,clamp(Lp()+1,2,13)]],.95,{solo:1})}}]]);
 
 // ===================== 凡间家书 =====================
@@ -1307,9 +1406,9 @@ nd('xinmo',d=>'你冲击瓶颈之际，识海中忽然浮现出一个与你一�
 // ===================== 醉仙楼说书 =====================
 nd('tale0',d=>{const B=(G.bio||[]).filter(b=>!b.t.startsWith('踏上仙途'));d.b=B.length&&pt(60)?pk(B):null;return`醉仙楼里座无虚席。说书先生一拍惊堂木：“今日说一段——${d.b?`${G.n}${d.b.t}的故事！`:'上古大能「青云剑尊」一剑断江的故事！'}”${d.b?'满堂叫好。你端着茶杯，差点呛着——他讲的版本，比真实的离谱了十倍。':''}`},d=>[[`打赏说书先生（${sc()}灵石）`,()=>{ST(-Math.min(G.st,sc()),'打赏说书');const t=ri(0,2);S('说书先生收了赏钱，凑过来压低声音：“客官出手大方，告诉您一个消息——'+['城外乱葬岗下，压着一座古墓。','坊市的赌石坊，最近进了一批好石头。','太虚秘境，快要开了。'][t]+'”','p');later(['tomb0','stone0','rlm0'][t],ri(0,1),{});gdA(1)}],...(d.b?[['上台纠正细节',()=>{S('“不对不对，那天我只砍了三刀，不是三千刀！”满堂哄笑。说书先生倒是灵机一动：“诸位，这就是本尊！”你被热情的听众灌了一夜的酒。','g')}]]:[]),['默默喝完这壶茶',()=>null]]);
 // ===================== 人形灵兽的心事 / 灵兽偷丹 =====================
-nd('pet_free',d=>{const z=G.bz[d.i];return`${MB[z.i][0]}化为人形后，常常一个人坐在崖边看云。今日，它终于开口：“主人，我想……去外面的世界看看。”`},d=>{const z=G.bz[d.i];return[['放它自由',()=>{G.bz.splice(G.bz.indexOf(z),1);retEq(z.eq,'临走前，它把你给的法宝还了回来');S(`${MB[z.i][0]}向你深深一拜，化作一道流光，消失在天际。`,'p');gdA(2);later('pet_back',ri(8,20),{z});bio(`放${MB[z.i][0]}自由`)}],['“你是我的伙伴，不是奴仆。想走就走，想回来就回来。”',()=>{if(pt(70)){S(`${MB[z.i][0]}愣了很久，最后坐回你身边：“……那我再陪主人一会儿。”`,'g');pxp(z,Math.round(xn(z.lv)*.5))}else{G.bz.splice(G.bz.indexOf(z),1);retEq(z.eq,'它把你给的法宝留在了石桌上');S(`第二天清晨，${MB[z.i][0]}不见了。石桌上留着一片它褪下的羽毛（鳞片）。`,'p');later('pet_back',ri(8,20),{z})}}],['命令它留下',()=>{if(!z.bd&&pt(40)){G.bz.splice(G.bz.indexOf(z),1);retEq(z.eq,'它把你给的法宝扔在了地上');S(`当夜，${MB[z.i][0]}挣断了烙印，逃走了。`,'e')}else S(`${MB[z.i][0]}低下头，沉默地回到了灵兽袋里。`,'e')}]]},d=>!!G.bz[d.i]);
-nd('pet_back',d=>{const z=d.z;return`洞府外落下一道熟悉的流光——是当年离开的${MB[z.i][0]}！它的修为又精进了许多，手里还提着一只沉甸甸的储物袋：“主人，我回来了。外面的世界很大，可是……没有主人。”`},d=>{const z=d.z;return[...(petRoom()?[['欢迎回家',()=>{G.bz.push(z);z.eq=[];kInherit(z.kt,`${MB[z.i][0]}带回的储物袋`);S(`${MB[z.i][0]}重新回到了你身边。`,'k')}]]:[]),['收下礼物，让它继续去闯荡',()=>{kInherit(z.kt,`${MB[z.i][0]}带回的储物袋`);S(`${MB[z.i][0]}笑了笑，又化作流光飞走了。`,'p')}]]});
-nd('pet_eat',d=>{const z=G.bz[d.i];return`你发现储物袋里的【${IT[d.p][0]}】少了一颗——${MB[z.i][0]}正鼓着腮帮子缩在角落里装睡，嘴角还沾着药渣。`},d=>{const z=G.bz[d.i];return[['罚它面壁',()=>{S(`${MB[z.i][0]}委屈巴巴地面壁去了，可那颗丹药的药力，已经化进了它的身体。`,'p');pxp(z,Math.round(xn(z.lv)*.3))}],['哭笑不得，揉揉它的脑袋',()=>{S(`${MB[z.i][0]}眯着眼睛蹭你的手，打了个满是药香的饱嗝。`,'g');pxp(z,Math.round(xn(z.lv)*.3))}]]},d=>!!G.bz[d.i]);
+nd('pet_free',d=>{const z=G.bz[d.i];return`${pN(z)}化为人形后，常常一个人坐在崖边看云。今日，它终于开口：“主人，我想……去外面的世界看看。”`},d=>{const z=G.bz[d.i];return[['放它自由',()=>{G.bz.splice(G.bz.indexOf(z),1);retEq(z.eq,'临走前，它把你给的法宝还了回来');S(`${pN(z)}向你深深一拜，化作一道流光，消失在天际。`,'p');gdA(2);later('pet_back',ri(8,20),{z});bio(`放${pN(z)}自由`)}],['“你是我的伙伴，不是奴仆。想走就走，想回来就回来。”',()=>{if(pt(70)){S(`${pN(z)}愣了很久，最后坐回你身边：“……那我再陪主人一会儿。”`,'g');pxp(z,Math.round(xn(z.lv)*.5))}else{G.bz.splice(G.bz.indexOf(z),1);retEq(z.eq,'它把你给的法宝留在了石桌上');S(`第二天清晨，${pN(z)}不见了。石桌上留着一片它褪下的羽毛（鳞片）。`,'p');later('pet_back',ri(8,20),{z})}}],['命令它留下',()=>{if(!z.bd&&pt(40)){G.bz.splice(G.bz.indexOf(z),1);retEq(z.eq,'它把你给的法宝扔在了地上');S(`当夜，${pN(z)}挣断了烙印，逃走了。`,'e')}else S(`${pN(z)}低下头，沉默地回到了灵兽袋里。`,'e')}]]},d=>!!G.bz[d.i]);
+nd('pet_back',d=>{const z=d.z;return`洞府外落下一道熟悉的流光——是当年离开的${pN(z)}！它的修为又精进了许多，手里还提着一只沉甸甸的储物袋：“主人，我回来了。外面的世界很大，可是……没有主人。”`},d=>{const z=d.z;return[...(petRoom()?[['欢迎回家',()=>{G.bz.push(z);z.eq=[];kInherit(z.kt,`${pN(z)}带回的储物袋`);S(`${pN(z)}重新回到了你身边。`,'k')}]]:[]),['收下礼物，让它继续去闯荡',()=>{kInherit(z.kt,`${pN(z)}带回的储物袋`);S(`${pN(z)}笑了笑，又化作流光飞走了。`,'p')}]]});
+nd('pet_eat',d=>{const z=G.bz[d.i];return`你发现储物袋里的【${IT[d.p][0]}】少了一颗——${pN(z)}正鼓着腮帮子缩在角落里装睡，嘴角还沾着药渣。`},d=>{const z=G.bz[d.i];return[['罚它面壁',()=>{S(`${pN(z)}委屈巴巴地面壁去了，可那颗丹药的药力，已经化进了它的身体。`,'p');pxp(z,Math.round(xn(z.lv)*.3))}],['哭笑不得，揉揉它的脑袋',()=>{S(`${pN(z)}眯着眼睛蹭你的手，打了个满是药香的饱嗝。`,'g');pxp(z,Math.round(xn(z.lv)*.3))}]]},d=>!!G.bz[d.i]);
 
 const EV=[
 fe(d=>`山道上，${d}拦住去路，杀气腾腾。`),
@@ -1363,7 +1462,7 @@ fe(d=>`溪边饮水的${d}察觉到了你，低吼着逼近。`),
 [()=>`深山云海之中，你发现一座被封印了万年的上古遗府。府门前立着一尊满身铜锈的守府傀儡——它的眼中，缓缓亮起了红光。`,[['迎战傀儡',()=>sf(G.enc,1.25,{ow:()=>{const q=pt(55)?'P12':'P13';add(q);S(`傀儡轰然倒塌，遗府石门洞开。玉台之上，静静躺着一枚【${IT[q][0]}】${tag(q)}——这是能逆天改命的上古灵丹！`,'k')}})],['悄然退走',()=>say('你不敢惊动傀儡，悄悄退出了云海。')]],()=>{const cs=Math.min(14,G.s+1);G.enc=[[-1,cvL(cs),'上古守府傀儡',[0,2],cs,0]]},()=>.03],
 [()=>`晴空骤起雷云，一道紫色天雷死死锁定了你——竟是可遇不可求的『九霄淬体雷劫』！传说熬过此劫者可洗去凡骨、逆转天命。（需气血充盈，否则凶多吉少）`,[['盘膝硬扛',()=>{hurt(.6,'紫雷一道接一道劈落，你皮开肉绽，');if(G.over)return;if(pt(50)){if(breakP())S('雷光散尽，你自焦土中站起，浑身骨骼隐隐有雷音流转——束缚你的天命枷锁，竟被雷劫劈碎了！（天命瓶颈已打破）','k');else{const g=Math.round(yY()*3);G.x+=g;S(`你本无天命桎梏，雷劫尽数化作淬体之力，修为+${g}！`,'g')}}else{const g=Math.round(yY()*.8);G.x+=g;S(`雷劫散去，你虽未能逆转天命，却也淬炼了肉身，修为+${g}。`,'g')}}],['遁地躲避',()=>say('你遁入地底，雷云在头顶盘旋良久，终于不甘地散去。')]],null,()=>G.limR&&G.lim<14?.03:.01],
 [()=>`云雾深处藏着一汪七彩灵泉，泉眼汩汩冒着灵光。据说上古仙人曾在此洗炼灵根，凡人入池，或可脱胎换骨。`,[['入池洗炼（耗时一年）',()=>{adv(1);if(G.over)return;if(!(G.lr.t in WUP)){const g=Math.round(yY()*1.5);G.x+=g;S(`你的灵根本已至纯，泉水只化作精纯灵气，修为+${g}。`,'g')}else if(pt(55))washRoot(G,1);else S('你在池中泡了整整一年，泉水只是温养了经脉，灵根并无变化。','p')}],['掬一捧泉水离去',()=>{add('P2');S('你取了一捧泉水，炼成一枚回灵丹。','g')}]],null,()=>G.lr&&G.lr.t>=4?.08:.04],
-[()=>{const z=G.bz[G.ex.zi];return `你的${MB[z.i][0]}忽然对着山崖下一株千年朱果低吼不止，周身隐隐泛起血光——这是血脉觉醒的征兆！`},()=>{const z=G.bz[G.ex.zi];return[['助它炼化朱果（妖丹×2）',()=>{if(!z)return;if(hv('W1')<2){say('你手头的妖丹不够。');return}tk('W1',2);breakPet(z)}],['让它自己吞下',()=>{if(!z)return;if(pt(50))breakPet(z);else S(`${MB[z.i][0]}吞下朱果后昏睡了三天三夜，醒来后似乎什么也没变。`,'p')}]]},()=>{const L=G.bz.map((z,i)=>i).filter(i=>G.bz[i].limR&&G.bz[i].lim<13);G.ex={zi:pk(L)}},()=>G.bz.some(z=>z.limR&&z.lim<13)?.12:0],
+[()=>{const z=G.bz[G.ex.zi];return `你的${pN(z)}忽然对着山崖下一株千年朱果低吼不止，周身隐隐泛起血光——这是血脉觉醒的征兆！`},()=>{const z=G.bz[G.ex.zi];return[['助它炼化朱果（妖丹×2）',()=>{if(!z)return;if(hv('W1')<2){say('你手头的妖丹不够。');return}tk('W1',2);breakPet(z)}],['让它自己吞下',()=>{if(!z)return;if(pt(50))breakPet(z);else S(`${pN(z)}吞下朱果后昏睡了三天三夜，醒来后似乎什么也没变。`,'p')}]]},()=>{const L=G.bz.map((z,i)=>i).filter(i=>G.bz[i].limR&&G.bz[i].lim<13);G.ex={zi:pk(L)}},()=>G.bz.some(z=>z.limR&&z.lim<13)?.12:0],
 [()=>`${nmK(G.dl.k)}从一处古修洞府中带回一卷残缺的上古传承，双眼发亮：“这上面说……能打破天命瓶颈！”`,()=>{const k=G.dl.k;return[[`陪${TA(k)}闭关参悟一年`,()=>{adv(1);if(G.over||!G.dl)return;breakDL();ar(k,4,7)}],[`让${TA(k)}自己参悟`,()=>{if(pt(50))breakDL();else S(`${nmK(k)}闭关数月，出关时神色黯然：“……还差一点。”`,'e')}]]},null,()=>dlOK()&&G.dl.limR&&G.dl.lim<14?.1:0]
 ];
 // 剧情事件：[描述, 选项(数组或函数), 初始化, 权重函数]；按权重随机抽取，有前置条件的事件条件不满足时权重为0
@@ -1384,7 +1483,7 @@ const crYield=(c,r,g,m)=>r.c=='A'||r.t>=3?1:clamp(1+Math.max(0,g-1-r.t)+CFM[m][2
 function crXP(c,n){const s=crS(c),g0=crGr(c);s.xp+=Math.max(1,Math.round(n*(crTal(c)?1.4:1)));const g1=crGr(c);if(g1>g0){S(`你的${DAO[c].n}精进了！晋升为「${DAO[c].rn[g1]}」，从此可以${DAO[c].v}${(c?TQA:TQN)[g1-1]}。`,'k');bang('技艺精进',`${DAO[c].n} · ${DAO[c].rn[g1]}`,'green');bio(`${DAO[c].n}晋升「${DAO[c].rn[g1]}」`)}else{const nx=XPN[Math.min(5,g0+1)];if(g0<5&&s.xp>=nx&&g0>=crCap()&&s.capN!==g0){s.capN=g0;S(`（你的${DAO[c].n}熟练度已足够晋升，但受境界所限，需突破到${RN[Math.min(4,g0)]}期才能更进一步。）`,'s')}}}
 // 时间：每开一炉耗时三个月（与一次历练相同），上品两炉时间、极品一年；炉火中运转周天，修为略有增长
 function spendQ(n){for(let j=0;j<n&&!G.over;j++){const x=Math.round(rnd(.3,.5)*yY()/4);G.x+=x;G.ec=(G.ec||0)+1;if(G.ec>=4){G.ec=0;S('光阴荏苒，又是一年。');adv(1)}}}
-function doCraft(c,j,m){const r=CRL[j],D=DAO[c],g=crGr(c),pn=crN(r);if(!r||!crKnow(c,r)||g<r.t+1)return;const ms=crMiss(r);if(ms){say(`材料不足：缺${ms}。`);return}
+function doCraft(c,j,m){if(!G.lr)return;const r=CRL[j],D=DAO[c],g=crGr(c),pn=crN(r);if(!r||!crKnow(c,r)||g<r.t+1)return;const ms=crMiss(r);if(ms){say(`材料不足：缺${ms}。`);return}
 const mat=crMat(r);for(const k in mat)tk(k,mat[k]);ST(-crSt(r),`${D.v}·${pn}`);const p=crP(c,r,m,g),ok=pt(p*100),q=crQ(r);
 spendQ(q);if(G.over)return;const tm=q==1?'三个月':q==2?'半年':'一年';
 if(ok){const n=crYield(c,r,g,m);add(crK(r),n);S(`${tm}后，${D.fu}中${r.c=='P'?'丹香四溢':'宝光冲霄'}——${D.v}成功！得到【${pn}】${tag(crK(r))}${n>1?'×'+n:''}。（成功率${Math.round(p*100)}%）`,'g');crXP(c,(2+2*r.t)*1.5);
@@ -1392,11 +1491,11 @@ if(r.t>=2)bang(r.c=='P'?'丹成！':'器成！',pn,r.t>=3?'gold':'purple');
 if(r.t>=3){bio(`亲手${D.v}出${(c?TQA:TQN)[3]}【${pn}】`);rumMe(`${G.n}亲手${D.v}出【${pn}】`);if(!crS(c).leg)crS(c).leg=[];if(!crS(c).leg.includes(j)){crS(c).leg.push(j);S(`上古传承之物，竟在你手中重现人间！消息不胫而走，${D.n}中人无不侧目。`,'k')}}}
 else{let t=`${tm}的心血付之一炬——${D.v}失败了，【${pn}】的材料尽数化为飞灰。（成功率${Math.round(p*100)}%）`;if(mat.W6&&pt(50)){add('W6');t+='好在天地灵物不惧凡火，被你完好地取了出来。'}S(t,'e');crXP(c,2+2*r.t);
 if((m==2&&pt(35))||(r.t>=3&&pt(15))){hurt(.08+.04*r.t,`${D.fu}轰然炸裂，火浪扑面而来，`)}}}
-function crStudy(c){if(!crS(c).on)return;spendQ(1);if(G.over)return;S(`你闭门研读${DAO[c].n}典籍，在${DAO[c].fu}前空烧了三个月的火，揣摩火候与药性的变化。（${DAO[c].n}熟练度+${Math.round(3*(crTal(c)?1.4:1))}）`,'p');crXP(c,3)}
+function crStudy(c){if(!G.lr)return;if(!crS(c).on)return;spendQ(1);if(G.over)return;S(`你闭门研读${DAO[c].n}典籍，在${DAO[c].fu}前空烧了三个月的火，揣摩火候与药性的变化。（${DAO[c].n}熟练度+${Math.round(3*(crTal(c)?1.4:1))}）`,'p');crXP(c,3)}
 // 请人代炼：丹修精通丹道；剑修、体修精通器道。代炼不耗你的时间，每人每年一次；你需提供材料（和丹方）
 const helpT=c=>c?[0,4]:[1],helpG=q=>clamp((q.s/3|0)+1,1,4);
 function helpL(c){const L=[];if(dlOK()&&helpT(c).includes(DLC[G.dl.k][2]))L.push(G.dl.k);Object.keys(G.np).map(Number).forEach(k=>{if(!isDL(k)&&ok0(k)&&lv(k)>=30&&helpT(c).includes(DLC[k][2])&&!(G.np[k].aw>G.age))L.push(k)});return L}
-function helpCraft(c,k,j){const r=CRL[j],q=isDL(k)?G.dl:G.np[k];if(!q||C||(q.cy===G.age))return;const g=helpG(q);if(g<r.t+1||r.x){say(`${nmK(k)}摇摇头：“这一炉我没有把握。”`);return}const ms=crMiss(r);if(ms){say(`材料不足：缺${ms}。`);return}
+function helpCraft(c,k,j){if(!G.lr)return;const r=CRL[j],q=isDL(k)?G.dl:G.np[k];if(!q||C||(q.cy===G.age))return;const g=helpG(q);if(g<r.t+1||r.x){say(`${nmK(k)}摇摇头：“这一炉我没有把握。”`);return}const ms=crMiss(r);if(ms){say(`材料不足：缺${ms}。`);return}
 const mat=crMat(r);for(const x in mat)tk(x,mat[x]);ST(-crSt(r),`请${nmK(k)}代炼·${crN(r)}`);q.cy=G.age;const p=clamp(crBase(c,r,g)+.05,.05,.95);
 if(pt(p*100)){const n=crYield(c,r,g,1);add(crK(r),n);S(`${nmK(k)}闭关数月，捧出一${r.c=='P'?'只玉瓶':'只锦盒'}：“幸不辱命。”——【${crN(r)}】${tag(crK(r))}${n>1?'×'+n:''}。（成功率${Math.round(p*100)}%）`,'g');like(k,2)}else{S(`${nmK(k)}灰头土脸地出关，歉然道：“火候差了一线……材料白费了。”（成功率${Math.round(p*100)}%）`,'e');like(k,1)}}
 // 开炉：剧情化的控火抉择
@@ -1453,31 +1552,32 @@ const evC=e=>typeof e[1]=='function'?e[1]():e[1],evW=e=>!Array.isArray(e)?(G.age
 function go(){if(!G.lr){po('lr');return}if(G.nd)return;G.nxp=0;G.ec=(G.ec||0)+1;if(G.ec>=4){G.ec=0;S('光阴荏苒，又是一年。');adv(1);if(G.over)return}if(G.sec!=null&&!(G.np[G.sec]&&G.np[G.sec].st==0&&G.dl))G.sec=null;if(pqGo())return;const ix=EV.map((e,i)=>i).filter(i=>evW(EV[i])>0);const ei=wp(ix,i=>evW(EV[i])),e=EV[ei];if(!Array.isArray(e)){G.ev=-1;G.evc[e.n]=G.age;G.nxp=1;goN(e.n,e.i?e.i():{});if(!G.nd&&!C){G.nxp=0;S('一路风平浪静。');trip()}return}G.ev=ei;const enc0=G.enc;if(e[2])e[2]();S(typeof e[0]=='function'?e[0]():e[0]);if(G.enc&&G.enc!==enc0){const t=scanTxt(G.enc);if(t)S(t,'s')}if(G.egg)S('……一股令你神魂战栗的恐怖威压扑面而来——对方的修为，竟比你高出整整三个级别！（天外凶星）','e')}
 function trip(nt){const x=Math.round(rnd(.6,1)*yY()/4);G.x+=x;S(`此番历练，修为+${x}。`,'g');if(dlOK())dlTrip(x);if(!C&&!nt)tre()}
 function pick(i){if(G.over||G.ev<0)return;const f=evC(EV[G.ev])[i][1];G.ev=-1;f();G.egg=0;if(!G.over){if(G.nd||C)G.nxp=1;else trip()}draw()}
-const TX={wk:'虚弱',bf:'强化',bn:'燃烧',bl:'致盲',po:'中毒',pa:'麻痹',ch:'被魅惑',inj:'重伤',hd:'敛气',rv:'复生',qk:'疾速',sw:'迟缓',im:'免疫',gh:'血影虚化',lm:'天命瓶颈',ol:'寿元将尽',sl:'残魂寄体'},PCT={wk:1,bf:1,po:1,qk:1,sw:1};
-const ED={wk:'虚弱（x%）：伤害暂时降低x%，持续x回合，虚弱持续期间无法再次被虚弱。',bf:'强化（x%）：伤害暂时提高x%，持续x回合，强化持续期间无法再次被强化。',bn:'燃烧（x%）：有x%几率使目标持续燃烧3回合，每回合损失生命。',bl:'致盲（x%）：有x%几率使目标致盲，下一击必定落空，冷却3回合。',po:'中毒（x%）：使目标每回合损失x%的生命，持续3回合，中毒持续期间无法再次中同一种毒。',pa:'麻痹（x%）：有x%几率使目标麻痹，下一回合无法行动，再下一回合只能普攻，冷却4回合。',ch:'魅惑（x%）：有x%几率使目标陷入幻境，防御和意志松懈，目标虚弱（30%），下一回合无法行动，冷却3回合。',inj:'重伤：受到的恢复效果减半。',hd:'敛气术：遮掩气息，伪装气息，甚至易容，可掩盖真实修为。使用期间不能战斗，否则敛气术失效。敛气术可以装大佬，竞拍成功率提高，开着敛气术在战斗外更容易脱身哦。',im:'免疫：免疫期间不会被施加任何负面效果（虚弱、燃烧、致盲、中毒、麻痹、魅惑、迟缓、重伤），持续若干回合。',gh:'血影虚化：血影笼罩全身，直到你下一次出手前，所有攻击与负面效果都会落空。',ol:'寿元将尽：剩余寿元已不足一成（或不足5年）。突破到下一个大境界可大幅延长寿元，否则寿元耗尽便会坐化。',lm:'天命瓶颈：冥冥之中自有定数，此生大道止步于此境界，无论如何也无法再突破到下一个大境界。',qk:'疾速（x%）：速度暂时提高x%，持续若干回合（以来源说明为准）。速度越快，出手越早、每回合出手次数越多；再次获得疾速时取较高者。',sw:'迟缓（x%）：速度暂时降低x%，持续3回合，迟缓持续期间无法再次被迟缓。',sl:'残魂寄体：戒中老者的一缕残魂栖身于你的识海，打坐修为+30%。只是……天下哪有白吃的午餐？',rv:'复生（九转还魂丹）：服下后，100年内如果死亡，会以40%气血、40%灵力复活一次，复活后此状态消失。'};
+const TX={wk:'虚弱',bf:'强化',bn:'燃烧',bl:'致盲',po:'中毒',pa:'麻痹',ch:'被魅惑',inj:'重伤',hd:'敛气',rv:'复生',qk:'疾速',sw:'迟缓',im:'免疫',gh:'血影虚化',lm:'天命瓶颈',ol:'寿元将尽',sl:'残魂寄体',bd:'⛓封禁'},PCT={wk:1,bf:1,po:1,qk:1,sw:1};
+const ED={wk:'虚弱（x%）：造成的伤害降低x%。不同来源的虚弱叠加生效（最高90%），同一来源重复施加只刷新回合数。',bf:'强化（x%）：造成的伤害提高x%。不同来源的强化叠加生效（例如燃血秘术+爆元丹+乾坤镜），同一来源重复施加只刷新。',bn:'燃烧（x%）：有x%几率使目标燃烧3回合，每回合损失5%最大生命。不同来源的燃烧叠加（例如烈阳诀+赤焰狐），伤害成倍增加。',bl:'致盲（x%）：有x%几率使目标致盲，下一击必定落空，冷却3回合。',po:'中毒（x%）：使目标每回合损失x%的生命，持续3回合，中毒持续期间无法再次中同一种毒。',pa:'麻痹（x%）：有x%几率使目标麻痹，下一回合无法行动，再下一回合只能普攻，冷却4回合。',ch:'魅惑（x%）：有x%几率使目标陷入幻境，防御和意志松懈，目标虚弱（30%），下一回合无法行动，冷却3回合。',inj:'重伤：受到的恢复效果减半。',hd:'敛气术：气息收敛如凡人。拍卖竞拍成功率+20%，遇到劫修、仇家时更容易脱身；一出手战斗即失效，神识比你强1.5倍的敌人能看穿。',bd:'封禁：被「手下留情」制住，经脉被封、四肢被缚，无法行动，也不能被任何人治疗或施加护盾。战斗结束后由你决定TA的生死。',im:'免疫：免疫期间不会被施加任何负面效果（虚弱、燃烧、致盲、中毒、麻痹、魅惑、迟缓、重伤），持续若干回合。',gh:'血影虚化：血影笼罩全身，直到你下一次出手前，所有攻击与负面效果都会落空。',ol:'寿元将尽：剩余寿元已不足一成（或不足5年）。突破到下一个大境界可大幅延长寿元，否则寿元耗尽便会坐化。',lm:'天命瓶颈：冥冥之中自有定数，此生大道止步于此境界，无论如何也无法再突破到下一个大境界。',qk:'疾速（x%）：速度提高x%，持续回合以来源为准。速度越快，出手越早、每回合出手次数越多。不同来源叠加生效，同一来源重复施加只刷新。',sw:'迟缓（x%）：速度降低x%。不同来源叠加生效（最高90%），同一来源重复施加只刷新。',sl:'残魂寄体：戒中老者的一缕残魂栖身于你的识海，打坐修为+30%。只是……天下哪有白吃的午餐？',rv:'复生（九转还魂丹）：服下后，100年内如果死亡，会以40%气血、40%灵力复活一次，复活后此状态消失。'};
 function stl(T){const r=[],w=T.wk;
-if(w){const y=w.yr&&G.wk;r.push(['wk',w.p,y?G.wk.y+'年':w.t+'回合',y?G.wk.y+'年':w.t+'回'])}
-if(T.bf){const t=T.bf.ft||T.bf.t>=99;r.push(['bf',T.bf.p,t?'整场战斗':T.bf.t+'回合',t?'整场':T.bf.t+'回'])}
+const sj=o=>srcL(o).join('、');if(T.bnd)r.push(['bd',0,'直到战斗结束','','']);
+if(w){const y=w.yr&&G.wk;r.push(['wk',w.p,y?G.wk.y+'年':w.t+'回合',y?G.wk.y+'年':w.t+'回',sj(w)])}
+if(T.bf){const t=T.bf.ft||T.bf.t>=99;r.push(['bf',T.bf.p,t?'整场战斗':T.bf.t+'回合',t?'整场':T.bf.t+'回',sj(T.bf)])}
 if(T.im)r.push(['im',0,T.im.t+'回合',T.im.t+'回']);
 if(T.gh)r.push(['gh',0,'直到你下次出手','']);
-if(T.qk){const t=T.qk.ft||T.qk.t>=99;r.push(['qk',T.qk.p,t?'整场战斗':T.qk.t+'回合',t?'整场':T.qk.t+'回'])}
-if(T.sw)r.push(['sw',T.sw.p,T.sw.t+'回合',T.sw.t+'回']);
-if(T.bn)r.push(['bn',0,T.bn.t+'回合',T.bn.t+'回']);
+if(T.qk){const t=T.qk.ft||T.qk.t>=99;r.push(['qk',T.qk.p,t?'整场战斗':T.qk.t+'回合',t?'整场':T.qk.t+'回',sj(T.qk)])}
+if(T.sw)r.push(['sw',T.sw.p,T.sw.t+'回合',T.sw.t+'回',sj(T.sw)]);
+if(T.bn)r.push(['bn',0,T.bn.t+'回合',T.bn.t+'回',sj(T.bn)]);
 for(const k in(T.po||{}))r.push(['po',T.po[k].p,T.po[k].t+'回合',T.po[k].t+'回',k]);
 if(T.bl)r.push(['bl',0,'下一击必定落空','']);
 if(T.pa)r.push(['pa',T.pa,T.pa==2?'下一回合无法行动':'下一回合只能普攻','']);
 if(T.sk>0)r.push(['ch',0,'下一回合无法行动','']);
 if(T.inj)r.push(['inj',0,'持续重伤','']);
 return r}
-const tgsL=l=>l.length?`<span class="tgs">${l.map(d=>{const t=TX[d[0]]+(PCT[d[0]]&&d[1]?d[1]+'%':'');return `<button class="sx sx${d[0]}" title="${t}${d[2]?'，剩余'+d[2]:''}（点击查看详情）" onclick="event.stopPropagation();po('e','${d.join('|')}')">${t}${d[3]?'·'+d[3]:''}</button>`}).join('')}</span>`:'';
+const tgsL=l=>l.length?`<span class="tgs">${l.map(d=>{const t=TX[d[0]]+(PCT[d[0]]&&d[1]?d[1]+'%':'');const nn=d[4]&&d[0]!='po'?d[4].split('、').length:1;return `<button class="sx sx${d[0]}" title="${t}${d[2]?'，剩余'+d[2]:''}${nn>1?`（${nn}个来源叠加）`:''}（点击查看详情）" onclick="event.stopPropagation();po('e','${d.join('|')}')">${t}${nn>1?'×'+nn:''}${d[3]?'·'+d[3]:''}</button>`}).join('')}</span>`:'';
 const xt=()=>G.rv>G.age?[['rv',0,`${G.rv-G.age}年`,`${G.rv-G.age}年`]]:[];
 const pl0=()=>{const l=stl(G.ps||{}).filter(d=>!(G.wk&&d[0]=='wk'));if(G.wk)l.unshift(['wk',G.wk.p,G.wk.y+'年',G.wk.y+'年']);if(G.hide)l.push(['hd',0,'持续至你出手战斗','']);if(G.limR)l.push(['lm',0,`止步${lab(G.lim)}`,'']);if(G.soul)l.push(['sl',0,'','']);if(oldW(G.age,LF()))l.push(['ol',0,`剩${LF()-G.age}年`,`剩${LF()-G.age}年`]);return l.concat(xt())},bst=z=>{const l=stl(z.ps||{});return l.length?`<br>状态：${tgsL(l)}`:''};
-const pdis=k=>['P12','P13','P14','P15','P16'].includes(k)&&!!C||k=='P17'&&!C||k=='P14'&&(G.lbn||0)>=3||k=='P15'&&!!G.lzn||k=='P16'&&(G.snb||0)>=.6-1e-9||k=='P13'&&!(G.lr&&G.lr.t in WUP)||k=='P9'&&G.rv>G.age||k=='P11'&&(!!C||(G.vb||0)>=.3-1e-9)||(k=='P4'||k=='P5'||k=='P10')&&!C;
+const pdis=k=>!G.lr||!!C&&!!C.post||['P12','P13','P14','P15','P16'].includes(k)&&!!C||k=='P17'&&!C||k=='P14'&&(G.lbn||0)>=3||k=='P15'&&!!G.lzn||k=='P16'&&(G.snb||0)>=.6-1e-9||k=='P13'&&!(G.lr&&G.lr.t in WUP)||k=='P9'&&G.rv>G.age||k=='P11'&&(!!C||(G.vb||0)>=.3-1e-9)||(k=='P4'||k=='P5'||k=='P10')&&!C;
 const cnt=cs=>Object.keys(G.iv).filter(k=>cs.includes(k[0])).reduce((x,k)=>x+G.iv[k],0);
 const RS=(h,t,bs,c='')=>`<div class="rw sr${c}"><div class="si"><b>${h}</b><p>${t}</p></div><div class="sb">${bs}</div></div>`,BB=(t,f,d=0,c='buy')=>`<button class="${c}" onclick="${f}"${d?' disabled':''}>${t}</button>`;
 const R=(h,t,x='')=>`<div class="rw"><div><b>${h}</b><p>${t}</p></div>${x}</div>`,B=(t,f,d=0)=>`<button class="s" onclick="${f}"${d?' disabled':''}>${t}</button>`,BC=(...a)=>`<div class="bc">${a.join('')}</div>`,no='<p class="no">暂无</p>';
 const tv=z=>{const M=MB[z.i],r=M[6].filter(s=>s.length>2).map(s=>`${NK[s[1]]}${Math.round(sv(s,z.lv,M[1]))}${s[1]=='po'?'%生命/回合':'%'}`);if(z.i==1)r.push(`寻宝${trP(z.lv)}%`);if(z.i==5)r.push(`回复${8+z.lv}%`);if(z.i==6)r.push(`护盾${10+1.5*z.lv}%`);if(z.i==10)r.push('必定双倍伤害');if(z.i==16)r.push('俯冲借速增伤');if(z.i==17)r.push(`回复${10+z.lv}%`);if(z.i==18)r.push(`群疗${8+z.lv}%`);if(z.i==19)r.push(`群盾${10+z.lv}%，免疫1回合`);if(z.i==20)r.push('攻击为神识攻击');return r.join('，')||'看穿迷障'};
-const bp=(z,x)=>{const M=MB[z.i];return R(`${M[0]}${z.lv>=8?'<span class="rt rtH">人形</span>':''}${tag('B'+z.i)}　${z.lv}级（${lvl(z.lv)}）`,`生命：${Math.max(0,Math.round(z.h))}/${bH(z)}　速度：${bsp(z.i,z.lv)}　神识：${snOf(be(z))}　寿元：${z.ag||0}/${pLz(z)}岁${oldW(z.ag||0,pLz(z))?' <b style="color:var(--hp)">寿元将尽</b>':''}　修炼：${z.lv>=13?'已满级':z.xp+'/'+xn(z.lv)} 等级上限：${pLv(z)}级${z.limR?'（天资所限）':''}<br>自动修炼：${z.lv>=13?'已满级':`每年约+${Math.round(xn(z.lv)*pcr(z))}（${pcrT(z)}）`}<br>契约：${z.bd?'滴血认主（完美发挥）':'仅烙印（只发挥5层实力）'}<br>神通「${M[4]}」：${M[5]}<br>当前：${tv(z)}${bst(z)}`)+`<div class="ch">${B(z.d?'收回':dN()>=dmax()?'出战（已满）':'出战',`act(()=>dep(${x}))`,!!C||(!z.d&&dN()>=dmax()))}${z.bd?'':B(`滴血认主（余${bq()}）`,`act(()=>bond(${x}))`,!!C||bq()<1)}${z.bd?'':B(`出售${bv(z)}`,`act(()=>sellB(${x}))`,!!C)}</div>${eqUI(z.eq,k=>`eqP(${x},'${k}')`,j=>`uneqP(${x},${j})`)}${petKitUI(z,x)}${hv('P12')&&z.lv<13?`<div class="ch">${B(`喂逆天改命丹×${hv('P12')}`,`act(()=>feedNT(${x}))`,!!C)}</div>`:''}<div class="lb">${z.lv>=13?'已臻13级，无需再喂养':z.lv>=pLv(z)&&z.xp>=xn(z.lv)-1?`已达等级上限${pLv(z)}级（主人对应等级+1）`:'喂养培养（距下一级还需'+(xn(z.lv)-z.xp)+'，每次喂养最多升1级）'}</div><div class="ch">${(()=>{const lk=z.lv>=13||z.lv>=pLv(z)&&z.xp>=xn(z.lv)-1;return B(`灵石${fcost(z)}（+${fcost(z)}）`,`act(()=>feed(${x},'$'))`,G.st<fcost(z)||lk)+['W0','W2','W1'].map(w=>B(`${IT[w][0]}×${hv(w)}（+${FP[w]}%）`,`act(()=>feed(${x},'${w}'))`,!hv(w)||lk)).join('')})()}</div>${petPills().length?`<div class="lb">喂丹药（下品+20%、中品+35%、上品+60%、极品+100%；今年已炼化${pyN(z)}/${PYL}颗；延寿丹、万年灵芝、养魂丹另有奇效，不占次数）</div><div class="ch">${petPills().map(k=>{const sp=['P14','P15','P16'].includes(k);return B(`${IT[k][0]}×${hv(k)}（${k=='P14'?'寿元+25':k=='P15'?'寿元+60':k=='P16'?'神识+15%':'+'+FPP[rar(k)[0]]+'%'}）`,`act(()=>feed(${x},'${k}'))`,sp?(k=='P14'&&(z.lbn||0)>=3||k=='P15'&&z.lzn):(z.lv>=13||pyN(z)>=PYL||z.lv>=pLv(z)&&z.xp>=xn(z.lv)-1))}).join('')}</div>`:''}</div>`};
+const bp=(z,x)=>{const M=MB[z.i];return R(`${pNF(z)}${z.lv>=8?'<span class="rt rtH">人形</span>':''}${tag('B'+z.i)}　${z.lv}级（${lvl(z.lv)}）`,`生命：${Math.max(0,Math.round(z.h))}/${bH(z)}　速度：${bsp(z.i,z.lv)}　神识：${snOf(be(z))}　寿元：${z.ag||0}/${pLz(z)}岁${oldW(z.ag||0,pLz(z))?' <b style="color:var(--hp)">寿元将尽</b>':''}　修炼：${z.lv>=13?'已满级':z.xp+'/'+xn(z.lv)} 等级上限：${pLv(z)}级${z.limR?'（天资所限）':''}<br>自动修炼：${z.lv>=13?'已满级':`每年约+${Math.round(xn(z.lv)*pcr(z))}（${pcrT(z)}）`}<br>契约：${z.bd?'滴血认主（完美发挥）':'仅烙印（只发挥5层实力）'}<div class="pif" style="margin-top:4px"><label>名字<input id="pnm" maxlength="8" value="${z.nm||''}" placeholder="给${M[0]}起个名字（1～8字）"><button class="s" onclick="pRen(${x})">✏ 命名</button></label>${G.pne?`<p class="pie">${G.pne}</p>`:''}</div><br>神通「${M[4]}」：${M[5]}<br>当前：${tv(z)}${bst(z)}`)+`<div class="ch">${B(z.d?'收回':dN()>=dmax()?'出战（已满）':'出战',`act(()=>dep(${x}))`,!!C||(!z.d&&dN()>=dmax()))}${z.bd?'':B(`滴血认主（余${bq()}）`,`act(()=>bond(${x}))`,!!C||bq()<1)}${z.bd?'':B(`出售${bv(z)}`,`act(()=>sellB(${x}))`,!!C)}</div>${eqUI(z.eq,k=>`eqP(${x},'${k}')`,j=>`uneqP(${x},${j})`)}${petKitUI(z,x)}${hv('P12')&&z.lv<13?`<div class="ch">${B(`喂逆天改命丹×${hv('P12')}`,`act(()=>feedNT(${x}))`,!!C)}</div>`:''}<div class="lb">${z.lv>=13?'已臻13级，无需再喂养':z.lv>=pLv(z)&&z.xp>=xn(z.lv)-1?`已达等级上限${pLv(z)}级（主人对应等级+1）`:'喂养培养（距下一级还需'+(xn(z.lv)-z.xp)+'，每次喂养最多升1级）'}</div><div class="ch">${(()=>{const lk=z.lv>=13||z.lv>=pLv(z)&&z.xp>=xn(z.lv)-1;return B(`灵石${fcost(z)}（+${fcost(z)}）`,`act(()=>feed(${x},'$'))`,G.st<fcost(z)||lk)+['W0','W2','W1'].map(w=>B(`${IT[w][0]}×${hv(w)}（+${FP[w]}%）`,`act(()=>feed(${x},'${w}'))`,!hv(w)||lk)).join('')})()}</div>${petPills().length?`<div class="lb">喂丹药（下品+20%、中品+35%、上品+60%、极品+100%；今年已炼化${pyN(z)}/${PYL}颗；延寿丹、万年灵芝、养魂丹另有奇效，不占次数）</div><div class="ch">${petPills().map(k=>{const sp=['P14','P15','P16'].includes(k);return B(`${IT[k][0]}×${hv(k)}（${k=='P14'?'寿元+25':k=='P15'?'寿元+60':k=='P16'?'神识+15%':'+'+FPP[rar(k)[0]]+'%'}）`,`act(()=>feed(${x},'${k}'))`,sp?(k=='P14'&&(z.lbn||0)>=3||k=='P15'&&z.lzn):(z.lv>=13||pyN(z)>=PYL||z.lv>=pLv(z)&&z.xp>=xn(z.lv)-1))}).join('')}</div>`:''}</div>`};
 const row=k=>{const c=k[0],q=IT[k],b=[];
 if('STMZF'.includes(c))b.push(B('参悟',`act(()=>study('${k}'))`,!!C));
 if(c=='P')b.push(B('服用',`act(()=>eat('${k}'))`,pdis(k)));
@@ -1500,7 +1600,7 @@ sec('秘术',li(G.se.map(i=>`<b>${SE[i][0]}</b>${tag('T'+i)}${i>=5&&C.su[i]||i==
 sec('阵法',li(G.zf.map(i=>{const z=ZF[i],za=C.za[i]||0,ms=za?'':zMiss(i);return`<b>${z[0]}</b>${tag('Z'+i)} ${za?`阵势运转中（剩${za}回合）`:ms?`<span style="color:var(--hp)">缺${ms}</span>`:'材料已备齐'}<br><small>${FZ(z[3])}</small>`})));
 const af=Object.keys(G.iv).filter(k=>k[0]=='A').sort();sec('储物袋中的法宝',li(af.map(k=>{const a=AF[+k.slice(1)],cd=C.cd['a'+k.slice(1)]||0;return`<b>${a[0]}</b>${tag(k)}×${hv(k)}${cd?`（冷却${cd}）`:''}<br><small>${a[2]}</small>`})))}
 else{const isP=!!U.r,D=U.D,mine=canEq(U);
-if(isP){const z=U.r,M=MB[z.i];L.push(R(`${M[0]}${z.lv>=8?'<span class="rt rtH">人形</span>':''}${tag('B'+z.i)}　${z.lv}级（${lvl(z.lv)}）`,`${hp}<br>契约：${z.bd?'滴血认主（完美发挥）':'仅烙印（五成实力）'}${st?'<br>'+st:''}`));sec('天赋神通',li([`<b>「${M[4]}」</b>${M[5]}<br><small>当前：${tv(z)}</small>`]))}
+if(isP){const z=U.r,M=MB[z.i];L.push(R(`${pNF(z)}${z.lv>=8?'<span class="rt rtH">人形</span>':''}${tag('B'+z.i)}　${z.lv}级（${lvl(z.lv)}）`,`${hp}<br>契约：${z.bd?'滴血认主（完美发挥）':'仅烙印（五成实力）'}${st?'<br>'+st:''}`));sec('天赋神通',li([`<b>「${M[4]}」</b>${M[5]}<br><small>当前：${tv(z)}</small>`]))}
 else{const c=DLC[D.k],T0=dlS(D);L.push(R(`${c[0]}<span class="rt rtL">${D===G.dl?'道侣':'同伴'}</span>　${lab(D.s)}　${D.r?lrT(D.r):''}`,`${hp}<br>${c[3]}·${T0.n}${st?'<br>'+st:''}`));sec('流派天赋',li([T0.tl]));sec('法术',li(T0.sp.map(i=>`<b>${SP[i][0]}</b>${tag('S'+i)}<br><small>${SP[i][2]}</small>`)))}
 if(U.kt)L.push(kitHTML(U.kt,U.dl?dlS(U.D).sp:[],1));
 const eq=U.eq||[];if(mine){const bag=Object.keys(G.iv).filter(k=>k[0]=='A').sort();
@@ -1510,8 +1610,8 @@ return L.join('')}
 function rp(){if(!PO)return;const[k,x]=PO;let h='',tt='';
 if(k=='t'){const q=IT[x];tt={S:'法术',T:'秘术',Z:'阵法',M:'主修功法'}[x[0]]||'详情';h=R(q[4]+tag(x),q[1],x=='T0'?BC(B(G.hide?'解除敛气':'施展敛气','act(hideT)',!!C)):'')+(x[0]=='Z'?(()=>{const ms=zMiss(+x.slice(1));return`<p class="no" style="margin-top:6px">${ms?`⚠ 材料未备齐：缺${ms}。战斗中无法布阵，请提前去坊市备齐。`:'✔ 布阵材料已备齐，战斗中可以布阵。'}（当前：阵盘${hv('W3')}、阵旗${hv('W4')}、灵石${G.st}）</p>`})():'')}
 else if(k=='m'){tt='主修功法';h=`<p>切换需灵石，每次翻倍：下次 <b>${50*Math.pow(2,G.sw)}</b> 灵石</p>`+G.mo.map(j=>R(`《${MT[j][0]}》${tag('M'+j)}${G.mt==j?'（当前）':''}`,MT[j][1],BC(B(G.mt==j?'当前':'切换',`act(()=>setMt(${j}))`,G.mt==j||!!C)))).join('')}
-else if(k=='b'){const xi=G.bz[x]?x:0,z=G.bz[xi];tt=`灵兽袋<small>灵兽 ${G.bz.length}/${pcap()} · 烙印 ${G.yin||0}/${pcap()} · 出战 ${dN()}/${dmax()}</small>`;h=`<p class="no">以你${RN[rl()]}期的神识，<b>一生最多可烙印 ${pcap()} 只灵兽</b>（金丹以下4、金丹5、元婴7、化神9；已用 <b>${G.yin||0}</b> 次，陨落、出售、放生都不返还，请谨慎选择），灵兽袋最多容纳 ${pcap()} 只，同时驱使 <b>${dmax()}</b> 只出战（金丹以下2、金丹3、元婴5、化神7）；灵兽等级最高可达 <b>${plv()}</b> 级（你的对应等级+1）。</p>`+(G.bz.length?`<div class="ch">${G.bz.map((y,j)=>`<button class="${j==xi?'p':''}" onclick="po('b',${j})">${MB[y.i][0]}${y.lv}级${y.d?'★':''}${tag('B'+y.i)}</button>`).join('')}</div>`+bp(z,xi):'<p class="no">灵兽袋空空如也。去历练、坊市中寻找灵兽吧。</p>')}
-else if(k=='s'){const ks=Object.keys(G.iv).sort();tt='储物袋';h=`<button class="stb" onclick="po('h','a')" title="点击查看灵石的来源与消耗记录"><span>灵石 <b>${G.st}</b></span><span class="sth">📜 收支记录 ›</span></button>`+[['玉简与阵法书（点「参悟」学会）',q=>'STMZ'.includes(q[0])],['丹方与图谱',q=>q[0]=='F'],['丹药',q=>q[0]=='P'],['法宝',q=>q[0]=='A'],['妖兽卵（需驭兽烙印才能孵化）',q=>q[0]=='E'],['炼丹炼器材料（灵草、妖丹、兽骨也可喂灵兽）',q=>['W0','W1','W2','W5','W6'].includes(q)],['布阵材料',q=>q=='W3'||q=='W4']].map(([t,f])=>{const r=ks.filter(f).map(row).join('');return r?`<h3>${t}</h3>`+r:''}).join('')}
+else if(k=='b'){const xi=G.bz[x]?x:0,z=G.bz[xi];tt=`灵兽袋<small>灵兽 ${G.bz.length}/${pcap()} · 烙印 ${G.yin||0}/${pcap()} · 出战 ${dN()}/${dmax()}</small>`;h=`<p class="no">以你${RN[rl()]}期的神识，<b>一生最多可烙印 ${pcap()} 只灵兽</b>（金丹以下4、金丹5、元婴7、化神9；已用 <b>${G.yin||0}</b> 次，陨落、出售、放生都不返还，请谨慎选择），灵兽袋最多容纳 ${pcap()} 只，同时驱使 <b>${dmax()}</b> 只出战（金丹以下2、金丹3、元婴5、化神7）；灵兽等级最高可达 <b>${plv()}</b> 级（你的对应等级+1）。</p>`+(G.bz.length?`<div class="ch">${G.bz.map((y,j)=>`<button class="${j==xi?'p':''}" onclick="po('b',${j})">${pN(y)}${y.lv}级${y.d?'★':''}${tag('B'+y.i)}</button>`).join('')}</div>`+bp(z,xi):'<p class="no">灵兽袋空空如也。去历练、坊市中寻找灵兽吧。</p>')}
+else if(k=='s'){const ks=Object.keys(G.iv).sort();tt='储物袋';h=((G.soulM||[]).length?`<h3>🧠 搜魂所得的记忆（一年内可补刻）</h3>`+G.soulM.map((m,j)=>RS(`${m.n}的记忆`,`${m.ks.map(k=>IT[k][4]+tag(k)).join('、')}<br><small>${m.a+1}岁之前有效 · 每门消耗1枚空白玉简（现有${hv('W7')}）</small>`,BB('刻录',`act(()=>soulCarve(${j}))`,!hv('W7')||!!C))).join(''):'')+`<button class="stb" onclick="po('h','a')" title="点击查看灵石的来源与消耗记录"><span>灵石 <b>${G.st}</b></span><span class="sth">📜 收支记录 ›</span></button>`+[['玉简与阵法书（点「参悟」学会）',q=>'STMZ'.includes(q[0])],['丹方与图谱',q=>q[0]=='F'],['丹药',q=>q[0]=='P'],['法宝',q=>q[0]=='A'],['妖兽卵（需驭兽烙印才能孵化）',q=>q[0]=='E'],['炼丹炼器材料（灵草、妖丹、兽骨也可喂灵兽）',q=>['W0','W1','W2','W5','W6'].includes(q)],['空白玉简（搜魂刻录用）',q=>q=='W7'],['布阵材料',q=>q=='W3'||q=='W4']].map(([t,f])=>{const r=ks.filter(f).map(row).join('');return r?`<h3>${t}</h3>`+r:''}).join('')}
 else if(k=='h'){tt='灵石账簿';h=ledger(x||'a')}
 else if(k=='ud'){const U=udU(x);if(!U){$('dg').close();return}tt=U.me?'我方 · 修士':U.r?'我方 · 灵兽':U.D===G.dl?'我方 · 道侣':'我方 · 同伴';h=udHTML(x)}
 else if(k=='lr'){tt='入门 · 定名测灵';const pc=LR.map((r,j)=>`<div class="lrr"><b>${lrT({t:j,e:j==1?0:EL.slice(0,r[7])}).replace(/·.*?</,'<').replace('雷灵根','变异灵根')}</b><span>${r[1]}%</span><small>速×${r[2]}</small><p>${r[8]}</p></div>`).join('');
@@ -1541,19 +1641,27 @@ const NK=Object.keys(G.iv).filter(kk=>kk[0]=='F'&&+kk.slice(1)>=2&&CRL[+kk.slice
 else if(k=='help'){tt='玩法说明';h=`<div class="hp"><h3>🎯 目标</h3><p>从炼气期一路修到化神后期，渡劫飞升。寿元有限，天赋、选择与机缘决定你能走多远——老死在半路也是常事。</p>
 <h3>⏳ 时间怎么流逝</h3><p>· <b>打坐修炼</b>：过一年，修为稳定增长，回复气血灵力。<br>· <b>外出历练</b>：每次三个月（4次为一年），触发剧情、战斗与奇遇，修为少量增长。<br>· <b>尝试突破</b>：修为圆满后才能突破，耗时一年；失败会损失修为并受伤。<br>· <b>炼丹炼器</b>：每开一炉三个月起，修为只有少许增长。</p>
 <h3>📜 剧情与抉择</h3><p>紫色框是剧情岔路口，你的选择会立刻改变下一幕，也可能在几十年后以另一个故事回来。你认识的人也在过自己的人生——他们会相识、结拜、相爱、反目，消息见「人物志 · 江湖传闻」。</p>
-<h3>⚔ 战斗</h3><p>回合制，按速度依次出手。默认攻击血量最低的敌人，点击敌人可锁定目标。法术耗灵力，法宝有冷却，秘术多为每场限次，丹药服用会占一次出手。战斗中没有逃跑按钮，只有血影遁、燃魂疾影能脱身。</p>
-<h3>🐾 灵兽与同伴</h3><p>学会驭兽烙印后，可把气血低于10%的妖兽收为灵兽（一生次数有限）。灵兽8级化为人形，会自己修炼、收集宝物。道侣、金兰、徒弟都会与你并肩作战。</p>
+<h3>⚔ 战斗</h3><p>回合制，按速度依次出手。默认攻击血量最低的敌人，点击敌人可锁定目标。法术耗灵力，法宝有冷却，秘术多为每场限次——它们和普攻一样各占一次出手；丹药服用不占出手，但同一场里服得越多药力越弱。不同来源的同类效果会叠加。开启「手下留情」后，致命一击会改为封禁敌人，战后决定其生死（学会搜魂术还能读取其功法）；可在 ⚙ 设置中设为默认开启。学会天眼通后，遇敌时能看出对方修为比你高还是低（只能看穿神识比你弱的人）。战斗中没有逃跑按钮，只有血影遁、燃魂疾影能脱身。</p>
+<h3>🐾 灵兽与同伴</h3><p>学会驭兽烙印后，可把气血低于10%的妖兽收为灵兽（一生次数有限）。灵兽8级化为人形，会自己修炼、收集宝物。可在灵兽袋中给灵兽起名字。道侣、金兰、徒弟都会与你并肩作战；你可以把主修、法术、秘术玉简与丹药、法宝赠给他们，他们参悟后会在战斗中使用。</p>
 <h3>💞 情缘与道心</h3><p>情缘达到70且相处5次以上，对方会向你表白。道心记录你的善恶：魔性深重会招来心魔劫与正道追杀，侠义之名则会让人记住你。</p>
 <h3>🔥 炼丹炼器</h3><p>可选的技艺之路：入门后一炉炉积累熟练度，品级上限受境界限制。顶级丹药法宝需要上古丹方、天地灵物，成功率极低。也可以请精通此道的道侣好友代炼。</p>
 <h3>💡 提示</h3><p>点击状态标签、物品、灵根都能看到说明；按钮下方的小字是它的效果或限制。进度自动保存在本机浏览器中。</p></div>`}
-else if(k=='o'){tt='战斗规则';h=R('① 出手顺序','每回合开始时，按全场单位的<b>当前速度</b>从快到慢排好出手队列（顶部那一行），速度相同者同时出手。疾速、迟缓等变化从<b>下一回合</b>起生效。')+R('② 多次出手','速度达到对方阵营最快者的<b>2倍</b>，本回合可出手2次；达到<b>3倍</b>可出手3次。')+R('③ 锁定目标','我方默认攻击敌方<b>剩余血量比例最低</b>的一员；点击敌人可手动锁定，再点一次取消。敌方同样优先攻击我方血量比例最低的单位。')+R('④ 回合结束','所有人出手后，结算燃烧、中毒等持续伤害与状态回合数，然后进入下一回合。')+R('⑤ 胜负','击败全部敌人即胜利；你的气血归零即死亡（涅槃、九转还魂丹、金兰舍命可能救你一命）。战斗中没有逃跑按钮，只有血影遁、燃魂疾影能脱身。')+(C?R('当前速度',allU().map(u=>`${nmU(u)}：${SPD(u)}（本回合出手${nAct(u)}次）`).join('<br>')):'')}
+else if(k=='lock'){tt='尚未踏上仙途';h=`<div class="lock"><b>🔒 请先完成入门</b>坊市、储物袋、灵兽、丹房等都要在踏上仙途之后才能使用。请先点「🔮 入门：定名测灵」定下名字、性别并测出灵根。</div>`+BC(B('🔮 前往入门',"po('lr')"))}
+else if(k=='set'){tt='设置';const th=(document.documentElement.dataset&&document.documentElement.dataset.theme)||'';
+h=`<h3>⛓ 手下留情</h3><label class="mc"><input type="checkbox"${G.mcd?' checked':''} onchange="G.mcd=this.checked?1:0;draw()"><span>每场战斗默认开启手下留情<small>开启后，致命一击会改为封禁敌人，战后由你处置；切磋不受影响。战斗中也可以随时临时切换。</small></span></label>
+<h3>◐ 主题</h3><div class="tabs">${[['','跟随系统'],['light','亮色'],['dark','暗色']].map(([v,n])=>`<button class="${th==v?'on':''}" onclick="setThm('${v}')">${n}</button>`).join('')}</div>
+<h3>💾 存档</h3><p class="no">进度在每次操作后自动保存在本机浏览器中。清除浏览器数据会丢失存档。</p>`}
+else if(k=='mcH'){tt='手下留情与封禁';h=`<div class="hp"><p><b>没开启</b>：你和同伴的攻击照常致命，敌人气血归零即阵亡。</p><p><b>开启后</b>：只有在「这一击会打死敌人」时才生效——敌人不会死，而是被<b>⛓封禁</b>：经脉被封、四肢被缚，<b>无法行动，也不能被任何人治疗</b>。</p><p>敌人全部倒下或被封禁后，战斗进入<b>战后处置</b>，你逐个决定：斩杀、收缴储物袋后放走、直接放走、驭兽烙印（妖兽）、搜魂（需学会搜魂术，魔道）。</p><p>持续伤害（燃烧、中毒）与斩仙飞刀同样遵守手下留情。切磋比试中不能使用。</p><p>「默认开启」勾选后，以后每场战斗开始时自动开启；也可以在右上角 ⚙ 设置中修改。</p></div>`}
+else if(k=='o'){tt='战斗规则';h=R('① 出手顺序','每回合开始时，按全场单位的<b>当前速度</b>从快到慢排好出手队列（顶部那一行），速度相同者同时出手。疾速、迟缓等变化从<b>下一回合</b>起生效。')+R('② 一次出手','施展一门法术、祭出一件法宝（包括灵兽、同伴佩戴的法宝）、施展一门秘术、布下一座阵法、普攻，各占<b>一次出手</b>；<b>服用丹药不占出手</b>，可在出手前随时服用，但同一场战斗里每多服一颗药力就打一次折扣（100%→75%→56%→42%……最低10%）。敌我双方完全相同。')+R('③ 多次出手','速度达到对方阵营最快者的<b>2倍</b>，本回合可出手2次；达到<b>3倍</b>可出手3次。')+R('④ 锁定目标','我方默认攻击敌方<b>剩余血量比例最低</b>的一员；点击敌人可手动锁定，再点一次取消。敌方同样优先攻击我方血量比例最低的单位。')+R('⑤ 回合结束','所有人出手后，结算燃烧、中毒等持续伤害与状态回合数，每人回复5点灵力（同伴、敌人的灵力上限为100），然后进入下一回合。')+R('⑥ 效果叠加','不同法术、法宝、秘术、丹药带来的同类效果（强化、虚弱、疾速、迟缓、燃烧、中毒、护盾、治疗）<b>叠加生效</b>；同一来源重复施加只刷新回合。')+R('⑦ 手下留情与封禁','没开启时，致命一击照常击杀敌人。开启后，你和同伴（含持续伤害、斩仙飞刀）的<b>致命一击</b>不会杀死敌人，而是将其<b>封禁</b>（无法行动、不能被治疗）；可勾选「默认开启」。来敌全部倒下或被封禁后，战斗结束，你逐个决定封禁者的生死。')+R('⑧ 胜负','击败全部敌人即胜利；你的气血归零即死亡（涅槃、九转还魂丹、金兰舍命可能救你一命）。战斗中没有逃跑按钮，只有血影遁、燃魂疾影能脱身。')+(C?R('当前速度',allU().map(u=>`${nmU(u)}：${SPD(u)}（本回合出手${nAct(u)}次）`).join('<br>')):'')}
 else if(k=='p'){if(G.sa!==G.age)shopGen();tt='坊市';const sh=G.slk?[G.slk,...G.shop.filter(q=>q!=G.slk)]:G.shop;
-h=`<p>灵石 <b>${G.st}</b>（出售物品请在储物袋中操作）</p><div class="shn">🔄 货品<b>每年刷新一次</b>（下次：${G.age+1}岁）。🔒 可<b>锁定一件</b>心仪商品，刷新时保留；购买后或取消锁定即解除，锁定新商品会替换旧的。</div>`+sh.map(q=>{const f=inf(q),p=P$(q),L=G.slk==q;return RS(f[0]+tag(q)+(L?'<span class="lkt">🔒已锁定</span>':''),f[1],BB(`💰 ${p}灵石`,`act(()=>buyK('${q}',1))`,G.st<p)+BB(L?'🔓 取消锁定':'🔒 锁定',`act(()=>lockS('${q}'))`,0,'s lkb'),L?' lkd':'')}).join('')+'<h3>常备材料</h3>'+['W0','W1','W2','W5','W3','W4'].map(q=>{const f=inf(q),p=P$(q);return RS(f[0]+tag(q),f[1],BB(`💰 ${p}灵石`,`act(()=>buyK('${q}',1))`,G.st<p)+(q!='W3'?BB(`×5 · ${p*5}`,`act(()=>buyK('${q}',5))`,G.st<p*5):''))}).join('')}
+h=`<p>灵石 <b>${G.st}</b>（出售物品请在储物袋中操作）</p><div class="shn">🔄 货品<b>每年刷新一次</b>（下次：${G.age+1}岁）。🔒 可<b>锁定一件</b>心仪商品，刷新时保留；购买后或取消锁定即解除，锁定新商品会替换旧的。</div>`+sh.map(q=>{const f=inf(q),p=P$(q),L=G.slk==q;return RS(f[0]+tag(q)+(L?'<span class="lkt">🔒已锁定</span>':''),f[1],BB(`💰 ${p}灵石`,`act(()=>buyK('${q}',1))`,G.st<p)+BB(L?'🔓 取消锁定':'🔒 锁定',`act(()=>lockS('${q}'))`,0,'s lkb'),L?' lkd':'')}).join('')+'<h3>常备材料</h3>'+['W0','W1','W2','W5','W3','W4','W7'].map(q=>{const f=inf(q),p=P$(q);return RS(f[0]+tag(q),f[1],BB(`💰 ${p}灵石`,`act(()=>buyK('${q}',1))`,G.st<p)+(q!='W3'?BB(`×5 · ${p*5}`,`act(()=>buyK('${q}',5))`,G.st<p*5):''))}).join('')}
 if(k=='e'){const[c,p,rm,rs,src]=String(x).split('|');tt='状态说明';h=R(`${TX[c]}${PCT[c]&&+p?`（${p}%）`:''}`,`${rm?`剩余：${rm}<br>`:''}${src?`来源：${src}<br>`:''}${ED[c]}`)}
 $('dtt').innerHTML=tt;$('dc').innerHTML=h}
-function po(k,x=0){if(k!='d')G.dvc=0;const sw=!PO||PO[0]!=k;PO=[k,x];rp();if(sw)$('dg').scrollTop=0;const d=$('dg');if(!d.open){if(d.showModal)d.showModal();else d.setAttribute('open','')}}
+const PRE=['lr','lri','help','e','o','t','set','mcH'];
+function po(k,x=0){if(!G.lr&&!PRE.includes(k)){k='lock'}if(k!='d')G.dvc=0;const sw=!PO||PO[0]!=k;PO=[k,x];rp();if(sw)$('dg').scrollTop=0;const d=$('dg');if(!d.open){if(d.showModal)d.showModal();else d.setAttribute('open','')}}
 // ===== 界面渲染（v1.9）=====
 function bang(t,s,c){const e=$('tst');if(!e)return;e.innerHTML=`<div class="t-${c||'gold'}">${t}${s?`<small>${s}</small>`:''}</div>`;if(typeof setTimeout!='undefined'){clearTimeout(bang.t);bang.t=setTimeout(()=>{e.innerHTML=''},2500)}}
+function setThm(c){const d=document.documentElement;if(d.dataset){if(c)d.dataset.theme=c;else delete d.dataset.theme}try{localStorage.setItem('xxt',c)}catch(e){}rp()}
 function thm(){const d=document.documentElement,o=['','light','dark'],c=o[(o.indexOf(d.dataset?d.dataset.theme||'':'')+1)%3];if(d.dataset){if(c)d.dataset.theme=c;else delete d.dataset.theme}try{localStorage.setItem('xxt',c)}catch(e){}}
 const btRate=()=>{if(G.s<14&&G.s>=(G.lim==null?14:G.lim))return -1;return Math.round(Math.max(.05,Math.min(.97,brR(G.lr,G.s)+G.pill*.2+(G.dx||0)+((G.gd||0)>=50?.05:0)))*100)};
 const sitG=()=>Math.round(1.15*yY()*(1+bo('xp')+(G.soul?.3:0)));
@@ -1571,7 +1679,7 @@ $('ordA').innerHTML=`<span class="ol">第${F.t}回合</span>${F.Q.map((q,j)=>{co
 const card=(u,j,en)=>{const cn=en&&cap(u),sl=en&&mu&&j==F.ti,me=u===F.P;
 const sub=me?lab(G.s):u.dl?`${lab(u.D.s)}<span class="rt rtL">${u.D===G.dl?'道侣':'同伴'}</span>`:en?`${elv(u)}${!u.cv&&u.kt?'<span class="rt rtH">人形</span>':''}${u.el?'<span class="rt rtD">精英</span>':''}${etag(u)}`:`${u.lv}级${u.kt?'<span class="rt rtH">人形</span>':''}${tag('B'+u.i)}${(u.eq||[]).length?`<span title="佩戴法宝">🔮${u.eq.length}</span>`:''}`;
 const ck=en?(mu?`act(()=>tgt(${j}))`:''):`po('ud',${j})`,ttl=en?(mu?(F.lkE===u?'点击取消锁定':'点击锁定为攻击目标'):''):'点击查看详情、调配法宝';
-return`<div class="un${fl(u)}${sl?' sel':''}"${ck?` onclick="${ck}"`:''}${ttl?` title="${ttl}"`:''}><div class="u1"><b>${me?G.n:u.n}</b><span class="ux">${sl?`<span class="tm">${F.lkE?'🔒锁定':'◎目标'}</span>`:''}${cn?'<span class="cn">可烙印</span>':''}${en&&canEye()?`<button onclick="event.stopPropagation();po('sc',${j})" title="神识查探（不占出手）">🔍</button>`:''}</span></div><div class="u2">${sub}<span>速${SPD(u)}·识${snOf(u)}</span></div>${bar('',me?p:u.h,me?h:u.H,me?'--hp':en?'--dm':'--gd',cn?'can':'',u.sh)}${me?bar('',G.mp,M,'--mp','mpb'):''}${tgsL(me?stl(u).concat(xt()):stl(u))}</div>`};
+return`<div class="un${fl(u)}${sl?' sel':''}${u.bnd?' ko':''}${en&&canEye()&&scOK(u)?' d'+dgOf(u):''}"${ck&&!u.bnd?` onclick="${ck}"`:''}${ttl?` title="${ttl}"`:''}><div class="u1"><b>${me?G.n:u.n}</b><span class="ux">${sl?`<span class="tm">${F.lkE?'🔒锁定':'◎目标'}</span>`:''}${u.bnd?'<span class="cn">⛓封禁</span>':cn?'<span class="cn">可烙印</span>':''}${en&&canEye()?(scOK(u)?dgChip(dgOf(u),j):dgQ(j)):''}</span></div><div class="u2">${sub}<span>速${SPD(u)}·识${snOf(u)}</span></div>${bar('',me?p:u.h,me?h:u.H,me?'--hp':en?'--dm':'--gd',cn?'can':'',u.sh)}${me?bar('',G.mp,M,'--mp','mpb'):u.mpM?bar('',u.mp,u.mpM,'--mp','mpb'):''}${tgsL(me?stl(u).concat(xt()):stl(u))}</div>`};
 $('cbA').className='bs'+(F.B.length>=4?' many':'');$('cbA').innerHTML=`<div class="lb">我方（${1+F.B.length}）· 点击看详情</div>`+card(F.P,0,0)+F.B.map((z,j)=>card(z,j+1,0)).join('');
 $('cbE').className='bs'+(F.EN.length>=4?' many':'');$('cbE').innerHTML=`<div class="lb">敌方（${F.EN.length}）${mu?'· 点击锁定':''}</div>`+F.EN.map((E,j)=>card(E,j,1)).join('')}
 else{
@@ -1580,14 +1688,14 @@ const full=G.x>=n&&G.lr;
 $('bars').innerHTML=bar('修为',Math.min(G.x,n),n,'--jd',full?'full':'')+bar('生命',p,h,'--hp')+bar('灵力',G.mp,M,'--mp')+bar('寿元',G.age,Lf,'--gd');
 const kv=(l,v,c='',t='')=>`<span class="kv ${c}"${t?` title="${t}"`:''}>${l}<b>${v}</b></span>`;
 $('kv').innerHTML=kv('神识',mySn()+(canEye()?'·可查探':''),'','神识：查探与神识攻击的强弱，随修为提升')+kv('速度',pspd0(),'','速度：决定战斗中的出手顺序与次数')+kv('道心',gdT(G.gd||0)+'·'+gdN(G.gd||0),(G.gd||0)>=25?'good':(G.gd||0)<=-25?'bad':'','道心：由你的抉择决定，影响心魔劫、宗门与正道追杀')+(G.sect?kv('宗门',`${SECT[G.sect.id].n}·${RK[G.sect.rk]}`):G.hunt?kv('宗门',`被${SECT[G.hunt.id].n}追杀`,'bad'):'')+(G.limR?kv('道途',`止步${lab(G.lim)}`,'bad','天命瓶颈：此生无法再突破大境界'):'')+[0,1].filter(c=>crS(c).on).map(c=>kv(DAO[c].n,DAO[c].rn[crGr(c)])).join('')+kv('灵石',fm(G.st));
-const mi=(ic,t,s,f,c='')=>`<button class="mi ${c}" onclick="${f}"><i>${ic}</i>${t}<small>${s}</small></button>`;
+const lk0=!G.lr,mi=(ic,t,s,f,c='')=>`<button class="mi ${c}" onclick="${f}"${lk0?' disabled title="踏上仙途后才能使用"':''}><i>${ic}</i>${t}<small>${lk0?'🔒 入门后开放':s}</small></button>`;
 $('rt').innerHTML=mi('📜','功法',`《${MT[G.mt][0]}》`,"po('kf')")+mi('🎒','储物袋',`灵石${fm(G.st)}`,"po('s')")+mi('🐾','灵兽',`${G.bz.length}/${pcap()}只 · 出战${dN()}`,"po('b',0)")+mi('💞','道侣',G.dl?`${nmK(G.dl.k)}${G.dl.cap?'·被擒':''}`:'尚无',"po('d')",'dl')+mi('👥','人物志',`${Object.keys(G.np).length}人`,"po('rw')")+mi('🔥','丹房器房',[0,1].filter(c=>crS(c).on).map(c=>DAO[c].rn[crGr(c)]).join('·')||'未入门',"po('cr')")+mi('📖','生平',`${(G.bio||[]).length}件大事`,"po('bio')")+mi('🏮','坊市','每年换货',"po('p')")}
 let py=-1;const L=$('lg');
 L.innerHTML=G.lg.map(e=>{const m=e.a!==py?`<div class="yr">${e.a}岁</div>`:'';py=e.a;return m+`<p class="${e.k}">${hl(e.t)}</p>`}).join('');L.scrollTop=L.scrollHeight;
 const pk0=Object.keys(G.iv).filter(k=>k[0]=='P').sort((a,b)=>+a.slice(1)-+b.slice(1)).filter(k=>!F||!pdis(k));
-$('itl').textContent=F?'丹药 · 战斗中可用（服用占一次出手）':'丹药 · 点击服用（灰色＝此时不能服）';
+$('itl').title=F?'同一场战斗里，每多服一颗丹药，身体吸收的药力就打一次折扣：第1颗100%、第2颗75%、第3颗56%、第4颗42%……最低10%。战斗结束后恢复。':'';$('itl').textContent=!G.lr?'丹药 · 踏上仙途后才能服用':F?`丹药 · 不占出手 · ${(F.pn||0)?`本场已服${F.pn}颗，下一颗药力${pEffT(F.pn)}%`:'下一颗药力100%'}`:'丹药 · 点击服用（灰色＝此时不能服）';
 $('it').innerHTML=pk0.map(k=>b(`${IT[k][0]}×${G.iv[k]}`,`act(()=>eat('${k}'))`,'s',pdis(k),IT[k][1])).join('')||'<span class="no">囊中暂无可用的丹药</span>';
-$('al').textContent=G.over?'尘埃落定':F?`第${F.t}回合 · 轮到你出手`:G.nd?'剧情抉择':G.ev>=0?'请做抉择':!G.lr?'入门测灵':'你要做什么？';
+$('al').textContent=G.over?'尘埃落定':F&&F.post?'战后处置':F?`第${F.t}回合 · 轮到你出手`:G.nd?'剧情抉择':G.ev>=0?'请做抉择':!G.lr?'入门测灵':'你要做什么？';
 const rate=btRate(),full=G.x>=n;
 $('ac').innerHTML=G.over?b(G.over==2?'再入轮回，重修一世':'转世重生','reset()','p one')
 :F?cm(b)
